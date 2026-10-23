@@ -1,0 +1,110 @@
+{
+  "version": "0.67.0",
+  "type": "complete-current-project",
+  "files": {
+    "LANCER_JEU.cmd": {
+      "bytes": 73,
+      "sha256": "5709cb4fa6b46de445d1d87cdce78236b8f30c44c839515d8103229573a1e650"
+    },
+    "README.md": {
+      "bytes": 2436,
+      "sha256": "8aef64ed398a10d57c1560a8f9e66583b778dde9ce5af09b352a5b6ef070a552"
+    },
+    "README_v67.md": {
+      "bytes": 2436,
+      "sha256": "8aef64ed398a10d57c1560a8f9e66583b778dde9ce5af09b352a5b6ef070a552"
+    },
+    "RECONSTRUIRE_JEU.cmd": {
+      "bytes": 62,
+      "sha256": "20b52ee343d80e2bc7b46a9d25fdcadd44a32b0ba98d9f3623cf508c7e451e48"
+    },
+    "SOMA_MASSILIA_AUDIT_COMPLET_v0_67.md": {
+      "bytes": 2442,
+      "sha256": "0a3133f62c6ad2428f4451a179338b08b3fbfb4b31a541d1e3e327db996fca4b"
+    },
+    "SOMA_MASSILIA_CHANGELOG_v0_67.md": {
+      "bytes": 752,
+      "sha256": "671ba8e66a5cc18869a3e0d4fbbabd5dd7bec5575a1d95f6ca74142d393bf10c"
+    },
+    "SOMA_MASSILIA_RAPPORT_v0_67.html": {
+      "bytes": 2042,
+      "sha256": "52172fd945b0fcef6b9ae0d3cc13daf2da8d4ff3cb95fdbe42859982f753e528"
+    },
+    "SOMA_MASSILIA_URBAIN_v0_67.html": {
+      "bytes": 51742676,
+      "sha256": "f4f30ee5d08c9596398a5762c79287c7e67ccebf0796150f52d552156331294f"
+    },
+    "SOMA_MASSILIA_VERIFICATION_v0_67.txt": {
+      "bytes": 471,
+      "sha256": "4eaf54dcda96518f01a61c21f353a6d8ad2b6f0ab3e8c0babac692cae092a0ed"
+    },
+    "VERIFIER_ARCHIVE.cmd": {
+      "bytes": 77,
+      "sha256": "f9f294419f6ce7c617e30a9d662fd63e1f8517472a6aeffc7865cb99c2de7940"
+    },
+    "baseline/v66.html": {
+      "bytes": 51728100,
+      "sha256": "f1a6ce4b5957f634ff9fdbfaccfcf11c9e0d22159d01758dd56e29513581a014"
+    },
+    "build.py": {
+      "bytes": 737,
+      "sha256": "94c6966abaa2e11f85af578ec14d6deba8ac7b400572a6747ba248f3276454cf"
+    },
+    "data/source/Marseille.osm.pbf": {
+      "bytes": 44250286,
+      "sha256": "0d16c8cd7c77945b22cb0a018f19a7d0bd1b3a2cbf05c137fa62e3aa8fd56d82"
+    },
+    "data/v58/IGN_ACQUISITION_REPORT.json": {
+      "bytes": 1972,
+      "sha256": "e7616cf848d326c5ec9c6ca19cc52b686e163d4feafe4df83f4d8532c0f44821"
+    },
+    "data/v58/IMPORT_REPORT.json": {
+      "bytes": 2367,
+      "sha256": "bdf7111342585223bf8d0d06d87f3495b2a448078537226bce9cfbbb42325bcf"
+    },
+    "data/v58/SOURCE_SUMMARY.json": {
+      "bytes": 22876,
+      "sha256": "79fcf2514331f52ef74e61eb8e10729196b5faa56b0dbcf0ab43d573f65930f2"
+    },
+    "data/v58/terrain.ign.25m.tif": {
+      "bytes": 43562,
+      "sha256": "f09bb2eefcbd684c411b2f87c0a39f572e9f9c41e360b6ad558304bc9de8f1a5"
+    },
+    "data/v58/terrain.ign.json": {
+      "bytes": 123925,
+      "sha256": "72c47931e2076125df8aad55cf05b231632352e79560bdbb96398cdf8c37a12c"
+    },
+    "data/v62/catalog.json": {
+      "bytes": 2325904,
+      "sha256": "4b88a20b4734dbf77aa19e9bd170300095aca700ee749d765be5d29292a506d5"
+    },
+    "data/v63/NAVIGATION_REPORT.json": {
+      "bytes": 578,
+      "sha256": "ff57dde97910cc8bdafcd443bf17e95aaf87b100da3d7f9a8b78b72c3ee4b9fd"
+    },
+    "data/v63/navigation.json": {
+      "bytes": 2850322,
+      "sha256": "3fc7bf1dae7e29b29d95fdcb34ec8b7c7c48cd3cd496e4e22c0625c910317b76"
+    },
+    "docs/BASE_V66_VERIFIED.json": {
+      "bytes": 95,
+      "sha256": "39ca09a3c2dca4310b354b72a5c8239301b3c43a02daa7a5b8206690c6d26e5a"
+    },
+    "src/v67/world-runtime.js": {
+      "bytes": 14529,
+      "sha256": "443146ea95abd6e70df221407a3b590827bf63235efcaf7ad2ef8a01fd397f43"
+    },
+    "tests/v67/core.test.cjs": {
+      "bytes": 2049,
+      "sha256": "556eb49313c5280e415eb4673163c41b2e5e5c5a4f3fd3b2696527c8e2425700"
+    },
+    "tools/serve_game.py": {
+      "bytes": 1018,
+      "sha256": "cc26f315c7fc52d3cb457bec2cf376a9dd965c2f0b4e1d5496c7c56ab9b56d0a"
+    },
+    "tools/verify_release.py": {
+      "bytes": 610,
+      "sha256": "046ea5be4b7ed202f942be46a9382f6f8609a1bc266ea99a7b4e561c48c24fd2"
+    }
+  }
+}

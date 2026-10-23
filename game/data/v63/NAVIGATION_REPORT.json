@@ -1,0 +1,20 @@
+{
+  "sourcePbfSHA256": "0d16c8cd7c77945b22cb0a018f19a7d0bd1b3a2cbf05c137fa62e3aa8fd56d82",
+  "graphSHA256": "3fc7bf1dae7e29b29d95fdcb34ec8b7c7c48cd3cd496e4e22c0625c910317b76",
+  "bytes": 2850322,
+  "counts": {
+    "excludedWays": 1277,
+    "barrierExcludedSegments": 33,
+    "notInPlayableSourceSegments": 6,
+    "nodes": 18993,
+    "edges": 21675,
+    "ways": 6237,
+    "turnRestrictions": 26,
+    "footSegments": 21294,
+    "carSegments": 9812,
+    "crossCellSegments": 1631
+  },
+  "newGeographicSourceObjects": 0,
+  "newIGNMeasurements": 0,
+  "usedNativeNodeIdentity": true
+}

@@ -1,0 +1,3 @@
+# Preserve the release fingerprints, including on Windows with core.autocrlf.
+/game/** -text
+/payload/** -text
