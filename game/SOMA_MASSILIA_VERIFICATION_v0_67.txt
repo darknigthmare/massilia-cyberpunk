@@ -1,0 +1,9 @@
+SOMA//MASSILIA 0.67 — verification
+Baseline v0.66 SHA-256: f1a6ce4b5957f634ff9fdbfaccfcf11c9e0d22159d01758dd56e29513581a014
+HTML v0.67 bytes: 51742676
+HTML v0.67 SHA-256: f4f30ee5d08c9596398a5762c79287c7e67ccebf0796150f52d552156331294f
+Builds deterministes: 2/2 identiques
+Syntaxe module v0.67: OK
+Tests noyau cible: 10/10
+Navigation Chromium file://: bloquee par ERR_BLOCKED_BY_ADMINISTRATOR
+Chargement complet via set_content: timeout du banc; non qualifie GPU/WebGL

@@ -1,0 +1,6 @@
+__pycache__/
+*.py[cod]
+.massilia-prepare-*/
+/game/baseline/v66.html
+/game/data/source/Marseille.osm.pbf
+/game/SOMA_MASSILIA_URBAIN_v0_67.html
