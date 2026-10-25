@@ -235,3 +235,58 @@ test('atomic cancel stops late publication even when preparation ignores abort',
   const pending=loader.load('cancelled'),rejected=assert.rejects(pending,{name:'AbortError'});loader.cancel();
   assert.equal(signal.aborted,true);gate.resolve('late-data');await rejected;assert.deepEqual(commits,[]);
 });
+
+function geometryHistoryFixture(){
+  const fs=require('node:fs'),path=require('node:path'),vm=require('node:vm'),crypto=require('node:crypto');
+  const html=fs.readFileSync(path.resolve(__dirname,'../../baseline/v66.html'),'utf8');
+  function core(id){const source=html.match(new RegExp('<script[^>]*id="'+id+'"[^>]*>([\\s\\S]*?)<\\/script>'))[1],context=vm.createContext({module:{exports:{}},TextEncoder,TextDecoder,atob:x=>Buffer.from(x,'base64').toString('binary')});vm.runInContext(source,context);return context.module.exports;}
+  const G=core('soma-v53-core'),T=core('soma-v56-terrain-core'),F=core('soma-v59-core'),A=require('../../src/v69/roof-core.js');
+  const Geometry=require('../../src/v69/metropole-viewer-core.js'),K=require('../../src/v69/streaming-core.js');
+  const origin=K.ORIGIN,id='osm/way/777',geometrySHA='1'.repeat(64),sourceSHA='2'.repeat(64);
+  function fragment(west,east,cut){
+    const south=origin[1]-10,north=origin[1]+10,ring=[[west,south],[east,south],[east,north],[west,north],[west,south]];
+    const walls=ring.slice(1).map((q,i)=>[ring[i],q]).filter((_,i)=>i!==cut);
+    return{id,properties:{canonical_id:id,'soma:layer':'buildings','soma:geometry_sha256':geometrySHA,
+      building:'apartments',height:'12','roof:shape':'skillion','roof:height':'2','roof:direction':'90',
+      'soma:sourceBoundsL93':[origin[0]+350,south,origin[0]+400,north],
+      'soma:mesh53':[{ringsL93:[ring],trianglesL93:[[ring[0],ring[1],ring[2]],[ring[0],ring[2],ring[3]]],wallsL93:walls,areaM2:(east-west)*20}]}};
+  }
+  function entry(x,y,height=10,missing=false){
+    const cellId=`V52-MC-${y+3}${x+3}`,e=origin[0]+x*250,n=origin[1]-y*250,bounds=[e-125,n-125,e+125,n+125];
+    const features=x===1&&y===0?[fragment(origin[0]+350,origin[0]+375,1)]:x===2&&y===0?[fragment(origin[0]+375,origin[0]+400,3)]:[];
+    const grid=new T.Grid({x0:bounds[0],n0:bounds[3],step:125,cols:3,rows:3},new Float32Array(9).fill(height),new Uint8Array(9).fill(missing?0:1),{},{});
+    return{cellId,tile:{boundsL93:bounds},layers:{vector:{cellId,boundsL93:bounds,v53Validated:true,v53Synthetic:false,
+      sourceReceipt:{sha256:sourceSHA},contentSHA256:crypto.createHash('sha256').update(cellId).digest('hex'),featureCollection:{type:'FeatureCollection',features}},terrain:{grid,pack:{}}}};
+  }
+  const entries=new Map();for(let y=-1;y<=1;y++)for(let x=-1;x<=1;x++){const value=entry(x,y);entries.set(value.cellId,value);}
+  return{entries,targetIds:[...entries.keys()],outside:entry(2,0,100),outsideNoData:entry(2,0,100,true),id,
+    deps:{geo:G,terrain:T,fidelity:F,architecture:A},Geometry,A};
+}
+
+test('geometry options and all nine target buffers ignore higher or NoData fragments outside the target set',()=>{
+  const f=geometryHistoryFixture(),before=JSON.stringify([...f.entries.values()].map(e=>e.layers.vector)),orders=[];
+  const architecture={...f.A,referenceIndex(records){const rows=[...records];orders.push(rows.map(r=>r.cellId));return f.A.referenceIndex(rows);}};
+  const baseline=V.geometryOptions(f.entries,f.targetIds,architecture),render=(entries,options)=>f.targetIds.slice().sort().map(id=>f.Geometry.buildTile(entries.get(id),f.deps,{...options,details:false}));
+  const expected=render(f.entries,baseline);assert.equal(expected.length,9);assert.equal(baseline.canonicalDatumsMap.get(f.id),10);
+  assert.equal([...baseline.references.values()][0].complete,false,'Only the source fragment inside the target is available.');
+  assert.equal(baseline.maxVertices,600000);assert.equal(baseline.maxWindowRows,3);
+  for(const outside of [f.outside,f.outsideNoData]){
+    const cached=new Map([...f.entries,[outside.cellId,outside]]),reverse=new Map([...cached].reverse());
+    for(const [entries,targets]of [[cached,f.targetIds],[reverse,new Set(f.targetIds.slice().reverse())]]){
+      const options=V.geometryOptions(entries,targets,architecture),actual=render(entries,options);
+      assert.deepEqual(options,baseline,'Non-target residents must not affect datums, NoData, roofs or proof options.');
+      for(let i=0;i<9;i++){
+        assert.deepEqual(actual[i].vertices,expected[i].vertices,`Exact Float32 buffer for ${f.targetIds.slice().sort()[i]}`);
+        assert.equal(actual[i].geometryBytes,expected[i].geometryBytes);assert.deepEqual(actual[i].counts,expected[i].counts);
+      }
+    }
+  }
+  assert(orders.every(order=>JSON.stringify(order)===JSON.stringify(f.targetIds.slice().sort())),'Reference records are always selected in sorted target order.');
+  const explicitEntries=new Map([...f.entries,[f.outside.cellId,f.outside]]),explicit=V.geometryOptions(explicitEntries,[...f.targetIds,f.outside.cellId],f.A);
+  assert(Math.abs(explicit.canonicalDatumsMap.get(f.id)-100)<1e-9,'The outside fragment must affect the datum when deliberately included as a target.');
+  assert.equal([...explicit.references.values()][0].complete,true,'The second source fragment closes the canonical roof boundary.');
+  const changed=render(explicitEntries,explicit);assert(changed.some((value,i)=>!Buffer.from(value.vertices.buffer).equals(Buffer.from(expected[i].vertices.buffer))),'The fixture must detect the original geometry-changing aggregation bug.');
+  const missingEntries=new Map([...f.entries,[f.outsideNoData.cellId,f.outsideNoData]]),missing=V.geometryOptions(missingEntries,[...f.targetIds,f.outsideNoData.cellId],f.A);
+  assert.equal(missing.missingCanonicalDatums.has(f.id),true,'NoData propagates only when that fragment is explicitly targeted.');
+  assert.equal(JSON.stringify([...f.entries.values()].map(e=>e.layers.vector)),before,'No source feature is mutated.');
+});

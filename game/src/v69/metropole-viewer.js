@@ -92,7 +92,27 @@
       finally{if(controller===active)controller=null;}
     },cancel(){nonce++;controller?.abort();controller=null;}};
   }
-  const API={safeWorldPath,sceneRegistry,desiredTiles,flightLayers,requestFlightTiles,readJSON,loadBuildingParts,atomicWorldLoader};
+  function geometryOptions(entries,targetIds,architecture,parts=null){
+    // A resident cache is an optimization, not geographic evidence for the
+    // current view. The same visible cells must derive identical datums and
+    // roof references regardless of previous flights or network arrival order.
+    const selected=[...new Set(targetIds)].sort().map(id=>entries.get(id)).filter(Boolean);
+    const records=selected.map(e=>e.layers.vector).filter(Boolean),useful=records.map(r=>({...r,featureCollection:{...r.featureCollection,
+      features:r.featureCollection.features.filter(f=>['skillion','pyramidal','dome'].includes(String(f.properties?.['roof:shape']||'').toLowerCase()))}}));
+    const datums=new Map(),missingCanonicalDatums=new Set(),aliases=new Map(),omitBuildingIds=new Set();
+    for(const entry of selected){
+      const r=entry.layers.vector,grid=entry.layers.terrain.grid;if(!r)continue;
+      for(const f of r.featureCollection.features){const p=f.properties||{},id=p.canonical_id||f.id;if(p['soma:layer']!=='buildings')continue;
+        for(const mesh of p['soma:mesh53']||[])for(const ring of mesh.ringsL93)for(const point of ring){const h=grid.sample(...point);if(Number.isFinite(h))datums.set(id,Math.max(datums.get(id)??-Infinity,h));else missingCanonicalDatums.add(id);}
+        const parent=parts?.parents?.[id];
+        if(parent&&parent.sourceSHA256===r.sourceReceipt.sha256&&parent.parentGeometrySHA256===p['soma:geometry_sha256']&&parent.cells?.[r.cellId]===r.contentSHA256)omitBuildingIds.add(id);
+        const link=parts?.partParents?.[id];if(link&&link.sourceSHA256===r.sourceReceipt.sha256&&link.geometrySHA256===p['soma:geometry_sha256']&&link.cells?.[r.cellId]===r.contentSHA256)aliases.set(id,link.parentId);
+      }
+    }
+    for(const [id,parent]of aliases){if(datums.has(parent))datums.set(id,datums.get(parent));if(missingCanonicalDatums.has(parent))missingCanonicalDatums.add(id);}
+    return {canonicalDatumsMap:datums,missingCanonicalDatums,omitBuildingIds,references:architecture.referenceIndex(useful),maxVertices:600000,maxWindowRows:3};
+  }
+  const API={safeWorldPath,sceneRegistry,desiredTiles,flightLayers,requestFlightTiles,readJSON,loadBuildingParts,atomicWorldLoader,geometryOptions};
   if(typeof module!=='undefined'&&module.exports)module.exports=API;
   root.__SOMA_METRO_VIEWER_UTILS__=API;
   if(!root.document)return;
@@ -168,21 +188,8 @@ precision highp float;in vec3 colour;in float fog;out vec4 pixel;void main(){pix
       return value;
     }
   };}
-  function proofMatch(record,p,id){const row=parts?.parents?.[id];return row&&row.sourceSHA256===record.sourceReceipt.sha256&&row.parentGeometrySHA256===p['soma:geometry_sha256']&&row.cells?.[record.cellId]===record.contentSHA256?row:null;}
   function rebuildOptions(){
-    const records=[...entries.values()].map(e=>e.layers.vector).filter(Boolean),useful=records.map(r=>({...r,featureCollection:{...r.featureCollection,
-      features:r.featureCollection.features.filter(f=>['skillion','pyramidal','dome'].includes(String(f.properties?.['roof:shape']||'').toLowerCase()))}}));
-    const datums=new Map(),missingCanonicalDatums=new Set(),aliases=new Map(),omitBuildingIds=new Set();
-    for(const entry of entries.values()){
-      const r=entry.layers.vector,grid=entry.layers.terrain.grid;if(!r)continue;
-      for(const f of r.featureCollection.features){const p=f.properties||{},id=p.canonical_id||f.id;if(p['soma:layer']!=='buildings')continue;
-        for(const mesh of p['soma:mesh53']||[])for(const ring of mesh.ringsL93)for(const point of ring){const h=grid.sample(...point);if(Number.isFinite(h))datums.set(id,Math.max(datums.get(id)??-Infinity,h));else missingCanonicalDatums.add(id);}
-        if(proofMatch(r,p,id))omitBuildingIds.add(id);
-        const link=parts?.partParents?.[id];if(link&&link.sourceSHA256===r.sourceReceipt.sha256&&link.geometrySHA256===p['soma:geometry_sha256']&&link.cells?.[r.cellId]===r.contentSHA256)aliases.set(id,link.parentId);
-      }
-    }
-    for(const [id,parent]of aliases){if(datums.has(parent))datums.set(id,datums.get(parent));if(missingCanonicalDatums.has(parent))missingCanonicalDatums.add(id);}
-    options={canonicalDatumsMap:datums,missingCanonicalDatums,omitBuildingIds,references:A.referenceIndex(useful),maxVertices:600000,maxWindowRows:3};
+    options=geometryOptions(entries,targetIds,A,parts);
   }
   function enqueueVisible(){
     // Cache hits publish a fresh store wrapper without onAttach; synchronize

@@ -40,7 +40,7 @@ python3 game/tools/build_metropole_viewer.py
 python3 game/tools/build_metropole_viewer.py --verify
 ```
 
-L’explorateur utilise `data/v69/metropole/manifest.json`, puis le paquet `data/v69/world/manifest.json` en cas d’absence. Les données restent locales, sans CDN. Les géométries et le cache sont bornés, les anciens chargements sont annulés lors d’un changement de destination et les buffers GPU sont libérés. Les emprises, cours et murs de découpe suivent les sources ; les altitudes manquantes restent absentes. Ce mode de survol ne constitue pas une migration de la campagne ni une validation des déplacements au sol.
+L’explorateur utilise `data/v69/metropole/manifest.json`, puis le paquet `data/v69/world/manifest.json` en cas d’absence. Les données restent locales, sans CDN. Les géométries et le cache sont bornés, les anciens chargements sont annulés lors d’un changement de destination et les buffers GPU sont libérés. Un même ensemble de cellules visibles retrouve exactement sa géométrie après un aller-retour, indépendamment des fragments restés en cache et de l’ordre d’arrivée des données. Les emprises, cours et murs de découpe suivent les sources ; les altitudes manquantes restent absentes. Ce mode de survol ne constitue pas une migration de la campagne ni une validation des déplacements au sol.
 
 ## Données connues, estimations et géométries inconnues
 

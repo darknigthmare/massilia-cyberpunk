@@ -62,6 +62,20 @@
     "noDataPreserved": true,
     "manifestSHA256": "3c9f5cdaa8613e5764d8ae239bfcc65e2332f2db98bc98c92f8907e1914c6398"
   },
+  "validation": {
+    "automatedTests": 496,
+    "javascriptTests": 143,
+    "metropolePythonTests": 215,
+    "v69PythonTests": 138,
+    "browserStatus": "passed-strict-after-cache-fix",
+    "browserViewerSHA256": "c74c8814a2f3e02bb9b85ab0cf5f11510ab813ed32f7775293b492ed4c789d53",
+    "browserReportSHA256": "988f81899bd76d12e2b2e088015cb701d1f86818f695b6019b972c1c8b93c125",
+    "returnedVisibleBuffersIdentical": true,
+    "maxConcurrentAssetRequests": 2,
+    "browserErrors": 0,
+    "externalBrowserRequests": 0,
+    "campaignStorageWritesByFlyover": 0
+  },
   "limits": {
     "certifiedOneToOne": false,
     "completeArchitecture": false,
