@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Prepare and launch the complete, byte-verified SOMA//MASSILIA v0.67 release."""
+"""Prepare the verified original release and launch SOMA//MASSILIA v0.69."""
 
 from pathlib import Path
 import argparse
@@ -175,11 +175,19 @@ def main():
         check_parts(manifest)
         check_game(manifest)
         print("Vérification réussie : 5 parties et 27 fichiers originaux conformes.")
+        for name in ("build_v68.py", "build_v69.py", "tools/build_metropole_viewer.py"):
+            result = subprocess.call([sys.executable, str(GAME / name), "--verify"], cwd=GAME)
+            if result:
+                return result
         return 0
     prepare(manifest)
+    for name in ("build_v68.py", "build_v69.py", "tools/build_metropole_viewer.py"):
+        result = subprocess.call([sys.executable, str(GAME / name)], cwd=GAME)
+        if result:
+            return result
     if args.prepare_only:
         return 0
-    command = [sys.executable, str(GAME / "tools" / "serve_game.py"), "--port", str(args.port)]
+    command = [sys.executable, str(GAME / "tools" / "serve_v69.py"), "--port", str(args.port)]
     if args.no_browser:
         command.append("--no-browser")
     return subprocess.call(command, cwd=GAME)

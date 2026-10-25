@@ -1,0 +1,26 @@
+{
+  "schema": "soma-metropole/public-acquisition/1",
+  "url": "https://geo.api.gouv.fr/epcis/200054807/communes?format=geojson&geometry=contour&fields=nom,code,population",
+  "finalURL": "https://geo.api.gouv.fr/epcis/200054807/communes?format=geojson&geometry=contour&fields=nom,code,population",
+  "httpStatus": 200,
+  "acquiredUTC": "2026-10-25T08:11:52.134046+00:00",
+  "service": "API Découpage administratif, geo.api.gouv.fr",
+  "source": "Public EPCI communes geometry=contour endpoint, SIREN 200054807",
+  "bytes": 1151548,
+  "sha256": "df468049137c2b9e72b0c27a37d0d8cb8dc52d4bed4d37cd801cab07ce65b0f8",
+  "responseHeaders": {
+    "server": "envoy",
+    "date": "Sun, 25 Oct 2026 08:11:51 GMT",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "1151548",
+    "x-powered-by": "Express",
+    "vary": "Origin",
+    "etag": "W/\"11923c-TADZ7VbmaWQXlAQbnV2DW7nt4AY\"",
+    "cache-control": "public, max-age=3600, immutable",
+    "x-cache-status": "MISS",
+    "x-envoy-upstream-service-time": "425",
+    "connection": "close"
+  },
+  "provenanceOnly": true,
+  "boundaryValidated": false
+}

@@ -1,0 +1,13 @@
+{
+  "acquisition": "user-upload",
+  "attribution": "© contributeurs OpenStreetMap — extrait Marseille fourni par l’utilisateur, téléchargement BBBike déclaré",
+  "bytes": 44250286,
+  "id": "osm-bbbike-marseille-user-upload",
+  "independentDownloadHashComparison": false,
+  "license": "ODbL-1.0",
+  "osmSnapshotTimestampUTC": "2026-09-18T23:00:00+00:00",
+  "producerDeclaredInPBF": "https://download.BBBike.org",
+  "sha256": "0d16c8cd7c77945b22cb0a018f19a7d0bd1b3a2cbf05c137fa62e3aa8fd56d82",
+  "sourceURL": "https://download.bbbike.org/osm/bbbike/Marseille/Marseille.osm.pbf",
+  "title": "Marseille.osm.pbf"
+}

@@ -1,0 +1,2663 @@
+{
+  "boundarySHA256": "3af4aa6a7652b76cc284f338431e323b27bf548d2cbf9f5ac4d8135cd0e27d13",
+  "canonicalStoreSHA256": "4ecf6f880d4bae6dcae66c1010c5c787afaf6256e4440aff36ec6159f338429b",
+  "completedAtUTC": "2026-10-25T09:30:44.379743+00:00",
+  "counts": {
+    "buildingEnvelopeUnresolved": 0,
+    "buildingIntersectsAMP": 1,
+    "buildingOutsideAMP": 18,
+    "missingObjects": 0,
+    "nonBuilding": 34
+  },
+  "crs": "EPSG:2154",
+  "method": "Two source PBF scans: exact rejected way/relation tags and refs; exact needed source nodes. Full source envelopes from every resolved node; no polygon closure, geometry repair, or clipping.",
+  "osmManifestSHA256": "33ce7f67dcf380e14c446518060d19094d574c775b39122f62329cf556a1f58d",
+  "proofSHA256": "0c7f7f3f96e8ec767340fe3c6c9c2a333839953bcc2e32b4b0abe839361cabf3",
+  "records": [
+    {
+      "canonicalId": "osm/relation/1024508",
+      "isBuilding": false,
+      "kind": "relation",
+      "members": [
+        {
+          "ref": "669966550",
+          "role": "outer",
+          "type": "w"
+        },
+        {
+          "ref": "181460985",
+          "role": "outer",
+          "type": "w"
+        },
+        {
+          "ref": "181460983",
+          "role": "outer",
+          "type": "w"
+        },
+        {
+          "ref": "181460981",
+          "role": "outer",
+          "type": "w"
+        },
+        {
+          "ref": "65808086",
+          "role": "outer",
+          "type": "w"
+        },
+        {
+          "ref": "181462616",
+          "role": "outer",
+          "type": "w"
+        },
+        {
+          "ref": "181462637",
+          "role": "outer",
+          "type": "w"
+        },
+        {
+          "ref": "65808803",
+          "role": "outer",
+          "type": "w"
+        },
+        {
+          "ref": "669686584",
+          "role": "outer",
+          "type": "w"
+        },
+        {
+          "ref": "669686583",
+          "role": "outer",
+          "type": "w"
+        },
+        {
+          "ref": "65800333",
+          "role": "outer",
+          "type": "w"
+        },
+        {
+          "ref": "181464155",
+          "role": "outer",
+          "type": "w"
+        },
+        {
+          "ref": "61325904",
+          "role": "outer",
+          "type": "w"
+        },
+        {
+          "ref": "181468312",
+          "role": "outer",
+          "type": "w"
+        },
+        {
+          "ref": "181468331",
+          "role": "outer",
+          "type": "w"
+        },
+        {
+          "ref": "55531224",
+          "role": "outer",
+          "type": "w"
+        },
+        {
+          "ref": "65804656",
+          "role": "outer",
+          "type": "w"
+        },
+        {
+          "ref": "65805961",
+          "role": "outer",
+          "type": "w"
+        },
+        {
+          "ref": "65801214",
+          "role": "outer",
+          "type": "w"
+        },
+        {
+          "ref": "669658629",
+          "role": "outer",
+          "type": "w"
+        },
+        {
+          "ref": "669658630",
+          "role": "outer",
+          "type": "w"
+        },
+        {
+          "ref": "65804381",
+          "role": "outer",
+          "type": "w"
+        },
+        {
+          "ref": "668674097",
+          "role": "outer",
+          "type": "w"
+        },
+        {
+          "ref": "668674096",
+          "role": "outer",
+          "type": "w"
+        },
+        {
+          "ref": "65807186",
+          "role": "outer",
+          "type": "w"
+        },
+        {
+          "ref": "65805505",
+          "role": "outer",
+          "type": "w"
+        },
+        {
+          "ref": "65710069",
+          "role": "outer",
+          "type": "w"
+        },
+        {
+          "ref": "669966545",
+          "role": "outer",
+          "type": "w"
+        },
+        {
+          "ref": "669966559",
+          "role": "outer",
+          "type": "w"
+        }
+      ],
+      "reason": "unassembled-source-area",
+      "status": "known-non-building",
+      "tags": {
+        "boundary": "national_park",
+        "foot": "yes",
+        "leisure": "nature_reserve",
+        "name": "Parc national des Écrins (cœur)",
+        "name:it": "Parco nazionale degli Écrins",
+        "protect_class": "2",
+        "protection_title": "cœur",
+        "ref:FR:INPN": "FR3300005",
+        "short_name": "PN des Ecrins",
+        "source": "Inventaire National du Patrimoine Naturel 2010",
+        "type": "boundary",
+        "valid_from": "1973-03-27",
+        "website": "https://www.ecrins-parcnational.fr/",
+        "wikidata": "Q476446",
+        "wikipedia": "fr:Parc national des Écrins",
+        "year_import": "2010"
+      }
+    },
+    {
+      "canonicalId": "osm/relation/11734820",
+      "isBuilding": false,
+      "kind": "relation",
+      "members": [
+        {
+          "ref": "920700650",
+          "role": "outer",
+          "type": "w"
+        },
+        {
+          "ref": "447092537",
+          "role": "outer",
+          "type": "w"
+        },
+        {
+          "ref": "920563344",
+          "role": "outer",
+          "type": "w"
+        },
+        {
+          "ref": "857181157",
+          "role": "outer",
+          "type": "w"
+        },
+        {
+          "ref": "447094674",
+          "role": "outer",
+          "type": "w"
+        },
+        {
+          "ref": "447094001",
+          "role": "outer",
+          "type": "w"
+        },
+        {
+          "ref": "448665366",
+          "role": "outer",
+          "type": "w"
+        }
+      ],
+      "reason": "unassembled-source-area",
+      "status": "known-non-building",
+      "tags": {
+        "boundary": "protected_area",
+        "contact:website": "http://parconaturalealpiliguri.it",
+        "leisure": "nature_reserve",
+        "name": "Parco Naturale Regionale delle Alpi Liguri",
+        "name:de": "Regionaler Naturpark der Ligurischen Alpen",
+        "name:en": "Regional Natural Park of the Ligurian Alps",
+        "name:fr": "Parc naturel régional des Alpes ligures",
+        "name:it": "Parco Naturale Regionale delle Alpi Liguri",
+        "operator": "Ente Parco delle Alpi Liguri",
+        "protect_class": "2",
+        "type": "boundary",
+        "website": "http://parconaturalealpiliguri.it",
+        "wikidata": "Q3895678",
+        "wikipedia": "it:Parco naturale regionale delle Alpi Liguri"
+      }
+    },
+    {
+      "canonicalId": "osm/relation/14783762",
+      "isBuilding": false,
+      "kind": "relation",
+      "members": [
+        {
+          "ref": "371863502",
+          "role": "outer",
+          "type": "w"
+        },
+        {
+          "ref": "371863829",
+          "role": "outer",
+          "type": "w"
+        },
+        {
+          "ref": "371454469",
+          "role": "outer",
+          "type": "w"
+        }
+      ],
+      "reason": "unassembled-source-area",
+      "status": "known-non-building",
+      "tags": {
+        "boundary": "protected_area",
+        "leisure": "nature_reserve",
+        "name": "Parco Naturale delle Alpi Marittime",
+        "name:de": "Naturpark der Seealpen",
+        "name:it": "Parco Naturale delle Alpi Marittime",
+        "protect_class": "2",
+        "start_date": "1980",
+        "type": "boundary",
+        "website": "https://www.parcoalpimarittime.it/",
+        "wikidata": "Q3364595",
+        "wikipedia": "it:Parco naturale delle Alpi Marittime"
+      }
+    },
+    {
+      "canonicalId": "osm/relation/15060966",
+      "isBuilding": false,
+      "kind": "relation",
+      "members": [
+        {
+          "ref": "1125636126",
+          "role": "outer",
+          "type": "w"
+        },
+        {
+          "ref": "1125636125",
+          "role": "outer",
+          "type": "w"
+        }
+      ],
+      "reason": "unassembled-source-area",
+      "status": "known-non-building",
+      "tags": {
+        "boundary": "protected_area",
+        "leisure": "nature_reserve",
+        "name": "Parco Naturale Regionale del Monviso",
+        "short_name": "Parco Naturale del Monviso",
+        "type": "boundary"
+      }
+    },
+    {
+      "canonicalId": "osm/way/1005199129",
+      "isBuilding": false,
+      "kind": "way",
+      "nodeRefs": [
+        "9274481407",
+        "11653255661",
+        "9274481406",
+        "11653255662",
+        "9274481405",
+        "9274481404",
+        "9274481403",
+        "9274481402",
+        "9274481401",
+        "9274481400",
+        "11653255660",
+        "11653255657",
+        "11653255658",
+        "11653255659",
+        "11653255656",
+        "11653255655",
+        "11653255654",
+        "11653255653",
+        "9274481399",
+        "9274481398",
+        "9274481397",
+        "9274481396",
+        "9274481395",
+        "9274481394",
+        "9274481393",
+        "9274481392",
+        "9274481391",
+        "9274481390",
+        "11653255652",
+        "9274481389",
+        "9274481388",
+        "9274481387",
+        "9274481386",
+        "9274481407"
+      ],
+      "reason": "unassembled-source-area",
+      "status": "known-non-building",
+      "tags": {
+        "area": "no",
+        "fixme": "geometry",
+        "leisure": "track",
+        "sport": "motocross"
+      }
+    },
+    {
+      "canonicalId": "osm/way/1005199130",
+      "isBuilding": false,
+      "kind": "way",
+      "nodeRefs": [
+        "9274470902",
+        "9274470901",
+        "9274470900",
+        "9274470899",
+        "9274470898",
+        "9274470897",
+        "9274470896",
+        "9274470895",
+        "9274470894",
+        "9274470893",
+        "9274470892",
+        "9274470891",
+        "9274470890",
+        "9274470889",
+        "9274470888",
+        "9274482272",
+        "9274482271",
+        "9274482270",
+        "9274482269",
+        "9274482268",
+        "9274482267",
+        "9274482266",
+        "9274482265",
+        "9274482264",
+        "9274482263",
+        "9274482262",
+        "9274482261",
+        "9274482260",
+        "9274482259",
+        "9274482258",
+        "9274482257",
+        "9274482256",
+        "9274482255",
+        "9274482254",
+        "9274482253",
+        "9274482252",
+        "9274482251",
+        "9274482250",
+        "9274482249",
+        "9274482248",
+        "9274482247",
+        "9274482246",
+        "9274482245",
+        "9274482244",
+        "9274482243",
+        "9274482242",
+        "9274482241",
+        "9274482240",
+        "9274482239",
+        "9274482238",
+        "9274482237",
+        "9274482236",
+        "9274482235",
+        "9274482234",
+        "9274482233",
+        "9274482232",
+        "9274482231",
+        "9274482230",
+        "9274482229",
+        "9274482228",
+        "9274482227",
+        "9274482226",
+        "9274482225",
+        "9274482224",
+        "9274482223",
+        "9274482222",
+        "9274482221",
+        "9274482220",
+        "9274482219",
+        "9274482218",
+        "9274482217",
+        "9274481416",
+        "9274481415",
+        "9274481414",
+        "9274481413",
+        "9274481412",
+        "9274481411",
+        "9274481410",
+        "9274481409",
+        "9274481408",
+        "9274470902"
+      ],
+      "reason": "unassembled-source-area",
+      "status": "known-non-building",
+      "tags": {
+        "area": "no",
+        "fixme": "geometry",
+        "leisure": "track",
+        "name": "Piste André Chaumard",
+        "sport": "motocross"
+      }
+    },
+    {
+      "canonicalId": "osm/way/106976409",
+      "isBuilding": false,
+      "kind": "way",
+      "nodeRefs": [
+        "1230036379",
+        "1230036344",
+        "1230036425",
+        "1230036338",
+        "1230036393",
+        "1230036406",
+        "1230036386",
+        "1230036397",
+        "1230036353",
+        "1230036370",
+        "1230036343",
+        "1230036362",
+        "1230036415",
+        "1230036329",
+        "1230036405",
+        "1230036424",
+        "1230036377",
+        "1230036391",
+        "1230036368",
+        "1230036384",
+        "1230036336",
+        "1230036352",
+        "1230036328",
+        "1230036342",
+        "1230036396",
+        "1230036413",
+        "1230036390",
+        "1230036404",
+        "1230036361",
+        "1230036379"
+      ],
+      "reason": "unassembled-source-area",
+      "status": "known-non-building",
+      "tags": {
+        "area": "no",
+        "leisure": "track",
+        "sport": "athletics"
+      }
+    },
+    {
+      "canonicalId": "osm/way/1263212765",
+      "isBuilding": false,
+      "kind": "way",
+      "nodeRefs": [
+        "11736731880",
+        "11736731879",
+        "11736731878",
+        "11736731877",
+        "11736731876",
+        "11736731875",
+        "11736731874",
+        "11736731873",
+        "11736731872",
+        "11736731871",
+        "11736731870",
+        "11736731880"
+      ],
+      "reason": "unassembled-source-area",
+      "status": "known-non-building",
+      "tags": {
+        "area": "no",
+        "leisure": "track",
+        "lit": "no"
+      }
+    },
+    {
+      "canonicalId": "osm/way/1263477186",
+      "isBuilding": false,
+      "kind": "way",
+      "nodeRefs": [
+        "11738935512",
+        "11738935511",
+        "11738935510",
+        "11738935509",
+        "11738935508",
+        "11738935507",
+        "11738935506",
+        "11738935505",
+        "11738935504",
+        "11738935503",
+        "11738935502",
+        "11738935501",
+        "11738935500",
+        "11738935499",
+        "11738935498",
+        "11738935497",
+        "11738935496",
+        "11738935495",
+        "11738935494",
+        "11738935493",
+        "11738935492",
+        "11738935491",
+        "11738935490",
+        "11738935489",
+        "11738935488",
+        "11738935487",
+        "11738935486",
+        "11738935485",
+        "11738935484",
+        "11738935483",
+        "11738935512"
+      ],
+      "reason": "unassembled-source-area",
+      "status": "known-non-building",
+      "tags": {
+        "area": "no",
+        "leisure": "track",
+        "sport": "athletics"
+      }
+    },
+    {
+      "boundsL93": [
+        952088.08006593,
+        6378448.775423465,
+        952097.4811118756,
+        6378458.132013167
+      ],
+      "boundsWGS84": [
+        6.1693961,
+        44.4595506,
+        6.1695152,
+        44.4596368
+      ],
+      "canonicalId": "osm/way/1316869386",
+      "intersectsAMP": false,
+      "isBuilding": true,
+      "kind": "way",
+      "missingNodeRefs": [],
+      "nodePositionsWGS84": {
+        "12187750107": [
+          6.1694203,
+          44.4596339
+        ],
+        "12187750108": [
+          6.1695152,
+          44.4595989
+        ],
+        "12187750109": [
+          6.1693961,
+          44.4595839
+        ],
+        "12187750110": [
+          6.1694879,
+          44.4595506
+        ],
+        "1487995318": [
+          6.1694217,
+          44.4596368
+        ]
+      },
+      "nodeRefs": [
+        "12187750107",
+        "12187750109",
+        "12187750110",
+        "12187750108",
+        "1487995318"
+      ],
+      "reason": "open-building-way",
+      "refsComplete": true,
+      "status": "proven-source-envelope",
+      "tags": {
+        "building": "yes",
+        "source": "cadastre-dgi-fr source : Direction Générale des Impôts - Cadastre. Mise à jour : 2011"
+      }
+    },
+    {
+      "canonicalId": "osm/way/1327578008",
+      "isBuilding": false,
+      "kind": "way",
+      "nodeRefs": [
+        "12282261108",
+        "12282261107",
+        "12282261106",
+        "12282261105",
+        "12282261104",
+        "12282261103",
+        "12282261102",
+        "12282261101",
+        "12282261108"
+      ],
+      "reason": "unassembled-source-area",
+      "status": "known-non-building",
+      "tags": {
+        "area": "no",
+        "description": "pumptrack",
+        "leisure": "track",
+        "sport": "cycling;roller_skating"
+      }
+    },
+    {
+      "canonicalId": "osm/way/1327578011",
+      "isBuilding": false,
+      "kind": "way",
+      "nodeRefs": [
+        "12282261124",
+        "12282261123",
+        "12282261122",
+        "12282261121",
+        "12282261120",
+        "12282261119",
+        "12282261118",
+        "12282261117",
+        "12282261116",
+        "12282261115",
+        "12282261114",
+        "12282261113",
+        "12282261112",
+        "12282261111",
+        "12282261110",
+        "12282261109",
+        "12282261124"
+      ],
+      "reason": "unassembled-source-area",
+      "status": "known-non-building",
+      "tags": {
+        "area": "no",
+        "description": "pumptrack",
+        "leisure": "track",
+        "sport": "cycling;roller_skating"
+      }
+    },
+    {
+      "canonicalId": "osm/way/1377797043",
+      "isBuilding": false,
+      "kind": "way",
+      "nodeRefs": [
+        "12757635234",
+        "12757635235",
+        "12757635236",
+        "12757635237",
+        "12757635238",
+        "12757635239",
+        "12757635240",
+        "12757635241",
+        "12757635242",
+        "12757635243",
+        "12757635244",
+        "12757635245",
+        "12757635246",
+        "14006678908",
+        "12757635247",
+        "12757635248",
+        "12757635249",
+        "12757635250",
+        "12757635251",
+        "12757635234"
+      ],
+      "reason": "unassembled-source-area",
+      "status": "known-non-building",
+      "tags": {
+        "area": "no",
+        "leisure": "track",
+        "sport": "horse_racing"
+      }
+    },
+    {
+      "canonicalId": "osm/way/1381808061",
+      "isBuilding": false,
+      "kind": "way",
+      "nodeRefs": [
+        "12793327426",
+        "12793327427",
+        "12793327428",
+        "12793327429",
+        "12793327430",
+        "12793327431",
+        "12793327432",
+        "12793327433",
+        "12793327434",
+        "12793327435",
+        "12793327436",
+        "12793327437",
+        "12793327438",
+        "12793327439",
+        "12793327440",
+        "12793327441",
+        "12793327442",
+        "12793327443",
+        "12793327426"
+      ],
+      "reason": "unassembled-source-area",
+      "status": "known-non-building",
+      "tags": {
+        "area": "no",
+        "leisure": "track",
+        "sport": "cycling"
+      }
+    },
+    {
+      "canonicalId": "osm/way/1393982121",
+      "isBuilding": false,
+      "kind": "way",
+      "nodeRefs": [
+        "12903108443",
+        "12903108444",
+        "12903108445",
+        "12903108446",
+        "12903108447",
+        "12903108448",
+        "12903108449",
+        "12903108450",
+        "12903108451",
+        "12903108452",
+        "12903108453",
+        "12903108454",
+        "12903108455",
+        "12903108456",
+        "12903108457",
+        "12903108458",
+        "12903108459",
+        "12903108460",
+        "12903108461",
+        "12903108462",
+        "12903108443"
+      ],
+      "reason": "unassembled-source-area",
+      "status": "known-non-building",
+      "tags": {
+        "area": "no",
+        "leisure": "track",
+        "sport": "bmx"
+      }
+    },
+    {
+      "canonicalId": "osm/way/1393982122",
+      "isBuilding": false,
+      "kind": "way",
+      "nodeRefs": [
+        "12903108463",
+        "12903108464",
+        "12903108465",
+        "12903108466",
+        "12903108467",
+        "12903108468",
+        "12903108469",
+        "12903108470",
+        "12903108471",
+        "12903108472",
+        "12903108463"
+      ],
+      "reason": "unassembled-source-area",
+      "status": "known-non-building",
+      "tags": {
+        "area": "no",
+        "leisure": "track",
+        "sport": "bmx"
+      }
+    },
+    {
+      "canonicalId": "osm/way/1393982123",
+      "isBuilding": false,
+      "kind": "way",
+      "nodeRefs": [
+        "12903108473",
+        "12903108474",
+        "12903108475",
+        "12903108476",
+        "12903108477",
+        "12903108478",
+        "12903108479",
+        "12903108480",
+        "12903108481",
+        "12903108482",
+        "12903108483",
+        "12903108484",
+        "12903108485",
+        "12903108486",
+        "12903108487",
+        "12903108488",
+        "12903108489",
+        "12903108473"
+      ],
+      "reason": "unassembled-source-area",
+      "status": "known-non-building",
+      "tags": {
+        "area": "no",
+        "leisure": "track",
+        "sport": "bmx"
+      }
+    },
+    {
+      "boundsL93": [
+        874089.1600747673,
+        6283267.643608909,
+        874095.6131412968,
+        6283277.604896624
+      ],
+      "boundsWGS84": [
+        5.1566804,
+        43.6270579,
+        5.1567577,
+        43.6271472
+      ],
+      "canonicalId": "osm/way/1436382591",
+      "intersectsAMP": true,
+      "isBuilding": true,
+      "kind": "way",
+      "missingNodeRefs": [],
+      "nodePositionsWGS84": {
+        "13202341274": [
+          5.1567577,
+          43.6270672
+        ],
+        "13202341275": [
+          5.1567099,
+          43.6270579
+        ],
+        "13202341276": [
+          5.1566804,
+          43.627138
+        ],
+        "13202341277": [
+          5.1567282,
+          43.6271472
+        ],
+        "13202341278": [
+          5.1567503,
+          43.6270875
+        ]
+      },
+      "nodeRefs": [
+        "13202341277",
+        "13202341276",
+        "13202341275",
+        "13202341274",
+        "13202341278"
+      ],
+      "reason": "open-building-way",
+      "refsComplete": true,
+      "status": "proven-source-envelope",
+      "tags": {
+        "building": "yes",
+        "source": "cadastre-dgi-fr source : Direction Générale des Impôts - Cadastre. Mise à jour : 2011"
+      }
+    },
+    {
+      "boundsL93": [
+        844384.3872269774,
+        6312912.884805827,
+        844388.5902388481,
+        6312917.770937627
+      ],
+      "boundsWGS84": [
+        4.7971813,
+        43.9004325,
+        4.7972345,
+        43.9004769
+      ],
+      "canonicalId": "osm/way/1500246309",
+      "intersectsAMP": false,
+      "isBuilding": true,
+      "kind": "way",
+      "missingNodeRefs": [],
+      "nodePositionsWGS84": {
+        "13737520553": [
+          4.7971813,
+          43.9004409
+        ],
+        "13737520554": [
+          4.7971958,
+          43.9004769
+        ],
+        "13737520555": [
+          4.7972211,
+          43.9004325
+        ],
+        "13737520560": [
+          4.7972345,
+          43.9004687
+        ]
+      },
+      "nodeRefs": [
+        "13737520560",
+        "13737520554",
+        "13737520553",
+        "13737520555"
+      ],
+      "reason": "open-building-way",
+      "refsComplete": true,
+      "status": "proven-source-envelope",
+      "tags": {
+        "building": "yes"
+      }
+    },
+    {
+      "boundsL93": [
+        860664.3358090587,
+        6303319.395608128,
+        860674.3937476667,
+        6303331.317654448
+      ],
+      "boundsWGS84": [
+        4.9967226,
+        43.8106047,
+        4.9968456,
+        43.8107116
+      ],
+      "canonicalId": "osm/way/1501821503",
+      "intersectsAMP": false,
+      "isBuilding": true,
+      "kind": "way",
+      "missingNodeRefs": [],
+      "nodePositionsWGS84": {
+        "13748946739": [
+          4.9968456,
+          43.8106291
+        ],
+        "13748946740": [
+          4.9967722,
+          43.8106047
+        ],
+        "13748946741": [
+          4.9967226,
+          43.8106871
+        ],
+        "13748946742": [
+          4.9967951,
+          43.8107116
+        ]
+      },
+      "nodeRefs": [
+        "13748946741",
+        "13748946740",
+        "13748946739",
+        "13748946742"
+      ],
+      "reason": "open-building-way",
+      "refsComplete": true,
+      "status": "proven-source-envelope",
+      "tags": {
+        "building": "yes"
+      }
+    },
+    {
+      "boundsL93": [
+        860815.8519792301,
+        6303380.072585313,
+        860825.8211029605,
+        6303389.140485746
+      ],
+      "boundsWGS84": [
+        4.9986229,
+        43.8111162,
+        4.9987454,
+        43.8111974
+      ],
+      "canonicalId": "osm/way/1501829756",
+      "intersectsAMP": false,
+      "isBuilding": true,
+      "kind": "way",
+      "missingNodeRefs": [],
+      "nodePositionsWGS84": {
+        "13749121794": [
+          4.9986949,
+          43.8111904
+        ],
+        "13749121795": [
+          4.9986658,
+          43.8111162
+        ],
+        "13749121796": [
+          4.9987065,
+          43.8111333
+        ],
+        "13749121797": [
+          4.998719,
+          43.8111178
+        ],
+        "13749121798": [
+          4.9987454,
+          43.8111289
+        ],
+        "13749121799": [
+          4.9986891,
+          43.8111974
+        ],
+        "13749121800": [
+          4.9986229,
+          43.8111696
+        ],
+        "13749143705": [
+          4.9986293,
+          43.8111615
+        ]
+      },
+      "nodeRefs": [
+        "13749143705",
+        "13749121800",
+        "13749121799",
+        "13749121794",
+        "13749121798",
+        "13749121797",
+        "13749121796",
+        "13749121795",
+        "13749121800"
+      ],
+      "reason": "open-building-way",
+      "refsComplete": true,
+      "status": "proven-source-envelope",
+      "tags": {
+        "building": "yes"
+      }
+    },
+    {
+      "canonicalId": "osm/way/1503410078",
+      "isBuilding": false,
+      "kind": "way",
+      "nodeRefs": [
+        "13759122842",
+        "13759122843",
+        "13759122844",
+        "13759122845",
+        "13759122846",
+        "13759122847",
+        "13759122848",
+        "13759122849",
+        "13759122850",
+        "13759122851",
+        "13759122852",
+        "13759122853",
+        "13759122854",
+        "13759122855",
+        "13759122856",
+        "13759122857",
+        "13759122858",
+        "13759122859",
+        "13759122860",
+        "13759122861",
+        "13759122862",
+        "13759122842"
+      ],
+      "reason": "unassembled-source-area",
+      "status": "known-non-building",
+      "tags": {
+        "area": "no",
+        "leisure": "track",
+        "sport": "bmx"
+      }
+    },
+    {
+      "canonicalId": "osm/way/152373834",
+      "isBuilding": false,
+      "kind": "way",
+      "nodeRefs": [
+        "1651960178",
+        "1651960174",
+        "1651960168",
+        "1651960164",
+        "1651960158",
+        "1651960154",
+        "1651960121",
+        "1651960116",
+        "1651960109",
+        "1651960106",
+        "1651960113",
+        "1651960118",
+        "1651960125",
+        "9152026114",
+        "1651960160",
+        "1651960171",
+        "9152026113",
+        "1651960190",
+        "1651960213",
+        "1651960185",
+        "1651960178"
+      ],
+      "reason": "unassembled-source-area",
+      "status": "known-non-building",
+      "tags": {
+        "area": "no",
+        "leisure": "track",
+        "source": "cadastre-dgi-fr source : Direction Générale des Impôts - Cadastre. Mise à jour : 2012",
+        "sport": "athletics"
+      }
+    },
+    {
+      "canonicalId": "osm/way/204423486",
+      "isBuilding": false,
+      "kind": "way",
+      "nodeRefs": [
+        "2144319582",
+        "2144319580",
+        "2144319636",
+        "2144319638",
+        "2144319621",
+        "2144319632",
+        "2144319642",
+        "2144319644",
+        "2144319646",
+        "2144319648",
+        "2144319647",
+        "2144319645",
+        "2144319643",
+        "2144319639",
+        "2144319630",
+        "2144319650",
+        "2144319652",
+        "2144319571",
+        "2144319568",
+        "2144319605",
+        "2144319603",
+        "2144319597",
+        "2144319593",
+        "2144319589",
+        "2144319585",
+        "2144319581",
+        "2144319587",
+        "2144319591",
+        "2144319599",
+        "2144319582"
+      ],
+      "reason": "unassembled-source-area",
+      "status": "known-non-building",
+      "tags": {
+        "area": "no",
+        "leisure": "track",
+        "sport": "running"
+      }
+    },
+    {
+      "canonicalId": "osm/way/226001048",
+      "isBuilding": false,
+      "kind": "way",
+      "nodeRefs": [
+        "2348515203",
+        "2348515243",
+        "2348515248",
+        "2348515219",
+        "2348515152",
+        "2348515100",
+        "2348515103",
+        "2348515111",
+        "2348515136",
+        "2348515203"
+      ],
+      "reason": "unassembled-source-area",
+      "status": "known-non-building",
+      "tags": {
+        "area": "no",
+        "leisure": "track",
+        "sport": "bmx"
+      }
+    },
+    {
+      "canonicalId": "osm/way/234424593",
+      "isBuilding": false,
+      "kind": "way",
+      "nodeRefs": [
+        "2426805224",
+        "13660786953",
+        "2426805225",
+        "13660786954",
+        "2426805219",
+        "2426805215",
+        "2426805211",
+        "13660786955",
+        "2426805209",
+        "2426805207",
+        "13660786956",
+        "2426805206",
+        "2426805205",
+        "13660786957",
+        "2426805208",
+        "13660786958",
+        "2426805210",
+        "2426805214",
+        "13660786952",
+        "2426805218",
+        "2426805221",
+        "2426805224"
+      ],
+      "reason": "unassembled-source-area",
+      "status": "known-non-building",
+      "tags": {
+        "area": "no",
+        "leisure": "track",
+        "sport": "running"
+      }
+    },
+    {
+      "canonicalId": "osm/way/24950043",
+      "isBuilding": false,
+      "kind": "way",
+      "nodeRefs": [
+        "271128515",
+        "2358504599",
+        "2358504597",
+        "2358504602",
+        "2358504604",
+        "271128516",
+        "271128517",
+        "271128518",
+        "271128519",
+        "271128520",
+        "271128521",
+        "271128522",
+        "271128523",
+        "271128524",
+        "271128525",
+        "271128526",
+        "2358504595",
+        "271128527",
+        "271128528",
+        "271128529",
+        "2358504601",
+        "271128530",
+        "271128515"
+      ],
+      "reason": "unassembled-source-area",
+      "status": "known-non-building",
+      "tags": {
+        "area": "no",
+        "leisure": "track"
+      }
+    },
+    {
+      "boundsL93": [
+        831549.0091012544,
+        6287848.130425919,
+        831549.2629356256,
+        6287849.09225803
+      ],
+      "boundsWGS84": [
+        4.6310213,
+        43.6774416,
+        4.6310242,
+        43.6774503
+      ],
+      "canonicalId": "osm/way/250212580",
+      "intersectsAMP": false,
+      "isBuilding": true,
+      "kind": "way",
+      "missingNodeRefs": [],
+      "nodePositionsWGS84": {
+        "2566972655": [
+          4.6310242,
+          43.6774416
+        ],
+        "2566972685": [
+          4.6310213,
+          43.6774503
+        ]
+      },
+      "nodeRefs": [
+        "2566972655",
+        "2566972685"
+      ],
+      "reason": "open-building-way",
+      "refsComplete": true,
+      "status": "proven-source-envelope",
+      "tags": {
+        "building:part": "yes",
+        "height": "4.5"
+      }
+    },
+    {
+      "boundsL93": [
+        831550.051157001,
+        6287844.57048606,
+        831550.1997270817,
+        6287845.123207594
+      ],
+      "boundsWGS84": [
+        4.6310332,
+        43.6774094,
+        4.6310349,
+        43.6774144
+      ],
+      "canonicalId": "osm/way/250212583",
+      "intersectsAMP": false,
+      "isBuilding": true,
+      "kind": "way",
+      "missingNodeRefs": [],
+      "nodePositionsWGS84": {
+        "2566972601": [
+          4.6310349,
+          43.6774094
+        ],
+        "2566972617": [
+          4.6310332,
+          43.6774144
+        ]
+      },
+      "nodeRefs": [
+        "2566972601",
+        "2566972617"
+      ],
+      "reason": "open-building-way",
+      "refsComplete": true,
+      "status": "proven-source-envelope",
+      "tags": {
+        "building:part": "yes",
+        "height": "7"
+      }
+    },
+    {
+      "boundsL93": [
+        831527.0088565936,
+        6287919.604884891,
+        831527.189679985,
+        6287920.156940431
+      ],
+      "boundsWGS84": [
+        4.6307668,
+        43.6780887,
+        4.6307689,
+        43.6780937
+      ],
+      "canonicalId": "osm/way/250212591",
+      "intersectsAMP": false,
+      "isBuilding": true,
+      "kind": "way",
+      "missingNodeRefs": [],
+      "nodePositionsWGS84": {
+        "2566973782": [
+          4.6307689,
+          43.6780887
+        ],
+        "2566973788": [
+          4.6307668,
+          43.6780937
+        ]
+      },
+      "nodeRefs": [
+        "2566973788",
+        "2566973782"
+      ],
+      "reason": "open-building-way",
+      "refsComplete": true,
+      "status": "proven-source-envelope",
+      "tags": {
+        "building:part": "yes",
+        "height": "7"
+      }
+    },
+    {
+      "boundsL93": [
+        831526.2487164915,
+        6287921.614773495,
+        831526.5511596274,
+        6287922.586717738
+      ],
+      "boundsWGS84": [
+        4.630758,
+        43.6781069,
+        4.6307615,
+        43.6781157
+      ],
+      "canonicalId": "osm/way/250212621",
+      "intersectsAMP": false,
+      "isBuilding": true,
+      "kind": "way",
+      "missingNodeRefs": [],
+      "nodePositionsWGS84": {
+        "2566973832": [
+          4.6307615,
+          43.6781069
+        ],
+        "2566973850": [
+          4.630758,
+          43.6781157
+        ]
+      },
+      "nodeRefs": [
+        "2566973850",
+        "2566973832"
+      ],
+      "reason": "open-building-way",
+      "refsComplete": true,
+      "status": "proven-source-envelope",
+      "tags": {
+        "building:part": "yes",
+        "height": "7"
+      }
+    },
+    {
+      "boundsL93": [
+        831531.8736977951,
+        6287920.01843686,
+        831532.1427374976,
+        6287920.935491802
+      ],
+      "boundsWGS84": [
+        4.6308273,
+        43.6780915,
+        4.6308304,
+        43.6780998
+      ],
+      "canonicalId": "osm/way/250212631",
+      "intersectsAMP": false,
+      "isBuilding": true,
+      "kind": "way",
+      "missingNodeRefs": [],
+      "nodePositionsWGS84": {
+        "2566973787": [
+          4.6308304,
+          43.6780915
+        ],
+        "2566973799": [
+          4.6308273,
+          43.6780998
+        ]
+      },
+      "nodeRefs": [
+        "2566973787",
+        "2566973799"
+      ],
+      "reason": "open-building-way",
+      "refsComplete": true,
+      "status": "proven-source-envelope",
+      "tags": {
+        "building:part": "yes",
+        "height": "6"
+      }
+    },
+    {
+      "boundsL93": [
+        831554.7897000939,
+        6287846.761994489,
+        831555.1241783256,
+        6287847.722160331
+      ],
+      "boundsWGS84": [
+        4.6310926,
+        43.6774282,
+        4.6310965,
+        43.6774369
+      ],
+      "canonicalId": "osm/way/250212634",
+      "intersectsAMP": false,
+      "isBuilding": true,
+      "kind": "way",
+      "missingNodeRefs": [],
+      "nodePositionsWGS84": {
+        "2566972632": [
+          4.6310965,
+          43.6774282
+        ],
+        "2566972646": [
+          4.6310926,
+          43.6774369
+        ]
+      },
+      "nodeRefs": [
+        "2566972646",
+        "2566972632"
+      ],
+      "reason": "open-building-way",
+      "refsComplete": true,
+      "status": "proven-source-envelope",
+      "tags": {
+        "building:part": "yes",
+        "height": "6"
+      }
+    },
+    {
+      "boundsL93": [
+        844759.5964549755,
+        6339056.750499325,
+        844775.3340107442,
+        6339103.463227058
+      ],
+      "boundsWGS84": [
+        4.8093069,
+        44.1355881,
+        4.8095106,
+        44.136007
+      ],
+      "canonicalId": "osm/way/251208239",
+      "intersectsAMP": false,
+      "isBuilding": true,
+      "kind": "way",
+      "missingNodeRefs": [],
+      "nodePositionsWGS84": {
+        "2445857881": [
+          4.8094808,
+          44.136007
+        ],
+        "2574621062": [
+          4.8093807,
+          44.1355881
+        ],
+        "2574621107": [
+          4.8093672,
+          44.1355946
+        ],
+        "2574621130": [
+          4.809359,
+          44.1355986
+        ],
+        "2574621154": [
+          4.8093502,
+          44.1356029
+        ],
+        "2574621165": [
+          4.809397,
+          44.1356044
+        ],
+        "2574621179": [
+          4.8093427,
+          44.1356065
+        ],
+        "2574621204": [
+          4.809335,
+          44.1356102
+        ],
+        "2574621231": [
+          4.8093271,
+          44.1356141
+        ],
+        "2574621240": [
+          4.8094046,
+          44.1356149
+        ],
+        "2574621255": [
+          4.8093196,
+          44.1356177
+        ],
+        "2574621288": [
+          4.8093252,
+          44.135623
+        ],
+        "2574621350": [
+          4.8094185,
+          44.1356318
+        ],
+        "2574621370": [
+          4.8093372,
+          44.1356353
+        ],
+        "2574621389": [
+          4.8093393,
+          44.1356376
+        ],
+        "2574621415": [
+          4.8093308,
+          44.1356415
+        ],
+        "2574621443": [
+          4.8094291,
+          44.1356449
+        ],
+        "2574621445": [
+          4.8093223,
+          44.1356455
+        ],
+        "2574621469": [
+          4.8093138,
+          44.1356494
+        ],
+        "2574621508": [
+          4.8093069,
+          44.1356525
+        ],
+        "2574621615": [
+          4.8094457,
+          44.1356667
+        ],
+        "2574621700": [
+          4.8093303,
+          44.1356788
+        ],
+        "2574621729": [
+          4.8094555,
+          44.1356825
+        ],
+        "2574621856": [
+          4.8094617,
+          44.1356936
+        ],
+        "2574621942": [
+          4.8093484,
+          44.135705
+        ],
+        "2574621970": [
+          4.8094704,
+          44.1357084
+        ],
+        "2574622051": [
+          4.8094758,
+          44.13572
+        ],
+        "2574622106": [
+          4.809362,
+          44.1357274
+        ],
+        "2574622168": [
+          4.8094829,
+          44.1357355
+        ],
+        "2574622342": [
+          4.8093748,
+          44.1357523
+        ],
+        "2574622416": [
+          4.8094921,
+          44.1357605
+        ],
+        "2574622486": [
+          4.8093821,
+          44.13577
+        ],
+        "2574622565": [
+          4.8093871,
+          44.1357839
+        ],
+        "2574622588": [
+          4.8094999,
+          44.1357881
+        ],
+        "2574622662": [
+          4.8093926,
+          44.135803
+        ],
+        "2574622682": [
+          4.8095043,
+          44.1358073
+        ],
+        "2574622706": [
+          4.8095056,
+          44.1358128
+        ],
+        "2574622735": [
+          4.8093968,
+          44.1358243
+        ],
+        "2574622783": [
+          4.8095087,
+          44.1358401
+        ],
+        "2574622785": [
+          4.8093989,
+          44.1358412
+        ],
+        "2574622831": [
+          4.8094001,
+          44.1358587
+        ],
+        "2574622848": [
+          4.8095106,
+          44.1358714
+        ],
+        "2574622881": [
+          4.8094003,
+          44.1358838
+        ],
+        "2574622906": [
+          4.80951,
+          44.1358908
+        ],
+        "2574622924": [
+          4.8093987,
+          44.1359035
+        ],
+        "2574622931": [
+          4.809508,
+          44.135912
+        ],
+        "2574622941": [
+          4.809395,
+          44.1359257
+        ],
+        "2574622956": [
+          4.8093912,
+          44.1359426
+        ],
+        "2574622970": [
+          4.8094999,
+          44.1359519
+        ],
+        "2574623099": [
+          4.809492,
+          44.1359802
+        ],
+        "2574623193": [
+          4.8094857,
+          44.1359958
+        ],
+        "8602553591": [
+          4.8094971,
+          44.1359621
+        ]
+      },
+      "nodeRefs": [
+        "2445857881",
+        "2574623193",
+        "2574623099",
+        "8602553591",
+        "2574622970",
+        "2574622931",
+        "2574622906",
+        "2574622848",
+        "2574622783",
+        "2574622706",
+        "2574622682",
+        "2574622588",
+        "2574622416",
+        "2574622168",
+        "2574622051",
+        "2574621970",
+        "2574621856",
+        "2574621729",
+        "2574621615",
+        "2574621443",
+        "2574621350",
+        "2574621240",
+        "2574621165",
+        "2574621062",
+        "2574621107",
+        "2574621130",
+        "2574621154",
+        "2574621179",
+        "2574621204",
+        "2574621231",
+        "2574621255",
+        "2574621288",
+        "2574621370",
+        "2574621389",
+        "2574621415",
+        "2574621445",
+        "2574621469",
+        "2574621508",
+        "2574621700",
+        "2574621942",
+        "2574622106",
+        "2574622342",
+        "2574622486",
+        "2574622565",
+        "2574622662",
+        "2574622735",
+        "2574622785",
+        "2574622831",
+        "2574622881",
+        "2574622924",
+        "2574622941",
+        "2574622956"
+      ],
+      "reason": "open-building-way",
+      "refsComplete": true,
+      "status": "proven-source-envelope",
+      "tags": {
+        "building:material": "stone",
+        "building:part": "yes",
+        "height": "15"
+      }
+    },
+    {
+      "canonicalId": "osm/way/254645090",
+      "isBuilding": false,
+      "kind": "way",
+      "nodeRefs": [
+        "2604527902",
+        "2604527876",
+        "2604527873",
+        "2604527872",
+        "2604527871",
+        "2604527870",
+        "2604527869",
+        "2604527867",
+        "2604527866",
+        "2604527863",
+        "2604527861",
+        "2604527860",
+        "2604527859",
+        "2604527862",
+        "2604527864",
+        "2604527877",
+        "2604527879",
+        "2604527882",
+        "2604527884",
+        "2604527886",
+        "2604527887",
+        "2604527889",
+        "2604527891",
+        "2604527892",
+        "2604527897",
+        "2604527899",
+        "2604527896",
+        "2604527901",
+        "2604527902"
+      ],
+      "reason": "unassembled-source-area",
+      "status": "known-non-building",
+      "tags": {
+        "area": "no",
+        "leisure": "track",
+        "sport": "athletics"
+      }
+    },
+    {
+      "canonicalId": "osm/way/26445430",
+      "isBuilding": false,
+      "kind": "way",
+      "nodeRefs": [
+        "289800029",
+        "289800040",
+        "289800053",
+        "289800063",
+        "289800075",
+        "289800088",
+        "289800097",
+        "289800098",
+        "289800099",
+        "289800100",
+        "289800101",
+        "289800102",
+        "289800103",
+        "289800104",
+        "289800105",
+        "289800106",
+        "289800107",
+        "289800108",
+        "289800109",
+        "289800110",
+        "289800111",
+        "289800112",
+        "289800113",
+        "289800029"
+      ],
+      "reason": "unassembled-source-area",
+      "status": "known-non-building",
+      "tags": {
+        "area": "no",
+        "leisure": "track",
+        "name": "Stade Antoine Scaglia",
+        "source": "cadastre-dgi-fr source : Direction Générale des Impôts - Cadastre;mise a jour 2021",
+        "sport": "athletics;running"
+      }
+    },
+    {
+      "canonicalId": "osm/way/26515932",
+      "isBuilding": false,
+      "kind": "way",
+      "nodeRefs": [
+        "290612735",
+        "290612740",
+        "290612742",
+        "290612760",
+        "290612761",
+        "290612762",
+        "290612763",
+        "290612764",
+        "290612765",
+        "290612766",
+        "290612767",
+        "290612768",
+        "290612769",
+        "290612770",
+        "290612771",
+        "290612772",
+        "290612735"
+      ],
+      "reason": "unassembled-source-area",
+      "status": "known-non-building",
+      "tags": {
+        "area": "no",
+        "leisure": "track",
+        "name": "Stade Hubidos",
+        "source": "cadastre-dgi-fr source : Direction Générale des Impôts - Cadastre ; mise à jour : 2007",
+        "sport": "athletics",
+        "wikidata": "Q120304942"
+      }
+    },
+    {
+      "canonicalId": "osm/way/294026333",
+      "isBuilding": false,
+      "kind": "way",
+      "nodeRefs": [
+        "2975921392",
+        "2975921393",
+        "2975921394",
+        "2975921395",
+        "2975921396",
+        "2975921397",
+        "2975921398",
+        "2975921399",
+        "2975921400",
+        "2975921401",
+        "2975921402",
+        "2975921407",
+        "2975921408",
+        "2975921409",
+        "2975921410",
+        "2975921411",
+        "2975921412",
+        "2975921413",
+        "2975921414",
+        "2975921415",
+        "9152026065",
+        "2975921392"
+      ],
+      "reason": "unassembled-source-area",
+      "status": "known-non-building",
+      "tags": {
+        "area": "no",
+        "leisure": "track",
+        "sport": "running"
+      }
+    },
+    {
+      "canonicalId": "osm/way/396563692",
+      "isBuilding": false,
+      "kind": "way",
+      "nodeRefs": [
+        "3993755558",
+        "3993755559",
+        "4595444465",
+        "3993755560",
+        "4595444466",
+        "3993755561",
+        "4595444467",
+        "3993755562",
+        "4595444468",
+        "3993755563",
+        "4595444469",
+        "4421505463",
+        "3993755564",
+        "4595444471",
+        "4595444470",
+        "4595444472",
+        "3993755565",
+        "4595444473",
+        "3993755566",
+        "4595444474",
+        "3993755567",
+        "4595444475",
+        "3993755568",
+        "4595444476",
+        "3993755558"
+      ],
+      "reason": "unassembled-source-area",
+      "status": "known-non-building",
+      "tags": {
+        "area": "no",
+        "leisure": "track",
+        "lit": "yes",
+        "sport": "running",
+        "surface": "fine_gravel"
+      }
+    },
+    {
+      "canonicalId": "osm/way/405008590",
+      "isBuilding": false,
+      "kind": "way",
+      "nodeRefs": [
+        "4072392326",
+        "4072392316",
+        "4072392307",
+        "4072392297",
+        "4072391785",
+        "4072391777",
+        "4072391774",
+        "4072391770",
+        "4072391768",
+        "4072391764",
+        "4072391761",
+        "4072391762",
+        "4072391763",
+        "4072391765",
+        "4072391769",
+        "4072391771",
+        "4072391776",
+        "4072391781",
+        "4072392289",
+        "4072392299",
+        "4072392308",
+        "4072392321",
+        "4072392324",
+        "4072392326"
+      ],
+      "reason": "unassembled-source-area",
+      "status": "known-non-building",
+      "tags": {
+        "area": "no",
+        "leisure": "track",
+        "sport": "athletics"
+      }
+    },
+    {
+      "canonicalId": "osm/way/42652651",
+      "isBuilding": false,
+      "kind": "way",
+      "nodeRefs": [
+        "533474033",
+        "533474036",
+        "533474040",
+        "533474043",
+        "533474045",
+        "533474047",
+        "533474049",
+        "533474051",
+        "533473992",
+        "533473994",
+        "533474013",
+        "533474016",
+        "533474020",
+        "533474022",
+        "533474026",
+        "533474030",
+        "533473986",
+        "533473990",
+        "533474033"
+      ],
+      "reason": "unassembled-source-area",
+      "status": "known-non-building",
+      "tags": {
+        "area": "no",
+        "leisure": "track",
+        "sport": "athletics"
+      }
+    },
+    {
+      "boundsL93": [
+        844763.5721890086,
+        6339096.145743142,
+        844772.6049788642,
+        6339104.916945993
+      ],
+      "boundsWGS84": [
+        4.8093677,
+        44.1359426,
+        4.8094808,
+        44.1360202
+      ],
+      "canonicalId": "osm/way/568455948",
+      "intersectsAMP": false,
+      "isBuilding": true,
+      "kind": "way",
+      "missingNodeRefs": [],
+      "nodePositionsWGS84": {
+        "1424944329": [
+          4.809474,
+          44.1360202
+        ],
+        "2445857881": [
+          4.8094808,
+          44.136007
+        ],
+        "2574622956": [
+          4.8093912,
+          44.1359426
+        ],
+        "2574622990": [
+          4.8093866,
+          44.1359586
+        ],
+        "2574623043": [
+          4.8093829,
+          44.1359692
+        ],
+        "2574623104": [
+          4.8093772,
+          44.135981
+        ],
+        "2574623165": [
+          4.8093727,
+          44.1359919
+        ],
+        "2574623203": [
+          4.8093699,
+          44.1359972
+        ],
+        "2574623235": [
+          4.8093677,
+          44.1360013
+        ],
+        "2574623277": [
+          4.8093977,
+          44.1360066
+        ],
+        "2574623354": [
+          4.809478,
+          44.1360135
+        ],
+        "2574623377": [
+          4.8094444,
+          44.1360149
+        ],
+        "2574623406": [
+          4.8094584,
+          44.1360175
+        ]
+      },
+      "nodeRefs": [
+        "2574622956",
+        "2574622990",
+        "2574623043",
+        "2574623104",
+        "2574623165",
+        "2574623203",
+        "2574623235",
+        "2574623277",
+        "2574623377",
+        "2574623406",
+        "1424944329",
+        "2574623354",
+        "2445857881"
+      ],
+      "reason": "open-building-way",
+      "refsComplete": true,
+      "status": "proven-source-envelope",
+      "tags": {
+        "building:material": "stone",
+        "building:part": "yes",
+        "height": "15"
+      }
+    },
+    {
+      "canonicalId": "osm/way/662864085",
+      "isBuilding": false,
+      "kind": "way",
+      "nodeRefs": [
+        "6205282279",
+        "6205282278",
+        "6205282277",
+        "6205282276",
+        "6205282275",
+        "6205282274",
+        "6205282273",
+        "6205282775",
+        "6205282774",
+        "6205282773",
+        "6205282772",
+        "6205282771",
+        "6205282770",
+        "6205282769",
+        "6205282768",
+        "6205282767",
+        "6205282766",
+        "6205282765",
+        "6205282764",
+        "6205282763",
+        "6205282762",
+        "6205282761",
+        "6205283496",
+        "6205283495",
+        "6205283494",
+        "6205283493",
+        "6205283492",
+        "6205283491",
+        "6205283490",
+        "6205283489",
+        "6205283488",
+        "6205283487",
+        "6205283486",
+        "6205283485",
+        "6205280584",
+        "6205280583",
+        "6205280582",
+        "6205282271",
+        "6205282270",
+        "6205282269",
+        "6205282268",
+        "6205282267",
+        "6205282266",
+        "6205282265",
+        "6205282264",
+        "6205282263",
+        "6205282262",
+        "6205282261",
+        "6205282260",
+        "6205282259",
+        "6205282258",
+        "6205282257",
+        "6205282760",
+        "6205282759",
+        "6205282758",
+        "6205282757",
+        "6205282756",
+        "6205282755",
+        "6205282754",
+        "6205282753",
+        "6205282752",
+        "6205282751",
+        "6205282748",
+        "6205282279"
+      ],
+      "reason": "unassembled-source-area",
+      "status": "known-non-building",
+      "tags": {
+        "area": "no",
+        "attraction": "summer_toboggan",
+        "leisure": "track"
+      }
+    },
+    {
+      "canonicalId": "osm/way/85845342",
+      "isBuilding": false,
+      "kind": "way",
+      "nodeRefs": [
+        "996399403",
+        "996399405",
+        "996399407",
+        "996399410",
+        "996399414",
+        "996399417",
+        "996399418",
+        "996399419",
+        "996399420",
+        "996399422",
+        "996399423",
+        "996399428",
+        "996399431",
+        "996399432",
+        "996399434",
+        "996399435",
+        "996399436",
+        "996399437",
+        "996399438",
+        "996399439",
+        "996399403"
+      ],
+      "reason": "unassembled-source-area",
+      "status": "known-non-building",
+      "tags": {
+        "area": "no",
+        "leisure": "track",
+        "name": "Stade André Matraglia",
+        "sport": "athletics"
+      }
+    },
+    {
+      "canonicalId": "osm/way/915185314",
+      "isBuilding": false,
+      "kind": "way",
+      "nodeRefs": [
+        "8501214086",
+        "8501214085",
+        "8501214084",
+        "8501214083",
+        "8501214082",
+        "8501214081",
+        "8501214080",
+        "8501214079",
+        "8501214078",
+        "8501214077",
+        "8501214076",
+        "8501214075",
+        "8501214074",
+        "8501214073",
+        "8501214072",
+        "8501214071",
+        "8501214070",
+        "8501214069",
+        "8501214086"
+      ],
+      "reason": "unassembled-source-area",
+      "status": "known-non-building",
+      "tags": {
+        "area": "no",
+        "leisure": "track",
+        "lit": "yes",
+        "name": "Stade du Sacré-Cœur",
+        "sport": "athletics",
+        "surface": "asphalt"
+      }
+    },
+    {
+      "boundsL93": [
+        860328.3093419644,
+        6328512.043481037,
+        860328.7287608815,
+        6328514.989324752
+      ],
+      "boundsWGS84": [
+        5.0004767,
+        44.0373308,
+        5.000481,
+        44.0373574
+      ],
+      "canonicalId": "osm/way/93909381",
+      "intersectsAMP": false,
+      "isBuilding": true,
+      "kind": "way",
+      "missingNodeRefs": [],
+      "nodePositionsWGS84": {
+        "1091662197": [
+          5.0004767,
+          44.0373574
+        ],
+        "1091791855": [
+          5.000481,
+          44.0373308
+        ]
+      },
+      "nodeRefs": [
+        "1091791855",
+        "1091662197"
+      ],
+      "reason": "open-building-way",
+      "refsComplete": true,
+      "status": "proven-source-envelope",
+      "tags": {
+        "building": "yes",
+        "name": "École maternelle Marcel Pagnol",
+        "source": "cadastre-dgi-fr source : Direction Générale des Impôts - Cadastre. Mise à jour : 2010",
+        "wall": "no"
+      }
+    },
+    {
+      "boundsL93": [
+        860202.7290710618,
+        6328457.110671003,
+        860207.8782537685,
+        6328457.491561714
+      ],
+      "boundsWGS84": [
+        4.9988923,
+        44.0368641,
+        4.9989564,
+        44.0368687
+      ],
+      "canonicalId": "osm/way/93914034",
+      "intersectsAMP": false,
+      "isBuilding": true,
+      "kind": "way",
+      "missingNodeRefs": [],
+      "nodePositionsWGS84": {
+        "1091584654": [
+          4.9989564,
+          44.0368641
+        ],
+        "1091596199": [
+          4.9988923,
+          44.0368687
+        ]
+      },
+      "nodeRefs": [
+        "1091584654",
+        "1091596199"
+      ],
+      "reason": "open-building-way",
+      "refsComplete": true,
+      "status": "proven-source-envelope",
+      "tags": {
+        "building": "yes",
+        "source": "cadastre-dgi-fr source : Direction Générale des Impôts - Cadastre. Mise à jour : 2010",
+        "wall": "no"
+      }
+    },
+    {
+      "boundsL93": [
+        860264.9076198114,
+        6328607.099041751,
+        860268.3432178966,
+        6328613.903035433
+      ],
+      "boundsWGS84": [
+        4.9997172,
+        44.0381998,
+        4.9997579,
+        44.0382618
+      ],
+      "canonicalId": "osm/way/93915148",
+      "intersectsAMP": false,
+      "isBuilding": true,
+      "kind": "way",
+      "missingNodeRefs": [],
+      "nodePositionsWGS84": {
+        "1091590568": [
+          4.9997172,
+          44.0382618
+        ],
+        "1091708014": [
+          4.9997579,
+          44.0381998
+        ]
+      },
+      "nodeRefs": [
+        "1091590568",
+        "1091708014"
+      ],
+      "reason": "open-building-way",
+      "refsComplete": true,
+      "status": "proven-source-envelope",
+      "tags": {
+        "building": "yes",
+        "source": "cadastre-dgi-fr source : Direction Générale des Impôts - Cadastre. Mise à jour : 2010",
+        "wall": "no"
+      }
+    },
+    {
+      "boundsL93": [
+        864887.8587563665,
+        6324627.794844294,
+        864902.0608412955,
+        6324637.301264479
+      ],
+      "boundsWGS84": [
+        5.0560799,
+        44.0013302,
+        5.05626,
+        44.0014124
+      ],
+      "canonicalId": "osm/way/95882058",
+      "intersectsAMP": false,
+      "isBuilding": true,
+      "kind": "way",
+      "missingNodeRefs": [],
+      "nodePositionsWGS84": {
+        "1110790918": [
+          5.0560799,
+          44.0013302
+        ],
+        "1110836628": [
+          5.05626,
+          44.0014124
+        ]
+      },
+      "nodeRefs": [
+        "1110836628",
+        "1110790918"
+      ],
+      "reason": "open-building-way",
+      "refsComplete": true,
+      "status": "proven-source-envelope",
+      "tags": {
+        "building": "yes",
+        "source": "cadastre-dgi-fr source : Direction Générale des Impôts - Cadastre. Mise à jour : 2010",
+        "wall": "no"
+      }
+    },
+    {
+      "boundsL93": [
+        851340.9497793537,
+        6322844.842529293,
+        851343.2014354349,
+        6322845.985558118
+      ],
+      "boundsWGS84": [
+        4.8866919,
+        43.9883324,
+        4.8867203,
+        43.9883422
+      ],
+      "canonicalId": "osm/way/97488300",
+      "intersectsAMP": false,
+      "isBuilding": true,
+      "kind": "way",
+      "missingNodeRefs": [],
+      "nodePositionsWGS84": {
+        "1128427890": [
+          4.8867203,
+          43.9883422
+        ],
+        "1128552442": [
+          4.8866919,
+          43.9883324
+        ]
+      },
+      "nodeRefs": [
+        "1128552442",
+        "1128427890"
+      ],
+      "reason": "open-building-way",
+      "refsComplete": true,
+      "status": "proven-source-envelope",
+      "tags": {
+        "building": "yes",
+        "source": "cadastre-dgi-fr source : Direction Générale des Impôts - Cadastre. Mise à jour : 2010",
+        "wall": "no"
+      }
+    },
+    {
+      "boundsL93": [
+        850346.1141242343,
+        6325211.812007617,
+        850364.4626426586,
+        6325222.58855006
+      ],
+      "boundsWGS84": [
+        4.874995,
+        44.0098421,
+        4.8752242,
+        44.0099353
+      ],
+      "canonicalId": "osm/way/97503505",
+      "intersectsAMP": false,
+      "isBuilding": true,
+      "kind": "way",
+      "missingNodeRefs": [],
+      "nodePositionsWGS84": {
+        "1128422798": [
+          4.874995,
+          44.0098421
+        ],
+        "12069586779": [
+          4.8752176,
+          44.0099353
+        ],
+        "13452045577": [
+          4.8752242,
+          44.0098521
+        ]
+      },
+      "nodeRefs": [
+        "1128422798",
+        "13452045577",
+        "12069586779"
+      ],
+      "reason": "open-building-way",
+      "refsComplete": true,
+      "status": "proven-source-envelope",
+      "tags": {
+        "building": "school",
+        "source": "cadastre-dgi-fr source : Direction Générale des Impôts - Cadastre. Mise à jour : 2010"
+      }
+    },
+    {
+      "canonicalId": "osm/way/989678073",
+      "isBuilding": false,
+      "kind": "way",
+      "nodeRefs": [
+        "9038440137",
+        "9146248468",
+        "9146248469",
+        "9146248477",
+        "9146248478",
+        "9146248479",
+        "9146248480",
+        "9146248481",
+        "9146248482",
+        "9146248483",
+        "9146248484",
+        "9146248466",
+        "9146248485",
+        "9146248467",
+        "9146248470",
+        "9146248471",
+        "9146248472",
+        "9146248473",
+        "9146248474",
+        "9146248475",
+        "9146248476",
+        "9038440137"
+      ],
+      "reason": "unassembled-source-area",
+      "status": "known-non-building",
+      "tags": {
+        "area": "no",
+        "leisure": "track",
+        "lit": "no",
+        "sport": "athletics",
+        "surface": "tartan"
+      }
+    },
+    {
+      "canonicalId": "osm/way/990982315",
+      "isBuilding": false,
+      "kind": "way",
+      "nodeRefs": [
+        "9156323484",
+        "9156323483",
+        "9156323482",
+        "9156323481",
+        "9156323480",
+        "9156323479",
+        "9156323478",
+        "9156323477",
+        "9156323476",
+        "9156323475",
+        "9156323474",
+        "9156323473",
+        "9156323472",
+        "9156323471",
+        "9156323470",
+        "9156323469",
+        "9156323468",
+        "9156323467",
+        "9156323466",
+        "9156323465",
+        "9156323464",
+        "9156323463",
+        "9156323462",
+        "9156323461",
+        "9156323460",
+        "9156323459",
+        "9156323458",
+        "9156323457",
+        "9156323456",
+        "9156323455",
+        "9156323454",
+        "9156323484"
+      ],
+      "reason": "unassembled-source-area",
+      "status": "known-non-building",
+      "tags": {
+        "area": "no",
+        "leisure": "track",
+        "lit": "yes",
+        "sport": "athletics",
+        "surface": "rubber"
+      }
+    }
+  ],
+  "runtimeIntegrationPerformed": false,
+  "schema": "soma-metropole/osm-rejection-envelopes/1",
+  "sourceSHA256": "258a6450ae90142b4c4c19c851e3983a5c82c0e216dbe5f4d6fcbda0b0646467",
+  "startedAtUTC": "2026-10-25T09:29:34.002632+00:00",
+  "units": "m"
+}

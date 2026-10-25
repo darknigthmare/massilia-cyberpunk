@@ -1,0 +1,74 @@
+{
+  "schema": "soma-metropole/delivery-status/1",
+  "version": "0.69.0",
+  "dateUTC": "2026-10-25",
+  "target": {
+    "id": "200054807",
+    "communes": 92,
+    "administrativeCompositionYear": 2026,
+    "areaL93Km2": 3151.584074444554,
+    "boundarySHA256": "3af4aa6a7652b76cc284f338431e323b27bf548d2cbf9f5ac4d8135cd0e27d13",
+    "boundaryGeometryVintage": null
+  },
+  "runtime": {
+    "mode": "independent-cyberpunk-flyover",
+    "preparedCache": "game/data/v69/metropole",
+    "cacheIncludedInGit": false,
+    "worldManifestSHA256": "b82bbe5d5c0aec2243bde2d81f8aaf3b8911fb3fe341b8bf8aae8a85f0022a41",
+    "cells": 52020,
+    "surfaceCells": 51809,
+    "terrainOnlyCells": 211,
+    "terrainCompleteCells": 51949,
+    "terrainPartialCells": 71,
+    "stepM": 5,
+    "campaignCells": 168,
+    "campaignAreaKm2": 10.5,
+    "campaignPersistenceMigrated": false
+  },
+  "vectors": {
+    "sourcePBF_SHA256": "258a6450ae90142b4c4c19c851e3983a5c82c0e216dbe5f4d6fcbda0b0646467",
+    "sourceSnapshotUTC": "2026-10-24T20:20:51Z",
+    "vectorManifestSHA256": "33ce7f67dcf380e14c446518060d19094d574c775b39122f62329cf556a1f58d",
+    "canonicalObjects": 1485245,
+    "buildingObjectsIncludingParts": 1041023,
+    "roadObjectsIncludingPoints": 266699,
+    "quarantinedSourceObjects": 53,
+    "core53AcceptedCells": 51809,
+    "core53RejectedCells": 0
+  },
+  "heights": {
+    "heightKind": "eaves",
+    "sourceEdition": "2026-06-15",
+    "canonicalMatches": 299391,
+    "matchedFragments": 326058,
+    "unmatchedOrPreservedObjects": 741632,
+    "roofSurveyed": false,
+    "qaReportSHA256": "456267072c4ccf5d4b4bd6d6fb424264944fbb9d056a33a18df73dd7bdf5e6ac",
+    "surfaceIntegrationQA_SHA256": "3160d96ce84c137deef96371220afb2f03361def950ed5e98738a9df5f1bc360",
+    "surfaceIntegrationStatus": "passed"
+  },
+  "buildingParts": {
+    "parents": 16,
+    "linkedParts": 267,
+    "proofSHA256": "13195281a994c3cbee964d061dc564185821fcb3d244b31604fbc0d1b1730f32",
+    "partialResidualPolicy": "unknown-footprint-only-no-invented-volume-or-collision"
+  },
+  "terrain": {
+    "provider": "IGN RGE ALTI",
+    "sourceArchiveEditions": "2022-12",
+    "sourceSurveyDate": "not-stated",
+    "crs": "EPSG:2154",
+    "verticalDatum": "NGF-IGN69",
+    "noDataPreserved": true,
+    "manifestSHA256": "3c9f5cdaa8613e5764d8ae239bfcc65e2332f2db98bc98c92f8907e1914c6398"
+  },
+  "limits": {
+    "certifiedOneToOne": false,
+    "completeArchitecture": false,
+    "missingHeightsEstimated": true,
+    "unsurveyedRoofsAndFacadesInterpreted": true,
+    "mostRoadWidthsEstimated": true,
+    "unsourcedElevatedStructuresWithheld": true,
+    "physicalNavigationValidated": false
+  }
+}

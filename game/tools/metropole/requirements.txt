@@ -1,0 +1,8 @@
+# Optional offline geodata generation; the game itself uses only Python stdlib.
+osmium==4.3.2
+shapely==2.1.2
+pyproj==3.7.2
+rasterio==1.4.3
+mapbox-earcut==2.0.0
+numpy==2.3.5
+py7zr==1.0.0

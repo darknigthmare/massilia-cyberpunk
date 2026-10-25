@@ -1,0 +1,426 @@
+{
+  "auditScope": {
+    "activeV69CorrectionsIncluded": false,
+    "kind": "frozen-delivery-baseline",
+    "meaning": "Inventory of source evidence before v0.69 corrections, not a certification of the active renderer.",
+    "sourceEdition": "0.67 (frozen v0.66 geographic baseline)"
+  },
+  "buildings": {
+    "activeBuildingParts": 359,
+    "declaredHeightOrIGN": 500,
+    "declaredHeightOrIGNPercent": 1.4291,
+    "fullyTaggedSkillionCount": 15,
+    "invalidDimensions": 0,
+    "meaning": "Height declarations or matched IGN references are not a certification of complete architecture.",
+    "roofShapes": {
+      "dome": 34,
+      "double_saltbox": 1,
+      "flat": 46,
+      "gabled": 75,
+      "hipped": 26,
+      "many": 4,
+      "onion": 1,
+      "pyramidal": 59,
+      "quadruple_saltbox": 1,
+      "round": 1,
+      "saltbox": 2,
+      "skillion": 24
+    },
+    "sourceHeightByObjectKind": {
+      "buildingParts": {
+        "estimated-from-levels": 59,
+        "osm-height": 273,
+        "procedural-estimate": 27
+      },
+      "otherBuildingObjects": {
+        "estimated-from-levels": 5081,
+        "ign-bdtopo-height": 23,
+        "osm-height": 204,
+        "procedural-estimate": 29319
+      }
+    },
+    "sourceHeightDistribution": {
+      "estimated-from-levels": 5140,
+      "ign-bdtopo-height": 23,
+      "osm-height": 477,
+      "procedural-estimate": 29346
+    },
+    "sourceHeightPercent": {
+      "estimated-from-levels": 14.6916,
+      "ign-bdtopo-height": 0.0657,
+      "osm-height": 1.3634,
+      "procedural-estimate": 83.8793
+    },
+    "tagPresence": {
+      "building:colour": 33,
+      "building:levels": 5333,
+      "building:material": 23,
+      "building:min_level": 27,
+      "building:part": 364,
+      "height": 478,
+      "min_height": 96,
+      "roof:colour": 16,
+      "roof:direction": 15,
+      "roof:height": 135,
+      "roof:material": 70,
+      "roof:orientation": 11,
+      "roof:shape": 274
+    },
+    "unique": 34986,
+    "validDimensions": 34986
+  },
+  "cellSeams": {
+    "geometricNeighborPairs": 309,
+    "matchedRoadEndpointPairs": 967,
+    "maxMismatchM": 0,
+    "meaning": "Compatible source endpoints under frozen v53 rules; not verified surface reachability, bridge access or all walkable boundary crossings.",
+    "neighborPairsWithNativeRoadSeam": 281,
+    "oneWayOnlyPairs": 690,
+    "runtimeReachabilityVerified": false,
+    "thresholdM": 0.03
+  },
+  "cells": {
+    "areaKm2": 10.5,
+    "boundsL93": [
+      891326.6480966414,
+      6245649.566415883,
+      894576.6480966414,
+      6248899.566415883
+    ],
+    "boundsWGS84": [
+      5.356197884110268,
+      43.28344709576968,
+      5.397412243003613,
+      43.313549597807125
+    ],
+    "count": 168,
+    "counts": {
+      "buildings": 34986,
+      "hydrography": 48,
+      "landuse": 780,
+      "pois": 7372,
+      "rail": 505,
+      "roads": 7723
+    },
+    "envelopeKm2": 10.5625,
+    "fragments": 57672,
+    "fragmentsByLayer": {
+      "buildings": 38206,
+      "hydrography": 98,
+      "landuse": 1165,
+      "pois": 7372,
+      "rail": 1055,
+      "roads": 9776
+    },
+    "multiCellBuildings": 3041,
+    "multiCellObjects": 5173,
+    "propertiesContradictions": 0,
+    "unique": 51414
+  },
+  "certification": {
+    "certifiedCells": 0,
+    "completeMarseille": false,
+    "completeMetropoleAMP": false,
+    "independentSourceAuthenticityVerified": false,
+    "meaning": "Source integrity and internal consistency do not prove surveyed 1:1 architecture or full territorial coverage."
+  },
+  "navigation": {
+    "carSegments": 9812,
+    "crossCellSegments": 1631,
+    "edges": 21675,
+    "footSegments": 21294,
+    "nodes": 18993,
+    "policy": {
+      "joins": "only shared source OSM node IDs; no planar crossing noding or proximity stitching",
+      "meaning": "navigation guidance on mapped surface axes; not a verified sidewalk mesh or collision-free traffic path",
+      "structure": "nonzero layer, bridges/tunnels/covered/indoor excluded until their vertical access is modelled",
+      "unsupported": "conditional restrictions or multi-via relations remove concerned edges/modes conservatively"
+    },
+    "stepsSegments": 892,
+    "turnRestrictions": 26,
+    "ways": 6237
+  },
+  "requestedTerritory": {
+    "boundaryProvided": false,
+    "boundaryValidated": false,
+    "communeCodes": [
+      "13001",
+      "13002",
+      "13003",
+      "13005",
+      "13007",
+      "13008",
+      "13009",
+      "13012",
+      "13013",
+      "13014",
+      "13015",
+      "13016",
+      "13019",
+      "13020",
+      "13021",
+      "13022",
+      "13023",
+      "13024",
+      "13025",
+      "13026",
+      "13028",
+      "13029",
+      "13030",
+      "13031",
+      "13032",
+      "13033",
+      "13035",
+      "13037",
+      "13039",
+      "13040",
+      "13041",
+      "13042",
+      "13043",
+      "13044",
+      "13046",
+      "13047",
+      "13048",
+      "13049",
+      "13050",
+      "13051",
+      "13053",
+      "13054",
+      "13055",
+      "13056",
+      "13059",
+      "13060",
+      "13062",
+      "13063",
+      "13069",
+      "13070",
+      "13071",
+      "13072",
+      "13073",
+      "13074",
+      "13075",
+      "13077",
+      "13078",
+      "13079",
+      "13080",
+      "13081",
+      "13082",
+      "13084",
+      "13085",
+      "13086",
+      "13087",
+      "13088",
+      "13090",
+      "13091",
+      "13092",
+      "13093",
+      "13095",
+      "13098",
+      "13099",
+      "13101",
+      "13102",
+      "13103",
+      "13104",
+      "13105",
+      "13106",
+      "13107",
+      "13109",
+      "13110",
+      "13111",
+      "13112",
+      "13113",
+      "13114",
+      "13115",
+      "13117",
+      "13118",
+      "13119",
+      "83120",
+      "84089"
+    ],
+    "communeCount": 92,
+    "coverageRatio": null,
+    "inseeSiren": "200054807",
+    "meaning": "No metropolitan completion ratio without a validated complete territorial boundary.",
+    "membershipFile": {
+      "bytes": 15634,
+      "file": "game/data/v69/territory.json",
+      "sha256": "e118012416c4be188dac9e83a79b33fcc2bd7c52e1480b67ebc26bc9e1ca4177"
+    },
+    "membershipSource": {
+      "attribution": "Etalab / data.gouv.fr — Code officiel géographique INSEE et composition DGCL des EPCI 2026",
+      "integrity": "sha512-XavYsFlbcM/prKr8hNHPKER94IHw/dsxNM4nxjWMYk6PLFACpEedvn/7wK8Baozm0dCYhWWcf+7bcWpA5pmCaQ==",
+      "license": "Licence Ouverte 2.0",
+      "note": "Appartenance administrative uniquement ; aucun contour ni relevé architectural fourni par ce fichier.",
+      "package": "@etalab/decoupage-administratif",
+      "sha256": "c189ffd5b33fe40c2f19e1a923ce557f190622f39228745d3195d746dfe00c4a",
+      "url": "https://registry.npmjs.org/@etalab/decoupage-administratif/-/decoupage-administratif-6.0.0.tgz",
+      "version": "6.0.0"
+    },
+    "name": "Métropole d'Aix-Marseille-Provence",
+    "year": 2026
+  },
+  "roads": {
+    "covered": 77,
+    "indoor": 40,
+    "indoorCoveredClassifiedAsNonStructural": 72,
+    "indoorCoveredExamples": [
+      {
+        "covered": "yes",
+        "highway": "service",
+        "id": "osm/way/287707531"
+      },
+      {
+        "covered": "yes",
+        "highway": "service",
+        "id": "osm/way/293782987"
+      },
+      {
+        "covered": "yes",
+        "highway": "footway",
+        "id": "osm/way/294246615"
+      },
+      {
+        "covered": "yes",
+        "highway": "footway",
+        "id": "osm/way/768141566"
+      },
+      {
+        "highway": "footway",
+        "id": "osm/way/1486530906",
+        "indoor": "yes"
+      },
+      {
+        "highway": "footway",
+        "id": "osm/way/1486530908",
+        "indoor": "yes"
+      },
+      {
+        "covered": "yes",
+        "highway": "footway",
+        "id": "osm/way/1486506071"
+      },
+      {
+        "highway": "footway",
+        "id": "osm/way/1486508867",
+        "indoor": "yes"
+      },
+      {
+        "highway": "footway",
+        "id": "osm/way/1486508868",
+        "indoor": "yes"
+      },
+      {
+        "highway": "footway",
+        "id": "osm/way/1486510039",
+        "indoor": "yes"
+      },
+      {
+        "highway": "footway",
+        "id": "osm/way/1486510040",
+        "indoor": "yes"
+      },
+      {
+        "highway": "footway",
+        "id": "osm/way/1486510041",
+        "indoor": "yes"
+      }
+    ],
+    "indoorOrCovered": 106,
+    "sidewalkDeclaredRoads": 713,
+    "sidewalkDeclaredSides": 810,
+    "stepsWithDeclaredStepCount": 193,
+    "stepsWithIncline": 491,
+    "structuralExcluded": 522,
+    "supportedSidewalkDeclaredSides": 806,
+    "unique": 7723,
+    "uniqueSteps": 728,
+    "widthDistribution": {
+      "estimated-from-class": 6529,
+      "estimated-from-lanes": 1094,
+      "osm-width": 100
+    },
+    "widthPercent": {
+      "estimated-from-class": 84.5397,
+      "estimated-from-lanes": 14.1655,
+      "osm-width": 1.2948
+    }
+  },
+  "schema": "soma/fidelity-audit/1",
+  "sourceFiles": {
+    "baseline": {
+      "bytes": 51728100,
+      "file": "game/baseline/v66.html",
+      "sha256": "f1a6ce4b5957f634ff9fdbfaccfcf11c9e0d22159d01758dd56e29513581a014"
+    },
+    "navigation": {
+      "bytes": 2850322,
+      "file": "game/data/v63/navigation.json",
+      "sha256": "3fc7bf1dae7e29b29d95fdcb34ec8b7c7c48cd3cd496e4e22c0625c910317b76"
+    },
+    "terrain": {
+      "bytes": 123925,
+      "file": "game/data/v58/terrain.ign.json",
+      "sha256": "72c47931e2076125df8aad55cf05b231632352e79560bdbb96398cdf8c37a12c"
+    },
+    "uncompressedFidelityOverlay": {
+      "bytes": 14711215,
+      "sha256": "3b0d7b90cf0217b6aef89f9d26ceebe9b3b3924b8ab052841d14e8d0f88f7143"
+    },
+    "uncompressedPack": {
+      "bytes": 117195930,
+      "sha256": "dcd66f26784b17d27ec9854e457b64fe506d5f0e17d9fcf928b5c9b6fd2284ca"
+    }
+  },
+  "sourceReceipt": {
+    "acquisition": "user-upload",
+    "attribution": "© contributeurs OpenStreetMap — extrait Marseille fourni par l’utilisateur, téléchargement BBBike déclaré",
+    "bytes": 44250286,
+    "id": "osm-bbbike-marseille-user-upload",
+    "independentDownloadHashComparison": false,
+    "license": "ODbL-1.0",
+    "osmSnapshotTimestampUTC": "2026-09-18T23:00:00+00:00",
+    "producerDeclaredInPBF": "https://download.BBBike.org",
+    "sha256": "0d16c8cd7c77945b22cb0a018f19a7d0bd1b3a2cbf05c137fa62e3aa8fd56d82",
+    "sourceURL": "https://download.bbbike.org/osm/bbbike/Marseille/Marseille.osm.pbf",
+    "title": "Marseille.osm.pbf"
+  },
+  "terrain": {
+    "computedMaxM": 143.49000549316406,
+    "computedMinM": -2.4700000286102295,
+    "computedNoData": 0,
+    "computedNodes": 17689,
+    "computedValid": 17689,
+    "declaredSHA256": "38eadcbdf00a64384e00923a85ce9886ec4d9a420d610dc9ccfd4449c41f344b",
+    "gridHeader": {
+      "boundsL93": [
+        891326.6480966414,
+        6245649.566415883,
+        894576.6480966414,
+        6248899.566415883
+      ],
+      "cols": 133,
+      "crs": "EPSG:2154",
+      "haloNodes": 1,
+      "interpolation": "fixed-diagonal-triangles",
+      "n0": 6248924.566415883,
+      "nodeRegistration": "grid-node",
+      "rowOrder": "north-to-south",
+      "rows": 133,
+      "step": 25.0,
+      "units": "m",
+      "verticalDatum": "NGF-IGN69",
+      "x0": 891301.6480966414
+    },
+    "legacyStatisticsDiffer": true,
+    "meaning": "Espacement de mesures, pas précision garantie des rues ou ouvrages.",
+    "sourceCoreStats": {
+      "maxM": 143.49000549316406,
+      "minM": -2.4700000286102295,
+      "noData": 0,
+      "nodes": 17689,
+      "valid": 17689
+    },
+    "sourceCoreValidated": true
+  },
+  "version": "0.69.0"
+}
