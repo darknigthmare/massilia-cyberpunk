@@ -1,0 +1,169 @@
+{
+  "schema": "soma-massilia/feature-delivery/1",
+  "version": "0.70.0",
+  "dateUTC": "2026-10-26",
+  "parentVersion": "0.69.0",
+  "parentGameSHA256": "8d0d68618ac2e9adde98e1a9a5cdfbc526af3a1af18841ac9e1ef4be83ebfd37",
+  "artifacts": {
+    "SOMA_MASSILIA_URBAIN_v0_70.html": {
+      "bytes": 64225744,
+      "sha256": "c73fcd0b771d83aa1849130934ca432c3dcb70f40905e9638792eca4afc01c2a",
+      "generatedOutsideGit": true
+    },
+    "metropole-viewer-v70.html": {
+      "bytes": 1713619,
+      "sha256": "c7c8b4ed748609332527a3c0bc72afc80aef42a239d647831e0ed9ff9110b03c",
+      "generatedOutsideGit": true
+    }
+  },
+  "inspirationReferences": [
+    "Syndicate (PS3)",
+    "Cyberpunk 2077 (PS5)",
+    "E.Y.E: Divine Cybermancy (Steam)"
+  ],
+  "campaign": {
+    "activeAugmentations": [
+      "Écho de trame",
+      "Rempart cortical",
+      "Ancrage réflexe"
+    ],
+    "resourceOwner": "existing v42 cyberdeck",
+    "shortcuts": "Maj+F1 panel; Maj+F2/F3/F4 abilities; unmodified F1-F4 legacy consumables",
+    "recoilMultiplier": 0.65,
+    "shield": {
+      "reduction": 0.55,
+      "sharedImpactBudget": 40,
+      "stage": "after defence multipliers and before armour",
+      "owners": [
+        "v32 tactical",
+        "v26 boss (including v36 delegation)",
+        "police stun",
+        "legacy security AI"
+      ],
+      "bodyAndArrestConsequencesPreserved": true
+    },
+    "perceptionScope": "tactical v32 units; actual located footsteps and accepted shots; last observed or heard contact; source-camera reports",
+    "legacyPoliceAndSecurityPursuitMemoryChanged": false,
+    "channelOwner": "real v42 hack/takedown channel; grouped save and travel guards repaired",
+    "persistence": {
+      "domain": "optional core.v70 in strict v37 continuity",
+      "legacySavesAccepted": true,
+      "temporaryBuffsPersisted": false,
+      "cooldownsTraceCountersPersisted": true
+    }
+  },
+  "localRoute": {
+    "scope": "independent flyover, source OSM axes only",
+    "sourceRouterSHA256": "d2dc3ea29f653a066e3a812b7db3b79c0c8bb81cb97319ad888618048f37d9ae",
+    "workflow": "mark departure at camera, fly to arrival, reopen and analyse",
+    "example": {
+      "from": "Belsunce",
+      "to": "République",
+      "axisLengthMeters": 599.486655769,
+      "loadedCells": 15
+    },
+    "budgets": {
+      "cells": 36,
+      "nodes": 12000,
+      "edges": 16000,
+      "accountedResidentBytes": 67108864,
+      "milliseconds": 3000,
+      "globalAssetRequests": 2
+    },
+    "physicalAccessibilityCertified": false,
+    "campaignRoutingActivated": false
+  },
+  "geography": {
+    "reusedVersion": "0.69.0",
+    "worldManifestSHA256": "881a3fec8837fe7922801102f5fa8c33ffa85ea743ed726e7d1f71dcb8ab0bfe",
+    "communes": 92,
+    "metropoleCells": 52020,
+    "vectorSurfaceNavigationCells": 51809,
+    "terrainOnlyCells": 211,
+    "partialTerrainCells": 71,
+    "nativeDEMStepMeters": 5,
+    "eavesHeightReferences": 299391,
+    "campaignCells": 168,
+    "campaignSquareKilometers": 10.5,
+    "sourceGeometryChanged": false,
+    "newGeographicCells": 0,
+    "newMaterialBuildings": 102,
+    "newFacadeAppearances": 94,
+    "newRoofAppearances": 9,
+    "fullArchitecturalOneToOne": false,
+    "physicalMetropoleCampaign": false
+  },
+  "index": {
+    "sourceQueriesAndDestinationsUnchanged": true,
+    "testedCameraPositions": 12,
+    "destinations": 92,
+    "benchmarkScope": "metadata queries, not frame rate",
+    "report": "/workspace/massilia-geodata-generated/world-index-v70-benchmark-2026-10-26.json"
+  },
+  "validation": {
+    "automatedTests": {
+      "javascript": 295,
+      "pythonV70": 21,
+      "pythonV69": 145,
+      "pythonGeodata": 264,
+      "totalPassed": 725,
+      "failedFinal": 0,
+      "javascriptConcurrency": 2,
+      "note": "Initial unbounded JS run exceeded two 3 s route budgets under CPU contention; unchanged production budgets passed in bounded run."
+    },
+    "finalStdlibBuild": {
+      "command": "python3 -S game/build_v70.py",
+      "passed": true
+    },
+    "finalStdlibVerify": {
+      "command": "python3 -S game/build_v70.py --verify",
+      "status": "passed"
+    },
+    "sourceOnlyColdRun": {
+      "passed": true,
+      "testedGameSHA256": "339079dcf5438ee99193cf341a1119eb1161197af073c097958c53cd207f90b6",
+      "testedViewerSHA256": "c7c8b4ed748609332527a3c0bc72afc80aef42a239d647831e0ed9ff9110b03c",
+      "exactFinalGame": false,
+      "report": "/workspace/massilia-geodata-generated/validation-v70-source-only/REPORT.md",
+      "scope": "empty venv, Python -S, external cwd, prepare-only, verify and HTTP fallback; before final keyboard, damage and navigation corrections"
+    },
+    "browser": {
+      "status": "passed",
+      "viewerRouteAndCancellationPassed": true,
+      "viewerConsoleErrors": 0,
+      "evidenceDirectory": "/workspace/massilia-geodata-generated/validation-v70-final",
+      "navigationRoundTripPassed": true,
+      "campaignContinuityPreservedOnReturn": true,
+      "viewerWritesDuringRoutePanel": 0,
+      "finalGameSHA256": "c73fcd0b771d83aa1849130934ca432c3dcb70f40905e9638792eca4afc01c2a",
+      "mechanicsReplayedOnFinal": true,
+      "mainConsoleErrors": 0,
+      "mainPageErrors": 0,
+      "finalReportSHA256": {
+        "RELEASE_FINAL.json": "382ba07463581636e1f754170b7b8e1935d426ae7fe579b4aea59e3ff1a74775",
+        "RELEASE_CONTROLS.json": "e94e7ebc666496f691c5fce78072a969c2792f6533d812fd83cbdebb170965f2",
+        "RELEASE_DAMAGE.json": "6057d6061c38ad356957970bfcbdbc2b96ae680a21e228d81b6f125e27daa4f1",
+        "RELEASE_CAMPAIGN_ENTRY.json": "1297510c8d7edbbe19af0134da22376c443becc807e38412152baa42ddb4d449"
+      },
+      "campaignEntryPassed": true,
+      "aggregateReportSHA256": "0030cff4fe8dd71fbfc0eea995cc4aaa8057962f278e69bb2e0ef5ab02d713ff"
+    },
+    "independentReview": "no blocking findings",
+    "viewerStdlibVerify": {
+      "command": "python3 -S game/tools/build_metropole_viewer_v70.py --verify",
+      "passed": true
+    }
+  },
+  "remainingWork": [
+    "architectural surveys and unknown facade/roof/road dimensions",
+    "physical metropolitan campaign and access verification",
+    "perceptive pursuit for legacy police/security AI"
+  ],
+  "dataDelivery": {
+    "outsideGit": true,
+    "archive": "/workspace/massilia-geodata-generated/delivery-v69-2026-10-26/soma-metropole-v69-2026-10-26.somaworld",
+    "archiveSHA256": "37bc83835a4c9da031f1decacbdf80ae7ce5644236abefa50dc89811019b2211",
+    "archiveUnchanged": true,
+    "freshCloudRestorationVerified": false
+  }
+}

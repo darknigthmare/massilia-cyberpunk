@@ -1,0 +1,714 @@
+{
+  "schema": "soma-metropole/territory/1",
+  "id": "200054807",
+  "name": "Métropole d'Aix-Marseille-Provence",
+  "year": 2026,
+  "communes": [
+    {
+      "code": "13055",
+      "siren": "211300553",
+      "nom": "Marseille",
+      "populationTotale": 883466,
+      "populationMunicipale": 877215
+    },
+    {
+      "code": "13001",
+      "siren": "211300017",
+      "nom": "Aix-en-Provence",
+      "populationTotale": 151033,
+      "populationMunicipale": 147933
+    },
+    {
+      "code": "13056",
+      "siren": "211300561",
+      "nom": "Martigues",
+      "populationTotale": 49346,
+      "populationMunicipale": 48818
+    },
+    {
+      "code": "13005",
+      "siren": "211300058",
+      "nom": "Aubagne",
+      "populationTotale": 48124,
+      "populationMunicipale": 47724
+    },
+    {
+      "code": "13103",
+      "siren": "211301031",
+      "nom": "Salon-de-Provence",
+      "populationTotale": 45080,
+      "populationMunicipale": 44553
+    },
+    {
+      "code": "13047",
+      "siren": "211300470",
+      "nom": "Istres",
+      "populationTotale": 44692,
+      "populationMunicipale": 44044
+    },
+    {
+      "code": "13028",
+      "siren": "211300280",
+      "nom": "La Ciotat",
+      "populationTotale": 37969,
+      "populationMunicipale": 37599
+    },
+    {
+      "code": "13117",
+      "siren": "211301171",
+      "nom": "Vitrolles",
+      "populationTotale": 36997,
+      "populationMunicipale": 36612
+    },
+    {
+      "code": "13054",
+      "siren": "211300546",
+      "nom": "Marignane",
+      "populationTotale": 33404,
+      "populationMunicipale": 33164
+    },
+    {
+      "code": "13063",
+      "siren": "211300637",
+      "nom": "Miramas",
+      "populationTotale": 26262,
+      "populationMunicipale": 25891
+    },
+    {
+      "code": "13071",
+      "siren": "211300710",
+      "nom": "Les Pennes-Mirabeau",
+      "populationTotale": 22671,
+      "populationMunicipale": 22423
+    },
+    {
+      "code": "13041",
+      "siren": "211300413",
+      "nom": "Gardanne",
+      "populationTotale": 21860,
+      "populationMunicipale": 21534
+    },
+    {
+      "code": "13002",
+      "siren": "211300025",
+      "nom": "Allauch",
+      "populationTotale": 21616,
+      "populationMunicipale": 21404
+    },
+    {
+      "code": "84089",
+      "siren": "218400893",
+      "nom": "Pertuis",
+      "populationTotale": 20032,
+      "populationMunicipale": 19764
+    },
+    {
+      "code": "13026",
+      "siren": "211300264",
+      "nom": "Châteauneuf-les-Martigues",
+      "populationTotale": 18468,
+      "populationMunicipale": 18364
+    },
+    {
+      "code": "13077",
+      "siren": "211300777",
+      "nom": "Port-de-Bouc",
+      "populationTotale": 16281,
+      "populationMunicipale": 16138
+    },
+    {
+      "code": "13039",
+      "siren": "211300397",
+      "nom": "Fos-sur-Mer",
+      "populationTotale": 15891,
+      "populationMunicipale": 15694
+    },
+    {
+      "code": "13015",
+      "siren": "211300157",
+      "nom": "Bouc-Bel-Air",
+      "populationTotale": 15644,
+      "populationMunicipale": 15367
+    },
+    {
+      "code": "13014",
+      "siren": "211300140",
+      "nom": "Berre-l'Étang",
+      "populationTotale": 14011,
+      "populationMunicipale": 13941
+    },
+    {
+      "code": "13007",
+      "siren": "211300074",
+      "nom": "Auriol",
+      "populationTotale": 13155,
+      "populationMunicipale": 12986
+    },
+    {
+      "code": "13081",
+      "siren": "211300819",
+      "nom": "Rognac",
+      "populationTotale": 12458,
+      "populationMunicipale": 12335
+    },
+    {
+      "code": "13106",
+      "siren": "211301064",
+      "nom": "Septèmes-les-Vallons",
+      "populationTotale": 12098,
+      "populationMunicipale": 12018
+    },
+    {
+      "code": "13075",
+      "siren": "211300751",
+      "nom": "Plan-de-Cuques",
+      "populationTotale": 11598,
+      "populationMunicipale": 11504
+    },
+    {
+      "code": "13110",
+      "siren": "211301106",
+      "nom": "Trets",
+      "populationTotale": 11117,
+      "populationMunicipale": 10933
+    },
+    {
+      "code": "13069",
+      "siren": "211300694",
+      "nom": "Pélissanne",
+      "populationTotale": 11040,
+      "populationMunicipale": 10799
+    },
+    {
+      "code": "13019",
+      "siren": "211300199",
+      "nom": "Cabriès",
+      "populationTotale": 10475,
+      "populationMunicipale": 10143
+    },
+    {
+      "code": "13040",
+      "siren": "211300405",
+      "nom": "Fuveau",
+      "populationTotale": 10452,
+      "populationMunicipale": 10235
+    },
+    {
+      "code": "13050",
+      "siren": "211300504",
+      "nom": "Lambesc",
+      "populationTotale": 10199,
+      "populationMunicipale": 9951
+    },
+    {
+      "code": "13043",
+      "siren": "211300439",
+      "nom": "Gignac-la-Nerthe",
+      "populationTotale": 10126,
+      "populationMunicipale": 10030
+    },
+    {
+      "code": "13051",
+      "siren": "211300512",
+      "nom": "Lançon-Provence",
+      "populationTotale": 9758,
+      "populationMunicipale": 9627
+    },
+    {
+      "code": "13037",
+      "siren": "211300371",
+      "nom": "La Fare-les-Oliviers",
+      "populationTotale": 9066,
+      "populationMunicipale": 8953
+    },
+    {
+      "code": "13112",
+      "siren": "211301122",
+      "nom": "Velaux",
+      "populationTotale": 8976,
+      "populationMunicipale": 8827
+    },
+    {
+      "code": "13086",
+      "siren": "211300868",
+      "nom": "Roquevaire",
+      "populationTotale": 8947,
+      "populationMunicipale": 8823
+    },
+    {
+      "code": "13092",
+      "siren": "211300926",
+      "nom": "Saint-Chamas",
+      "populationTotale": 8802,
+      "populationMunicipale": 8669
+    },
+    {
+      "code": "13078",
+      "siren": "211300785",
+      "nom": "Port-Saint-Louis-du-Rhône",
+      "populationTotale": 8583,
+      "populationMunicipale": 8510
+    },
+    {
+      "code": "13113",
+      "siren": "211301130",
+      "nom": "Venelles",
+      "populationTotale": 8582,
+      "populationMunicipale": 8420
+    },
+    {
+      "code": "13032",
+      "siren": "211300322",
+      "nom": "Éguilles",
+      "populationTotale": 8512,
+      "populationMunicipale": 8349
+    },
+    {
+      "code": "13104",
+      "siren": "211301049",
+      "nom": "Sausset-les-Pins",
+      "populationTotale": 7673,
+      "populationMunicipale": 7556
+    },
+    {
+      "code": "13035",
+      "siren": "211300355",
+      "nom": "Eyguières",
+      "populationTotale": 7075,
+      "populationMunicipale": 6915
+    },
+    {
+      "code": "13119",
+      "siren": "211301197",
+      "nom": "Carnoux-en-Provence",
+      "populationTotale": 6952,
+      "populationMunicipale": 6872
+    },
+    {
+      "code": "13105",
+      "siren": "211301056",
+      "nom": "Sénas",
+      "populationTotale": 6916,
+      "populationMunicipale": 6829
+    },
+    {
+      "code": "13042",
+      "siren": "211300421",
+      "nom": "Gémenos",
+      "populationTotale": 6818,
+      "populationMunicipale": 6678
+    },
+    {
+      "code": "13022",
+      "siren": "211300223",
+      "nom": "Cassis",
+      "populationTotale": 6808,
+      "populationMunicipale": 6706
+    },
+    {
+      "code": "13102",
+      "siren": "211301023",
+      "nom": "Saint-Victoret",
+      "populationTotale": 6718,
+      "populationMunicipale": 6689
+    },
+    {
+      "code": "13070",
+      "siren": "211300702",
+      "nom": "La Penne-sur-Huveaune",
+      "populationTotale": 6669,
+      "populationMunicipale": 6618
+    },
+    {
+      "code": "13016",
+      "siren": "211300165",
+      "nom": "La Bouilladisse",
+      "populationTotale": 6547,
+      "populationMunicipale": 6447
+    },
+    {
+      "code": "13060",
+      "siren": "211300603",
+      "nom": "Meyreuil",
+      "populationTotale": 6429,
+      "populationMunicipale": 6341
+    },
+    {
+      "code": "13053",
+      "siren": "211300538",
+      "nom": "Mallemort",
+      "populationTotale": 6352,
+      "populationMunicipale": 6190
+    },
+    {
+      "code": "13098",
+      "siren": "211300983",
+      "nom": "Saint-Mitre-les-Remparts",
+      "populationTotale": 6112,
+      "populationMunicipale": 5996
+    },
+    {
+      "code": "13030",
+      "siren": "211300306",
+      "nom": "Cuges-les-Pins",
+      "populationTotale": 6012,
+      "populationMunicipale": 5949
+    },
+    {
+      "code": "13091",
+      "siren": "211300918",
+      "nom": "Saint-Cannat",
+      "populationTotale": 5977,
+      "populationMunicipale": 5877
+    },
+    {
+      "code": "83120",
+      "siren": "218301208",
+      "nom": "Saint-Zacharie",
+      "populationTotale": 5949,
+      "populationMunicipale": 5877
+    },
+    {
+      "code": "13107",
+      "siren": "211301072",
+      "nom": "Simiane-Collongue",
+      "populationTotale": 5947,
+      "populationMunicipale": 5823
+    },
+    {
+      "code": "13080",
+      "siren": "211300801",
+      "nom": "Le Puy-Sainte-Réparade",
+      "populationTotale": 5905,
+      "populationMunicipale": 5794
+    },
+    {
+      "code": "13033",
+      "siren": "211300330",
+      "nom": "Ensuès-la-Redonne",
+      "populationTotale": 5897,
+      "populationMunicipale": 5796
+    },
+    {
+      "code": "13085",
+      "siren": "211300850",
+      "nom": "Roquefort-la-Bédoule",
+      "populationTotale": 5846,
+      "populationMunicipale": 5784
+    },
+    {
+      "code": "13021",
+      "siren": "211300215",
+      "nom": "Carry-le-Rouet",
+      "populationTotale": 5845,
+      "populationMunicipale": 5717
+    },
+    {
+      "code": "13114",
+      "siren": "211301148",
+      "nom": "Ventabren",
+      "populationTotale": 5753,
+      "populationMunicipale": 5613
+    },
+    {
+      "code": "13073",
+      "siren": "211300736",
+      "nom": "Peypin",
+      "populationTotale": 5687,
+      "populationMunicipale": 5612
+    },
+    {
+      "code": "13087",
+      "siren": "211300876",
+      "nom": "Rousset",
+      "populationTotale": 5505,
+      "populationMunicipale": 5357
+    },
+    {
+      "code": "13084",
+      "siren": "211300843",
+      "nom": "La Roque-d'Anthéron",
+      "populationTotale": 5476,
+      "populationMunicipale": 5355
+    },
+    {
+      "code": "13044",
+      "siren": "211300447",
+      "nom": "Grans",
+      "populationTotale": 5470,
+      "populationMunicipale": 5382
+    },
+    {
+      "code": "13074",
+      "siren": "211300744",
+      "nom": "Peyrolles-en-Provence",
+      "populationTotale": 5393,
+      "populationMunicipale": 5316
+    },
+    {
+      "code": "13088",
+      "siren": "211300884",
+      "nom": "Le Rove",
+      "populationTotale": 5254,
+      "populationMunicipale": 5205
+    },
+    {
+      "code": "13023",
+      "siren": "211300231",
+      "nom": "Ceyreste",
+      "populationTotale": 4956,
+      "populationMunicipale": 4847
+    },
+    {
+      "code": "13082",
+      "siren": "211300827",
+      "nom": "Rognes",
+      "populationTotale": 4746,
+      "populationMunicipale": 4640
+    },
+    {
+      "code": "13048",
+      "siren": "211300488",
+      "nom": "Jouques",
+      "populationTotale": 4559,
+      "populationMunicipale": 4478
+    },
+    {
+      "code": "13046",
+      "siren": "211300462",
+      "nom": "Gréasque",
+      "populationTotale": 4551,
+      "populationMunicipale": 4469
+    },
+    {
+      "code": "13062",
+      "siren": "211300629",
+      "nom": "Mimet",
+      "populationTotale": 4221,
+      "populationMunicipale": 4147
+    },
+    {
+      "code": "13031",
+      "siren": "211300314",
+      "nom": "La Destrousse",
+      "populationTotale": 4073,
+      "populationMunicipale": 4023
+    },
+    {
+      "code": "13059",
+      "siren": "211300595",
+      "nom": "Meyrargues",
+      "populationTotale": 3881,
+      "populationMunicipale": 3818
+    },
+    {
+      "code": "13118",
+      "siren": "211301189",
+      "nom": "Coudoux",
+      "populationTotale": 3855,
+      "populationMunicipale": 3775
+    },
+    {
+      "code": "13072",
+      "siren": "211300728",
+      "nom": "Peynier",
+      "populationTotale": 3768,
+      "populationMunicipale": 3692
+    },
+    {
+      "code": "13101",
+      "siren": "211301015",
+      "nom": "Saint-Savournin",
+      "populationTotale": 3521,
+      "populationMunicipale": 3449
+    },
+    {
+      "code": "13003",
+      "siren": "211300033",
+      "nom": "Alleins",
+      "populationTotale": 2903,
+      "populationMunicipale": 2833
+    },
+    {
+      "code": "13024",
+      "siren": "211300249",
+      "nom": "Charleval",
+      "populationTotale": 2682,
+      "populationMunicipale": 2634
+    },
+    {
+      "code": "13109",
+      "siren": "211301098",
+      "nom": "Le Tholonet",
+      "populationTotale": 2427,
+      "populationMunicipale": 2370
+    },
+    {
+      "code": "13025",
+      "siren": "211300256",
+      "nom": "Châteauneuf-le-Rouge",
+      "populationTotale": 2405,
+      "populationMunicipale": 2331
+    },
+    {
+      "code": "13020",
+      "siren": "211300207",
+      "nom": "Cadolive",
+      "populationTotale": 2265,
+      "populationMunicipale": 2219
+    },
+    {
+      "code": "13115",
+      "siren": "211301155",
+      "nom": "Vernègues",
+      "populationTotale": 2202,
+      "populationMunicipale": 2158
+    },
+    {
+      "code": "13049",
+      "siren": "211300496",
+      "nom": "Lamanon",
+      "populationTotale": 2107,
+      "populationMunicipale": 2069
+    },
+    {
+      "code": "13013",
+      "siren": "211300132",
+      "nom": "Belcodène",
+      "populationTotale": 2014,
+      "populationMunicipale": 1978
+    },
+    {
+      "code": "13079",
+      "siren": "211300793",
+      "nom": "Puyloubier",
+      "populationTotale": 1915,
+      "populationMunicipale": 1780
+    },
+    {
+      "code": "13029",
+      "siren": "211300298",
+      "nom": "Cornillon-Confoux",
+      "populationTotale": 1650,
+      "populationMunicipale": 1619
+    },
+    {
+      "code": "13095",
+      "siren": "211300959",
+      "nom": "Saint-Marc-Jaumegarde",
+      "populationTotale": 1342,
+      "populationMunicipale": 1270
+    },
+    {
+      "code": "13111",
+      "siren": "211301114",
+      "nom": "Vauvenargues",
+      "populationTotale": 1080,
+      "populationMunicipale": 1058
+    },
+    {
+      "code": "13099",
+      "siren": "211300991",
+      "nom": "Saint-Paul-lès-Durance",
+      "populationTotale": 899,
+      "populationMunicipale": 886
+    },
+    {
+      "code": "13009",
+      "siren": "211300090",
+      "nom": "La Barben",
+      "populationTotale": 888,
+      "populationMunicipale": 852
+    },
+    {
+      "code": "13012",
+      "siren": "211300124",
+      "nom": "Beaurecueil",
+      "populationTotale": 644,
+      "populationMunicipale": 595
+    },
+    {
+      "code": "13008",
+      "siren": "211300082",
+      "nom": "Aurons",
+      "populationTotale": 571,
+      "populationMunicipale": 559
+    },
+    {
+      "code": "13093",
+      "siren": "211300934",
+      "nom": "Saint-Estève-Janson",
+      "populationTotale": 375,
+      "populationMunicipale": 364
+    },
+    {
+      "code": "13090",
+      "siren": "211300900",
+      "nom": "Saint-Antonin-sur-Bayon",
+      "populationTotale": 129,
+      "populationMunicipale": 125
+    }
+  ],
+  "boundary": {
+    "path": "acquisition/amp-boundary-2026-10-25.geojson",
+    "sha256": "3af4aa6a7652b76cc284f338431e323b27bf548d2cbf9f5ac4d8135cd0e27d13",
+    "bytes": 419155,
+    "encoding": "json",
+    "schema": "soma-metropole/administrative-boundary/1",
+    "crs": "EPSG:4326",
+    "source": {
+      "path": "acquisition/amp-communes-2026-10-25.geojson",
+      "sha256": "df468049137c2b9e72b0c27a37d0d8cb8dc52d4bed4d37cd801cab07ce65b0f8",
+      "bytes": 1151548,
+      "encoding": "json",
+      "service": "API Découpage administratif, geo.api.gouv.fr",
+      "url": "https://geo.api.gouv.fr/epcis/200054807/communes?format=geojson&geometry=contour&fields=nom,code,population",
+      "acquiredUTC": "2026-10-25T08:11:52.134046+00:00",
+      "httpStatus": 200,
+      "vintage": null,
+      "vintageStatus": "not-stated-by-service",
+      "license": null,
+      "licenseStatus": "not-stated-in-api-response"
+    },
+    "rawReceipt": {
+      "path": "acquisition/amp-communes-2026-10-25.receipt.json",
+      "sha256": "cd0f536df84c5382f15ba5d2077cbb7b15b24aa38a467b772e72257a776b444b",
+      "bytes": 1119,
+      "encoding": "json"
+    },
+    "validationReceipt": {
+      "path": "acquisition/amp-boundary-2026-10-25.receipt.json",
+      "sha256": "4810af30416795480cceebc947f70042c5f4fab14871a0bc361e7ec69e4bf5d0",
+      "bytes": 3455,
+      "encoding": "json"
+    },
+    "acquiredUTC": "2026-10-25T08:11:52.134046+00:00",
+    "vintage": null,
+    "vintageStatus": "not-stated-by-service",
+    "boundsWGS84": [
+      4.733718,
+      43.157423,
+      5.813434,
+      43.772067
+    ],
+    "boundsL93": [
+      840432.7599510866,
+      6232221.795831317,
+      926837.6290563704,
+      6299234.073853413
+    ],
+    "validationScope": "Source polygons and union checked valid at acquisition; later standard-library checks bind files and receipts without repeating GIS topology validation.",
+    "certifiedOneToOne": false
+  },
+  "complete": false,
+  "source": {
+    "package": "@etalab/decoupage-administratif",
+    "version": "6.0.0",
+    "license": "Licence Ouverte 2.0",
+    "attribution": "Etalab / data.gouv.fr — Code officiel géographique INSEE et composition DGCL des EPCI 2026",
+    "url": "https://registry.npmjs.org/@etalab/decoupage-administratif/-/decoupage-administratif-6.0.0.tgz",
+    "sha256": "c189ffd5b33fe40c2f19e1a923ce557f190622f39228745d3195d746dfe00c4a",
+    "integrity": "sha512-XavYsFlbcM/prKr8hNHPKER94IHw/dsxNM4nxjWMYk6PLFACpEedvn/7wK8Baozm0dCYhWWcf+7bcWpA5pmCaQ==",
+    "note": "Cette source documente uniquement l’appartenance administrative ; le contour géométrique référencé séparément provient de geo.api.gouv.fr."
+  }
+}
