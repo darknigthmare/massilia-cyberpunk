@@ -98,7 +98,7 @@
     // roof references regardless of previous flights or network arrival order.
     const selected=[...new Set(targetIds)].sort().map(id=>entries.get(id)).filter(Boolean);
     const records=selected.map(e=>e.layers.vector).filter(Boolean),useful=records.map(r=>({...r,featureCollection:{...r.featureCollection,
-      features:r.featureCollection.features.filter(f=>['skillion','pyramidal','dome'].includes(String(f.properties?.['roof:shape']||'').toLowerCase()))}}));
+      features:r.featureCollection.features.filter(f=>['skillion','pyramidal','dome','gabled','hipped'].includes(String(f.properties?.['roof:shape']||'').toLowerCase()))}}));
     const datums=new Map(),missingCanonicalDatums=new Set(),aliases=new Map(),omitBuildingIds=new Set();
     for(const entry of selected){
       const r=entry.layers.vector,grid=entry.layers.terrain.grid;if(!r)continue;

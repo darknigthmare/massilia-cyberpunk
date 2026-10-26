@@ -20,10 +20,24 @@
     const text = value.trim().replace(',', '.');
     const feet = text.match(/^(\d+(?:\.\d+)?)\s*'\s*(\d+(?:\.\d+)?)\s*(?:"|in)?$/);
     if (feet) return +feet[1]*0.3048 + +feet[2]*0.0254;
-    const m = text.match(/^(\d+(?:\.\d+)?)\s*(m|metres?|meters?|cm|ft|feet|'|in|inches?|\")?$/i);
+    const m = text.match(/^(\d+(?:\.\d+)?|\.\d+)\s*(m|metres?|meters?|cm|ft|feet|'|in|inches?|\")?$/i);
     if (!m) return null;
     const unit = (m[2] || 'm').toLowerCase();
     return +m[1] * (unit === 'cm' ? 0.01 : /^(ft|feet|')$/.test(unit) ? 0.3048 : /^(in|inch|inches|\")$/.test(unit) ? 0.0254 : 1);
+  }
+
+  function roofDimensions(properties={},dimensions={}) {
+    const p=properties||{},dim=dimensions||{};
+    if(dim.valid===false||String(p.building||'').trim().toLowerCase()!=='roof'||
+      Object.hasOwn(p,'min_height')||Object.hasOwn(p,'building:min_level')||
+      dim.heightSource!=='osm-height'||dim.heightKind==='eaves')return dim;
+    const total=measure(p.height),rise=measure(p['roof:height']);
+    if(total===null||total<=.05||total>1000||!Number.isFinite(dim.height)||Math.abs(dim.height-total)>1e-5||
+      rise===null||rise<=.05||rise>total)return dim;
+    // The eave is a difference of two explicit OSM dimensions, not a default
+    // canopy thickness or an absolute IGN ground/roof-altitude subtraction.
+    return {...dim,minHeight:total-rise,valid:true,minHeightSource:'derived-osm-total-minus-roof-rise',
+      minHeightAccuracy:'inferred',roofSurveyed:false};
   }
 
   function area(polygon) {
@@ -41,9 +55,13 @@
     return result;
   }
 
-  function convexRing(reference) {
-    if (!reference?.complete || reference.outerCount !== 1 || reference.hasHoles || reference.rings?.length !== 1) return null;
-    let ring = clean(reference.rings[0]);
+  function convexRing(reference,allowHoles=false) {
+    if (!reference?.complete || reference.outerCount !== 1 || !reference.rings?.length ||
+        !allowHoles&&(reference.hasHoles||reference.rings.length!==1)) return null;
+    if(reference.rings.some(ring=>!Array.isArray(ring)||ring.length<3||!ring.every(finitePoint)))return null;
+    // Interior rings remain solely in the prepared triangulation. The largest
+    // closed ring supplies a derived frame, never a replacement footprint.
+    let ring = clean(allowHoles?reference.rings.reduce((a,b)=>Math.abs(area(a))>=Math.abs(area(b))?a:b):reference.rings[0]);
     if (ring.length < 3 || !ring.every(finitePoint) || Math.abs(area(ring)) < 0.1) return null;
     if (area(ring) < 0) ring.reverse();
     // All vertices must lie on the inner side of every edge. This also rejects
@@ -53,6 +71,85 @@
       if (length <= EPS || ring.some(p => cross(a,b,p)/length < -EPS)) return null;
     }
     return ring;
+  }
+
+  function rectangleFrame(reference) {
+    const ring=convexRing(reference,true);
+    if(!ring||ring.length>512)return null;
+    const origin=ring[0];let best=null;
+    for(let i=0;i<ring.length;i++){
+      const a=ring[i],b=ring[(i+1)%ring.length],length=distance(a,b);
+      if(length<=EPS)continue;
+      let u=[(b[0]-a[0])/length,(b[1]-a[1])/length];
+      if(u[0]<-EPS||Math.abs(u[0])<=EPS&&u[1]<0)u=u.map(x=>-x);
+      const v=[-u[1],u[0]],project=p=>[(p[0]-origin[0])*u[0]+(p[1]-origin[1])*u[1],(p[0]-origin[0])*v[0]+(p[1]-origin[1])*v[1]];
+      const points=ring.map(project),bounds=[Math.min(...points.map(p=>p[0])),Math.min(...points.map(p=>p[1])),Math.max(...points.map(p=>p[0])),Math.max(...points.map(p=>p[1]))];
+      const size=(bounds[2]-bounds[0])*(bounds[3]-bounds[1]);
+      // A deterministic tie also keeps reversed rings and neighbouring cells
+      // on the same source-wide ridge frame.
+      const bearing=Math.atan2(u[1],u[0]);
+      if(!best||size<best.size-1e-8||Math.abs(size-best.size)<=1e-8&&bearing<best.bearing)best={u,v,bounds,size,bearing};
+    }
+    if(!best||best.size<=.1||1-Math.abs(area(ring))/best.size>.01)return null;
+    let {u,v,bounds}=best;
+    const center=[origin[0]+u[0]*(bounds[0]+bounds[2])/2+v[0]*(bounds[1]+bounds[3])/2,
+                  origin[1]+u[1]*(bounds[0]+bounds[2])/2+v[1]*(bounds[1]+bounds[3])/2];
+    let length=bounds[2]-bounds[0],width=bounds[3]-bounds[1];
+    if(width>length){[length,width]=[width,length];[u,v]=[v,u.map(x=>-x)];}
+    if(u[0]<-EPS||Math.abs(u[0])<=EPS&&u[1]<0){u=u.map(x=>-x);v=v.map(x=>-x);}
+    if(width<=.05)return null;
+    return {center,u,v,length,width,rectangleAreaM2:best.size,footprintAreaM2:Math.abs(area(ring)),rectangleAreaError:Math.max(0,1-Math.abs(area(ring))/best.size)};
+  }
+
+  function bearing(value) {
+    if(typeof value!=='string'&&typeof value!=='number')return null;
+    const text=String(value).trim().toUpperCase(),names=['N','NNE','NE','ENE','E','ESE','SE','SSE','S','SSW','SW','WSW','W','WNW','NW','NNW'];
+    const index=names.indexOf(text);
+    if(index>=0)return index*Math.PI/8;
+    if(!/^(\d+(?:\.\d+)?)\s*°?$/.test(text))return null;
+    const degrees=Number(text.replace('°','').trim());
+    return degrees<=360?degrees*Math.PI/180:null;
+  }
+
+  function pitchedPlan(p,dim,reference,shape,fallback) {
+    const total=dim.height,floor=dim.minHeight??0,height=measure(p.height),rise=measure(p['roof:height']);
+    if(!Number.isFinite(total)||total<=0||total>1000||!Number.isFinite(floor)||floor<0||total<=floor+.05||dim.valid===false)return fallback('invalid-dimensions');
+    if(height===null||Math.abs(height-total)>1e-5)return fallback('explicit-total-height-required');
+    if(rise===null||rise<=0||rise>total-floor+1e-5)return fallback('invalid-or-missing-roof-height');
+    const frame=rectangleFrame(reference);
+    if(!frame)return fallback('complete-near-rectangular-footprint-required');
+    const orientation=String(p['roof:orientation']||'').trim().toLowerCase();
+    if(orientation&&!['along','across'].includes(orientation))return fallback('unsupported-roof-orientation');
+    let along=orientation!=='across',source=orientation?'osm-roof-orientation':'inferred-long-footprint-axis',ridge=null;
+    for(const [key,sourceName,perpendicular]of [['roof:ridge:direction','osm-roof-ridge-direction',false],['roof:direction','osm-roof-direction-perpendicular',true]]){
+      if(p[key]===undefined||p[key]===null||String(p[key]).trim()==='')continue;
+      const angle=bearing(p[key]);if(angle===null)return fallback('invalid-roof-direction');
+      let axis=[Math.sin(angle),Math.cos(angle)];if(perpendicular)axis=[-axis[1],axis[0]];
+      if(ridge&&Math.abs(ridge[0]*axis[0]+ridge[1]*axis[1])<Math.cos(Math.PI/360))return fallback('conflicting-roof-directions');
+      const dot=Math.abs(frame.u[0]*axis[0]+frame.u[1]*axis[1]),crossDot=Math.abs(frame.v[0]*axis[0]+frame.v[1]*axis[1]);
+      if(Math.max(dot,crossDot)<Math.cos(Math.PI/360))return fallback('roof-direction-not-aligned-with-source-frame');
+      const selected=dot>=crossDot;
+      if(orientation&&selected!==along)return fallback('conflicting-roof-orientation');
+      if(!ridge){along=selected;source=sourceName;ridge=axis;}
+    }
+    if(!ridge&&frame.length/frame.width<1.05)return fallback('roof-direction-required-for-near-square');
+    let u=along?frame.u:frame.v,v=[-u[1],u[0]],length=along?frame.length:frame.width,width=along?frame.width:frame.length;
+    if(shape==='hipped'&&length<width-EPS)return fallback('hipped-orientation-requires-unequal-pitches');
+    const a=length/2,b=width/2,eave=total-rise,point=(s,t)=>[frame.center[0]+u[0]*s+v[0]*t,frame.center[1]+u[1]*s+v[1]*t];
+    const corner=[point(-a,-b),point(a,-b),point(a,b),point(-a,b)];
+    const ridgeStart=point(shape==='gabled'?-a:-a+b,0),ridgeEnd=point(shape==='gabled'?a:a-b,0);
+    const facets=shape==='gabled'?[[corner[0],corner[1],ridgeEnd,ridgeStart],[ridgeStart,ridgeEnd,corner[2],corner[3]]]:
+      [[corner[0],corner[1],ridgeEnd,ridgeStart],[ridgeStart,ridgeEnd,corner[2],corner[3]],[corner[0],ridgeStart,corner[3]],[corner[1],corner[2],ridgeEnd]];
+    const coordinates=(e,n)=>[(e-frame.center[0])*u[0]+(n-frame.center[1])*u[1],(e-frame.center[0])*v[0]+(n-frame.center[1])*v[1]];
+    return {shape,requestedShape:shape,modelled:true,reason:'osm-parametric-'+shape,eave,
+      heightAt(e,n){const[s,t]=coordinates(e,n),profile=shape==='gabled'?1-Math.abs(t)/b:Math.min((a-Math.abs(s))/b,1-Math.abs(t)/b);return eave+rise*Math.max(0,Math.min(1,profile));},
+      breakLines:shape==='gabled'?[[ridgeStart,ridgeEnd]]:[[ridgeStart,ridgeEnd],[corner[0],ridgeStart],[corner[3],ridgeStart],[corner[1],ridgeEnd],[corner[2],ridgeEnd]],
+      geometrySource:'osm-parametric',accuracy:'inferred',roofSurveyed:false,
+      parameterSources:{shape:'osm-roof-shape',height:'osm-height',roofHeight:'osm-roof-height',ridgeDirection:source,
+        ridgePosition:'inferred-centered-footprint-frame',profile:shape==='gabled'?'inferred-symmetric-two-plane':'inferred-equal-pitch-four-plane'},
+      profile:shape==='gabled'?'symmetric-gable':'equal-pitch-hip',ridgeL93:[ridgeStart.slice(),ridgeEnd.slice()],apexHeight:total,
+      frame:{centerL93:frame.center.slice(),ridgeAxis:u.slice(),lengthM:length,widthM:width,rectangleAreaError:frame.rectangleAreaError},
+      errorBoundM:0,courtyardPolicy:'retain-prepared-source-triangle-holes',facetDomainsL93:facets.map(clean)};
   }
 
   function centroid(ring) {
@@ -114,8 +211,9 @@
 
   function roofPlan(properties={},dimensions={},reference=null) {
     const p=properties||{},dim=dimensions||{},shape=String(p['roof:shape']||'').trim().toLowerCase();
-    if(!['pyramidal','dome'].includes(shape))return previousPlan(p,dim,reference);
+    if(!['pyramidal','dome','gabled','hipped'].includes(shape))return previousPlan(p,dim,reference);
     const fallback=reason=>({...previousPlan(p,dim,reference),reason});
+    if(shape==='gabled'||shape==='hipped')return pitchedPlan(p,dim,reference,shape,fallback);
     const total=dim.height,floor=dim.minHeight??0,height=measure(p.height),riseTag=measure(p['roof:height']);
     if(!Number.isFinite(total)||total<=0||total>1000||!Number.isFinite(floor)||floor<0||total<=floor+0.05||dim.valid===false)return fallback('invalid-dimensions');
     if(height===null||Math.abs(height-total)>1e-5)return fallback('explicit-total-height-required');
@@ -199,12 +297,32 @@
     if(!finitePoint(a)||!finitePoint(b)||typeof projector?.toMetric!=='function'||typeof plan?.heightAt!=='function')throw new TypeError('Wall heights require source endpoints and a metric roof plan.');
     const ma=projector.toMetric(a.slice()),mb=projector.toMetric(b.slice());
     if(!finitePoint(ma)||!finitePoint(mb))throw new TypeError('Invalid metric wall coordinate.');
-    const topA=plan.heightAt(...ma),topB=plan.heightAt(...mb);
-    if(!Number.isFinite(topA)||!Number.isFinite(topB))throw new TypeError('Invalid wall roof height.');
-    return [{a:a.slice(0,2),b:b.slice(0,2),topA,topB}];
+    const vector=[mb[0]-ma[0],mb[1]-ma[1]],length2=vector[0]**2+vector[1]**2,cuts=[0,1];
+    if(length2<=EPS*EPS)return [];
+    const det=(x,y)=>x[0]*y[1]-x[1]*y[0];
+    for(const line of plan.breakLines||[]){
+      if(!Array.isArray(line)||line.length!==2||!line.every(finitePoint))throw new TypeError('Invalid roof break line.');
+      const edge=[line[1][0]-line[0][0],line[1][1]-line[0][1]],offset=[line[0][0]-ma[0],line[0][1]-ma[1]],denominator=det(vector,edge);
+      if(Math.abs(denominator)<=1e-10){
+        if(Math.abs(det(vector,offset))>EPS*Math.sqrt(length2))continue;
+        for(const p of line){const t=((p[0]-ma[0])*vector[0]+(p[1]-ma[1])*vector[1])/length2;if(t>1e-9&&t<1-1e-9)cuts.push(t);}
+      }else{
+        const t=det(offset,edge)/denominator,s=det(offset,vector)/denominator;
+        if(t>1e-9&&t<1-1e-9&&s>=-1e-9&&s<=1+1e-9)cuts.push(t);
+      }
+      if(cuts.length>1024)throw new RangeError('Roof wall segmentation exceeds its geometry budget.');
+    }
+    cuts.sort((x,y)=>x-y);const values=cuts.filter((t,i)=>i===0||t-cuts[i-1]>1e-9),segments=[];
+    for(let i=0;i+1<values.length;i++){
+      const from=values[i],to=values[i+1],start=from===0?a.slice(0,2):interpolate(a,b,from),end=to===1?b.slice(0,2):interpolate(a,b,to);
+      const topA=plan.heightAt(ma[0]+vector[0]*from,ma[1]+vector[1]*from),topB=plan.heightAt(ma[0]+vector[0]*to,ma[1]+vector[1]*to);
+      if(!Number.isFinite(topA)||!Number.isFinite(topB))throw new TypeError('Invalid wall roof height.');
+      segments.push({a:start,b:end,topA,topB,sourceT:[from,to],derivedSplit:values.length>2});
+    }
+    return segments;
   }
 
-  Object.assign(K,{roofPlan,roofTriangles,wallSegments,roofCoreVersion:'0.69.0'});
+  Object.assign(K,{roofPlan,roofTriangles,wallSegments,roofDimensions,roofCoreVersion:'0.69.0'});
   root.__SOMA_ARCH68_CORE__=K;root.__SOMA_ROOF69_CORE__=K;
   if(typeof module!=='undefined'&&module.exports)module.exports=K;
 })(typeof window!=='undefined'?window:globalThis);

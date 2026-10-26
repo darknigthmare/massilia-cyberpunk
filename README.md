@@ -28,9 +28,13 @@ Le bouton **« Survoler la métropole »** ouvre l’explorateur indépendant. S
 - Un lot de **14 279 références IGN à l’égout** est intégré au socle, dont 14 258 identités nouvelles. Elles décrivent la hauteur à l’égout et le pied du bâtiment ; les toitures non relevées restent approximatives. Les déclarations OSM prioritaires sont conservées.
 - Les parties documentées de **9 bâtiments composites** deviennent visibles sans être englouties par une enveloppe pleine générique. Les emprises résiduelles restent identifiées comme non reconstituées ; aucun volume ou obstacle n’est inventé pour les combler.
 - **26 toits pyramidaux et 15 dômes** des données livrées sont admissibles aux nouveaux profils paramétriques. Leur forme est inférée à partir des paramètres disponibles ; il ne s’agit pas d’un relevé architectural. Les toits à un pan et les cours intérieures restent préservés.
+- Les profils **à deux pans et à croupes** exploitent les hauteurs OSM explicites et les contours complets compatibles. L’audit métropolitain trouve **9 toits à deux pans et l’Ombrière du Vieux-Port** nouvellement modélisables. Les pignons suivent le faîtage ; les couvertures ouvertes restent visibles du dessous. Les formes insuffisamment documentées restent approximatives.
 - **72 voies couvertes ou intérieures** sont reclassées : les chaussées injustifiées au niveau du MNT sont retirées, avec conservation des recouvrements routiers valides. Les ouvrages sans altitude connue ne deviennent pas des routes plates.
 - Le socle existant est préparé en **quatre couches vérifiables par cellule** : vecteurs, relief, surfaces et navigation. Les outils d’import, de préparation et d’assemblage permettent de produire des éditions supplémentaires sans les activer automatiquement dans la campagne.
+- Les **51 809 cellules vectorielles métropolitaines** disposent aussi de leur navigation préparée, validée indépendamment avec le moteur historique et les segments OSM natifs. Les restrictions, accès et barrières sont conservés ou refusés prudemment. Cette préparation ne certifie pas les déplacements physiques et n’active pas de nouvelle campagne.
 - Un diagnostic de fidélité distingue les sources OSM/IGN, les estimations et les zones encore inconnues. Le périmètre officiel des 92 communes est consultable dans l’espace de développement.
+- Le survol distingue les paysages OSM : forêts, plages, roches, cultures et carrières. Les eaux intérieures sans altitude déclarée sont colorées sur le relief valide ; mers, ports et baies gardent leur cote visuelle conventionnelle de 0 m, qui n’est pas un relevé de marée.
+- Un outil de **paquet portable vérifié** permet d’exporter, contrôler et réinstaller le cache métropolitain sans dépendances externes ; les données volumineuses restent hors Git.
 
 L’ambiance cyberpunk et les sauvegardes v0.68 sont conservées. Les lumières de façade sont une interprétation artistique stable entre cellules. Le mode « Sans filtre » retire l’étalonnage coloré ; il ne supprime pas les lumières.
 
@@ -42,8 +46,11 @@ Avant les ajouts v0.69, le socle original audité avait **500 objets bâtis sur 
 
 La Major conserve notamment environ **844,4 m² d’emprise résiduelle dont le volume reste inconnu**. Ces zones n’ont pas de volume, collision ou occlusion de bâtiment fabriqués. Une construction partiellement visible ne constitue donc pas un monument intégralement reproduit.
 
+L’audit détaillé des 71 secteurs de relief partiels ne trouve aucun raster absent. Les 1 933 nœuds utiles manquants situés dans le contour restent à moins de 11,03 m de sa limite côtière ; les autres nœuds manquants sont hors contour. Les 92 destinations ont une altitude source disponible. Ces constats ne justifient aucun comblement artificiel du masque IGN.
+
 [Documentation de la v0.69, commandes et limites](game/README_v69.md).
 [État chiffré et empreintes de la livraison métropolitaine](game/data/v69/METROPOLE_DELIVERY.json).
+[Exporter et réinstaller le cache vérifié](game/tools/metropole/README_world_bundle.md).
 
 ## Développer et vérifier
 

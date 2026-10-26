@@ -9,6 +9,22 @@
     !['','no','false','0'].includes(String(p['building:part']).trim().toLowerCase()));
   const hash=value=>{let n=2166136261;for(const c of String(value)){n^=c.charCodeAt(0);n=Math.imul(n,16777619);}return n>>>0;};
   const mul=(colour,factor)=>colour.map(value=>Math.max(0,Math.min(1,value*factor)));
+  function landcoverAppearance(properties={}){
+    const natural=String(properties.natural||'').toLowerCase(),landuse=String(properties.landuse||'').toLowerCase(),leisure=String(properties.leisure||'').toLowerCase();
+    let kind='other',colour=[.21,.24,.22];
+    if(['wood'].includes(natural)||landuse==='forest'){kind='forest';colour=[.09,.19,.16];}
+    else if(['beach','sand','shingle'].includes(natural)){kind='beach';colour=[.46,.40,.28];}
+    else if(['bare_rock','scree','rock'].includes(natural)){kind='rock';colour=[.39,.40,.36];}
+    else if(natural==='wetland'){kind='wetland';colour=[.13,.23,.23];}
+    else if(['scrub','heath'].includes(natural)){kind='scrub';colour=[.18,.25,.20];}
+    else if(['farmland','farmyard','orchard','vineyard'].includes(landuse)){kind='agriculture';colour=[.26,.28,.18];}
+    else if(landuse==='quarry'){kind='quarry';colour=[.38,.33,.26];}
+    else if(['grassland'].includes(natural)||['grass','meadow','village_green'].includes(landuse)){kind='grass';colour=[.19,.28,.19];}
+    else if(['park','garden','nature_reserve'].includes(leisure)){kind='park';colour=[.11,.24,.18];}
+    else if(['pitch','sports_centre','golf_course'].includes(leisure)){kind='sports';colour=[.15,.28,.22];}
+    else if(['industrial','commercial','retail','railway'].includes(landuse)){kind='developed';colour=[.25,.27,.28];}
+    return {kind,colour,source:'interpreted-colour-from-osm-landcover'};
+  }
   // Explicit OSM zeroes do not describe an elevated floor. Keep this strict:
   // coercing objects, booleans or malformed strings could hide a real datum.
   function zero(value){
@@ -34,8 +50,8 @@
   function emptyCounts(){return {triangles:0,terrainTriangles:0,missingTerrainTriangles:0,buildingTriangles:0,
     buildings:0,estimatedBuildings:0,ignHeightBuildings:0,missingGroundBuildings:0,
     sourceWallSegments:0,windows:0,litWindows:0,roadTriangles:0,waterTriangles:0,
-    landuseTriangles:0,unsupportedStructures:0,omittedOutlines:0,unknownFootprintAreaM2:0,
-    modelledRoofs:0,unsurveyedRoofs:0,estimatedRoadWidths:0,missingSurfacePieces:0};}
+    landuseTriangles:0,drapedWaterTriangles:0,unsupportedStructures:0,omittedOutlines:0,unknownFootprintAreaM2:0,
+    modelledRoofs:0,unsurveyedRoofs:0,canopyBackfaceTriangles:0,estimatedRoadWidths:0,missingSurfacePieces:0};}
 
   // A typed DEM-only tile has no vector record, including no fabricated empty
   // FeatureCollection. Its grid is validated upstream by the terrain loader.
@@ -176,7 +192,7 @@
           /^[a-f0-9]{64}$/i.test(candidate.proofSHA256||'')&&Number.isFinite(candidate.height)&&candidate.height>.05&&candidate.height<=1000&&Number.isFinite(candidate.groundAltitude);
         const legacyReference=referenceAllowed&&!eavesCandidate&&(ownBinding||legacySidecar)&&candidate&&F.canApplyHeight(p,candidate);
         const ref=eavesReference||legacyReference?candidate:null;
-        const dim=F.dimension(p,fallback,ref);if(!dim.valid)continue;
+        const dim=A.roofDimensions(p,F.dimension(p,fallback,ref));if(!dim.valid)continue;
         if(options.missingCanonicalDatums?.has(id)&&dim.heightSource!=='ign-bdtopo-height'){
           counts.missingGroundBuildings++;continue;
         }
@@ -198,13 +214,22 @@
         if(plan.modelled&&plan.shape!=='flat')counts.modelledRoofs++;
         for(const mesh of meshes){
           const triangles=mesh.trianglesL93.map(t=>t.map(local));
-          for(const t of A.roofTriangles(triangles,plan,projector))triangle(...t.map(([x,y,z])=>[x,base+y,z]),material.roof,'buildingTriangles',true);
+          for(const t of A.roofTriangles(triangles,plan,projector)){
+            const lifted=t.map(([x,y,z])=>[x,base+y,z]);
+            triangle(...lifted,material.roof,'buildingTriangles',true);
+            if(dim.openStructure){triangle(...lifted,mul(material.roof,.7),'buildingTriangles',false,[0,-1,0]);counts.canopyBackfaceTriangles++;}
+          }
           for(const [aa,bb]of mesh.wallsL93){
             const a=local(aa),b=local(bb),dx=b[0]-a[0],dz=b[1]-a[1],length=Math.hypot(dx,dz);if(length<1e-6||dim.openStructure)continue;
             let outward=[dz/length,0,-dx/length];const middle=[(aa[0]+bb[0])/2,(aa[1]+bb[1])/2];
             if(G.inPolygon([middle[0]+outward[0]*.01,middle[1]-outward[2]*.01],mesh.ringsL93))outward=outward.map(v=>-v);
             const ha=base+plan.heightAt(...aa),hb=base+plan.heightAt(...bb),floor=base+dim.minHeight;
-            quad([a[0],floor,a[1]],[b[0],floor,b[1]],[b[0],hb,b[1]],[a[0],ha,a[1]],mul(material.wall,.88+.08*Math.abs(outward[0])),'buildingTriangles',outward);counts.sourceWallSegments++;
+            for(const wall of A.wallSegments(a,b,plan,projector)){
+              quad([wall.a[0],floor,wall.a[1]],[wall.b[0],floor,wall.b[1]],
+                [wall.b[0],base+wall.topB,wall.b[1]],[wall.a[0],base+wall.topA,wall.a[1]],
+                mul(material.wall,.88+.08*Math.abs(outward[0])),'buildingTriangles',outward);
+            }
+            counts.sourceWallSegments++;
             // Foundation skirts follow original source walls only; unknown
             // ground endpoints are withheld rather than assigned zero height.
             if(dim.minHeight===0){const ga=grid.sample(...aa),gb=grid.sample(...bb);
@@ -238,19 +263,23 @@
           drape([ring[0],ring[1],ring[2]],colour,.06,'roadTriangles');drape([ring[0],ring[2],ring[3]],colour,.06,'roadTriangles');
         }
       }else if(layer==='landuse'){
-        const green=p.natural==='wood'||p.landuse==='forest'||p.leisure==='park'||p.landuse==='grass';
-        for(const mesh of p['soma:mesh53']||[])for(const t of mesh.trianglesL93)drape(t.map(local),green?[.10,.20,.17]:[.21,.24,.22],.025,'landuseTriangles');
+        const material=landcoverAppearance(p);
+        for(const mesh of p['soma:mesh53']||[])for(const t of mesh.trianglesL93)drape(t.map(local),material.colour,.025,'landuseTriangles');
       }else if(layer==='hydrography'){
         const explicit=typeof p.ele==='number'?p.ele:typeof p.ele==='string'&&/^-?\d+(?:\.\d+)?$/.test(p.ele.trim())?Number(p.ele):null;
         const sea=['sea','harbour','bay'].includes(String(p.water||''))||p.natural==='bay';
         const level=Number.isFinite(explicit)?explicit:sea?0:null;
-        if(level!==null)for(const mesh of p['soma:mesh53']||[])for(const t of mesh.trianglesL93)triangle(...t.map(q=>{const l=local(q);return[l[0],level,l[1]];}),[.025,.14,.18],'waterTriangles',true);
+        for(const mesh of p['soma:mesh53']||[])for(const t of mesh.trianglesL93){
+          if(level!==null)triangle(...t.map(q=>{const l=local(q);return[l[0],level,l[1]];}),[.025,.14,.18],'waterTriangles',true);
+          else{const before=counts.waterTriangles;drape(t.map(local),[.035,.16,.19],.035,'waterTriangles');counts.drapedWaterTriangles+=counts.waterTriangles-before;}
+        }
       }
     }
     return {vertices:new Float32Array(values),counts,boundsL93:bounds,centerL93,geometryBytes:values.length*4,
       heightPolicy:'OSM explicit height, then source-bound IGN reference; eaves use an unsurveyed flat roof, other missing heights are labelled estimates',
-      facadePolicy:'interpreted cyberpunk windows, no physical navigation or collision claim'};
+      facadePolicy:'interpreted cyberpunk windows, no physical navigation or collision claim',
+      landscapePolicy:'source landcover colours are interpreted; inland water without a declared level is a visual footprint draped only on valid DEM faces; sea, harbour and bay retain a conventional 0 m visual level, not a water-level survey'};
   }
-  const API={buildTile,buildTerrainTile};root.__SOMA_METRO_VIEW_CORE__=API;
+  const API={buildTile,buildTerrainTile,landcoverAppearance};root.__SOMA_METRO_VIEW_CORE__=API;
   if(typeof module!=='undefined'&&module.exports)module.exports=API;
 })(typeof window!=='undefined'?window:globalThis);

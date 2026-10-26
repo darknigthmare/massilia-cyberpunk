@@ -32,6 +32,76 @@ function meshFeature(id='osm/way/1',tags={},hole=false){
 }
 function vertices(result){const output=[];for(let i=0;i<result.vertices.length;i+=9)output.push(Array.from(result.vertices.slice(i,i+9)));return output;}
 
+test('source landcover classes have distinct interpreted colours without changing their geometry',()=>{
+ const kinds=[{natural:'wood'},{natural:'beach'},{natural:'bare_rock'},{natural:'wetland'},{landuse:'vineyard'},{landuse:'quarry'}];
+ assert.equal(new Set(kinds.map(p=>Viewer.landcoverAppearance(p).kind)).size,kinds.length);
+ assert.equal(new Set(kinds.map(p=>JSON.stringify(Viewer.landcoverAppearance(p).colour))).size,kinds.length);
+ for(const tags of kinds){
+  const f=meshFeature('osm/way/land',{...tags,'soma:layer':'landuse'},true),before=JSON.stringify(f),r=Viewer.buildTile(entry([f]),deps);
+  const expected=Viewer.landcoverAppearance(tags),surface=vertices(r).slice(r.counts.terrainTriangles*3);
+  assert(r.counts.landuseTriangles>0);assert.match(expected.source,/interpreted/);
+  for(const v of surface){assert(v[1]>20);for(let c=0;c<3;c++)assert(Math.abs(v[6+c]-expected.colour[c])<1e-6);}
+  assert.equal(JSON.stringify(f),before);
+ }
+ const material=Viewer.landcoverAppearance({natural:'wood'});material.colour[0]=99;
+ assert(Viewer.landcoverAppearance({natural:'wood'}).colour[0]<1);
+});
+
+test('inland water without a declared level colours only its source footprint on valid terrain',()=>{
+ const f=meshFeature('osm/way/lake',{'soma:layer':'hydrography',natural:'water',water:'lake'},true),before=JSON.stringify(f);
+ const result=Viewer.buildTile(entry([f]),deps),surface=vertices(result).slice(result.counts.terrainTriangles*3);
+ assert(result.counts.waterTriangles>0);assert.equal(result.counts.drapedWaterTriangles,result.counts.waterTriangles);
+ for(let i=0;i<surface.length;i+=3){
+  const tri=surface.slice(i,i+3),e=tri.reduce((s,v)=>s+v[0]+center[0],0)/3,n=tri.reduce((s,v)=>s+center[1]-v[2],0)/3;
+  assert(!(e>891065&&e<891085&&n>6246065&&n<6246085),'A source water courtyard/hole stays open.');
+  for(const v of tri)assert(Math.abs(v[1]-(grid().sample(v[0]+center[0],center[1]-v[2])+.035))<1e-4);
+ }
+ const masked=Viewer.buildTile(entry([f],grid(new Uint8Array(121))),deps);
+ assert.equal(masked.counts.waterTriangles,0);assert(masked.counts.missingSurfacePieces>0);
+ assert.equal(JSON.stringify(f),before);assert.match(result.landscapePolicy,/visual footprint/);
+});
+
+test('a declared water level is distinct from a visual overlay and remains source-bound',()=>{
+ const f=meshFeature('osm/way/lake',{'soma:layer':'hydrography',natural:'water',ele:'-2.5'},true),result=Viewer.buildTile(entry([f]),deps);
+ const surface=vertices(result).slice(result.counts.terrainTriangles*3);
+ assert.equal(result.counts.drapedWaterTriangles,0);assert.equal(result.counts.waterTriangles,8);
+ assert(surface.every(v=>v[1]===-2.5));
+});
+
+test('gabled source walls meet the ridge instead of leaving an open triangular gable',()=>{
+ const f=meshFeature('osm/way/gable',{'roof:shape':'gabled','roof:height':'3','roof:orientation':'along',heritage:'yes'});
+ const mesh=f.properties['soma:mesh53'][0];
+ for(const point of mesh.ringsL93[0])if(point[1]===6246100)point[1]=6246080;
+ const input=entry([f]),before=JSON.stringify(f),references=A.referenceIndex([input.layers.vector]);
+ const result=Viewer.buildTile(input,deps,{references,canonicalDatumsMap:new Map([[f.id,40]]),details:false});
+ assert.equal(result.counts.modelledRoofs,1);assert.equal(result.counts.sourceWallSegments,4);
+ const wall=vertices(result).filter(v=>Math.abs(v[4])<1e-7);
+ for(const east of [891050,891100])assert(wall.some(v=>Math.abs(v[0]+center[0]-east)<1e-5&&Math.abs(center[1]-v[2]-6246065)<1e-5&&v[1]===52),'Each source gable must contain its ridge endpoint.');
+ assert.equal(JSON.stringify(f),before);
+});
+
+test('an open roof has the same source surface visible from both sides without invented thickness',()=>{
+ const f=meshFeature('osm/way/canopy',{building:'roof','roof:shape':'hipped','roof:height':'3'});
+ for(const point of f.properties['soma:mesh53'][0].ringsL93[0])if(point[1]===6246100)point[1]=6246080;
+ const input=entry([f]),before=JSON.stringify(f),references=A.referenceIndex([input.layers.vector]);
+ const result=Viewer.buildTile(input,deps,{references,canonicalDatumsMap:new Map([[f.id,40]]),details:false});
+ assert(result.counts.canopyBackfaceTriangles>0);assert.equal(result.counts.buildingTriangles,2*result.counts.canopyBackfaceTriangles);
+ assert.equal(result.counts.sourceWallSegments,0);
+ const surface=vertices(result).slice(result.counts.terrainTriangles*3);
+ for(let i=0;i<surface.length;i+=6){
+  const top=surface.slice(i,i+3),bottom=surface.slice(i+3,i+6);
+  assert(top.every(v=>v[4]>0));assert(bottom.every(v=>v[4]<0));
+  const positions=vs=>vs.map(v=>JSON.stringify(v.slice(0,3))).sort();
+  assert.deepEqual(positions(top),positions(bottom));
+ }
+ assert.equal(JSON.stringify(f),before);
+});
+
+test('roof dimension derivation never revives dimensions rejected by the source dimension core',()=>{
+ const p={building:'roof',height:'10','roof:height':'.5'},dim={height:10,minHeight:9.8,heightSource:'osm-height',valid:false};
+ assert.equal(A.roofDimensions(p,dim),dim);assert.equal(dim.valid,false);
+});
+
 test('real core56 terrain triangles use local metres, absolute NGF and finite normals',()=>{
  const result=Viewer.buildTile(entry(),deps);assert.equal(result.counts.terrainTriangles,200);assert.equal(result.vertices.length,200*3*9);
  assert.ok(vertices(result).every(v=>v.every(Number.isFinite)&&v[0]>=-125&&v[0]<=125&&v[2]>=-125&&v[2]<=125&&v[1]>=20&&v[1]<=30&&v[4]>0));

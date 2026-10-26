@@ -53,19 +53,33 @@ function addRealBuildingBase69(z,g,rings,p,sourceId,index,partIndex=0){'''
 
 def patch_renderer(script):
     script=replace_once(script,'const dim = dimension(p, C50.buildingHeight(p, sourceId), heightReference(p, sourceId, z));',
-        'const sourceReference = heightReference(p, sourceId, z);\n    const dim = dimension(p, C50.buildingHeight(p, sourceId), sourceReference);',
+        'const sourceReference = heightReference(p, sourceId, z);\n    const dim = K.roofDimensions(p, dimension(p, C50.buildingHeight(p, sourceId), sourceReference));',
         'référence mesurée à l’égout conservée')
     script=replace_once(script,'const plan = K.roofPlan(p, dim, reference(p, sourceId, z.v50Record));',
         'const plan = {...K.roofPlan(p, dim, reference(p, sourceId, z.v50Record)),...window.__SOMA_HEIGHTS69__?.roofPolicy(p,sourceReference)};',
         'toiture inconnue au-dessus de la hauteur à l’égout')
     script=replace_once(script,"if (String(p['roof:shape'] || '').toLowerCase() !== 'skillion') return null;",
-        "if (!['skillion','pyramidal','dome'].includes(String(p['roof:shape'] || '').toLowerCase())) return null;",'références de toit')
+        "if (!['skillion','pyramidal','dome','gabled','hipped'].includes(String(p['roof:shape'] || '').toLowerCase())) return null;",'références de toit')
     script=replace_once(script,"String(feature.properties?.['roof:shape'] || '').toLowerCase() === 'skillion'",
-        "['skillion','pyramidal','dome'].includes(String(feature.properties?.['roof:shape'] || '').toLowerCase())",'index limité aux toits utiles')
+        "['skillion','pyramidal','dome','gabled','hipped'].includes(String(feature.properties?.['roof:shape'] || '').toLowerCase())",'index limité aux toits utiles')
+    script=replace_once(script,'g.tri(a, b, c, n, material.roof);',
+        'g.tri(a, b, c, n, material.roof);\n      if (canopy) g.tri(c, b, a, n.map(v=>-v), C.mul(material.roof,.7));',
+        'sous-face visible des couvertures ouvertes sans épaisseur inventée')
+    script=replace_once(script,'''      const face = [[a[0],floor,a[1]], [b[0],floor,b[1]], [b[0],topB,b[1]], [a[0],topA,a[1]]];
+      if ((-dz)*outward[0]+dx*outward[2] < 0) face.reverse();
+      // Shade by orientation, not fragment-local wall order: no colour seams.
+      g.quad(...face, outward, C.mul(material.wall, .92+.06*Math.abs(outward[0])));''',
+        '''      for (const wall of K.wallSegments(a,b,plan,z.v50Projector)) {
+        const face = [[wall.a[0],floor,wall.a[1]], [wall.b[0],floor,wall.b[1]],
+          [wall.b[0],wall.topB,wall.b[1]], [wall.a[0],wall.topA,wall.a[1]]];
+        if ((-dz)*outward[0]+dx*outward[2] < 0) face.reverse();
+        // Split source walls at roof ridges without adding footprint edges.
+        g.quad(...face, outward, C.mul(material.wall, .92+.06*Math.abs(outward[0])));
+      }''','pignons fermés au passage du faîtage')
     script=replace_once(script,"geometrySource: z.v50Record.v53Validated ? 'declared-source' : 'legacy',",
         "geometrySource: mesh.v69Derived ? 'derived-building-parts' : z.v50Record.v53Validated ? 'declared-source' : 'legacy',",'provenance du maillage dérivé')
     return replace_once(script,'lightingSource: material.lightingSource}});',
-        "lightingSource: material.lightingSource},v69:{roofGeometrySource:plan.geometrySource||null,accuracy:plan.accuracy||null,modelTessellationErrorM:plan.errorBoundM??null,heightKind:sourceReference?.heightKind||null,roofSurveyed:sourceReference?.roofSurveyed??null,heightReferenceProofSHA256:sourceReference?.proofSHA256||null,derivedBuildingParts:!!mesh.v69Derived,partParent:window.__SOMA_PARTS69__?.anchorId(z,p,sourceId)!==sourceId?window.__SOMA_PARTS69__.anchorId(z,p,sourceId):null}});",'précision paramétrique déclarée')
+        "lightingSource: material.lightingSource},v69:{roofGeometrySource:plan.geometrySource||null,accuracy:plan.accuracy||null,modelTessellationErrorM:plan.errorBoundM??null,minHeightSource:dim.minHeightSource||null,minHeightAccuracy:dim.minHeightAccuracy||null,heightKind:sourceReference?.heightKind||null,roofSurveyed:sourceReference?.roofSurveyed??null,heightReferenceProofSHA256:sourceReference?.proofSHA256||null,derivedBuildingParts:!!mesh.v69Derived,partParent:window.__SOMA_PARTS69__?.anchorId(z,p,sourceId)!==sourceId?window.__SOMA_PARTS69__.anchorId(z,p,sourceId):null}});",'précision paramétrique déclarée')
 
 
 def patch_terrain(script):
@@ -87,6 +101,9 @@ def patch_sight(script):
 
 def build():
     html=build_v68().decode('utf-8')
+    html=replace_once(html,'<head>',
+        '<head>\n<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22%3E%3Crect width=%2232%22 height=%2232%22 rx=%224%22 fill=%22%2305161c%22/%3E%3Cpath d=%22M6 24V8l10 10L26 8v16%22 fill=%22none%22 stroke=%22%236fe7e0%22 stroke-width=%223%22/%3E%3C/svg%3E">',
+        'icône locale sans requête réseau')
     source_pack,_=embedded(html,'soma-v53-embedded-pack')
     proof=loadproof(ROOT/'data/v69/building-parts.json',records=source_pack['records'],source_sha=source_pack['sourceReceipt']['sha256'])
     heights=load_height_matches(ROOT/'data/v69/building-height-matches.json.gz',records=source_pack['records'],source_sha=source_pack['sourceReceipt']['sha256'])

@@ -4,7 +4,7 @@ La v0.69 améliore les géométries du socle de Marseille et ajoute les outils n
 
 La partie jouable livrée reste **168 cellules de 250 m, soit 10,5 km² du centre de Marseille**. La liste des communes, un import vectoriel ou la présence d’un manifeste ne prouvent pas que tout ce territoire est reproduit ou jouable.
 
-Le **survol indépendant** dispose désormais dans cet environnement du paquet métropolitain complet préparé : **52 020 secteurs**, dont **51 809 avec vecteurs OSM** et **211 de relief seul**, avec relief IGN à 5 m, surfaces routières et **299 391 appariements IGN à l’égout** (326 058 fragments de cellules). Les 16 parents et 267 parties associés ont leur preuve propre ; les volumes résiduels inconnus restent absents. Le [rapport de livraison](data/v69/METROPOLE_DELIVERY.json) conserve les quantités, dates, empreintes et limites.
+Le **survol indépendant** dispose désormais dans cet environnement du paquet métropolitain complet préparé : **52 020 secteurs**, dont **51 809 avec vecteurs OSM, surfaces et navigation préparée** et **211 de relief seul**, avec relief IGN à 5 m et **299 391 appariements IGN à l’égout** (326 058 fragments de cellules). Les 16 parents et 267 parties associés ont leur preuve propre ; les volumes résiduels inconnus restent absents. Le [rapport de livraison](data/v69/METROPOLE_DELIVERY.json) conserve les quantités, dates, empreintes et limites.
 
 Les datasets lourds ne sont pas dans Git. Le dossier local préparé est `game/data/v69/metropole/` ; les sources et preuves complètes restent dans `/workspace/massilia-geodata-generated/`. Le survol utilise ce cache automatiquement. Sans lui, un nouveau clone affiche explicitement le centre partiel. Le paquet métropolitain n’introduit pas de navigation physique ou de migration de campagne et ne certifie pas une architecture 1:1 complète.
 
@@ -75,6 +75,16 @@ Les emprises résiduelles restent conservées dans les données comme zones dont
 
 En plus des toits à un pan déjà pris en charge, 26 empreintes pyramidales et 15 dômes du socle sont admissibles aux nouveaux modèles. Les paramètres OSM fournissent la forme déclarée et les hauteurs disponibles ; la position du sommet et le profil courbe sont **inférés**. Les emprises, cours et limites de cellule sont conservées. La borne d’erreur de triangulation d’un dôme décrit l’approximation mathématique du modèle, pas une précision de relevé du monument réel. Les formes insuffisamment renseignées restent explicitement non résolues.
 
+Les profils **gabled** (deux pans) et **hipped** (croupes) utilisent un contour complet quasi rectangulaire, une hauteur totale et une hauteur de toit OSM explicites. L’axe du faîtage et le profil restent inférés ; un carré sans orientation exploitable est refusé. Les murs source sont divisés aux ruptures du toit pour fermer les pignons sans créer de murs aux limites de cellule. Les triangles source conservent les cours intérieures. L’audit de 38 couples de hauteurs cohérents du catalogue métropolitain trouve **9 gabled et 1 hipped** admissibles ; les 28 autres restent approximatifs.
+
+Le cas hipped est l’**Ombrière du Vieux-Port** (`osm/way/200273945`). Ses tags donnent 10 m au total et 0,5 m de toit. En l’absence de déclaration de sous-face ou de niveau minimum, le modèle déduit une base de couverture à 9,5 m, étiquetée `derived-osm-total-minus-roof-rise` et `inferred`. Une déclaration minimum explicite reste prioritaire. Cette déduction ne constitue pas une mesure de passage libre. Les couvertures ouvertes affichent les mêmes triangles sur les deux faces, sans épaisseur ni poteaux inventés.
+
+## Paysages du survol
+
+Les emprises OSM de forêt, plage, roche, végétation basse, cultures, carrière et espaces aménagés reçoivent des couleurs distinctes. Les couleurs restent une interprétation artistique cyberpunk ; les emprises et la triangulation source ne changent pas. Aucune position d’arbre ou hauteur de végétation n’est fabriquée.
+
+Pour une emprise d’eau intérieure sans altitude déclarée, le survol colore uniquement les triangles de relief valides couverts par la source, en conservant ses trous et les NoData. Il ne crée pas de plan horizontal pour ces eaux. Ce drapage visuel ne constitue pas un relevé de niveau d’eau ou de bathymétrie. Les eaux possédant un niveau déclaré conservent leur traitement distinct. L’exception historique des emprises OSM de mer, port et baie reste une cote visuelle conventionnelle de **0 m**, sans prétendre mesurer le niveau d’eau instantané ou la marée.
+
 La génération facultative de la preuve de parties utilise le PBF vérifié pour les relations `type=building` :
 
 ```sh
@@ -94,6 +104,48 @@ Pour régénérer la correction livrée avec l’environnement GIS :
 ```sh
 python3 game/tools/metropole/road_surfaces.py
 ```
+
+## Navigation métropolitaine préparée
+
+Les **51 809 graphes de cellules** sont générés et validés dans cet environnement. Ils contiennent 1 767 811 occurrences de segments et 1 841 016 occurrences de nœuds ; les fragments partagés ne représentent pas autant d’objets distincts. La QA relit les sources vectorielles et natives, les masques d’accès, les barrières, les identités, les positions interpolées et les règles applicables. Chaque graphe passe le véritable noyau de navigation v0.63 ; 16 assemblages et routages voisins sont également contrôlés. Les 1 235 restrictions présentes comprennent 182 demi-tours entre ways distincts normalisés pour être pris en compte par ce moteur.
+
+Les voies de construction, accès verrouillés et conditions non interprétables restent traités prudemment. Les restrictions cyclistes que le routeur ne sait pas appliquer ne sont pas présentées comme résolues. Les ouvrages dépourvus d’altitude restent exclus. Les champs `physicalMovementReady`, `physicalAccessibilityVerified` et `campaignRoutingActivated` restent faux : ni le déplacement au sol ni la campagne ne sont activés par ces fichiers.
+
+Après génération, produire la preuve indépendante puis ajouter les graphes à un **clone non servi** du monde préparé :
+
+```sh
+"$MASSILIA_GEO_PYTHON" game/tools/metropole/navigation_qa.py \
+  --source /tmp/massilia-metropole/vectors/manifest.json \
+  --navigation /tmp/massilia-metropole/navigation/manifest.json \
+  --output /tmp/massilia-metropole/navigation/VALIDATION_REPORT.json
+
+python3 game/tools/metropole/attach_world_navigation.py \
+  --world /tmp/massilia-metropole/world \
+  --navigation /tmp/massilia-metropole/navigation/manifest.json \
+  --qa /tmp/massilia-metropole/navigation/VALIDATION_REPORT.json --progress
+```
+
+Le validateur indépendant demande Node.js et l’environnement GIS. L’attacheur utilise seulement Python standard : il exige une preuve complète liée au manifeste, aux cellules, aux sources et aux empreintes réelles du moteur gelé et du validateur. Il vérifie aussi la structure native minimale des graphes. Les assets existants sont conservés, la preuve est copiée dans le paquet et le manifeste est remplacé atomiquement. Les 211 cellules de relief seul ne reçoivent aucun graphe fabriqué.
+
+## Cache portable et diagnostic du relief
+
+[world_bundle.py](tools/metropole/world_bundle.py) exporte, vérifie et réinstalle le cache avec la bibliothèque standard Python, sans acquisition réseau. Les commandes, budgets, reçus SHA et plateformes de publication prises en charge sont détaillés dans [README_world_bundle.md](tools/metropole/README_world_bundle.md). Un import exige une destination absente et ne remplace pas un cache existant. Le paquet conserve exactement les sources, NoData et états de préparation ; son export ne certifie pas la fidélité architecturale.
+
+L’outil [diagnose_terrain_coverage.py](tools/v69/diagnose_terrain_coverage.py) relie le monde installé, les cellules DEM, les rasters natifs et le contour administratif :
+
+```sh
+"$MASSILIA_GEO_PYTHON" game/tools/v69/diagnose_terrain_coverage.py \
+  --world game/data/v69/metropole/manifest.json \
+  --terrain /chemin/vers/terrain/manifest.json \
+  --boundary game/data/v69/acquisition/amp-boundary-2026-10-25.geojson \
+  --territory game/data/v69/territory.json \
+  --anchors game/data/v69/settlement-anchors.json \
+  --raster-index /chemin/vers/natif/raster-index.json \
+  --receipt /chemin/vers/natif/source-receipt.json \
+  --output /tmp/massilia-terrain-diagnostic.json
+```
+
+L’audit réel ne trouve aucun raster absent. Les 71 cellules partielles se concentrent au Frioul et au Planier. Parmi les nœuds utiles manquants uniques, 108 113 sont hors contour et 1 933 dedans ; ceux-ci se répartissent entre 37 points entièrement NoData natifs et 1 896 points de frange d’interpolation stricte, tous à moins de 11,03 m de la limite administrative. L’extérieur du contour n’est pas assimilé automatiquement à la mer. Les 92 destinations ont une altitude connue. Une recherche bornée de métadonnées IGN plus fines a reçu trois réponses HTTP 403 ; aucun raster nouveau n’a été acquis et aucun masque n’a été réparé artificiellement.
 
 ## Paquet du socle et chargement par couches
 
@@ -240,13 +292,11 @@ Les surfaces distinguent largeurs OSM et estimations, préservent les trous et n
 "$MASSILIA_GEO_PYTHON" game/tools/metropole/assemble_world.py \
   --vectors /tmp/massilia-metropole/vectors/manifest.json \
   --terrain /tmp/massilia-metropole/terrain/manifest.json \
-  --surfaces /tmp/massilia-metropole/surfaces/surface-manifest.json \
-  --navigation /tmp/massilia-metropole/navigation/manifest.json \
   --territory game/data/v69/territory.json \
   --output /tmp/massilia-metropole/world
 ```
 
-L’assembleur vérifie les empreintes, éditions sources, emprises et liaisons entre couches. Les couches absentes restent `null`, les NoData restent invalides, et `activationPerformed` reste `false`. Même une préparation techniquement complète ne certifie pas les accès physiques ou la couverture des 92 communes.
+L’assembleur vérifie les empreintes, éditions sources, emprises et liaisons entre couches. Ce premier assemblage prépare vecteurs et relief ; les surfaces enrichies et la navigation sont ajoutées ensuite par les attacheurs avec leurs preuves, sur ce monde encore non servi. Les couches absentes restent `null`, les NoData restent invalides, et `activationPerformed` reste `false`. Même une préparation techniquement complète ne certifie pas les accès physiques ou la couverture des 92 communes.
 
 ### Hauteurs IGN BD TOPO locales
 
