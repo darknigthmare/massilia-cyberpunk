@@ -1,6 +1,8 @@
-# Massilia Cyberpunk — SOMA//MASSILIA v0.69
+# Massilia Cyberpunk — SOMA//MASSILIA v0.70
 
 **Marseille augmentée** poursuit la reconstruction de la ville dans l’ambiance cyberpunk du projet : architecture méditerranéenne, fenêtres éclairées et accents cyan, magenta et ambre.
+
+La v0.70 ajoute un **Cortex tactique** : trois augmentations actives, une infiltration avec mémoire des contacts et des bruits, et une analyse locale des itinéraires dans le survol. Les références de jeu demandées — *Syndicate*, *Cyberpunk 2077* et *E.Y.E: Divine Cybermancy* — orientent les choix tactiques, les ressources neurales et l’intrusion, dans les systèmes propres à Massilia.
 
 La campagne embarquée couvre **168 cellules de 250 m, soit 10,5 km² du centre de Marseille**. Le nouveau survol couvre les **92 communes de la métropole Aix-Marseille-Provence**, avec **52 020 secteurs de relief IGN à 5 m**, les objets OSM et **299 391 références IGN de hauteur à l’égout**. Le cache métropolitain complet est installé dans cet environnement cloud ; il reste hors Git. Une copie source seule utilise explicitement le centre partiel jusqu’à préparation des données. Les façades, toitures et dimensions encore inconnues restent interprétées : la restitution architecturale complète à 1:1 n’est pas atteinte.
 
@@ -11,7 +13,7 @@ Utilisez une copie complète de cette version, avec `game/`, `payload/` et le la
 - Windows : lancez **`LANCER_JEU.cmd` à la racine du dépôt**.
 - Linux/macOS : depuis la racine, exécutez `python3 lancer.py`.
 
-Le premier lancement restaure les fichiers originaux, vérifie leurs empreintes, reconstruit les éditions v0.68/v0.69, le mode de survol et les assets du centre déjà livré. Le serveur ouvre la v0.69 dans le navigateur et reste lié à la machine locale. `Ctrl+C` l’arrête. La préparation du jeu livré ne télécharge aucune donnée. Prévoir au moins 1 Go libre en plus du dépôt pour les sorties et fichiers temporaires ; les imports géographiques peuvent demander davantage.
+Le premier lancement restaure les fichiers originaux, vérifie leurs empreintes, reconstruit les éditions v0.68/v0.69/v0.70, les survols et les assets du centre déjà livré. Le serveur ouvre la v0.70 dans le navigateur et reste lié à la machine locale. `Ctrl+C` l’arrête. La préparation du jeu livré ne télécharge aucune donnée. Prévoir au moins 1 Go libre en plus du dépôt pour les sorties et fichiers temporaires ; les imports géographiques peuvent demander davantage.
 
 ```sh
 python3 lancer.py --prepare-only
@@ -22,6 +24,16 @@ python3 lancer.py --no-browser
 Sous Windows, remplacez `python3` par `python`. Utilisez `--port 8766` si nécessaire. Les anciennes commandes conservées dans `game/` visent les éditions antérieures : le lanceur à la racine choisit la version actuelle.
 
 Le bouton **« Survoler la métropole »** ouvre l’explorateur indépendant. Sa carte propose les 92 communes ; il affiche les données effectivement installées, avec un repli explicitement marqué sur le centre partiel. Le survol n’utilise aucune sauvegarde de campagne. Clavier ZQSD/WASD ou flèches, souris pour regarder, Espace pour monter, C pour descendre et Maj pour accélérer.
+
+## Ce qui change en v0.70
+
+- **Maj+F1** ouvre le Cortex tactique ; **Maj+F2/F3/F4** activent Écho de trame, Rempart cortical et Ancrage réflexe. Ils consomment le cyberdeck existant, avec délais et charge neurale. Les consommables **F1–F4** conservent leurs raccourcis.
+- L’accroupissement **C et Ctrl** est reconnu par la détection des unités tactiques. Elles perçoivent les pas et tirs à leur position d’émission et cherchent la dernière position connue après une perte de contact. Les brouillages existants conservent leurs effets distincts.
+- Les transferts et voyages détectent réellement les canaux de hack et de neutralisation en cours. Les augmentations respectent ces canaux et la sauvegarde conserve les attentes, sans rétablir les protections temporaires au chargement.
+- Le survol propose un **itinéraire local** sur les axes OSM préparés, avec limites de secteurs et recherche explicites. Le tracé et les projections restent distincts d’un accès physique vérifié.
+- L’index spatial conserve les 92 destinations et réduit le coût des recherches de cellules et communes. Les nouveaux matériaux OSM concernent **102 bâtiments**, sans modifier leurs emprises, hauteurs ou relief.
+
+[Commandes, références de jeu et portée de la v0.70](game/README_v70.md).
 
 ## Ce qui change en v0.69
 
@@ -58,21 +70,19 @@ Les fichiers originaux v0.67 et leurs empreintes restent conservés. Les HTML, r
 
 ```sh
 python3 lancer.py --prepare-only
-python3 game/build_v69.py --verify
+python3 lancer.py --verify
 python3 game/tools/metropole/bootstrap.py --verify
-python3 game/tools/serve_v69.py --no-browser
+python3 game/tools/serve_v70.py --no-browser
 ```
 
 Pour les contrôles JavaScript, utiliser Node.js 18 ou plus récent :
 
 ```sh
-node game/tests/v67/core.test.cjs
-node --test game/tests/v68/architecture.test.cjs game/tests/v68/renderer.test.cjs game/tests/v68/visual-profile.test.cjs
-node game/tests/v68/persistence.test.cjs
-node --test game/tests/v69/*.test.cjs
+node --test --test-concurrency=2 game/tests/v67/core.test.cjs game/tests/v68/*.test.cjs game/tests/v69/*.test.cjs game/tests/v70/*.test.cjs
+python3 -m unittest discover -s game/tests/v70 -p 'test_*.py'
 ```
 
-Les tests Python et les outils GIS facultatifs sont détaillés dans [README_v69.md](game/README_v69.md). Le contrôle Chromium avec Playwright reste disponible dans `game/tests/v68/browser_smoke.py`, avec `--version 0.69` et une URL de serveur pointant sur le HTML v0.69. Ces vérifications ne certifient ni une campagne humaine complète ni une reproduction métropolitaine 1:1.
+Les contrôles propres à la v0.70 sont détaillés dans [README_v70.md](game/README_v70.md) ; les outils GIS facultatifs restent documentés dans [README_v69.md](game/README_v69.md). Le contrôle historique Chromium avec Playwright reste disponible dans `game/tests/v68/browser_smoke.py`, avec `--version 0.69` et une URL de serveur pointant sur le HTML v0.69. Ces vérifications ne certifient ni une campagne humaine complète ni une reproduction métropolitaine 1:1.
 
 ## Sources
 
