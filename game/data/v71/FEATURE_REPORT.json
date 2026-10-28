@@ -1,0 +1,208 @@
+{
+  "schema": "soma-massilia/feature-delivery/1",
+  "version": "0.71.0",
+  "dateUTC": "2026-10-28",
+  "parentVersion": "0.70.0",
+  "parentCommit": "1f6cd14c3c5d9def9ce49eff0e0bcd03c60cb8fb",
+  "baseMainCommit": "8702c394bda5ea8d53d938c095e8b23f58dcbf9d",
+  "artifacts": {
+    "SOMA_MASSILIA_URBAIN_v0_71.html": {
+      "bytes": 64233402,
+      "sha256": "6bd174abf56504640edbc8c92a4d9279fb76f0d6b079f3d4ae4bbb5a948c333d",
+      "trackedInGit": false
+    },
+    "metropole-viewer-v71.html": {
+      "bytes": 1746632,
+      "sha256": "2f06f5c2d0710af5ce9e96d12290e46672fb98c099951c8a7523c9dbafd69a54",
+      "trackedInGit": false
+    }
+  },
+  "inspirationReferences": [
+    "Syndicate (PS3)",
+    "Cyberpunk 2077 (PS5)",
+    "E.Y.E: Divine Cybermancy (Steam)"
+  ],
+  "deliveredLots": {
+    "legacyPerception": {
+      "owners": [
+        "police pedestrians",
+        "legacy security",
+        "police drones",
+        "dispatch road vehicles",
+        "dispatch aircraft"
+      ],
+      "memorySeconds": 5,
+      "positionSources": [
+        "observed visual contact",
+        "located accepted shots",
+        "actual distance-based footsteps"
+      ],
+      "wantedAloneRevealsPosition": false,
+      "arrestRequiresVisibleContact": true,
+      "tacticalDoubleProcessingRemoved": true,
+      "numericICEAndBossOwnersPreserved": true,
+      "observerBudget": 256,
+      "newPersistenceDomain": false
+    },
+    "architectureInspector": {
+      "selection": "front-facing actually rendered triangles with scene occlusion",
+      "maximumDistanceMeters": 1500,
+      "maximumTriangles": 600000,
+      "sourceFacts": [
+        "OSM identity and tags",
+        "declared or inferred height",
+        "matched IGN eaves height",
+        "model base NGF",
+        "parametric or approximate roof",
+        "explicit appearance provenance"
+      ],
+      "newSourceGeometry": false,
+      "realSourceQA": "/workspace/massilia-geodata-generated/validation-v71-architecture/REAL_DATA_QA.json",
+      "verifiedCells": 17,
+      "realCases": [
+        "osm/way/431532367: IGN eaves17m",
+        "osm/way/264740438: gabled23m",
+        "Ombrière: hipped10m"
+      ],
+      "geometryBuffersAndCountsByteIdenticalTo70": true,
+      "extraNetworkReads": 0,
+      "campaignStorageWrites": 0,
+      "newRoofProfiles": 0
+    },
+    "routePresentation": {
+      "nativeRouterSHA256": "d2dc3ea29f653a066e3a812b7db3b79c0c8bb81cb97319ad888618048f37d9ae",
+      "sourceNamedWaysAndSteps": true,
+      "ambiguousAxisLabels": "declared name, native OSM identity and projection distance",
+      "maximumItineraryGroups": 120,
+      "exampleAxisMeters": 599.486655769,
+      "maximumMarkerSpans": 4096,
+      "maximumMarkerVertexBytes": 884736,
+      "markerElevation": "clipped to actual native fixed-diagonal DEM triangles in complete rendered cells; visual lift0.25m",
+      "partialOrMissingCellsOmitted": true,
+      "additionalTerrainNetworkReads": 0,
+      "nativeSourceConnectionsOnly": true,
+      "graphBudgetsUnchanged": {
+        "cells": 36,
+        "nodes": 12000,
+        "edges": 16000,
+        "accountedResidentBytes": 67108864,
+        "milliseconds": 3000,
+        "globalAssetRequests": 2
+      },
+      "physicalMovementActivated": false,
+      "nativeDEMRegressionPassed": true,
+      "partialOrOverlappingTriangleCoverageRefused": true,
+      "finalBrowserGPUTriangles": 1038
+    },
+    "launcher": {
+      "status": "passed",
+      "normalLaunchUsesVerifiedOutputs": true,
+      "timestampsAloneTrusted": false,
+      "fallbackOnModifiedOrCorruptInput": true,
+      "fullPrepareAndVerifyPreserved": true,
+      "originalsVerified": 27,
+      "payloadPartsVerified": 5,
+      "HTMLFilesVerified": 7,
+      "centreAssetCellsVerified": 168,
+      "fixtureTestsPassed": 11,
+      "fastIntegritySeconds": [
+        0.6922248560003936,
+        0.6901390889979666
+      ],
+      "normalLaunchToHTTPSeconds": 1.2624963369962643,
+      "fullVerifySeconds": 56.666137460000755,
+      "measurementScope": "Warm filesystem measurements in this cloud machine; metadata/integrity startup cost, not gameplay frame rate.",
+      "report": "/workspace/massilia-geodata-generated/launch-v71-2026-10-28/REPORT.json",
+      "reportSHA256": "81854851b163f676a5244080257d319783816734933fce2a4b5988cddb4f600f"
+    }
+  },
+  "geography": {
+    "reusedVersion": "0.69.0",
+    "worldManifestSHA256": "881a3fec8837fe7922801102f5fa8c33ffa85ea743ed726e7d1f71dcb8ab0bfe",
+    "communes": 92,
+    "metropoleCells": 52020,
+    "vectorSurfaceNavigationCells": 51809,
+    "terrainOnlyCells": 211,
+    "partialTerrainCells": 71,
+    "nativeDEMStepMeters": 5,
+    "eavesHeightReferences": 299391,
+    "campaignCells": 168,
+    "campaignSquareKilometers": 10.5,
+    "sourceGeometryChanged": false,
+    "newGeographicCells": 0,
+    "fullArchitecturalOneToOne": false,
+    "physicalMetropoleCampaign": false
+  },
+  "continuity": {
+    "v70ProfilesAccepted": true,
+    "newDomainV71": false,
+    "existingCoreV70Preserved": true,
+    "temporaryEffectsRestored": false,
+    "viewerUsesCampaignState": false
+  },
+  "validation": {
+    "automatedTests": {
+      "inheritedJavascript": 295,
+      "v71Javascript": 44,
+      "javascript": 339,
+      "pythonV70": 21,
+      "pythonV71": 43,
+      "totalPassed": 403,
+      "failedFinal": 0,
+      "skipped": 0,
+      "javascriptConcurrency": 2,
+      "scope": "295 inherited JS passed in full run, all44finalv71JS rerun after native DEM fix; 21+43Python passed; no duplicated test count"
+    },
+    "stdlibBuildAndVerify": {
+      "main": true,
+      "viewer": true,
+      "originalFilesVerified": 27
+    },
+    "sourceOnlyParentViewer": {
+      "passed": true,
+      "sourcePathWasAbsent": true,
+      "reconstructedParentSHA256": "c7c8b4ed748609332527a3c0bc72afc80aef42a239d647831e0ed9ff9110b03c",
+      "frozenParentsWritten": false,
+      "scope": "actual69construction from original67 then verified70 temporary viewer; fullfreshcloud restoration not claimed"
+    },
+    "browser": {
+      "status": "passed",
+      "mainSHA256": "6bd174abf56504640edbc8c92a4d9279fb76f0d6b079f3d4ae4bbb5a948c333d",
+      "viewerSHA256": "2f06f5c2d0710af5ce9e96d12290e46672fb98c099951c8a7523c9dbafd69a54",
+      "report": "/workspace/massilia-geodata-generated/validation-v71-2026-10-28/browser/REPORT.json",
+      "reportSHA256": "716344af52c1eccd7fb17a0d6d21fa8e279292291123f9c328b524dbe39a2510",
+      "architectureEvidenceViewerSHA256": "931f9e80eba10c68acd5967ce02801f9b50afc3b3e058e5a9e6b6de62de79d50",
+      "architectureEvidenceScope": "Architecture module code and rendered building buffers remained frozen across the route-only native DEM correction, per release freeze; the actual architecture evidence remains bound to the earlier viewer SHA.",
+      "campaignContinuityPreserved": true,
+      "viewerStorageWrites": 0,
+      "JSConsoleWebGLErrors": 0,
+      "gpuTerrainTestPoints": 7266,
+      "gpuTerrainMaximumNumericalDifferenceMeters": 6.2627e-06,
+      "numericalComparisonMeaning": "agreement with rendered native DEM, not geographic survey accuracy",
+      "outsideResidentOmittedSpans": 121
+    },
+    "independentReview": {
+      "status": "passed",
+      "materialIssueFoundAndFixed": "marker ribbons now clip against actual native DEM triangles instead of interpolating only four corners",
+      "reviewedFix": "native plane clipping, barycentric heights, halo exclusion, incomplete coverage and GPU budget"
+    },
+    "evidenceDirectory": "/workspace/massilia-geodata-generated/validation-v71-2026-10-28",
+    "fullLauncherStdlibVerify": {
+      "passed": true,
+      "seconds": 56.666137460000755,
+      "report": "/workspace/massilia-geodata-generated/launch-v71-2026-10-28/REPORT.json"
+    }
+  },
+  "remainingWork": [
+    "architectural surveys of unknown facades/roofs/dimensions",
+    "additional source road widths and unresolved structure altitudes",
+    "physical access and campaign traversal throughout AMP"
+  ],
+  "dataDelivery": {
+    "cacheOutsideGit": true,
+    "archiveUnchanged": true,
+    "archive": "/workspace/massilia-geodata-generated/delivery-v69-2026-10-26/soma-metropole-v69-2026-10-26.somaworld",
+    "archiveSHA256": "37bc83835a4c9da031f1decacbdf80ae7ce5644236abefa50dc89811019b2211",
+    "freshCloudRestorationVerified": false
+  }
+}
