@@ -1,8 +1,8 @@
-# Massilia Cyberpunk — SOMA//MASSILIA v0.70
+# Massilia Cyberpunk — SOMA//MASSILIA v0.71
 
 **Marseille augmentée** poursuit la reconstruction de la ville dans l’ambiance cyberpunk du projet : architecture méditerranéenne, fenêtres éclairées et accents cyan, magenta et ambre.
 
-La v0.70 ajoute un **Cortex tactique** : trois augmentations actives, une infiltration avec mémoire des contacts et des bruits, et une analyse locale des itinéraires dans le survol. Les références de jeu demandées — *Syndicate*, *Cyberpunk 2077* et *E.Y.E: Divine Cybermancy* — orientent les choix tactiques, les ressources neurales et l’intrusion, dans les systèmes propres à Massilia.
+La v0.71 étend l’infiltration à la police et aux anciennes sentinelles, ajoute un **inspecteur architectural** des bâtiments visibles et présente les itinéraires par voies nommées, avec des repères en 3D. Le Cortex tactique conserve ses trois augmentations et le cyberdeck existant. Les références demandées — *Syndicate*, *Cyberpunk 2077* et *E.Y.E: Divine Cybermancy* — orientent les choix tactiques, les ressources neurales et l’intrusion, dans les systèmes propres à Massilia.
 
 La campagne embarquée couvre **168 cellules de 250 m, soit 10,5 km² du centre de Marseille**. Le nouveau survol couvre les **92 communes de la métropole Aix-Marseille-Provence**, avec **52 020 secteurs de relief IGN à 5 m**, les objets OSM et **299 391 références IGN de hauteur à l’égout**. Le cache métropolitain complet est installé dans cet environnement cloud ; il reste hors Git. Une copie source seule utilise explicitement le centre partiel jusqu’à préparation des données. Les façades, toitures et dimensions encore inconnues restent interprétées : la restitution architecturale complète à 1:1 n’est pas atteinte.
 
@@ -13,7 +13,9 @@ Utilisez une copie complète de cette version, avec `game/`, `payload/` et le la
 - Windows : lancez **`LANCER_JEU.cmd` à la racine du dépôt**.
 - Linux/macOS : depuis la racine, exécutez `python3 lancer.py`.
 
-Le premier lancement restaure les fichiers originaux, vérifie leurs empreintes, reconstruit les éditions v0.68/v0.69/v0.70, les survols et les assets du centre déjà livré. Le serveur ouvre la v0.70 dans le navigateur et reste lié à la machine locale. `Ctrl+C` l’arrête. La préparation du jeu livré ne télécharge aucune donnée. Prévoir au moins 1 Go libre en plus du dépôt pour les sorties et fichiers temporaires ; les imports géographiques peuvent demander davantage.
+Le premier lancement restaure les fichiers originaux, vérifie leurs empreintes, reconstruit les éditions v0.68 à v0.71, les survols et les assets du centre déjà livré. Le serveur ouvre la v0.71 dans le navigateur et reste lié à la machine locale. `Ctrl+C` l’arrête. La préparation du jeu livré ne télécharge aucune donnée. Prévoir au moins 1 Go libre en plus du dépôt pour les sorties et fichiers temporaires ; les imports géographiques peuvent demander davantage.
+
+Les lancements suivants contrôlent les sources, sorties et assets préparés avant de les réutiliser. Une entrée modifiée ou abîmée déclenche la préparation complète. `--prepare-only` et `--verify` conservent leurs contrôles complets.
 
 ```sh
 python3 lancer.py --prepare-only
@@ -24,6 +26,16 @@ python3 lancer.py --no-browser
 Sous Windows, remplacez `python3` par `python`. Utilisez `--port 8766` si nécessaire. Les anciennes commandes conservées dans `game/` visent les éditions antérieures : le lanceur à la racine choisit la version actuelle.
 
 Le bouton **« Survoler la métropole »** ouvre l’explorateur indépendant. Sa carte propose les 92 communes ; il affiche les données effectivement installées, avec un repli explicitement marqué sur le centre partiel. Le survol n’utilise aucune sauvegarde de campagne. Clavier ZQSD/WASD ou flèches, souris pour regarder, Espace pour monter, C pour descendre et Maj pour accélérer.
+
+## Ce qui change en v0.71
+
+- Les policiers à pied, drones, anciennes sentinelles et véhicules de poursuite utilisent des contacts réellement vus ou entendus. Ils cherchent une dernière position connue pendant cinq secondes. Les arrestations, quickhacks et collisions conservent leurs règles ; les ICE numériques et boss restent sous leurs systèmes propres.
+- Dans le survol, **I** ou **« Inspecter le bâtiment »** ouvre la fiche de la façade ou du toit visible sous le réticule. Elle distingue hauteur OSM, référence IGN à l’égout, estimations, toiture paramétrique et matériaux interprétés. Les surfaces qui cachent le bâtiment restent des obstacles à la sélection.
+- Les itinéraires présentent les **voies nommées** et les escaliers issus des graphes. Leurs repères cyan en 3D restent limités au relief complet déjà affiché, avec interruptions explicites dans les secteurs indisponibles ou partiels. Le bouton **« Effacer le trajet »** les retire.
+- La continuité v0.70 reste acceptée, sans nouveau domaine de sauvegarde. Les formes, hauteurs et altitudes du monde sont conservées ; l’inspecteur rend les limites des sources consultables.
+- Le lancement normal réutilise les sorties dont les sources et empreintes restent vérifiées, avec contrôle des assets du centre. Les modifications ou corruptions provoquent une reconstruction.
+
+[Guide de la v0.71](game/README_v71.md).
 
 ## Ce qui change en v0.70
 
@@ -72,17 +84,18 @@ Les fichiers originaux v0.67 et leurs empreintes restent conservés. Les HTML, r
 python3 lancer.py --prepare-only
 python3 lancer.py --verify
 python3 game/tools/metropole/bootstrap.py --verify
-python3 game/tools/serve_v70.py --no-browser
+python3 game/tools/serve_v71.py --no-browser
 ```
 
 Pour les contrôles JavaScript, utiliser Node.js 18 ou plus récent :
 
 ```sh
-node --test --test-concurrency=2 game/tests/v67/core.test.cjs game/tests/v68/*.test.cjs game/tests/v69/*.test.cjs game/tests/v70/*.test.cjs
+node --test --test-concurrency=2 game/tests/v67/core.test.cjs game/tests/v68/*.test.cjs game/tests/v69/*.test.cjs game/tests/v70/*.test.cjs game/tests/v71/*.test.cjs
 python3 -m unittest discover -s game/tests/v70 -p 'test_*.py'
+python3 -m unittest discover -s game/tests/v71 -p 'test_*.py'
 ```
 
-Les contrôles propres à la v0.70 sont détaillés dans [README_v70.md](game/README_v70.md) ; les outils GIS facultatifs restent documentés dans [README_v69.md](game/README_v69.md). Le contrôle historique Chromium avec Playwright reste disponible dans `game/tests/v68/browser_smoke.py`, avec `--version 0.69` et une URL de serveur pointant sur le HTML v0.69. Ces vérifications ne certifient ni une campagne humaine complète ni une reproduction métropolitaine 1:1.
+Les contrôles propres à la version actuelle sont détaillés dans [README_v71.md](game/README_v71.md) ; les augmentations héritées dans [README_v70.md](game/README_v70.md), et les outils GIS facultatifs dans [README_v69.md](game/README_v69.md). Le contrôle historique Chromium avec Playwright reste disponible dans `game/tests/v68/browser_smoke.py`, avec `--version 0.69` et une URL de serveur pointant sur le HTML v0.69. Ces vérifications ne certifient ni une campagne humaine complète ni une reproduction métropolitaine 1:1.
 
 ## Sources
 
