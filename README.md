@@ -1,8 +1,8 @@
-# Massilia Cyberpunk — SOMA//MASSILIA v0.71
+# Massilia Cyberpunk — SOMA//MASSILIA v0.72
 
 **Marseille augmentée** poursuit la reconstruction de la ville dans l’ambiance cyberpunk du projet : architecture méditerranéenne, fenêtres éclairées et accents cyan, magenta et ambre.
 
-La v0.71 étend l’infiltration à la police et aux anciennes sentinelles, ajoute un **inspecteur architectural** des bâtiments visibles et présente les itinéraires par voies nommées, avec des repères en 3D. Le Cortex tactique conserve ses trois augmentations et le cyberdeck existant. Les références demandées — *Syndicate*, *Cyberpunk 2077* et *E.Y.E: Divine Cybermancy* — orientent les choix tactiques, les ressources neurales et l’intrusion, dans les systèmes propres à Massilia.
+La v0.72 ajoute une **radio de contacts observés**, une surcharge netrunner préparée et interrompable, des itinéraires sur des corridors plus étendus et un **inspecteur de voirie**. Elle corrige aussi une largeur routière OSM déclarée jusque-là mal interprétée. Le Cortex tactique, l’inspecteur architectural et les repères 3D restent disponibles. Les références demandées — *Syndicate*, *Cyberpunk 2077* et *E.Y.E: Divine Cybermancy* — orientent les choix tactiques, les ressources neurales et l’intrusion, dans les systèmes propres à Massilia.
 
 La campagne embarquée couvre **168 cellules de 250 m, soit 10,5 km² du centre de Marseille**. Le nouveau survol couvre les **92 communes de la métropole Aix-Marseille-Provence**, avec **52 020 secteurs de relief IGN à 5 m**, les objets OSM et **299 391 références IGN de hauteur à l’égout**. Le cache métropolitain complet est installé dans cet environnement cloud ; il reste hors Git. Une copie source seule utilise explicitement le centre partiel jusqu’à préparation des données. Les façades, toitures et dimensions encore inconnues restent interprétées : la restitution architecturale complète à 1:1 n’est pas atteinte.
 
@@ -13,7 +13,7 @@ Utilisez une copie complète de cette version, avec `game/`, `payload/` et le la
 - Windows : lancez **`LANCER_JEU.cmd` à la racine du dépôt**.
 - Linux/macOS : depuis la racine, exécutez `python3 lancer.py`.
 
-Le premier lancement restaure les fichiers originaux, vérifie leurs empreintes, reconstruit les éditions v0.68 à v0.71, les survols et les assets du centre déjà livré. Le serveur ouvre la v0.71 dans le navigateur et reste lié à la machine locale. `Ctrl+C` l’arrête. La préparation du jeu livré ne télécharge aucune donnée. Prévoir au moins 1 Go libre en plus du dépôt pour les sorties et fichiers temporaires ; les imports géographiques peuvent demander davantage.
+Le premier lancement restaure les fichiers originaux, vérifie leurs empreintes, reconstruit les éditions v0.68 à v0.72, les survols et les assets du centre déjà livré. Le serveur ouvre la v0.72 dans le navigateur et reste lié à la machine locale. `Ctrl+C` l’arrête. La préparation du jeu livré ne télécharge aucune donnée. Prévoir au moins 1 Go libre en plus du dépôt pour les sorties et fichiers temporaires ; les imports géographiques peuvent demander davantage.
 
 Les lancements suivants contrôlent les sources, sorties et assets préparés avant de les réutiliser. Une entrée modifiée ou abîmée déclenche la préparation complète. `--prepare-only` et `--verify` conservent leurs contrôles complets.
 
@@ -26,6 +26,15 @@ python3 lancer.py --no-browser
 Sous Windows, remplacez `python3` par `python`. Utilisez `--port 8766` si nécessaire. Les anciennes commandes conservées dans `game/` visent les éditions antérieures : le lanceur à la racine choisit la version actuelle.
 
 Le bouton **« Survoler la métropole »** ouvre l’explorateur indépendant. Sa carte propose les 92 communes ; il affiche les données effectivement installées, avec un repli explicitement marqué sur le centre partiel. Le survol n’utilise aucune sauvegarde de campagne. Clavier ZQSD/WASD ou flèches, souris pour regarder, Espace pour monter, C pour descendre et Maj pour accélérer.
+
+## Ce qui change en v0.72
+
+- Les unités compatibles partagent une **dernière position réellement observée**, dans une portée locale de 48 m. Une réception radio autorise une recherche, sans permettre de tirer à travers les murs ni de prolonger le souvenir en boucle.
+- Le netrunner prépare sa surcharge pendant **1,1 seconde**. Un coup reçu ou une perte de ligne de vue l’interrompt ; l’attaque consomme alors son délai de récupération. Le signal apparaît seulement dans le champ de caméra. L’effet neural et les coûts existants restent propriétaires de leurs actions.
+- Le routage conserve les deux extrémités du corridor : jusqu’à **96 cellules**, puis **192 après demande explicite**. Des trajets source de plus de 4 km ont été vérifiés ; une limite de couverture ne devient plus une fausse conclusion d’absence de trajet.
+- **J** ou **« Inspecter la voirie »** présente la surface visible, ses axes source compatibles, leurs largeurs déclarées ou estimées, les tags d’accès et d’ouvrage. Les intersections restent explicitement ambiguës. Une cohorte réelle est corrigée : un sentier `width='.5'` est rendu à **0,5 m**, au lieu de la largeur de repli de **1,8 m**.
+
+[Guide de la v0.72](game/README_v72.md).
 
 ## Ce qui change en v0.71
 
@@ -84,18 +93,18 @@ Les fichiers originaux v0.67 et leurs empreintes restent conservés. Les HTML, r
 python3 lancer.py --prepare-only
 python3 lancer.py --verify
 python3 game/tools/metropole/bootstrap.py --verify
-python3 game/tools/serve_v71.py --no-browser
+python3 game/tools/serve_v72.py --no-browser
 ```
 
 Pour les contrôles JavaScript, utiliser Node.js 18 ou plus récent :
 
 ```sh
-node --test --test-concurrency=2 game/tests/v67/core.test.cjs game/tests/v68/*.test.cjs game/tests/v69/*.test.cjs game/tests/v70/*.test.cjs game/tests/v71/*.test.cjs
+node --test --test-concurrency=2 game/tests/v67/core.test.cjs game/tests/v68/*.test.cjs game/tests/v69/*.test.cjs game/tests/v70/*.test.cjs game/tests/v71/*.test.cjs game/tests/v72/*.test.cjs
 python3 -m unittest discover -s game/tests/v70 -p 'test_*.py'
-python3 -m unittest discover -s game/tests/v71 -p 'test_*.py'
+python3 -m unittest discover -s game/tests/v72 -p 'test_*.py'
 ```
 
-Les contrôles propres à la version actuelle sont détaillés dans [README_v71.md](game/README_v71.md) ; les augmentations héritées dans [README_v70.md](game/README_v70.md), et les outils GIS facultatifs dans [README_v69.md](game/README_v69.md). Le contrôle historique Chromium avec Playwright reste disponible dans `game/tests/v68/browser_smoke.py`, avec `--version 0.69` et une URL de serveur pointant sur le HTML v0.69. Ces vérifications ne certifient ni une campagne humaine complète ni une reproduction métropolitaine 1:1.
+Les contrôles propres à la version actuelle sont détaillés dans [README_v72.md](game/README_v72.md) ; les augmentations héritées dans [README_v70.md](game/README_v70.md), et les outils GIS facultatifs dans [README_v69.md](game/README_v69.md). Les tests du lanceur historique v0.71 visent sa commande v0.71 ; le lanceur partagé actuel est testé dans v0.72. Le contrôle historique Chromium avec Playwright reste disponible dans `game/tests/v68/browser_smoke.py`, avec `--version 0.69` et une URL de serveur pointant sur le HTML v0.69. Ces vérifications ne certifient ni une campagne humaine complète ni une reproduction métropolitaine 1:1.
 
 ## Sources
 

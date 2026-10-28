@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Prepare the verified original release and launch SOMA//MASSILIA v0.71."""
+"""Prepare the verified original release and launch SOMA//MASSILIA v0.72."""
 
 from pathlib import Path
 import argparse
@@ -16,9 +16,9 @@ ROOT = Path(__file__).resolve().parent
 GAME = ROOT / "game"
 PAYLOAD = ROOT / "payload"
 CHUNK = 1024 * 1024
-BUILDERS = ("build_v68.py", "build_v69.py", "build_v70.py", "build_v71.py",
+BUILDERS = ("build_v68.py", "build_v69.py", "build_v70.py", "build_v71.py", "build_v72.py",
             "tools/build_metropole_viewer.py", "tools/build_metropole_viewer_v70.py",
-            "tools/build_metropole_viewer_v71.py")
+            "tools/build_metropole_viewer_v71.py", "tools/build_metropole_viewer_v72.py")
 
 
 class PreparationError(Exception):
@@ -186,25 +186,25 @@ def main():
     prepare(manifest)
     if str(GAME) not in sys.path:
         sys.path.insert(0, str(GAME))
-    from tools import launch_cache_v71
+    from tools import launch_cache_v72
     if not args.prepare_only:
-        cached = launch_cache_v71.try_ready(GAME)
+        cached = launch_cache_v72.try_ready(GAME)
         if cached['ready']:
-            print(f"Édition 0.71 contrôlée sans reconstruction ({cached['seconds']:.2f} s).", flush=True)
+            print(f"Édition 0.72 contrôlée sans reconstruction ({cached['seconds']:.2f} s).", flush=True)
             return serve(args)
-    expected_sources = launch_cache_v71.source_inputs(GAME)
+    expected_sources = launch_cache_v72.source_inputs(GAME)
     for name in BUILDERS:
         result = subprocess.call([sys.executable, str(GAME / name)], cwd=GAME)
         if result:
             return result
-    launch_cache_v71.record_prepared(expected_sources, GAME)
+    launch_cache_v72.record_prepared(expected_sources, GAME)
     if args.prepare_only:
         return 0
     return serve(args)
 
 
 def serve(args):
-    command = [sys.executable, str(GAME / "tools" / "serve_v71.py"), "--port", str(args.port)]
+    command = [sys.executable, str(GAME / "tools" / "serve_v72.py"), "--port", str(args.port)]
     if args.no_browser:
         command.append("--no-browser")
     return subprocess.call(command, cwd=GAME)

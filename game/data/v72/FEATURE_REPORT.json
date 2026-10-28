@@ -1,0 +1,211 @@
+{
+  "schema": "soma-massilia/feature-delivery/1",
+  "version": "0.72.0",
+  "dateUTC": "2026-10-28",
+  "parentVersion": "0.71.0",
+  "parentCommit": "e348acef66830210487b0615e662757880381c80",
+  "artifacts": {
+    "SOMA_MASSILIA_URBAIN_v0_72.html": {
+      "bytes": 64255096,
+      "sha256": "5d0b1a1dccdc304c10121b9b902f8cc84ba5818440af297ff19c8f6928df2429",
+      "trackedInGit": false
+    },
+    "metropole-viewer-v72.html": {
+      "bytes": 1774900,
+      "sha256": "8a4fd891473925e596787fe79e205d48a35c4ea9365ba53cbbdee34f6c7aa242",
+      "trackedInGit": false
+    }
+  },
+  "inspirationReferences": [
+    "Syndicate (PS3)",
+    "Cyberpunk 2077 (PS5)",
+    "E.Y.E: Divine Cybermancy (Steam)"
+  ],
+  "deliveredLots": {
+    "observedContactRadio": {
+      "rangeMetersInLocalPlane": 48,
+      "verticalRangeClaimed": false,
+      "maximumContacts": 128,
+      "maximumPeers": 512,
+      "maximumComparisonsPerClock": 4096,
+      "memoryMaximumSeconds": 5,
+      "receivedContactAuthorizesAttack": false,
+      "receivedContactAuthorizesArrest": false,
+      "receivedContactsRetransmitted": false,
+      "observationAndOriginPositionsSampled": true,
+      "expiryAndObjectIdentityPreserved": true,
+      "newCampaignOrNetworkState": false
+    },
+    "netrunnerCounterplay": {
+      "chargeSeconds": 1.1,
+      "interruptions": [
+        "actual received hit",
+        "personal contact lost",
+        "existing blind/jam effect",
+        "pause/hidden document",
+        "death/recovery/driving",
+        "import or zone/state replacement"
+      ],
+      "interruptionConsumesRecovery": true,
+      "originalEffect": {
+        "tension": 9,
+        "weaponJamSeconds": 2.8
+      },
+      "originalImpactCallbackPreserved": true,
+      "physicalDamageAdded": false,
+      "humanQuickhackTargetingExpanded": false,
+      "maximumChannels": 64,
+      "telegraphRequiresActualCameraVisibilityAndNativeBodyHeight": true
+    },
+    "sourceCorridors": {
+      "initialCells": 96,
+      "expandedCells": 192,
+      "initialCorridorMeters": 75,
+      "expandedCorridorMeters": 250,
+      "requiresExplicitExpansion": true,
+      "maximumAccountedResidentBytes": 134217728,
+      "initialNodes": 24000,
+      "expandedNodes": 48000,
+      "initialEdges": 32000,
+      "expandedEdges": 64000,
+      "defaultMillisecondsPerAnalysis": 6000,
+      "globalAssetRequests": 2,
+      "NAVReadsConcurrent": 1,
+      "nativeRouterSHA256": "d2dc3ea29f653a066e3a812b7db3b79c0c8bb81cb97319ad888618048f37d9ae",
+      "globalDisconnectionClaimed": false,
+      "exampleMeters": [
+        4716.825,
+        4098.885,
+        4805.21
+      ],
+      "exampleCellCounts": [
+        41,
+        54,
+        54
+      ],
+      "proof": "/workspace/massilia-geodata-generated/validation-v72-routing/ROUTE_CORRIDOR72_PROOF.json",
+      "proofSHA256": "cc2c32ac18e0cbdd3f6af53f5863f4cd1c73e2c39f2310a01675f38ccb0a650c",
+      "historicalConformanceTestsPassed": 22
+    },
+    "roadFidelity": {
+      "auditedCanonicalBuildingObjects": 1041023,
+      "auditedCanonicalRoadObjects": 266699,
+      "auditScope": "complete canonical OSM objects selected by intersection with official AMP boundary before tile/frontier clipping; not certified inventory or wholly contained count",
+      "newlyAdmissibleWidthCohort": 1,
+      "sourceIdentity": "osm/way/1413045827",
+      "cellId": "V52-MC-E12-N70",
+      "sourceWidthTag": ".5",
+      "previousRenderedWidthMeters": 1.8,
+      "correctedRenderedWidthMeters": 0.5,
+      "preparedAreaBeforeSquareMeters": 6.785707,
+      "preparedAreaAfterSquareMeters": 1.884919,
+      "correctedNativeDrapedTrianglesBefore": 8,
+      "correctedNativeDrapedTrianglesAfter": 6,
+      "sameCellOtherVerticesAndColoursByteIdentical": true,
+      "unchangedControlCells": 4,
+      "sourceAssetsRewritten": false,
+      "roadInspectorUsesRenderedTriangles": true,
+      "preparedUnionCandidateIdentityClaimedCertain": false,
+      "NAVGraphLoadedByInspector": false,
+      "proof": "/workspace/massilia-geodata-generated/validation-v72-fidelity/REAL_DATA_QA.json",
+      "proofSHA256": "27d5a1da67a85ba2af2900dcd9cd0b89473c2c45d8c74284accf74fb577fa91e"
+    },
+    "launcher": {
+      "edition": 72,
+      "HTMLFilesChecked": 9,
+      "reportsChecked": 7,
+      "originalFilesChecked": 27,
+      "payloadPartsChecked": 5,
+      "centreCellsChecked": 168,
+      "fullPrepareAndVerifyPreserved": true,
+      "timestampOnlyValidation": false,
+      "report": "/workspace/massilia-geodata-generated/validation-v72-2026-10-28/launch/REPORT.json",
+      "reportSHA256": "872c26e01eb7a2700f200f97146dff3f78641e5c97bfc612d2082cb6bda38535",
+      "cacheMedianSeconds": 0.6645494800000051,
+      "normalLaunchToHTTPSeconds": 1.1791199930000857,
+      "measurementScope": "warm cloud metadata/integrity startup, not gameplay FPS; timing measured on functional viewer before CSS-only adjustment"
+    }
+  },
+  "geography": {
+    "reusedDataVersion": "0.69.0",
+    "worldManifestSHA256": "881a3fec8837fe7922801102f5fa8c33ffa85ea743ed726e7d1f71dcb8ab0bfe",
+    "communes": 92,
+    "metropoleCells": 52020,
+    "vectorSurfaceNavigationCells": 51809,
+    "terrainOnlyCells": 211,
+    "partialTerrainCells": 71,
+    "nativeDEMStepMeters": 5,
+    "eavesHeightReferences": 299391,
+    "campaignCells": 168,
+    "campaignSquareKilometers": 10.5,
+    "originalSourceAssetsChanged": false,
+    "renderedRoadGeometryCorrected": true,
+    "newGeographicCells": 0,
+    "fullArchitecturalOneToOne": false,
+    "physicalMetropoleCampaign": false
+  },
+  "continuity": {
+    "v70AndV71ProfilesAccepted": true,
+    "newCoreV72": false,
+    "coreV70Preserved": true,
+    "transientBuffsRestored": false,
+    "viewerUsesCampaignStorage": false
+  },
+  "validation": {
+    "automatedTests": {
+      "javascript": 398,
+      "pythonV70": 21,
+      "pythonV71": 43,
+      "pythonV72": 46,
+      "totalPassed": 508,
+      "failedFinal": 0,
+      "skipped": 0,
+      "javascriptConcurrency": 2
+    },
+    "historicalLauncher71": {
+      "tests": 4,
+      "sourceCommit": "e348acef66830210487b0615e662757880381c80",
+      "sourceSHA256": "1f1c78230e9c2713249362ecc0dec227f57f22d458ff4f0ac90e1a8c85b1ea2e",
+      "method": "exact historical command executed in memory; test assertions unchanged; current launcher verified by v72 cases",
+      "requiresHistoricalGitObjectOnlyForDevelopmentReplay": true
+    },
+    "fullStdlibPrepare": true,
+    "fullStdlibVerify": true,
+    "inheritedSourcesPinned": 74,
+    "independentReview": "passed without material findings",
+    "browser": {
+      "status": "passed",
+      "functionalReport": "/workspace/massilia-geodata-generated/validation-v72-2026-10-28/browser/REPORT.json",
+      "functionalReportSHA256": "5a74e8a9f76e0eedb5b516a3ca1f8ad921b261221c0bd320470dde5e6cafec5f",
+      "functionalMainSHA256": "5d0b1a1dccdc304c10121b9b902f8cc84ba5818440af297ff19c8f6928df2429",
+      "functionalViewerSHA256": "430621ddff280ef143b834546fb15236cbad2b1edfa7f1d0154019e59cac5ea7",
+      "finalViewerSHA256": "8a4fd891473925e596787fe79e205d48a35c4ea9365ba53cbbdee34f6c7aa242",
+      "finalCSSReport": "/workspace/massilia-geodata-generated/validation-v72-2026-10-28/browser/POLISH_CSS_FINAL.json",
+      "finalCSSReportSHA256": "88bafcd450ad116ab79673054cea3c2b2400f671c8e6a90a9b5e207283ffcaeb",
+      "onlyFinalDifference": "source OSM link colour and underline offset; every script and all other DOM bytes identical",
+      "byteIdentityProof": "/workspace/massilia-geodata-generated/validation-v72-2026-10-28/tests/css-only-diff.json",
+      "viewerStorageWrites": 0,
+      "JSConsoleWebGLErrors": 0,
+      "continuityAndReturnPassed": true,
+      "radioNetrunnerAndInheritedDamagePassed": true,
+      "roadWidthAndExtendedCorridorPassed": true,
+      "nativeDEMComparedPoints": 7266,
+      "nativeDEMComparisonMeaning": "numerical agreement with native DEM, not survey accuracy",
+      "fixturesQualifiedInBrowserReport": true
+    },
+    "evidenceDirectory": "/workspace/massilia-geodata-generated/validation-v72-2026-10-28",
+    "fullStdlibVerifyScope": "All9builders passed on functional candidate; edition72 builders and verify rerun after CSS-only adjustment, inherited outputs unchanged."
+  },
+  "remainingWork": [
+    "architectural surveys for missing facades, roofs and dimensions",
+    "unsourced road widths and unresolved structure altitudes",
+    "physical metropolitan campaign traversal and access verification"
+  ],
+  "dataDelivery": {
+    "cacheOutsideGit": true,
+    "archiveUnchanged": true,
+    "archive": "/workspace/massilia-geodata-generated/delivery-v69-2026-10-26/soma-metropole-v69-2026-10-26.somaworld",
+    "archiveSHA256": "37bc83835a4c9da031f1decacbdf80ae7ce5644236abefa50dc89811019b2211",
+    "freshCloudRestorationVerified": false
+  }
+}
