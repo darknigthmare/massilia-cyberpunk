@@ -4,7 +4,7 @@
 
 Ce guide décrit les vérifications de **SOMA//MASSILIA v0.72**, à partir du commit
 [`e1b292a01b720e54d194d9e6f2a4d4b39581b9e8`](https://github.com/darknigthmare/massilia-cyberpunk/tree/e1b292a01b720e54d194d9e6f2a4d4b39581b9e8).
-Il constitue une procédure ; il ne rapporte aucune nouvelle exécution de tests.
+Il constitue une procédure ; les résultats restent ceux du rapport associé à chaque révision.
 Consigner le commit réellement vérifié, les commandes, les résultats et les limites.
 
 Une réussite des contrôles de code ne certifie ni une campagne humaine complète,
@@ -98,8 +98,89 @@ v72 vérifient le lanceur partagé actuel. Ne pas affaiblir leurs assertions pou
 
 Le smoke test `game/tests/v68/browser_smoke.py` accepte seulement les versions
 `0.68` et `0.69`. Il nécessite Playwright/Chromium et reste un contrôle historique.
-Ne pas annoncer une validation navigateur v72 à partir de ce script sans adaptation
-explicite, scénarios actuels et preuve d'exécution sur l'édition v72.
+Le contrôle courant est `game/tests/v72/browser_smoke.cjs`, décrit ci-dessous.
+Une réussite du script historique ne prouve pas une validation navigateur v72.
+
+## Smoke navigateur courant : campagne et survol v72
+
+Le [smoke v72](../../game/tests/v72/browser_smoke.cjs) utilise Playwright pour Node.js.
+**Playwright 1.56.1** est la version utilisée lors de la première exécution de ce contrôle.
+C'est une dépendance facultative de QA : le jeu reste jouable avec Python et un navigateur,
+sans Node.js ni Playwright. La présence du script ne constitue pas une preuve de réussite ;
+conserver son rapport d'exécution et le commit auquel il se rapporte.
+
+Pour installer cette dépendance de QA à la racine, sans modifier un manifeste du jeu :
+
+```sh
+npm install --no-save --package-lock=false playwright@1.56.1
+```
+
+Après la préparation complète décrite plus haut, démarrer le serveur dans un terminal :
+
+```sh
+python3 game/tools/serve_v72.py --no-browser --port 8765
+```
+
+Dans un second terminal, fournir le chemin d'un exécutable Chromium existant.
+Remplacer `/chemin/vers/chromium` dans cette commande ; ajuster le port si nécessaire :
+
+```sh
+node game/tests/v72/browser_smoke.cjs \
+  --url http://127.0.0.1:8765/SOMA_MASSILIA_URBAIN_v0_72.html \
+  --chromium /chemin/vers/chromium \
+  --output test-results/v72
+```
+
+Pour utiliser le Chromium géré par Playwright, exécuter `npx playwright install chromium`,
+puis omettre l'option `--chromium`. Le script utilise un contexte navigateur neuf et isolé,
+sans profil habituel, sauvegarde utilisateur, interception réseau ni remplacement des API du jeu.
+`--timeout` règle le délai maximal de chaque étape, en millisecondes ; sa valeur par défaut
+est `90000`. Les dépendances locales `/node_modules/` et les sorties `/test-results/`
+sont ignorées par Git.
+
+Le scénario exerce les points d'entrée et propriétaires réels :
+
+1. Charger l'édition v72, entrer par **Explorer Marseille réelle** et vérifier la scène,
+   les empreintes du socle et la compilation du programme WebGL2.
+2. Ouvrir le Cortex avec **Maj+F1**, fermer son panneau, puis activer le **Rempart** par
+   son bouton. Les compteurs, délais et la protection temporaire deviennent non nuls.
+3. Exporter la copie groupée, changer temporairement les crédits de 17, puis réimporter
+   avec l'importeur réel. Vérifier les valeurs restaurées et l'annulation de la protection.
+4. Recharger la page, contrôler la continuité, ouvrir le survol avec son bouton v72,
+   puis exercer les inspecteurs bâtiment et voirie sur la scène réellement chargée.
+5. Comparer le stockage durant le survol et revenir au jeu par son lien de retour.
+   Vérifier à nouveau les données persistantes et collecter les erreurs d'exécution.
+
+Le script fige temporairement la simulation avec `paused=true` pour comparer les délais
+sans temps de jeu écoulé. Cette instrumentation et la mutation des crédits figurent dans
+le rapport. Aucune scène de combat ni entité ennemie artificielle n'est injectée.
+
+Le répertoire de sortie contient `report.json`, les captures PNG et `grouped-save-v72.json`,
+copie de la partie fraîche du contrôle. Le rapport distingue les étapes réussies et échouées,
+les observations, les interventions du test, les limites et les erreurs JavaScript, console,
+HTTP ou réseau. Un échec produit un code de sortie non nul et, si possible, une capture
+supplémentaire ; conserver ce résultat pour diagnostiquer le problème.
+
+Un **HTTP 404 du seul manifeste métropolitain facultatif** est attendu uniquement si
+le repli sur le centre est ensuite réellement rendu et correctement annoncé.
+L'annulation du corps de cette même réponse peut produire `net::ERR_ABORTED` : elle n'est
+acceptée qu'avec la même URL de manifeste, un fetch 404 journalisé à la même étape et
+le repli observé. Le rapport la distingue des ressources annulées pendant une navigation.
+Les autres erreurs restent des échecs ; aucun échec réseau générique n'est masqué.
+
+### Portée de ce contrôle
+
+- Le domaine persistant `v70` partagé avec la v71 est vérifié dans le jeu v72.
+  Les anciennes pages et copies de sauvegarde v70/v71 restent à exercer séparément.
+- Une protection Cortex active est réellement nettoyée lors de l'import. Les contacts
+  radio et préparations netrunner sont contrôlés vides après restauration ; leur remise
+  à zéro depuis un combat réel actif reste à observer.
+- Un inspecteur peut retourner « vide », « occulté » ou « budget atteint » ; son résultat
+  est conservé explicitement. L'ouverture du panneau ne prouve pas la sélection d'un objet.
+- Le contrôle observe le manifeste installé et une première scène chargée. Les 92 destinations
+  administratives ne prouvent pas que le cache métropolitain complet est présent ou parcouru.
+- Le rendu headless demande SwiftShader. Il ne mesure pas les performances d'un GPU joueur,
+  ne valide pas un long parcours physique et ne certifie aucune restitution à 1:1.
 
 ## Parcours manuel de la v0.72
 
@@ -140,8 +221,10 @@ Les budgets existants et la libération des ressources restent des critères de 
 
 ## Prochaines validations à réaliser
 
-- Établir un smoke navigateur dédié à v72 couvrant campagne et survol avec preuves visuelles.
-- Exercer les sauvegardes de test v70/v71 dans l'édition courante et documenter la continuité.
+- Importer de véritables copies de sauvegarde v70/v71 dans l'édition courante et documenter
+  les valeurs conservées, migrations éventuelles et erreurs de compatibilité.
+- Observer en combat réel la radio, ses expirations et le netrunner interrompu, notamment
+  lors d'une pause, d'un import ou d'un changement de zone.
 - Rejouer les trajets AMP sur un cache identifié, en publiant couverture et tests sautés.
 - Mesurer un parcours de transitions sur plusieurs configurations graphiques identifiées.
 - Vérifier la lisibilité du Cortex, des télégraphes et des inspecteurs avec les options d'affichage.

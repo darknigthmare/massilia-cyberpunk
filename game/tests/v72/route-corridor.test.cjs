@@ -42,6 +42,38 @@ test('missing coverage cannot become an assertion that no route exists',async()=
  const missing=await api.preview({start:pt(-40),end:pt(290)});assert.equal(missing.code,'axis_unavailable');assert.equal(missing.continuation.available,true);
  assert.equal(missing.globalDisconnectionProven,false);assert.equal(missing.route,null);
 });
+test('a known cell without prepared NAV leaves explicit incomplete corridor coverage without an asset read',async()=>{
+ const missingId=tile(1).cellId,f=chain(3,{mutateWorld(world){delete world.tiles[1].navigation;}}),
+  before=JSON.stringify(f.world),r=await f.api.preview({start:pt(-100),end:pt(600)});
+ assert.equal(r.code,'corridor_incomplete');assert.equal(r.route,null);assert.equal(r.globalDisconnectionProven,false);
+ assert.equal(r.coverage.completeRequestedSector,false);assert.equal(r.coverage.requestedCells,3);
+ assert.deepEqual(r.coverage.missingCells,[missingId]);assert.equal(r.coverage.selectedCells.length,3);
+ assert.equal(r.coverage.loadedCells.length,2);assert.equal(f.requests.length,2);
+ assert(f.requests.every(({options})=>options.cellId!==missingId));
+ assert.equal(f.api.snapshot().catalogueCells,2);assert.equal(f.api.snapshot().residentGraphs,0);
+ assert.equal(JSON.stringify(f.world),before);
+});
+test('an unreadable NAV cell stays incomplete while a verified empty graph is complete known coverage',async()=>{
+ const f=chain(3),missingId=tile(1).cellId,reads=[],api=Preview.create({world:f.world,routerCore:core,
+  routerCoreSHA256:Preview.CORE_SHA256,loadAsset:async(d,options)=>{
+   reads.push(options.cellId);if(options.cellId===missingId)throw Object.assign(Error('missing'),{status:404});return f.assets.get(d.path);
+  }}),q={start:pt(-100),end:pt(600)},missing=await api.preview(q);
+ assert.equal(missing.code,'corridor_incomplete');assert.deepEqual(missing.coverage.missingCells,[missingId]);
+ assert.equal(missing.coverage.completeRequestedSector,false);assert.equal(reads.length,3);assert.equal(missing.coverage.loadedCells.length,2);
+ const empty=chain(3,{mutateGraph(g,i){if(i===1)Object.assign(g,{nodes:[],edges:[],turns:[],edgeSources:[],bicycleMasks:[],nodeTags:{},ways:{}});}}),
+  complete=await empty.api.preview(q);
+ assert.equal(complete.code,'no_route_in_loaded_network');assert.equal(complete.coverage.completeRequestedSector,true);
+ assert.deepEqual(complete.coverage.missingCells,[]);assert.equal(complete.coverage.loadedCells.length,3);
+ assert.equal(complete.globalDisconnectionProven,false);assert.equal(complete.route,null);
+});
+test('known unprepared cells retain corridor and catalogue budgets',async()=>{
+ const f=chain(3,{mutateWorld(world){delete world.tiles[1].navigation;},budgets:{maxCells:2}}),
+  r=await f.api.preview({start:pt(-100),end:pt(600)});
+ assert.equal(r.code,'corridor_cell_budget');assert.equal(r.coverage.requestedCells,3);assert.equal(r.coverage.spineCells,3);
+ assert.equal(r.coverage.uncoveredSpineCells.length,1);assert.equal(f.requests.length,0);assert.equal(r.route,null);
+ assert.throws(()=>chain(3,{mutateWorld(world){for(const t of world.tiles)delete t.navigation;},
+  budgets:{maxDecodedBytes:1,maxResidentBytes:8}}),/budget résident/);
+});
 test('omitted lateral coverage reports corridor incomplete instead of no route',async()=>{
  const a=tile(),b=tile(1),side=tile(0,-1),f=setup([
  [a,graph(a,[['n/1',-100,0],['n/2',50,0]],[[0,1,'100']])],

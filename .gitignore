@@ -24,3 +24,7 @@ __pycache__/
 /game/data/v72/BUILD_REPORT.json
 /game/data/v72/VIEWER_BUILD_REPORT.json
 /game/data/v72/LAUNCH_CACHE.json
+
+# Dépendances et résultats facultatifs du smoke navigateur.
+/node_modules/
+/test-results/

@@ -1,0 +1,60 @@
+{
+  "schema": "massilia/gamedev-application-evidence/1",
+  "date": "2026-10-29",
+  "gameBaseCommit": "e1b292a01b720e54d194d9e6f2a4d4b39581b9e8",
+  "documentationParentCommit": "3c8f9727d65b4fc6e88b919f10a07585a39ee380",
+  "sources": {
+    "game/src/v72/route-corridor-core.js": {
+      "sha256": "c2b7164d5151b6f4fb063e428dfae24f9e964190426757e2cbd8f15d6b48b8ec",
+      "bytes": 30619
+    },
+    "game/tests/v72/route-corridor.test.cjs": {
+      "sha256": "4beb3112f1234aa0a9c5ef803a5f049f62fcafc066757d5b0efb2098e7fc7207",
+      "bytes": 8888
+    },
+    "game/tests/v72/browser_smoke.cjs": {
+      "sha256": "2c2cfdb531b2aa36b65d9ea0ac5f7db3410f9d87c1e71befb20fdd77b5138aea",
+      "bytes": 25965
+    }
+  },
+  "generatedOutputs": {
+    "game/SOMA_MASSILIA_URBAIN_v0_72.html": {
+      "sha256": "5d0b1a1dccdc304c10121b9b902f8cc84ba5818440af297ff19c8f6928df2429",
+      "bytes": 64255096
+    },
+    "game/metropole-viewer-v72.html": {
+      "sha256": "b0d2910a557c59197303a2907537d413a0d6c856d63bd2cdf8b6052d322863c7",
+      "bytes": 1775416
+    }
+  },
+  "evidence": {
+    "01-campaign-real-marseille.png": {
+      "sha256": "b3893dba0b53bda07baeef895aa0250a729395efb4538b08230bdd64458c4096",
+      "bytes": 532196
+    },
+    "02-cortex.png": {
+      "sha256": "1872905961610619f3ffd5fbf422d41a633057aff46a1b9d420c2afa36ce0c80",
+      "bytes": 233038
+    },
+    "03-flyover-installed-data.png": {
+      "sha256": "566cad0a4d9ce8008f2d6504574ac84cfb24533f7f9a41971c2155d9effff2d8",
+      "bytes": 365672
+    },
+    "04-inspector-architecture.png": {
+      "sha256": "a0cf41cd72b321bd0164d66a222f6f8f172874ea555a8f40c9c4515f30817b8d",
+      "bytes": 239527
+    },
+    "04-inspector-road.png": {
+      "sha256": "f308eba62d6756e7aa7d11e58b1014ad79587154bf8483a4e87499c038827dad",
+      "bytes": 249858
+    },
+    "javascript-tests.txt": {
+      "sha256": "7c526e961117c532aa0ba49891c4e366a41d0af933e713eb07b6843131f965df",
+      "bytes": 15965
+    },
+    "report.json": {
+      "sha256": "6bd72822ea1173b21010e87aaa20c3083c2f791222dde671c97d8df46bfc3dda",
+      "bytes": 29512
+    }
+  }
+}

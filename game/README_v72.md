@@ -38,6 +38,8 @@ Les limites initiales sont 24 000 nœuds, 32 000 arêtes, 128 Mio résidents com
 
 Une couverture incomplète, une limite et une absence de trajet dans le corridor chargé ont des statuts distincts. Les identités natives, accès, sens uniques, tours et escaliers restent soumis au noyau63 vérifié. Aucun raccord n’est ajouté entre des axes qui se croisent sans jonction source. Les approches libres, ponts, tunnels et conditions non résolues restent exclus ; un détour hors corridor peut exister.
 
+Les cellules déclarées dans le monde mais sans descripteur NAV restent désormais comptées dans le corridor et ses budgets. Elles figurent parmi les cellules manquantes, sans lecture d’asset inventé. Sur le cas de régression à trois cellules, un secteur intermédiaire non préparé produit `corridor_incomplete` et une couverture incomplète. Un graphe vide dont l’intégrité est vérifiée reste, lui, une couverture connue : cette distinction évite d’annoncer à tort un corridor entièrement chargé.
+
 Trois paires réelles ont servi de preuve : un trajet Belsunce–Gillibert de **4 716,83 m sur 41 cellules**, et deux calculs initialement interrompus ou sans trajet local qui trouvent **4 098,89 m** et **4 805,21 m** après élargissement. L’aperçu 2D, les voies nommées et les repères 3D conservent leurs règles v0.71 : rubans découpés contre le MNT natif complet déjà affiché, sans comblement des secteurs absents. La navigation physique métropolitaine reste inactive.
 
 ## Fidélité et inspection de voirie
@@ -62,3 +64,5 @@ python3 -S lancer.py --verify
 Définir `MASSILIA_ROUTE_WORLD` vers le manifeste préparé exerce les vrais graphes AMP. Le corpus de routage70 est également rejoué contre72 en mémoire, avec ses assertions de source intactes et ses seules adaptations de planification documentées. Les quatre tests historiques du lanceur71 ont été exécutés sur sa vraie commande du commit `e348ace`, sans modifier leurs assertions ; le lanceur actuel est vérifié par les tests72.
 
 Le [rapport de livraison](data/v72/FEATURE_REPORT.json) consigne les empreintes, résultats et preuves. Les sources 67–71, 27 originaux et données métropolitaines restent conservés. La fidélité architecturale 1:1 complète reste un chantier : façades, toitures, largeurs et ouvrages encore inconnus requièrent des relevés ou sources supplémentaires.
+
+Un [smoke navigateur dédié à v72](tests/v72/browser_smoke.cjs) vérifie aussi le démarrage, le Cortex, l’export/import réel d’une sauvegarde de test, le rechargement, les inspecteurs du survol et le retour à la campagne dans un profil isolé. Playwright est une dépendance facultative de QA. Les commandes et limites figurent dans la [procédure de validation](../docs/development/VALIDATION.md) ; les résultats du correctif de couverture et de ce parcours sont consignés séparément dans le [rapport d’application des guides](../docs/development/APPLICATION_V72.md).
