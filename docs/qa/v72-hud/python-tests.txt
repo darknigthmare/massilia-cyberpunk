@@ -1,0 +1,66 @@
+
+test_build_v72.py
+test_original_pack_geographic_cores_and_campaign_continuity_are_byte_identical (test_build_v72.Build72RealParentTests.test_original_pack_geographic_cores_and_campaign_continuity_are_byte_identical) ... ok
+test_survol_does_not_reassign_the_real_v54_campaign_button (test_build_v72.Build72RealParentTests.test_survol_does_not_reassign_the_real_v54_campaign_button) ... ok
+test_atomic_publication_refuses_escape_symlink_and_cleans_failures (test_build_v72.Build72Tests.test_atomic_publication_refuses_escape_symlink_and_cleans_failures) ... ok
+test_edition_link_title_and_ephemeral_domain (test_build_v72.Build72Tests.test_edition_link_title_and_ephemeral_domain) ... ok
+test_edition_refuses_repeated_application_and_changed_flyover_anchor (test_build_v72.Build72Tests.test_edition_refuses_repeated_application_and_changed_flyover_anchor) ... ok
+test_missing_empty_or_duplicate_feature_contracts_are_refused (test_build_v72.Build72Tests.test_missing_empty_or_duplicate_feature_contracts_are_refused) ... ok
+test_parent_sources_are_frozen_before_extension_loading (test_build_v72.Build72Tests.test_parent_sources_are_frozen_before_extension_loading) ... ok
+test_prepare_is_reproducible_and_verify_checks_both_outputs (test_build_v72.Build72Tests.test_prepare_is_reproducible_and_verify_checks_both_outputs) ... ok
+test_script_snapshot_is_exact_bounded_and_cannot_end_its_container (test_build_v72.Build72Tests.test_script_snapshot_is_exact_bounded_and_cannot_end_its_container) ... ok
+test_wrong_parent_and_input_drift_prevent_build (test_build_v72.Build72Tests.test_wrong_parent_and_input_drift_prevent_build) ... ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 4.189s
+
+OK
+
+test_viewer_build_v72.py
+test_missing_explicit_source_is_not_silently_replaced (test_viewer_build_v72.Viewer72PublicationTests.test_missing_explicit_source_is_not_silently_replaced) ... ok
+test_parent_and_source_sha_drift_are_refused (test_viewer_build_v72.Viewer72PublicationTests.test_parent_and_source_sha_drift_are_refused) ... ok
+test_parent_derivation_delegates_without_publishing_any_parent (test_viewer_build_v72.Viewer72PublicationTests.test_parent_derivation_delegates_without_publishing_any_parent) ... ok
+test_repeated_prepare_and_verify_check_html_and_report (test_viewer_build_v72.Viewer72PublicationTests.test_repeated_prepare_and_verify_check_html_and_report) ... ok
+test_source_snapshot_drift_prevents_publication (test_viewer_build_v72.Viewer72PublicationTests.test_source_snapshot_drift_prevents_publication) ... ok
+setUpClass (test_viewer_build_v72.Viewer72RealParentTests) ... skipped 'Generated v71 viewer absent; source-only derivation tested separately.'
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.118s
+
+OK (skipped=1)
+
+test_launch_cache_v72.py
+test_all_four_actual_centre_asset_layers_are_hashed_even_on_receipt_hit (test_launch_cache_v72.LaunchCacheTests.test_all_four_actual_centre_asset_layers_are_hashed_even_on_receipt_hit) ... ok
+test_missing_or_bad_receipt_and_incomplete_outputs_fall_back (test_launch_cache_v72.LaunchCacheTests.test_missing_or_bad_receipt_and_incomplete_outputs_fall_back) ... ok
+test_new_transitive_source_and_pinned_new_edition_inputs_miss (test_launch_cache_v72.LaunchCacheTests.test_new_transitive_source_and_pinned_new_edition_inputs_miss) ... ok
+test_optional_metropole_and_download_sources_are_outside_required_receipt (test_launch_cache_v72.LaunchCacheTests.test_optional_metropole_and_download_sources_are_outside_required_receipt) ... ok
+test_parent_viewer_cannot_be_rebound_by_changing_its_report (test_launch_cache_v72.LaunchCacheTests.test_parent_viewer_cannot_be_rebound_by_changing_its_report) ... ok
+test_record_refuses_concurrent_transitive_edits_and_external_symlinks (test_launch_cache_v72.LaunchCacheTests.test_record_refuses_concurrent_transitive_edits_and_external_symlinks) ... ok
+test_repeat_hit_uses_no_builders_and_needs_no_git_or_optional_metropole (test_launch_cache_v72.LaunchCacheTests.test_repeat_hit_uses_no_builders_and_needs_no_git_or_optional_metropole) ... ok
+test_report_and_html_cannot_be_changed_together_to_reuse_an_old_receipt (test_launch_cache_v72.LaunchCacheTests.test_report_and_html_cannot_be_changed_together_to_reuse_an_old_receipt) ... ok
+test_same_size_same_timestamp_source_and_generated_html_edits_miss (test_launch_cache_v72.LaunchCacheTests.test_same_size_same_timestamp_source_and_generated_html_edits_miss) ... ok
+test_failed_builder_neither_records_a_receipt_nor_starts_server (test_launch_cache_v72.Launcher72Tests.test_failed_builder_neither_records_a_receipt_nor_starts_server) ... ok
+test_normal_hit_preserves_original_preparation_checks_and_serves72_without_builders (test_launch_cache_v72.Launcher72Tests.test_normal_hit_preserves_original_preparation_checks_and_serves72_without_builders) ... ok
+test_normal_miss_rebuilds_all_editions_and_records_only_after_success (test_launch_cache_v72.Launcher72Tests.test_normal_miss_rebuilds_all_editions_and_records_only_after_success) ... ok
+test_prepare_only_always_runs_full_chain_and_verify_is_read_only_and_full (test_launch_cache_v72.Launcher72Tests.test_prepare_only_always_runs_full_chain_and_verify_is_read_only_and_full) ... ok
+
+----------------------------------------------------------------------
+Ran 13 tests in 0.321s
+
+OK
+
+Viewer parent restored: rerun full test_viewer_build_v72.py
+test_missing_explicit_source_is_not_silently_replaced (test_viewer_build_v72.Viewer72PublicationTests.test_missing_explicit_source_is_not_silently_replaced) ... ok
+test_parent_and_source_sha_drift_are_refused (test_viewer_build_v72.Viewer72PublicationTests.test_parent_and_source_sha_drift_are_refused) ... ok
+test_parent_derivation_delegates_without_publishing_any_parent (test_viewer_build_v72.Viewer72PublicationTests.test_parent_derivation_delegates_without_publishing_any_parent) ... ok
+test_repeated_prepare_and_verify_check_html_and_report (test_viewer_build_v72.Viewer72PublicationTests.test_repeated_prepare_and_verify_check_html_and_report) ... ok
+test_source_snapshot_drift_prevents_publication (test_viewer_build_v72.Viewer72PublicationTests.test_source_snapshot_drift_prevents_publication) ... ok
+test_all_derived_scripts_parse_and_have_unique_ids (test_viewer_build_v72.Viewer72RealParentTests.test_all_derived_scripts_parse_and_have_unique_ids) ... ok
+test_campaign_and_external_scripts_stay_out (test_viewer_build_v72.Viewer72RealParentTests.test_campaign_and_external_scripts_stay_out) ... ok
+test_double_application_and_changed_edition_anchors_are_refused (test_viewer_build_v72.Viewer72RealParentTests.test_double_application_and_changed_edition_anchors_are_refused) ... ok
+test_metadata_return_link_and_runtime_use_edition72 (test_viewer_build_v72.Viewer72RealParentTests.test_metadata_return_link_and_runtime_use_edition72) ... ok
+
+----------------------------------------------------------------------
+Ran 9 tests in 3.839s
+
+OK

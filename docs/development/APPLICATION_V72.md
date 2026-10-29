@@ -1,5 +1,9 @@
 # Première application des guides gamedev à Massilia v0.72
 
+**Mise à jour du 29 octobre 2026 :** les chevauchements du HUD signalés dans ce
+rapport ont fait l'objet d'un [lot de correction et de validation dédié](HUD_V72.md).
+Les résultats, empreintes et limites ci-dessous restent ceux de la première passe.
+
 ## Résultat et périmètre
 
 Le 29 octobre 2026, le cadre décrit dans [GAMEDEV_SKILLS.md](GAMEDEV_SKILLS.md)

@@ -14,6 +14,12 @@ Le jeu courant est `SOMA_MASSILIA_URBAIN_v0_72.html`, le survol `metropole-viewe
 
 Les continuités v0.70/v0.71 restent acceptées. Aucun domaine `core.v72` n’est ajouté : radio, préparation ennemie et inspection sont éphémères. Les augmentations héritées utilisent toujours le cyberdeck v42 et `core.v70` ; **Maj+F1** ouvre le Cortex, **Maj+F2/F3/F4** activent ses capacités. Les consommables **F1–F4** gardent leur usage. Les imports effacent les états temporaires tout en conservant les délais et compteurs enregistrés.
 
+## HUD organisé par zones
+
+Le HUD v72 regroupe les panneaux dans huit zones : en-tête, navigation, alertes, statut, état du personnage, contexte géographique, combat et attribution des données. Les panneaux d'origine sont déplacés dans cette disposition en conservant leurs nœuds, identifiants, commandes et propriétaires. Le Cortex tactique rejoint les informations de combat à droite ; les menus masquent le HUD et ses descendants. Les règles d'apparition des panneaux conditionnels restent pilotées par leurs systèmes existants.
+
+Un [smoke navigateur du HUD](tests/v72/hud_browser_smoke.cjs) ajoute les contrôles de visibilité, de chevauchement et de redimensionnement sur 19 panneaux et quatre résolutions, ainsi que les parcours réels du Cortex. Le cas 700 × 800 concerne uniquement le menu ; il n'annonce pas une validation du jeu mobile. Les comparaisons de continuité ont lieu en pause, sans activation de capacité. La commande figure dans la [procédure de validation](../docs/development/VALIDATION.md) ; le [dossier du HUD v72](../docs/development/HUD_V72.md) décrit la disposition et les preuves associées.
+
 ## Radio de contacts observés
 
 Les unités compatibles partagent une position échantillonnée au moment d’un contact visuel réel. Caméras, tactiques et police gardent leurs propriétaires de perception ; factions explicites et équipes locales limitent les destinataires. La portée radio est de 48 m dans le plan local de la zone. Aucune précision entre étages n’est prétendue à partir de hauteurs relatives incompatibles.

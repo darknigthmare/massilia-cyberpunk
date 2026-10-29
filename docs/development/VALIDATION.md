@@ -182,6 +182,42 @@ Les autres erreurs restent des échecs ; aucun échec réseau générique n'est 
 - Le rendu headless demande SwiftShader. Il ne mesure pas les performances d'un GPU joueur,
   ne valide pas un long parcours physique et ne certifie aucune restitution à 1:1.
 
+## Smoke navigateur du HUD v72
+
+Le [smoke HUD](../../game/tests/v72/hud_browser_smoke.cjs) reprend les prérequis Playwright,
+le serveur `serve_v72.py` et les options du smoke précédent. Il utilise son propre contexte
+navigateur isolé et un répertoire de sortie distinct :
+
+```sh
+node game/tests/v72/hud_browser_smoke.cjs \
+  --url http://127.0.0.1:8765/SOMA_MASSILIA_URBAIN_v0_72.html \
+  --chromium /chemin/vers/chromium \
+  --output test-results/v72-hud
+```
+
+Après l'entrée réelle dans Marseille, le scénario mesure **19 panneaux** à **1920 × 1080**,
+**1440 × 1000**, **1280 × 720** et **1024 × 768**, puis revient à 1440 × 1000.
+Il contrôle leurs nœuds conservés pendant les transitions, leur visibilité, leur présence
+dans les huit zones, leurs limites dans la fenêtre, les intersections et le débordement
+horizontal, avec une tolérance de 1 pixel CSS.
+
+Le Cortex est ouvert par **Maj+F1**, puis par **Tab → Augmentations actives**.
+Ses redimensionnements couvrent les mêmes tailles et **700 × 800 pour le menu uniquement**.
+Le contrôle vérifie le masquage du sous-arbre HUD, le défilement et le clic réel de fermeture.
+Pendant les pauses créées par les menus, il compare seulement crédits, zone, `core.v70`
+et énergie du cyberdeck. Il n'active aucune capacité et n'écrit pas dans l'état du jeu.
+
+La sortie contient `report.json`, les mesures, les versions du navigateur et de Playwright,
+les erreurs collectées et les captures HUD à 1280/1024 ainsi que Cortex à 700 pixels de large.
+Une capture d'échec est tentée si nécessaire. Conserver le rapport avec la révision testée ;
+la commande documentée ne constitue pas un résultat d'exécution.
+
+La navigation complète au clavier, le jeu mobile, les situations de combat et les panneaux
+conditionnels de poursuite ou de conduite ne sont pas qualifiés par ce scénario.
+Le réglage « grands textes » existant concerne le dialogue ; il n'est pas traité comme
+un réglage de taille du HUD. Voir le [dossier du HUD v72](HUD_V72.md) pour le changement
+de disposition et ses preuves propres.
+
 ## Parcours manuel de la v0.72
 
 Lancer `python3 lancer.py --no-browser`, puis ouvrir l'adresse fournie par le serveur.

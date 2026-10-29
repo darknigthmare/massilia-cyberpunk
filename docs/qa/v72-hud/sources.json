@@ -1,0 +1,171 @@
+{
+  "schema": "massilia/hud-v72-evidence/1",
+  "date": "2026-10-29",
+  "parentCommit": "5a69f03603a2250d3a4c0fcd39752fd79eb980c7",
+  "pullRequest": "https://github.com/darknigthmare/massilia-cyberpunk/pull/4",
+  "guide": {
+    "repository": "gamedev-skills/awesome-gamedev-agent-skills",
+    "commit": "19d93f97c9c1ea0f8b306e77aa81e0d3e352d3e9",
+    "path": "skills/disciplines/game-ui-ux/SKILL.md"
+  },
+  "sources": {
+    "game/build_v72.py": {
+      "sha256": "fdeedbaae1582b0dc8651c2ca586093443980fe721b438d8fc94346f787abbbb",
+      "bytes": 16879
+    },
+    "game/tools/v72_hud.py": {
+      "sha256": "1137e850ec9635ac4c35f623d1bf4c641c9cb9747cb422c8657fbe4c10a4df3e",
+      "bytes": 807
+    },
+    "game/src/v72/hud-layout-runtime.js": {
+      "sha256": "e2642dd13d23927d79b61e5bff95878dcee15263af2c610777cc946c5a16c589",
+      "bytes": 8268
+    },
+    "game/tests/v72/hud_browser_smoke.cjs": {
+      "sha256": "236c92ded7adf1cf143e369613ef63b23fdc71f7bc3b1ae22e44eda1c57ba1d3",
+      "bytes": 29194
+    },
+    "game/tests/v72/browser_smoke.cjs": {
+      "sha256": "2c2cfdb531b2aa36b65d9ea0ac5f7db3410f9d87c1e71befb20fdd77b5138aea",
+      "bytes": 25965
+    }
+  },
+  "generatedOutputs": {
+    "game/SOMA_MASSILIA_URBAIN_v0_72.html": {
+      "sha256": "77f09426c0c68ec2702f8ce8cc46b75d5005d468d2988416f6cbe92155ae1c50",
+      "bytes": 64263418
+    },
+    "game/metropole-viewer-v72.html": {
+      "sha256": "b0d2910a557c59197303a2907537d413a0d6c856d63bd2cdf8b6052d322863c7",
+      "bytes": 1775416
+    }
+  },
+  "hudRun": {
+    "startedAt": "2026-10-29T13:52:41.452Z",
+    "finishedAt": "2026-10-29T13:55:47.738Z",
+    "stepsPassed": 19,
+    "rawReport": {
+      "sha256": "778de3657256e09a6deabf780edd37c4950ba1b979e495acebec209984993014",
+      "bytes": 769218
+    },
+    "storedReport": "report.json",
+    "serialization": "JSON compacté sans modification des valeurs ; égalité structurelle vérifiée."
+  },
+  "continuityRun": {
+    "startedAt": "2026-10-29T13:52:40.117Z",
+    "finishedAt": "2026-10-29T13:55:18.812Z",
+    "stepsPassed": 11,
+    "storedReport": "continuity/report.json"
+  },
+  "before": {
+    "commit": "5a69f03603a2250d3a4c0fcd39752fd79eb980c7",
+    "htmlSHA256": "5d0b1a1dccdc304c10121b9b902f8cc84ba5818440af297ff19c8f6928df2429",
+    "purpose": "Comparaison de la disposition ; les captures ne représentent pas un même instant de simulation."
+  },
+  "environment": {
+    "python": "3.12.3",
+    "node": "22.20.0",
+    "playwright": "1.56.1",
+    "chromium": "156.0.8078.73",
+    "headless": true,
+    "softwareWebGLRequested": true
+  },
+  "testResults": {
+    "javascript": {
+      "total": 62,
+      "passed": 60,
+      "skipped": 2,
+      "failed": 0
+    },
+    "python": {
+      "total": 32,
+      "passed": 32,
+      "skipped": 0,
+      "failed": 0
+    }
+  },
+  "evidence": {
+    "before/1024x768.png": {
+      "sha256": "e93b030119fbfaedae9e6c64712836c498d53d2c648858b763f88adee4c208e2",
+      "bytes": 393838
+    },
+    "before/1280x720.png": {
+      "sha256": "a98b6d85c0b8d567e4f7c8d0ddc32b030719dcf72500ebe691d4af8b185a3d76",
+      "bytes": 436801
+    },
+    "before/inventory.json": {
+      "sha256": "4b99c3a18ccf5b0f3d20bbe2e7d4810ddf46db41e8a2e13485e0324be7c99d84",
+      "bytes": 37375
+    },
+    "build-report.json": {
+      "sha256": "c07c55634c42994643fc2863bab1572a20814e4969d29f1e6bd17a3b9f94cc8a",
+      "bytes": 27897
+    },
+    "continuity/01-campaign-real-marseille.png": {
+      "sha256": "6b8c29a6cd917577bc3ae8de68781677df1d42146b22651d126c4e15b2c07de8",
+      "bytes": 561559
+    },
+    "continuity/02-cortex.png": {
+      "sha256": "f30c77aca444ae83dbcc49dd826e5d422128db875bb19f157115d028bed113ab",
+      "bytes": 229159
+    },
+    "continuity/03-flyover-installed-data.png": {
+      "sha256": "21e2895c792ec42cadd273f88e7dfc7f5730a7aada1a3b661af05a67a5f45571",
+      "bytes": 365807
+    },
+    "continuity/04-inspector-architecture.png": {
+      "sha256": "a0cf41cd72b321bd0164d66a222f6f8f172874ea555a8f40c9c4515f30817b8d",
+      "bytes": 239527
+    },
+    "continuity/04-inspector-road.png": {
+      "sha256": "f308eba62d6756e7aa7d11e58b1014ad79587154bf8483a4e87499c038827dad",
+      "bytes": 249858
+    },
+    "continuity/report.json": {
+      "sha256": "5797174343469b51991873fa926e195ccbfca43b0962a8e3f605c90e07214d9e",
+      "bytes": 29480
+    },
+    "cortex-700x800.png": {
+      "sha256": "c1e7803826c494ca2fcad5e80776202bbafbdaae25645eba1b7d2fb87329422f",
+      "bytes": 82664
+    },
+    "hud-1024x768.png": {
+      "sha256": "a6c5f9a516e2224f721e02dcb712adc64722fa94e539e890da07b2e0458cee0a",
+      "bytes": 432393
+    },
+    "hud-1280x720.png": {
+      "sha256": "1b4dd8b2919431ac46fbc7db13ec0fdc48197abb440c1a6de147e22a0ddb283d",
+      "bytes": 472120
+    },
+    "javascript-tests.txt": {
+      "sha256": "f9dbc088806e6bdcaea4e1e351454f4ad20f7fa0a8fa80084a7f42b275dd7aae",
+      "bytes": 15960
+    },
+    "python-summary.json": {
+      "sha256": "28faadf95fd16f905bd6f3f4f67ade2e2adcbb92de4cf09d060774c166595373",
+      "bytes": 427
+    },
+    "python-tests.txt": {
+      "sha256": "d536cc178fdd2eb8aca67341ea2bb8933e5a8aa2d26545fdf290296f3a54f4ea",
+      "bytes": 6982
+    },
+    "report.json": {
+      "sha256": "f960e00e1e425a4956aaf91bb410247325dadf7947af1f60bf1501a291fe9bed",
+      "bytes": 409623
+    },
+    "viewer-build-report.json": {
+      "sha256": "e80fea1aae9581d65131337082a72e39a7a89a690ff82c0456c048ee1545c27b",
+      "bytes": 28307
+    }
+  },
+  "builds": {
+    "campaign": {
+      "report": "build-report.json",
+      "originalFilesVerified": 27
+    },
+    "viewer": {
+      "report": "viewer-build-report.json",
+      "originalFilesVerified": 27
+    }
+  }
+}

@@ -1,0 +1,709 @@
+{
+  "bytes": 64263418,
+  "certifiedOneToOne": false,
+  "completeMetropole": false,
+  "geographicWorld": "data/v69/world/manifest.json",
+  "inputs": {
+    "frozenParentSources": {
+      "build.py": {
+        "bytes": 737,
+        "sha256": "94c6966abaa2e11f85af578ec14d6deba8ac7b400572a6747ba248f3276454cf"
+      },
+      "build_v68.py": {
+        "bytes": 5739,
+        "sha256": "04e6ac1adde4e656166710176a52597a65202b87ecd33ea7e1f15ab9eb55a1c0"
+      },
+      "build_v69.py": {
+        "bytes": 12075,
+        "sha256": "74a20fbc6366c46253dbfef5ae8d3b732270d06cdb589d6305be51c96c62d7ee"
+      },
+      "build_v70.py": {
+        "bytes": 10456,
+        "sha256": "4788f3e072f1708cecae0235aa5da5e88977a1a39c064537507db2126ee637ac"
+      },
+      "build_v71.py": {
+        "bytes": 9912,
+        "sha256": "b051415237c2e2d2234d2996e25e1decd768f98ea6a75965bd109d9889953cd4"
+      },
+      "src/v67/world-runtime.js": {
+        "bytes": 14529,
+        "sha256": "443146ea95abd6e70df221407a3b590827bf63235efcaf7ad2ef8a01fd397f43"
+      },
+      "src/v68/architecture-core.js": {
+        "bytes": 19053,
+        "sha256": "60acf299e9a8cc49a33491b24c6c00e906234f74869c828d7a4d7c1672c8fd01"
+      },
+      "src/v68/building-renderer.js": {
+        "bytes": 7769,
+        "sha256": "92837c8b37f321d8182b3edf8c9cb130ec4c254703973a78cc7f753e8dc13221"
+      },
+      "src/v68/world-runtime.js": {
+        "bytes": 4138,
+        "sha256": "9294390e7071d10ec125043ef899fa92ebfeece23ce87b06b5662c51b5a42b42"
+      },
+      "src/v69/building-parts.js": {
+        "bytes": 3554,
+        "sha256": "14a8b2767f4b347a6daa76cde6f4a889ae10e400b644aa9f06db0b6387b224b3"
+      },
+      "src/v69/height-references.js": {
+        "bytes": 5266,
+        "sha256": "fb2e12223d937c5f32c49b1d09da5da14485b9d7f3e59fcd7c53c0b713eb924c"
+      },
+      "src/v69/metropole-viewer-core.js": {
+        "bytes": 21984,
+        "sha256": "f1f2df8692635c8c25acfe12aef1ca4277f1893528a8748260233e02534f61c1"
+      },
+      "src/v69/metropole-viewer.html": {
+        "bytes": 8140,
+        "sha256": "08528097b8e41057c23928d53fc91bed7d7a871cc2346afa0083f261e0533d19"
+      },
+      "src/v69/metropole-viewer.js": {
+        "bytes": 33837,
+        "sha256": "ce8fe245f8a83767a200e28ed47959f3c3d0e72fb5284e906db9cdb40d944ab8"
+      },
+      "src/v69/road-fidelity.js": {
+        "bytes": 2098,
+        "sha256": "9d841f8c63223e521d0cfb6462e69b9224cbadedb236219d6c3e7a286a311d81"
+      },
+      "src/v69/roof-core.js": {
+        "bytes": 20729,
+        "sha256": "5c18fc4718f656ec372e89ce117095185dcec319517cdd3b92a060503259d3bd"
+      },
+      "src/v69/streaming-core.js": {
+        "bytes": 18539,
+        "sha256": "06995e1867257dca0e6ba2eed415326e16febbbd874ffa03a05a1028120f9ccc"
+      },
+      "src/v69/world-runtime.js": {
+        "bytes": 12026,
+        "sha256": "c3ab96db2a08d6df24610745e64877beb218fc0141d9034ee26a86fa41e67819"
+      },
+      "src/v70/augmentations-core.js": {
+        "bytes": 9283,
+        "sha256": "ea05cae0a634513c932728313f229a3cc82d604ad6a234e37e338dcf12dad215"
+      },
+      "src/v70/infiltration-core.js": {
+        "bytes": 12477,
+        "sha256": "f4ed8fec6f398ceba7677bf0423767fefe9ec18e5371c97eea5b90b7fc9ad220"
+      },
+      "src/v70/material-extension-core.js": {
+        "bytes": 3972,
+        "sha256": "3286a5209d51fbf8995580db14810be11522a08ed9485bd1ce71bc5cb7a1217b"
+      },
+      "src/v70/perception-runtime.js": {
+        "bytes": 9149,
+        "sha256": "7b691f45b3fba23e12d55a097e3ab7971e137daff47e99f41aba414fd5026c1a"
+      },
+      "src/v70/route-preview-core.js": {
+        "bytes": 26641,
+        "sha256": "3f1df2f74b4323e863b3ddc7734d4943e9d5e3ca3b8e7588645176c9f8c1c85f"
+      },
+      "src/v70/runtime.js": {
+        "bytes": 17590,
+        "sha256": "c82e36b043c0f12158022949464cf41ee22387507abf5383873af7dc3c8ac9ee"
+      },
+      "src/v70/viewer-runtime.js": {
+        "bytes": 16198,
+        "sha256": "716fa63a501864a2c5e5ae5ace5c434ea9f7915eac33dca8fd738a4015910c25"
+      },
+      "src/v70/world-index.js": {
+        "bytes": 14238,
+        "sha256": "3a53b1ed0b788ae721fed5830af9affab1e20999889816001d373408c4b4fad5"
+      },
+      "src/v71/architecture-inspector-core.js": {
+        "bytes": 7804,
+        "sha256": "b580c8852ef7a9b1878581927f32966b1003243a9bd614cc2c3d04e526b77ab1"
+      },
+      "src/v71/architecture-inspector-runtime.js": {
+        "bytes": 7475,
+        "sha256": "6ee6fe26e9b8679a01daef6ec4c0b7d9335d1b809c4cac23135fc3819d8d6335"
+      },
+      "src/v71/legacy-perception-runtime.js": {
+        "bytes": 6008,
+        "sha256": "905922773f083111f86de348d86588dcad97ba738b605b9d3bb5315a31b7c05f"
+      },
+      "src/v71/route-presentation-core.js": {
+        "bytes": 8013,
+        "sha256": "0825b1ac9f60d236a61016d4e6582141f58d7a96cb1b7e01dd63c1181047d59e"
+      },
+      "src/v71/viewer-route-runtime.js": {
+        "bytes": 1779,
+        "sha256": "1ae45800ea7a72c16a5f7f6d406d2357d4120f3dd2c35315818662830b10527b"
+      },
+      "tools/build_metropole_viewer.py": {
+        "bytes": 14604,
+        "sha256": "e6089c3541cb6452abcf15f1c14737cdc0f32fb01437abf7d8389e4177da28d7"
+      },
+      "tools/build_metropole_viewer_v70.py": {
+        "bytes": 18496,
+        "sha256": "f8eb3cae73bcb1b46f950496ef0892974579383e89fd7dabe3a1f51e69e592a1"
+      },
+      "tools/build_metropole_viewer_v71.py": {
+        "bytes": 6731,
+        "sha256": "149df6d6fd2ac80dd36d0e9f1200c7c2b11d4e94ef23e38a189e9f7b389540ea"
+      },
+      "tools/launch_cache_v71.py": {
+        "bytes": 10406,
+        "sha256": "cd63c0df89faf568aa0b9276a67e5b6bb98962330abaa4f76f027c5666d23fb1"
+      },
+      "tools/metropole/acquire_bdtopo.py": {
+        "bytes": 27727,
+        "sha256": "a436fd8287457cc8a339afee4276baf817984f2cce26a049aabb1eb8564a3ecf"
+      },
+      "tools/metropole/assemble_world.py": {
+        "bytes": 27012,
+        "sha256": "66cdad0ed481fbb840f05f1b524b1656683de97b895f5756e81358650f74d80b"
+      },
+      "tools/metropole/attach_height_references.py": {
+        "bytes": 16380,
+        "sha256": "b7829f700e7567adf832e14b1b0c78906eaa6f86233af7c735fe7835562905d9"
+      },
+      "tools/metropole/attach_world_navigation.py": {
+        "bytes": 15733,
+        "sha256": "3f917febc0819bde52d8984210ee550a580840fcb9a96ea8f76780cc2a2c5bf9"
+      },
+      "tools/metropole/attach_world_parts.py": {
+        "bytes": 16433,
+        "sha256": "2111492be9cf344d997a1a0337ee40caabafa4fe31e985befb003c66975c108c"
+      },
+      "tools/metropole/attach_world_surfaces.py": {
+        "bytes": 11582,
+        "sha256": "d19fccf58b90b13336db0f61bf9a791bdb9b73e3b893bb4ea23121c094d25b98"
+      },
+      "tools/metropole/bootstrap.py": {
+        "bytes": 22310,
+        "sha256": "fe9d5d993871067a90bf0a99f28192dfee7e15a4dc39c8a3ce04e190de425b80"
+      },
+      "tools/metropole/building_heights.py": {
+        "bytes": 38646,
+        "sha256": "35a84932181935ee6b3977124a24168b4c01c326c6c9a91abeb0e73a853aa573"
+      },
+      "tools/metropole/building_parts.py": {
+        "bytes": 25088,
+        "sha256": "e9a5abb2caadc3e23d355876b8c93aa994c4e9cd880040fbeab387f9635dd13d"
+      },
+      "tools/metropole/catalogue_building_parts.py": {
+        "bytes": 20410,
+        "sha256": "5cb22216add539b3693836ba9e36470d69b9fbb9c6bd52e7102fd39cd09140b7"
+      },
+      "tools/metropole/import_tiles.py": {
+        "bytes": 33123,
+        "sha256": "c360642b6c15b3342ed24700468b58f59aceb259a927dcf45f89f825f618ef2a"
+      },
+      "tools/metropole/match_catalogues.py": {
+        "bytes": 33734,
+        "sha256": "bedcf23f66f1fd9a77c6061c78dbc00b86dc553785a15eff1d754060a29c3030"
+      },
+      "tools/metropole/navigation_qa.py": {
+        "bytes": 36479,
+        "sha256": "cb783d8eb718340aa4451ae93d8ddf0b346d3bd014213dd4e0d4a46969f50ead"
+      },
+      "tools/metropole/navigation_tiles.py": {
+        "bytes": 36836,
+        "sha256": "01c43588515c693296afc2ffe9d152ab9ef956513397da5757c21d628cea13be"
+      },
+      "tools/metropole/road_surfaces.py": {
+        "bytes": 23142,
+        "sha256": "bc671261254571cddad9a9afa636d4d40a93a2d2530267ddb3fc4ccb7da46300"
+      },
+      "tools/metropole/settlement_anchors.py": {
+        "bytes": 12715,
+        "sha256": "14b3aff91b9d0155d85cacf048b357bd0db0d7ac605a0dca768c336a139074af"
+      },
+      "tools/metropole/surface_tiles.py": {
+        "bytes": 31036,
+        "sha256": "478f2cd53b73c2599e11100dd8ae6a72a5df6614323c33063fb96b3350e80647"
+      },
+      "tools/metropole/world_bundle.py": {
+        "bytes": 32776,
+        "sha256": "26a04b8d7e9308cee114f15546076216b1433250b809c5b937013b0c5f2c6875"
+      },
+      "tools/serve_game.py": {
+        "bytes": 1018,
+        "sha256": "cc26f315c7fc52d3cb457bec2cf376a9dd965c2f0b4e1d5496c7c56ab9b56d0a"
+      },
+      "tools/serve_v68.py": {
+        "bytes": 1532,
+        "sha256": "ada46a7b257e5364c01ad750bbdaa0607068f2dc0800d8f10d7a1b916aae9c72"
+      },
+      "tools/serve_v69.py": {
+        "bytes": 309,
+        "sha256": "a316f69c1a6e8676c50f97fc5d456a747545dc3eac566ed52dbeb851427c925e"
+      },
+      "tools/serve_v70.py": {
+        "bytes": 280,
+        "sha256": "30487a4269cf79e24b8916f8ca398388c5b6f517ecb2738740f2121560b85807"
+      },
+      "tools/serve_v71.py": {
+        "bytes": 311,
+        "sha256": "12d2963d3fa79e27577cd52eefbd7b9acac69074590379a6152a927a873dbca1"
+      },
+      "tools/v68_persistence.py": {
+        "bytes": 2833,
+        "sha256": "467adfc30c19e78ddb2d3b6f09355dba7c628025f057b712b8708bb3bccdbcf6"
+      },
+      "tools/v69/acquire_terrain.py": {
+        "bytes": 44919,
+        "sha256": "e16ec65d9b9eb06942424dd2cc2dd3a8a9eee409d386391b0681f08f83e5e230"
+      },
+      "tools/v69/build_terrain_coverage.py": {
+        "bytes": 18564,
+        "sha256": "ecb1e9c3cc8e59b43066e3438004069fbc1dea25caec5acc16258ea967bc7460"
+      },
+      "tools/v69/diagnose_terrain_coverage.py": {
+        "bytes": 24442,
+        "sha256": "eb30d03fde331a79609ff8fb878067ae2a7e187e083d58322011700d4614b193"
+      },
+      "tools/v69/fidelity_audit.py": {
+        "bytes": 22746,
+        "sha256": "cfbc9932e19241e24767b86b5bf275af5e3402f2ca962ab661ac311227cbc8d9"
+      },
+      "tools/v69/terrain_tiles.py": {
+        "bytes": 29779,
+        "sha256": "97eefd4802e45fa32f37d9da8863cdb2d5a25f06d65370ce782f269d98846c09"
+      },
+      "tools/v69_depth.py": {
+        "bytes": 4846,
+        "sha256": "01ec3f50adeb9997583dca9795e109b8d0590a4adece7255b6f22730040597e6"
+      },
+      "tools/v69_heights.py": {
+        "bytes": 8194,
+        "sha256": "169c87cb6456ce1b7ab04be0358a0587c45b8eabf4c1eb476d99af25b396c215"
+      },
+      "tools/v69_streaming.py": {
+        "bytes": 6357,
+        "sha256": "a8817848be92f5025968fcd984290ff434b25b449c27ee9295178e24a54e609f"
+      },
+      "tools/v69_terrain.py": {
+        "bytes": 17012,
+        "sha256": "d92b224177326a64c6c6b3efe341e6f43e60fc35ab173055bcf4131ebae086a6"
+      },
+      "tools/v70_gameplay.py": {
+        "bytes": 11244,
+        "sha256": "e3c43c4f66089bc6de44859e6d675931551d0ed5bc7bebb95ca7460a84e5bf54"
+      },
+      "tools/v70_persistence.py": {
+        "bytes": 2078,
+        "sha256": "a85888ed46be517d16bc0f6ae74fb8f068f81722c2d7ea3fb65ec0b9ead9bacf"
+      },
+      "tools/v71_architecture.py": {
+        "bytes": 7168,
+        "sha256": "5bd9a12e5d55bd91769151dae9c9547d188a21a16c576233ab26d0874eee97a0"
+      },
+      "tools/v71_legacy_perception.py": {
+        "bytes": 6401,
+        "sha256": "58a59285431b4c6240de6c5258022608915b428848c01a86cb03bd878257487b"
+      },
+      "tools/v71_route_viewer.py": {
+        "bytes": 8552,
+        "sha256": "794ec5779f42613aa98266439bafcf72e06b3b9fdfc6bab7be2216178afa4163"
+      },
+      "tools/verify_release.py": {
+        "bytes": 610,
+        "sha256": "046ea5be4b7ed202f942be46a9382f6f8609a1bc266ea99a7b4e561c48c24fd2"
+      }
+    },
+    "modules72": [
+      "fidelity-core",
+      "road-inspector-core",
+      "road-inspector-runtime",
+      "route-corridor-core",
+      "contact-sharing-runtime",
+      "netrunner-runtime",
+      "hud-layout-runtime"
+    ],
+    "parentInputs": {
+      "frozenParentSources": {
+        "build_v70.py": {
+          "bytes": 10456,
+          "sha256": "4788f3e072f1708cecae0235aa5da5e88977a1a39c064537507db2126ee637ac"
+        },
+        "src/v69/metropole-viewer.html": {
+          "bytes": 8140,
+          "sha256": "08528097b8e41057c23928d53fc91bed7d7a871cc2346afa0083f261e0533d19"
+        },
+        "src/v70/augmentations-core.js": {
+          "bytes": 9283,
+          "sha256": "ea05cae0a634513c932728313f229a3cc82d604ad6a234e37e338dcf12dad215"
+        },
+        "src/v70/infiltration-core.js": {
+          "bytes": 12477,
+          "sha256": "f4ed8fec6f398ceba7677bf0423767fefe9ec18e5371c97eea5b90b7fc9ad220"
+        },
+        "src/v70/material-extension-core.js": {
+          "bytes": 3972,
+          "sha256": "3286a5209d51fbf8995580db14810be11522a08ed9485bd1ce71bc5cb7a1217b"
+        },
+        "src/v70/perception-runtime.js": {
+          "bytes": 9149,
+          "sha256": "7b691f45b3fba23e12d55a097e3ab7971e137daff47e99f41aba414fd5026c1a"
+        },
+        "src/v70/route-preview-core.js": {
+          "bytes": 26641,
+          "sha256": "3f1df2f74b4323e863b3ddc7734d4943e9d5e3ca3b8e7588645176c9f8c1c85f"
+        },
+        "src/v70/runtime.js": {
+          "bytes": 17590,
+          "sha256": "c82e36b043c0f12158022949464cf41ee22387507abf5383873af7dc3c8ac9ee"
+        },
+        "src/v70/viewer-runtime.js": {
+          "bytes": 16198,
+          "sha256": "716fa63a501864a2c5e5ae5ace5c434ea9f7915eac33dca8fd738a4015910c25"
+        },
+        "src/v70/world-index.js": {
+          "bytes": 14238,
+          "sha256": "3a53b1ed0b788ae721fed5830af9affab1e20999889816001d373408c4b4fad5"
+        },
+        "tools/build_metropole_viewer.py": {
+          "bytes": 14604,
+          "sha256": "e6089c3541cb6452abcf15f1c14737cdc0f32fb01437abf7d8389e4177da28d7"
+        },
+        "tools/build_metropole_viewer_v70.py": {
+          "bytes": 18496,
+          "sha256": "f8eb3cae73bcb1b46f950496ef0892974579383e89fd7dabe3a1f51e69e592a1"
+        },
+        "tools/v70_gameplay.py": {
+          "bytes": 11244,
+          "sha256": "e3c43c4f66089bc6de44859e6d675931551d0ed5bc7bebb95ca7460a84e5bf54"
+        },
+        "tools/v70_persistence.py": {
+          "bytes": 2078,
+          "sha256": "a85888ed46be517d16bc0f6ae74fb8f068f81722c2d7ea3fb65ec0b9ead9bacf"
+        }
+      },
+      "modules71": [
+        "legacy-perception-runtime",
+        "architecture-inspector-core",
+        "architecture-inspector-runtime",
+        "route-presentation-core",
+        "viewer-route-runtime"
+      ],
+      "parentInputs": {
+        "frozen69Sources": {
+          "build_v69.py": {
+            "bytes": 12075,
+            "sha256": "74a20fbc6366c46253dbfef5ae8d3b732270d06cdb589d6305be51c96c62d7ee"
+          },
+          "src/v69/building-parts.js": {
+            "bytes": 3554,
+            "sha256": "14a8b2767f4b347a6daa76cde6f4a889ae10e400b644aa9f06db0b6387b224b3"
+          },
+          "src/v69/height-references.js": {
+            "bytes": 5266,
+            "sha256": "fb2e12223d937c5f32c49b1d09da5da14485b9d7f3e59fcd7c53c0b713eb924c"
+          },
+          "src/v69/metropole-viewer-core.js": {
+            "bytes": 21984,
+            "sha256": "f1f2df8692635c8c25acfe12aef1ca4277f1893528a8748260233e02534f61c1"
+          },
+          "src/v69/metropole-viewer.js": {
+            "bytes": 33837,
+            "sha256": "ce8fe245f8a83767a200e28ed47959f3c3d0e72fb5284e906db9cdb40d944ab8"
+          },
+          "src/v69/road-fidelity.js": {
+            "bytes": 2098,
+            "sha256": "9d841f8c63223e521d0cfb6462e69b9224cbadedb236219d6c3e7a286a311d81"
+          },
+          "src/v69/roof-core.js": {
+            "bytes": 20729,
+            "sha256": "5c18fc4718f656ec372e89ce117095185dcec319517cdd3b92a060503259d3bd"
+          },
+          "src/v69/streaming-core.js": {
+            "bytes": 18539,
+            "sha256": "06995e1867257dca0e6ba2eed415326e16febbbd874ffa03a05a1028120f9ccc"
+          },
+          "src/v69/world-runtime.js": {
+            "bytes": 12026,
+            "sha256": "c3ab96db2a08d6df24610745e64877beb218fc0141d9034ee26a86fa41e67819"
+          },
+          "tools/v69_depth.py": {
+            "bytes": 4846,
+            "sha256": "01ec3f50adeb9997583dca9795e109b8d0590a4adece7255b6f22730040597e6"
+          },
+          "tools/v69_heights.py": {
+            "bytes": 8194,
+            "sha256": "169c87cb6456ce1b7ab04be0358a0587c45b8eabf4c1eb476d99af25b396c215"
+          },
+          "tools/v69_streaming.py": {
+            "bytes": 6357,
+            "sha256": "a8817848be92f5025968fcd984290ff434b25b449c27ee9295178e24a54e609f"
+          },
+          "tools/v69_terrain.py": {
+            "bytes": 17012,
+            "sha256": "d92b224177326a64c6c6b3efe341e6f43e60fc35ab173055bcf4131ebae086a6"
+          }
+        },
+        "originals": {
+          "LANCER_JEU.cmd": {
+            "bytes": 73,
+            "sha256": "5709cb4fa6b46de445d1d87cdce78236b8f30c44c839515d8103229573a1e650"
+          },
+          "MANIFEST_v67.json": {
+            "bytes": 3869,
+            "sha256": "aeb08bc5fd51499281b1ad57290399646778d856807e482a9e0645bf583acb3d"
+          },
+          "README.md": {
+            "bytes": 2436,
+            "sha256": "8aef64ed398a10d57c1560a8f9e66583b778dde9ce5af09b352a5b6ef070a552"
+          },
+          "README_v67.md": {
+            "bytes": 2436,
+            "sha256": "8aef64ed398a10d57c1560a8f9e66583b778dde9ce5af09b352a5b6ef070a552"
+          },
+          "RECONSTRUIRE_JEU.cmd": {
+            "bytes": 62,
+            "sha256": "20b52ee343d80e2bc7b46a9d25fdcadd44a32b0ba98d9f3623cf508c7e451e48"
+          },
+          "SOMA_MASSILIA_AUDIT_COMPLET_v0_67.md": {
+            "bytes": 2442,
+            "sha256": "0a3133f62c6ad2428f4451a179338b08b3fbfb4b31a541d1e3e327db996fca4b"
+          },
+          "SOMA_MASSILIA_CHANGELOG_v0_67.md": {
+            "bytes": 752,
+            "sha256": "671ba8e66a5cc18869a3e0d4fbbabd5dd7bec5575a1d95f6ca74142d393bf10c"
+          },
+          "SOMA_MASSILIA_RAPPORT_v0_67.html": {
+            "bytes": 2042,
+            "sha256": "52172fd945b0fcef6b9ae0d3cc13daf2da8d4ff3cb95fdbe42859982f753e528"
+          },
+          "SOMA_MASSILIA_URBAIN_v0_67.html": {
+            "bytes": 51742676,
+            "sha256": "f4f30ee5d08c9596398a5762c79287c7e67ccebf0796150f52d552156331294f"
+          },
+          "SOMA_MASSILIA_VERIFICATION_v0_67.txt": {
+            "bytes": 471,
+            "sha256": "4eaf54dcda96518f01a61c21f353a6d8ad2b6f0ab3e8c0babac692cae092a0ed"
+          },
+          "VERIFIER_ARCHIVE.cmd": {
+            "bytes": 77,
+            "sha256": "f9f294419f6ce7c617e30a9d662fd63e1f8517472a6aeffc7865cb99c2de7940"
+          },
+          "baseline/v66.html": {
+            "bytes": 51728100,
+            "sha256": "f1a6ce4b5957f634ff9fdbfaccfcf11c9e0d22159d01758dd56e29513581a014"
+          },
+          "build.py": {
+            "bytes": 737,
+            "sha256": "94c6966abaa2e11f85af578ec14d6deba8ac7b400572a6747ba248f3276454cf"
+          },
+          "data/source/Marseille.osm.pbf": {
+            "bytes": 44250286,
+            "sha256": "0d16c8cd7c77945b22cb0a018f19a7d0bd1b3a2cbf05c137fa62e3aa8fd56d82"
+          },
+          "data/v58/IGN_ACQUISITION_REPORT.json": {
+            "bytes": 1972,
+            "sha256": "e7616cf848d326c5ec9c6ca19cc52b686e163d4feafe4df83f4d8532c0f44821"
+          },
+          "data/v58/IMPORT_REPORT.json": {
+            "bytes": 2367,
+            "sha256": "bdf7111342585223bf8d0d06d87f3495b2a448078537226bce9cfbbb42325bcf"
+          },
+          "data/v58/SOURCE_SUMMARY.json": {
+            "bytes": 22876,
+            "sha256": "79fcf2514331f52ef74e61eb8e10729196b5faa56b0dbcf0ab43d573f65930f2"
+          },
+          "data/v58/terrain.ign.25m.tif": {
+            "bytes": 43562,
+            "sha256": "f09bb2eefcbd684c411b2f87c0a39f572e9f9c41e360b6ad558304bc9de8f1a5"
+          },
+          "data/v58/terrain.ign.json": {
+            "bytes": 123925,
+            "sha256": "72c47931e2076125df8aad55cf05b231632352e79560bdbb96398cdf8c37a12c"
+          },
+          "data/v62/catalog.json": {
+            "bytes": 2325904,
+            "sha256": "4b88a20b4734dbf77aa19e9bd170300095aca700ee749d765be5d29292a506d5"
+          },
+          "data/v63/NAVIGATION_REPORT.json": {
+            "bytes": 578,
+            "sha256": "ff57dde97910cc8bdafcd443bf17e95aaf87b100da3d7f9a8b78b72c3ee4b9fd"
+          },
+          "data/v63/navigation.json": {
+            "bytes": 2850322,
+            "sha256": "3fc7bf1dae7e29b29d95fdcb34ec8b7c7c48cd3cd496e4e22c0625c910317b76"
+          },
+          "docs/BASE_V66_VERIFIED.json": {
+            "bytes": 95,
+            "sha256": "39ca09a3c2dca4310b354b72a5c8239301b3c43a02daa7a5b8206690c6d26e5a"
+          },
+          "src/v67/world-runtime.js": {
+            "bytes": 14529,
+            "sha256": "443146ea95abd6e70df221407a3b590827bf63235efcaf7ad2ef8a01fd397f43"
+          },
+          "tests/v67/core.test.cjs": {
+            "bytes": 2049,
+            "sha256": "556eb49313c5280e415eb4673163c41b2e5e5c5a4f3fd3b2696527c8e2425700"
+          },
+          "tools/serve_game.py": {
+            "bytes": 1018,
+            "sha256": "cc26f315c7fc52d3cb457bec2cf376a9dd965c2f0b4e1d5496c7c56ab9b56d0a"
+          },
+          "tools/verify_release.py": {
+            "bytes": 610,
+            "sha256": "046ea5be4b7ed202f942be46a9382f6f8609a1bc266ea99a7b4e561c48c24fd2"
+          }
+        },
+        "reusedWorldManifest": {
+          "bytes": 178967,
+          "sha256": "443d24d1acb87fa3e264392a953b95b27d966e7eb1ff64abf3bcc9d157b10b21"
+        },
+        "sources70": {
+          "build_v70.py": {
+            "bytes": 10456,
+            "sha256": "4788f3e072f1708cecae0235aa5da5e88977a1a39c064537507db2126ee637ac"
+          },
+          "src/v70/augmentations-core.js": {
+            "bytes": 9283,
+            "sha256": "ea05cae0a634513c932728313f229a3cc82d604ad6a234e37e338dcf12dad215"
+          },
+          "src/v70/infiltration-core.js": {
+            "bytes": 12477,
+            "sha256": "f4ed8fec6f398ceba7677bf0423767fefe9ec18e5371c97eea5b90b7fc9ad220"
+          },
+          "src/v70/material-extension-core.js": {
+            "bytes": 3972,
+            "sha256": "3286a5209d51fbf8995580db14810be11522a08ed9485bd1ce71bc5cb7a1217b"
+          },
+          "src/v70/perception-runtime.js": {
+            "bytes": 9149,
+            "sha256": "7b691f45b3fba23e12d55a097e3ab7971e137daff47e99f41aba414fd5026c1a"
+          },
+          "src/v70/runtime.js": {
+            "bytes": 17590,
+            "sha256": "c82e36b043c0f12158022949464cf41ee22387507abf5383873af7dc3c8ac9ee"
+          },
+          "tools/v70_gameplay.py": {
+            "bytes": 11244,
+            "sha256": "e3c43c4f66089bc6de44859e6d675931551d0ed5bc7bebb95ca7460a84e5bf54"
+          },
+          "tools/v70_persistence.py": {
+            "bytes": 2078,
+            "sha256": "a85888ed46be517d16bc0f6ae74fb8f068f81722c2d7ea3fb65ec0b9ead9bacf"
+          }
+        }
+      },
+      "sources71": {
+        "build_v71.py": {
+          "bytes": 9912,
+          "sha256": "b051415237c2e2d2234d2996e25e1decd768f98ea6a75965bd109d9889953cd4"
+        },
+        "src/v71/architecture-inspector-core.js": {
+          "bytes": 7804,
+          "sha256": "b580c8852ef7a9b1878581927f32966b1003243a9bd614cc2c3d04e526b77ab1"
+        },
+        "src/v71/architecture-inspector-runtime.js": {
+          "bytes": 7475,
+          "sha256": "6ee6fe26e9b8679a01daef6ec4c0b7d9335d1b809c4cac23135fc3819d8d6335"
+        },
+        "src/v71/legacy-perception-runtime.js": {
+          "bytes": 6008,
+          "sha256": "905922773f083111f86de348d86588dcad97ba738b605b9d3bb5315a31b7c05f"
+        },
+        "src/v71/route-presentation-core.js": {
+          "bytes": 8013,
+          "sha256": "0825b1ac9f60d236a61016d4e6582141f58d7a96cb1b7e01dd63c1181047d59e"
+        },
+        "src/v71/viewer-route-runtime.js": {
+          "bytes": 1779,
+          "sha256": "1ae45800ea7a72c16a5f7f6d406d2357d4120f3dd2c35315818662830b10527b"
+        },
+        "tools/build_metropole_viewer_v71.py": {
+          "bytes": 6731,
+          "sha256": "149df6d6fd2ac80dd36d0e9f1200c7c2b11d4e94ef23e38a189e9f7b389540ea"
+        },
+        "tools/serve_v71.py": {
+          "bytes": 311,
+          "sha256": "12d2963d3fa79e27577cd52eefbd7b9acac69074590379a6152a927a873dbca1"
+        },
+        "tools/v71_architecture.py": {
+          "bytes": 7168,
+          "sha256": "5bd9a12e5d55bd91769151dae9c9547d188a21a16c576233ab26d0874eee97a0"
+        },
+        "tools/v71_legacy_perception.py": {
+          "bytes": 6401,
+          "sha256": "58a59285431b4c6240de6c5258022608915b428848c01a86cb03bd878257487b"
+        },
+        "tools/v71_route_viewer.py": {
+          "bytes": 8552,
+          "sha256": "794ec5779f42613aa98266439bafcf72e06b3b9fdfc6bab7be2216178afa4163"
+        }
+      }
+    },
+    "sources72": {
+      "build_v72.py": {
+        "bytes": 16879,
+        "sha256": "fdeedbaae1582b0dc8651c2ca586093443980fe721b438d8fc94346f787abbbb"
+      },
+      "src/v72/contact-sharing-runtime.js": {
+        "bytes": 7703,
+        "sha256": "097f637521d341982efcad126ec4158f9040c17d5d23b556e43d0fbaf2c8d9d1"
+      },
+      "src/v72/fidelity-core.js": {
+        "bytes": 4877,
+        "sha256": "c1d0ae947a3a26d3d7bdb76ecb5d5fd28cf290bb30697d230a6b9df49419fd9d"
+      },
+      "src/v72/hud-layout-runtime.js": {
+        "bytes": 8268,
+        "sha256": "e2642dd13d23927d79b61e5bff95878dcee15263af2c610777cc946c5a16c589"
+      },
+      "src/v72/netrunner-runtime.js": {
+        "bytes": 8585,
+        "sha256": "1962944f6309b19ed86ca0bc8ce0fe4bd26e22f1f7889738ae7ea6b806d83c60"
+      },
+      "src/v72/road-inspector-core.js": {
+        "bytes": 9268,
+        "sha256": "0e96e167eb383ebc59e6e29b61c5de725b8b6cd6f0bf218da46f6267e52d981b"
+      },
+      "src/v72/road-inspector-runtime.js": {
+        "bytes": 6463,
+        "sha256": "2d418a64b29e39ced264416da9cad6ac66698ec71e7fb8bfbeb2d61ba7a34905"
+      },
+      "src/v72/route-corridor-core.js": {
+        "bytes": 30619,
+        "sha256": "c2b7164d5151b6f4fb063e428dfae24f9e964190426757e2cbd8f15d6b48b8ec"
+      },
+      "tools/build_metropole_viewer_v72.py": {
+        "bytes": 6944,
+        "sha256": "32a36522281beac29fd2496bb3d73275ed423d1d6e22218188e20c11ab4b46b6"
+      },
+      "tools/launch_cache_v72.py": {
+        "bytes": 11212,
+        "sha256": "c4e27194359fe6766b2c7fcf8bc686396b76e6359e036aa4c0f3418ebb7401f4"
+      },
+      "tools/serve_v72.py": {
+        "bytes": 311,
+        "sha256": "6cdcde15b4a2b3db941110dce6a0f8616081add4491086d7e8a15ce73a11bfca"
+      },
+      "tools/v72_contact_sharing.py": {
+        "bytes": 5447,
+        "sha256": "a25cfb7426c98ddc313ef431d15565b8f94fe71c55fd710152b1a7b561e944cb"
+      },
+      "tools/v72_fidelity.py": {
+        "bytes": 7896,
+        "sha256": "c9719d69001ef63625f543fe3f4e455d6ebb671b742e63e26b5cf04433c1d966"
+      },
+      "tools/v72_hud.py": {
+        "bytes": 807,
+        "sha256": "1137e850ec9635ac4c35f623d1bf4c641c9cb9747cb422c8657fbe4c10a4df3e"
+      },
+      "tools/v72_netrunner.py": {
+        "bytes": 2850,
+        "sha256": "35ed993af5c57c89c1f5ac480e83da332a7245e9caf88d47427c4283be2db553"
+      },
+      "tools/v72_routing.py": {
+        "bytes": 4768,
+        "sha256": "68d08b8a28d10da504705507778b9fc58c240fd27fb932eca01c46b7840a69fd"
+      }
+    }
+  },
+  "newGeographicCells": 0,
+  "newPersistenceDomain": false,
+  "originalFilesVerified": 27,
+  "output": "SOMA_MASSILIA_URBAIN_v0_72.html",
+  "parentSHA256": "6bd174abf56504640edbc8c92a4d9279fb76f0d6b079f3d4ae4bbb5a948c333d",
+  "parentVersion": "0.71.0",
+  "preparedCells": 168,
+  "sha256": "77f09426c0c68ec2702f8ce8cc46b75d5005d468d2988416f6cbe92155ae1c50",
+  "sourceGeometryUnchanged": true,
+  "version": "0.72.0",
+  "worldManifestSHA256": "443d24d1acb87fa3e264392a953b95b27d966e7eb1ff64abf3bcc9d157b10b21"
+}
