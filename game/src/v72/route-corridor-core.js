@@ -75,22 +75,24 @@
     const c=world.navigationCore;
     if(c?.scriptId!=='soma-v63-nav-core'||c.version!=='0.63.0'||c.sha256!==CORE_SHA||c.baselineSHA256!==BASELINE_SHA)
       fail('core','Empreinte du moteur NAV incompatible.');
-    const tiles=new Map(),positions=new Set(),encoder=new TextEncoder();let metadataBytes=0;
+    const tiles=new Map(),unpreparedTiles=new Map(),positions=new Set(),encoder=new TextEncoder();let metadataBytes=0;
     for(const t of world.tiles){
-      if(!t.navigation)continue;
-      const grid=cellGrid(t.cellId);
-      if(!grid||grid.x!==t.gridX||grid.y!==t.gridY||!Number.isSafeInteger(t.gridX)||!Number.isSafeInteger(t.gridY)||
-        !HASH.test(t.contentSHA256)||!Array.isArray(t.boundsL93)||t.boundsL93.length!==4||!t.boundsL93.every(Number.isFinite)||
-        t.terrainOnly===true||tiles.has(t.cellId)||positions.has(t.gridX+':'+t.gridY))fail('manifest','Cellule NAV invalide ou dupliquée.');
+      const grid=cellGrid(t?.cellId),prepared=!!t?.navigation;
+      if(!plain(t)||!grid||grid.x!==t.gridX||grid.y!==t.gridY||!Number.isSafeInteger(t.gridX)||!Number.isSafeInteger(t.gridY)||
+        !Array.isArray(t.boundsL93)||t.boundsL93.length!==4||!t.boundsL93.every(Number.isFinite)||
+        prepared&&(!HASH.test(t.contentSHA256)||t.terrainOnly===true)||
+        tiles.has(t.cellId)||unpreparedTiles.has(t.cellId)||positions.has(t.gridX+':'+t.gridY))fail('manifest','Cellule NAV invalide ou dupliquée.');
       const e=ORIGIN[0]+t.gridX*250,n=ORIGIN[1]-t.gridY*250;
       if([e-125,n-125,e+125,n+125].some((v,i)=>Math.abs(v-t.boundsL93[i])>.001))fail('manifest','Emprise NAV décalée.');
-      const tile=Object.freeze({cellId:t.cellId,gridX:t.gridX,gridY:t.gridY,contentSHA256:t.contentSHA256,
-        boundsL93:Object.freeze(t.boundsL93.slice()),navigation:descriptor(t.navigation)});
+      const tile=Object.freeze({cellId:t.cellId,gridX:t.gridX,gridY:t.gridY,...(prepared?{contentSHA256:t.contentSHA256}:{}),
+        boundsL93:Object.freeze(t.boundsL93.slice()),...(prepared?{navigation:descriptor(t.navigation)}:{})});
       metadataBytes+=encoder.encode(JSON.stringify(tile)).byteLength;
       if(metadataBytes*2>b.maxResidentBytes)fail('catalogue_budget','Index NAV supérieur au budget résident.');
-      tiles.set(t.cellId,tile);positions.add(t.gridX+':'+t.gridY);
+      // An explicitly known cell without NAV is missing coverage, not an empty
+      // verified graph. Keep its bounded metadata without inventing an asset.
+      (prepared?tiles:unpreparedTiles).set(t.cellId,tile);positions.add(t.gridX+':'+t.gridY);
     }
-    return {tiles,sourcePbfSHA256:world.source.sha256,sourcePackSHA256:world.sourcePackSHA256,
+    return {tiles,unpreparedTiles,sourcePbfSHA256:world.source.sha256,sourcePackSHA256:world.sourcePackSHA256,
       nativeTopologySHA256:world.nativeTopologySHA256,routingCoreSHA256:CORE_SHA,catalogueAccountedBytes:metadataBytes*2};
   }
   function projection(p,a,b){const dx=b.e-a.e,dy=b.n-a.n,l=dx*dx+dy*dy,t=l?Math.max(0,Math.min(1,((p.e-a.e)*dx+(p.n-a.n)*dy)/l)):0;
@@ -109,7 +111,7 @@
   }
   function plan(index,start,end,b){
     const candidates=[];
-    for(const tile of index.tiles.values()){
+    for(const group of [index.tiles,index.unpreparedTiles])for(const tile of group.values()){
       if(!intersects(start,end,tile.boundsL93,Math.max(b.corridorM,b.maxAxisDistanceM)))continue;
       const center={e:(tile.boundsL93[0]+tile.boundsL93[2])/2,n:(tile.boundsL93[1]+tile.boundsL93[3])/2},q=projection(center,start,end);
       candidates.push({tile,along:q.t,distance:dist(center,q),spine:intersects(start,end,tile.boundsL93,b.maxAxisDistanceM)});
@@ -172,7 +174,7 @@
     }
     const ordered=[...nodes.values()].sort((a,b)=>a[0].localeCompare(b[0])),ids=new Map(ordered.map((n,i)=>[n[0],i])),merged=[],origins=[],bike=[];
     for(const [,{edge,source,bike:mask}]of [...edges].sort(([a],[b])=>a.localeCompare(b))){merged.push([ids.get(edge[0]),ids.get(edge[1]),...edge.slice(2)]);origins.push(source);bike.push(mask);}
-    return {schema:'soma/navigation-source/1',version:'0.72.0',...index,tiles:undefined,nodes:ordered,edges:merged,
+    return {schema:'soma/navigation-source/1',version:'0.72.0',...index,tiles:undefined,unpreparedTiles:undefined,nodes:ordered,edges:merged,
       ways:Object.fromEntries(ways),nodeTags:Object.fromEntries(tags),turns:[...turns.values()],cellHashes:hashes,edgeSources:origins,bicycleMasks:bike};
   }
   function anchor(router,g,input,options,selector){
@@ -242,19 +244,20 @@
         if(!Number.isFinite(axisDistance)||axisDistance<=0||axisDistance>b.maxAxisDistanceM)fail('position','Distance à l’axe hors budget.');
         const sector=plan(index,request.start,request.end,b);check();coverage.requestedCells=sector.requested;
         coverage.selectedCells=sector.selected.map(t=>t.cellId);coverage.omittedCells=sector.omitted;
+        coverage.missingCells=sector.selected.filter(t=>!t.navigation).map(t=>t.cellId);
         coverage.spineCells=sector.spineCells;coverage.uncoveredSpineCells=sector.uncoveredSpineCells;
         if(sector.uncoveredSpineCells.length)return result('interrupted','corridor_cell_budget',{reason:'Le corridor entre les deux points dépasse le budget de cellules. Aucun préfixe trompeur chargé.'});
         // Descriptor preflight bounds IO and retains the arrival. Missing legacy
         // decodedBytes are accounted while reading, as in the original core.
         let plannedEncoded=0,plannedDecoded=0;
-        for(const tile of sector.selected){const d=tile.navigation;plannedEncoded+=d.bytes;plannedDecoded+=d.decodedBytes||0;
+        for(const tile of sector.selected){const d=tile.navigation;if(!d)continue;plannedEncoded+=d.bytes;plannedDecoded+=d.decodedBytes||0;
           if(d.bytes>b.maxAssetEncodedBytes||d.decodedBytes>b.maxAssetDecodedBytes)return result('interrupted','asset_budget');}
         if(plannedEncoded>b.maxEncodedBytes)return result('interrupted','asset_budget');
         if(plannedDecoded>b.maxDecodedBytes)return result('interrupted','decoded_budget');
         if(index.catalogueAccountedBytes+plannedDecoded*b.memoryFactor>b.maxResidentBytes)return result('interrupted','resident_budget');
         if(!sector.selected.length)return result('unavailable','no_navigation_sector');
         const graphs=[];
-        for(const tile of sector.selected){check();const d=tile.navigation;
+        for(const tile of sector.selected){check();const d=tile.navigation;if(!d)continue;
           if(d.bytes>b.maxAssetEncodedBytes||d.bytes+resources.encodedBytes>b.maxEncodedBytes||
             d.decodedBytes!==undefined&&(d.decodedBytes>b.maxAssetDecodedBytes||d.decodedBytes+resources.decodedBytes>b.maxDecodedBytes))fail('asset_budget','Budget de fichiers atteint.');
           let encoded;

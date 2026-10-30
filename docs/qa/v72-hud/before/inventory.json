@@ -1,0 +1,1176 @@
+[
+  {
+    "width": 1440,
+    "height": 1000,
+    "rows": [
+      {
+        "tag": "DIV",
+        "id": "",
+        "class": "game",
+        "parent": "soma-v42 soma-v43 soma-v44 soma-v45 soma-v46 v46-migration-warning soma-v47 v47-migration-warning soma-v48 soma-v49 soma-v50 soma-v51 soma-v34 soma-v52 soma-v54 soma-v55 soma-v57 soma-v66 soma-cyberpunk68 v57-real-field",
+        "text": "SOMA//MASSILIA 0.72\nJ1 · 21:24 · Soirée\nMarseille · Cours Belsunce / Rue de la Providence\nCellule NULL · Nuit claire · 21:24\nNV 1\n0/336 XP\nINTÉGRITÉ\n100/104\nBLINDAGE\n65/120\nDETTE\n28\nTENSION\n12\nMÉMOIRE\n100\nP-12 TRAME\n12 / 72\nSEMI\nVÉHICULE\n00",
+        "position": "fixed",
+        "z": "auto",
+        "style": null,
+        "rect": {
+          "x": 0,
+          "y": 0,
+          "w": 1440,
+          "h": 1000
+        },
+        "overflow": "visible"
+      },
+      {
+        "tag": "DIV",
+        "id": "",
+        "class": "hud",
+        "parent": "game",
+        "text": "SOMA//MASSILIA 0.72\nJ1 · 21:24 · Soirée\nMarseille · Cours Belsunce / Rue de la Providence\nCellule NULL · Nuit claire · 21:24\nNV 1\n0/336 XP\nINTÉGRITÉ\n100/104\nBLINDAGE\n65/120\nDETTE\n28\nTENSION\n12\nMÉMOIRE\n100\nP-12 TRAME\n12 / 72\nSEMI\nVÉHICULE\n00",
+        "position": "absolute",
+        "z": "auto",
+        "style": null,
+        "rect": {
+          "x": 0,
+          "y": 0,
+          "w": 1440,
+          "h": 1000
+        },
+        "overflow": "visible"
+      },
+      {
+        "tag": "DIV",
+        "id": "",
+        "class": "topbar",
+        "parent": "hud",
+        "text": "SOMA//MASSILIA 0.72\nJ1 · 21:24 · Soirée\nMarseille · Cours Belsunce / Rue de la Providence\nCellule NULL · Nuit claire · 21:24",
+        "position": "absolute",
+        "z": "auto",
+        "style": null,
+        "rect": {
+          "x": 0,
+          "y": 0,
+          "w": 1440,
+          "h": 60
+        },
+        "overflow": "visible"
+      },
+      {
+        "tag": "DIV",
+        "id": "level27",
+        "class": "player-level",
+        "parent": "hud",
+        "text": "NV 1\n0/336 XP",
+        "position": "absolute",
+        "z": "auto",
+        "style": null,
+        "rect": {
+          "x": 18,
+          "y": 778,
+          "w": 121.09375,
+          "h": 31
+        },
+        "overflow": "visible"
+      },
+      {
+        "tag": "DIV",
+        "id": "",
+        "class": "stats",
+        "parent": "hud",
+        "text": "INTÉGRITÉ\n100/104\nBLINDAGE\n65/120\nDETTE\n28\nTENSION\n12\nMÉMOIRE\n100",
+        "position": "absolute",
+        "z": "auto",
+        "style": null,
+        "rect": {
+          "x": 22,
+          "y": 865,
+          "w": 310,
+          "h": 115
+        },
+        "overflow": "visible"
+      },
+      {
+        "tag": "DIV",
+        "id": "",
+        "class": "weapon",
+        "parent": "hud",
+        "text": "P-12 TRAME\n12 / 72\nSEMI",
+        "position": "absolute",
+        "z": "auto",
+        "style": null,
+        "rect": {
+          "x": 1248,
+          "y": 885,
+          "w": 170,
+          "h": 95
+        },
+        "overflow": "visible"
+      },
+      {
+        "tag": "DIV",
+        "id": "quick28",
+        "class": "quick28",
+        "parent": "hud",
+        "text": "F1 · 2\nGel de réparation somatique\nF2 · 1\nPatch de blindage\nF3 · 1\nCellule neurale\nF4 · 0\nTampon mnésique",
+        "position": "fixed",
+        "z": "6",
+        "style": null,
+        "rect": {
+          "x": 436.59375,
+          "y": 940.84375,
+          "w": 566.8125,
+          "h": 39.15625
+        },
+        "overflow": "visible"
+      },
+      {
+        "tag": "DIV",
+        "id": "stance28",
+        "class": "stance28",
+        "parent": "hud",
+        "text": "ARME BASSE",
+        "position": "fixed",
+        "z": "5",
+        "style": null,
+        "rect": {
+          "x": 1341.828125,
+          "y": 858,
+          "w": 76.171875,
+          "h": 12
+        },
+        "overflow": "visible"
+      },
+      {
+        "tag": "DIV",
+        "id": "nightObjective",
+        "class": "",
+        "parent": "hud",
+        "text": "[G] Rencontrer Sofia Amari · Le Résonance",
+        "position": "absolute",
+        "z": "auto",
+        "style": null,
+        "rect": {
+          "x": 20,
+          "y": 133,
+          "w": 349.90625,
+          "h": 37.5
+        },
+        "overflow": "visible"
+      },
+      {
+        "tag": "DIV",
+        "id": "notice",
+        "class": "notice on",
+        "parent": "hud",
+        "text": "MARSEILLE CENTRE · V52-MC-33 · SOURCE DÉCLARÉE · STAGED NON CERTIFIÉ",
+        "position": "absolute",
+        "z": "auto",
+        "style": null,
+        "rect": {
+          "x": 466.609375,
+          "y": 76,
+          "w": 506.78125,
+          "h": 32
+        },
+        "overflow": "visible"
+      },
+      {
+        "tag": "DIV",
+        "id": "modeText",
+        "class": "mode",
+        "parent": "hud",
+        "text": "1440 CR",
+        "position": "absolute",
+        "z": "auto",
+        "style": null,
+        "rect": {
+          "x": 1373.640625,
+          "y": 112,
+          "w": 46.359375,
+          "h": 13
+        },
+        "overflow": "visible"
+      },
+      {
+        "tag": "BUTTON",
+        "id": "v34-launcher",
+        "class": "",
+        "parent": "game",
+        "text": "F6 DOSSIERS",
+        "position": "absolute",
+        "z": "80",
+        "style": null,
+        "rect": {
+          "x": 1298.546875,
+          "y": 59,
+          "w": 119.453125,
+          "h": 35
+        },
+        "overflow": "visible"
+      },
+      {
+        "tag": "DIV",
+        "id": "v42-posture-hud",
+        "class": "",
+        "parent": "soma-v42 soma-v43 soma-v44 soma-v45 soma-v46 v46-migration-warning soma-v47 v47-migration-warning soma-v48 soma-v49 soma-v50 soma-v51 soma-v34 soma-v52 soma-v54 soma-v55 soma-v57 soma-v66 soma-cyberpunk68 v57-real-field",
+        "text": "DEBOUT · 1,72 M",
+        "position": "fixed",
+        "z": "54",
+        "style": null,
+        "rect": {
+          "x": 662.9609375,
+          "y": 844.40625,
+          "w": 114.078125,
+          "h": 23.59375
+        },
+        "overflow": "visible"
+      },
+      {
+        "tag": "DIV",
+        "id": "v42-city-hud",
+        "class": "",
+        "parent": "soma-v42 soma-v43 soma-v44 soma-v45 soma-v46 v46-migration-warning soma-v47 v47-migration-warning soma-v48 soma-v49 soma-v50 soma-v51 soma-v34 soma-v52 soma-v54 soma-v55 soma-v57 soma-v66 soma-cyberpunk68 v57-real-field",
+        "text": "Station Zéro\nCALCAIRE / VILLE\nNuit claire\ncontinuité urbaine 0.42",
+        "position": "fixed",
+        "z": "44",
+        "style": null,
+        "rect": {
+          "x": 18,
+          "y": 116,
+          "w": 148.625,
+          "h": 71.640625
+        },
+        "overflow": "visible"
+      },
+      {
+        "tag": "DIV",
+        "id": "v43-cred",
+        "class": "",
+        "parent": "soma-v42 soma-v43 soma-v44 soma-v45 soma-v46 v46-migration-warning soma-v47 v47-migration-warning soma-v48 soma-v49 soma-v50 soma-v51 soma-v34 soma-v52 soma-v54 soma-v55 soma-v57 soma-v66 soma-cyberpunk68 v57-real-field",
+        "text": "INCONNU\n0\nprochain palier 80",
+        "position": "fixed",
+        "z": "53",
+        "style": null,
+        "rect": {
+          "x": 1295.265625,
+          "y": 18,
+          "w": 126.734375,
+          "h": 45
+        },
+        "overflow": "visible"
+      },
+      {
+        "tag": "DIV",
+        "id": "v43-weapon",
+        "class": "",
+        "parent": "soma-v42 soma-v43 soma-v44 soma-v45 soma-v46 v46-migration-warning soma-v47 v47-migration-warning soma-v48 soma-v49 soma-v50 soma-v51 soma-v34 soma-v52 soma-v54 soma-v55 soma-v57 soma-v66 soma-cyberpunk68 v57-real-field",
+        "text": "PRÉCISION · HANCHE\nP-12 TRAME · 100 % stabilité",
+        "position": "fixed",
+        "z": "52",
+        "style": null,
+        "rect": {
+          "x": 590,
+          "y": 877,
+          "w": 260,
+          "h": 31
+        },
+        "overflow": "visible"
+      },
+      {
+        "tag": "DIV",
+        "id": "v44-gps",
+        "class": "",
+        "parent": "soma-v42 soma-v43 soma-v44 soma-v45 soma-v46 v46-migration-warning soma-v47 v47-migration-warning soma-v48 soma-v49 soma-v50 soma-v51 soma-v34 soma-v52 soma-v54 soma-v55 soma-v57 soma-v66 soma-cyberpunk68 v57-real-field",
+        "text": "GARE SAINT-CHARLES\nBoulevard d’Athènes\n125 m · Marseille · La Canebière / Allée Léon Gambetta",
+        "position": "fixed",
+        "z": "68",
+        "style": null,
+        "rect": {
+          "x": 18,
+          "y": 94,
+          "w": 330,
+          "h": 75.1875
+        },
+        "overflow": "visible"
+      },
+      {
+        "tag": "DIV",
+        "id": "v45-tracker",
+        "class": "",
+        "parent": "soma-v42 soma-v43 soma-v44 soma-v45 soma-v46 v46-migration-warning soma-v47 v47-migration-warning soma-v48 soma-v49 soma-v50 soma-v51 soma-v34 soma-v52 soma-v54 soma-v55 soma-v57 soma-v66 soma-cyberpunk68 v57-real-field",
+        "text": "ACTE III · 0.45\nVille ouverte\nAppel disponible · Un homme derrière la balise",
+        "position": "fixed",
+        "z": "72",
+        "style": null,
+        "rect": {
+          "x": 18,
+          "y": 908.953125,
+          "w": 440,
+          "h": 65.046875
+        },
+        "overflow": "visible"
+      },
+      {
+        "tag": "DIV",
+        "id": "v45-autosave",
+        "class": "on",
+        "parent": "soma-v42 soma-v43 soma-v44 soma-v45 soma-v46 v46-migration-warning soma-v47 v47-migration-warning soma-v48 soma-v49 soma-v50 soma-v51 soma-v34 soma-v52 soma-v54 soma-v55 soma-v57 soma-v66 soma-cyberpunk68 v57-real-field",
+        "text": "CONTINUITÉ SAUVEGARDÉE",
+        "position": "fixed",
+        "z": "72",
+        "style": null,
+        "rect": {
+          "x": 1131.75,
+          "y": 18,
+          "w": 290.25,
+          "h": 25
+        },
+        "overflow": "visible"
+      },
+      {
+        "tag": "DIV",
+        "id": "v52-hud",
+        "class": "",
+        "parent": "soma-v42 soma-v43 soma-v44 soma-v45 soma-v46 v46-migration-warning soma-v47 v47-migration-warning soma-v48 soma-v49 soma-v50 soma-v51 soma-v34 soma-v52 soma-v54 soma-v55 soma-v57 soma-v66 soma-cyberpunk68 v57-real-field",
+        "text": "MARSEILLE CENTRE · TRAME DE VÉRITÉ\nV52-MC-33 · Rue de la Providence / Rue Magenta\nSOURCE DÉCLARÉE · STAGED NON CERTIFIÉ · cache 1/13\nAncrer la Canebière · 1/10",
+        "position": "fixed",
+        "z": "48",
+        "style": null,
+        "rect": {
+          "x": 410,
+          "y": 893.5,
+          "w": 620,
+          "h": 88.5
+        },
+        "overflow": "visible"
+      },
+      {
+        "tag": "ASIDE",
+        "id": "v54-attribution",
+        "class": "",
+        "parent": "soma-v42 soma-v43 soma-v44 soma-v45 soma-v46 v46-migration-warning soma-v47 v47-migration-warning soma-v48 soma-v49 soma-v50 soma-v51 soma-v34 soma-v52 soma-v54 soma-v55 soma-v57 soma-v66 soma-cyberpunk68 v57-real-field",
+        "text": "Données : © contributeurs OpenStreetMap · ODbL 1.0 · extrait BBBike",
+        "position": "fixed",
+        "z": "95",
+        "style": null,
+        "rect": {
+          "x": 8,
+          "y": 975,
+          "w": 401.21875,
+          "h": 21
+        },
+        "overflow": "visible"
+      },
+      {
+        "tag": "OUTPUT",
+        "id": "terrain56-hud",
+        "class": "",
+        "parent": "soma-v42 soma-v43 soma-v44 soma-v45 soma-v46 v46-migration-warning soma-v47 v47-migration-warning soma-v48 soma-v49 soma-v50 soma-v51 soma-v34 soma-v52 soma-v54 soma-v55 soma-v57 soma-v66 soma-cyberpunk68 v57-real-field",
+        "text": "IGN · 6.57 m · grille 25 m · non certifié",
+        "position": "fixed",
+        "z": "8",
+        "style": null,
+        "rect": {
+          "x": 18,
+          "y": 808,
+          "w": 270.421875,
+          "h": 27
+        },
+        "overflow": "visible"
+      },
+      {
+        "tag": "ASIDE",
+        "id": "v70-hud",
+        "class": "",
+        "parent": "soma-v42 soma-v43 soma-v44 soma-v45 soma-v46 v46-migration-warning soma-v47 v47-migration-warning soma-v48 soma-v49 soma-v50 soma-v51 soma-v34 soma-v52 soma-v54 soma-v55 soma-v57 soma-v66 soma-cyberpunk68 v57-real-field",
+        "text": "CORTEX TACTIQUE · MAJ+F1\n\nCyberdeck 100 · charge neurale 0%\n\nà l’arrêt · silencieux · suspicion 0%\n\nMaj+F2 Écho · Maj+F3 Rempart · Maj+F4 Ancrage",
+        "position": "fixed",
+        "z": "12",
+        "style": null,
+        "rect": {
+          "x": 18,
+          "y": 657,
+          "w": 250,
+          "h": 107
+        },
+        "overflow": "visible"
+      }
+    ]
+  },
+  {
+    "width": 1280,
+    "height": 720,
+    "rows": [
+      {
+        "tag": "DIV",
+        "id": "",
+        "class": "game",
+        "parent": "soma-v42 soma-v43 soma-v44 soma-v45 soma-v46 v46-migration-warning soma-v47 v47-migration-warning soma-v48 soma-v49 soma-v50 soma-v51 soma-v34 soma-v52 soma-v54 soma-v55 soma-v57 soma-v66 soma-cyberpunk68 v57-real-field",
+        "text": "SOMA//MASSILIA 0.72\nJ1 · 21:25 · Soirée\nMarseille · Cours Belsunce / Rue de la Providence\nCellule NULL · Nuit claire · 21:25\nNV 1\n0/336 XP\nINTÉGRITÉ\n100/104\nBLINDAGE\n65/120\nDETTE\n28\nTENSION\n12\nMÉMOIRE\n100\nP-12 TRAME\n12 / 72\nSEMI\nVÉHICULE\n00",
+        "position": "fixed",
+        "z": "auto",
+        "style": null,
+        "rect": {
+          "x": 0,
+          "y": 0,
+          "w": 1280,
+          "h": 720
+        },
+        "overflow": "visible"
+      },
+      {
+        "tag": "DIV",
+        "id": "",
+        "class": "hud",
+        "parent": "game",
+        "text": "SOMA//MASSILIA 0.72\nJ1 · 21:25 · Soirée\nMarseille · Cours Belsunce / Rue de la Providence\nCellule NULL · Nuit claire · 21:25\nNV 1\n0/336 XP\nINTÉGRITÉ\n100/104\nBLINDAGE\n65/120\nDETTE\n28\nTENSION\n12\nMÉMOIRE\n100\nP-12 TRAME\n12 / 72\nSEMI\nVÉHICULE\n00",
+        "position": "absolute",
+        "z": "auto",
+        "style": null,
+        "rect": {
+          "x": 0,
+          "y": 0,
+          "w": 1280,
+          "h": 720
+        },
+        "overflow": "visible"
+      },
+      {
+        "tag": "DIV",
+        "id": "",
+        "class": "topbar",
+        "parent": "hud",
+        "text": "SOMA//MASSILIA 0.72\nJ1 · 21:25 · Soirée\nMarseille · Cours Belsunce / Rue de la Providence\nCellule NULL · Nuit claire · 21:25",
+        "position": "absolute",
+        "z": "auto",
+        "style": null,
+        "rect": {
+          "x": 0,
+          "y": 0,
+          "w": 1280,
+          "h": 60
+        },
+        "overflow": "visible"
+      },
+      {
+        "tag": "DIV",
+        "id": "level27",
+        "class": "player-level",
+        "parent": "hud",
+        "text": "NV 1\n0/336 XP",
+        "position": "absolute",
+        "z": "auto",
+        "style": null,
+        "rect": {
+          "x": 18,
+          "y": 498,
+          "w": 121.09375,
+          "h": 31
+        },
+        "overflow": "visible"
+      },
+      {
+        "tag": "DIV",
+        "id": "",
+        "class": "stats",
+        "parent": "hud",
+        "text": "INTÉGRITÉ\n100/104\nBLINDAGE\n65/120\nDETTE\n28\nTENSION\n12\nMÉMOIRE\n100",
+        "position": "absolute",
+        "z": "auto",
+        "style": null,
+        "rect": {
+          "x": 22,
+          "y": 585,
+          "w": 310,
+          "h": 115
+        },
+        "overflow": "visible"
+      },
+      {
+        "tag": "DIV",
+        "id": "",
+        "class": "weapon",
+        "parent": "hud",
+        "text": "P-12 TRAME\n12 / 72\nSEMI",
+        "position": "absolute",
+        "z": "auto",
+        "style": null,
+        "rect": {
+          "x": 1088,
+          "y": 605,
+          "w": 170,
+          "h": 95
+        },
+        "overflow": "visible"
+      },
+      {
+        "tag": "DIV",
+        "id": "quick28",
+        "class": "quick28",
+        "parent": "hud",
+        "text": "F1 · 2\nGel de réparation somatique\nF2 · 1\nPatch de blindage\nF3 · 1\nCellule neurale\nF4 · 0\nTampon mnésique",
+        "position": "fixed",
+        "z": "6",
+        "style": null,
+        "rect": {
+          "x": 356.59375,
+          "y": 660.84375,
+          "w": 566.8125,
+          "h": 39.15625
+        },
+        "overflow": "visible"
+      },
+      {
+        "tag": "DIV",
+        "id": "stance28",
+        "class": "stance28",
+        "parent": "hud",
+        "text": "ARME BASSE",
+        "position": "fixed",
+        "z": "5",
+        "style": null,
+        "rect": {
+          "x": 1181.828125,
+          "y": 578,
+          "w": 76.171875,
+          "h": 12
+        },
+        "overflow": "visible"
+      },
+      {
+        "tag": "DIV",
+        "id": "nightObjective",
+        "class": "",
+        "parent": "hud",
+        "text": "[G] Rencontrer Sofia Amari · Le Résonance",
+        "position": "absolute",
+        "z": "auto",
+        "style": null,
+        "rect": {
+          "x": 20,
+          "y": 133,
+          "w": 349.90625,
+          "h": 37.5
+        },
+        "overflow": "visible"
+      },
+      {
+        "tag": "DIV",
+        "id": "notice",
+        "class": "notice on",
+        "parent": "hud",
+        "text": "Lieu découvert — Carrefour City",
+        "position": "absolute",
+        "z": "auto",
+        "style": null,
+        "rect": {
+          "x": 525.9609375,
+          "y": 76,
+          "w": 228.078125,
+          "h": 32
+        },
+        "overflow": "visible"
+      },
+      {
+        "tag": "DIV",
+        "id": "modeText",
+        "class": "mode",
+        "parent": "hud",
+        "text": "1440 CR",
+        "position": "absolute",
+        "z": "auto",
+        "style": null,
+        "rect": {
+          "x": 1213.640625,
+          "y": 112,
+          "w": 46.359375,
+          "h": 13
+        },
+        "overflow": "visible"
+      },
+      {
+        "tag": "BUTTON",
+        "id": "v34-launcher",
+        "class": "",
+        "parent": "game",
+        "text": "F6 DOSSIERS",
+        "position": "absolute",
+        "z": "80",
+        "style": null,
+        "rect": {
+          "x": 1138.546875,
+          "y": 59,
+          "w": 119.453125,
+          "h": 35
+        },
+        "overflow": "visible"
+      },
+      {
+        "tag": "DIV",
+        "id": "v42-posture-hud",
+        "class": "",
+        "parent": "soma-v42 soma-v43 soma-v44 soma-v45 soma-v46 v46-migration-warning soma-v47 v47-migration-warning soma-v48 soma-v49 soma-v50 soma-v51 soma-v34 soma-v52 soma-v54 soma-v55 soma-v57 soma-v66 soma-cyberpunk68 v57-real-field",
+        "text": "DEBOUT · 1,72 M",
+        "position": "fixed",
+        "z": "54",
+        "style": null,
+        "rect": {
+          "x": 582.9609375,
+          "y": 564.40625,
+          "w": 114.078125,
+          "h": 23.59375
+        },
+        "overflow": "visible"
+      },
+      {
+        "tag": "DIV",
+        "id": "v42-city-hud",
+        "class": "",
+        "parent": "soma-v42 soma-v43 soma-v44 soma-v45 soma-v46 v46-migration-warning soma-v47 v47-migration-warning soma-v48 soma-v49 soma-v50 soma-v51 soma-v34 soma-v52 soma-v54 soma-v55 soma-v57 soma-v66 soma-cyberpunk68 v57-real-field",
+        "text": "Station Zéro\nCALCAIRE / VILLE\nNuit claire\ncontinuité urbaine 0.42",
+        "position": "fixed",
+        "z": "44",
+        "style": null,
+        "rect": {
+          "x": 18,
+          "y": 116,
+          "w": 148.625,
+          "h": 71.640625
+        },
+        "overflow": "visible"
+      },
+      {
+        "tag": "DIV",
+        "id": "v43-cred",
+        "class": "",
+        "parent": "soma-v42 soma-v43 soma-v44 soma-v45 soma-v46 v46-migration-warning soma-v47 v47-migration-warning soma-v48 soma-v49 soma-v50 soma-v51 soma-v34 soma-v52 soma-v54 soma-v55 soma-v57 soma-v66 soma-cyberpunk68 v57-real-field",
+        "text": "INCONNU\n0\nprochain palier 80",
+        "position": "fixed",
+        "z": "53",
+        "style": null,
+        "rect": {
+          "x": 1135.265625,
+          "y": 18,
+          "w": 126.734375,
+          "h": 45
+        },
+        "overflow": "visible"
+      },
+      {
+        "tag": "DIV",
+        "id": "v43-weapon",
+        "class": "",
+        "parent": "soma-v42 soma-v43 soma-v44 soma-v45 soma-v46 v46-migration-warning soma-v47 v47-migration-warning soma-v48 soma-v49 soma-v50 soma-v51 soma-v34 soma-v52 soma-v54 soma-v55 soma-v57 soma-v66 soma-cyberpunk68 v57-real-field",
+        "text": "PRÉCISION · HANCHE\nP-12 TRAME · 100 % stabilité",
+        "position": "fixed",
+        "z": "52",
+        "style": null,
+        "rect": {
+          "x": 510,
+          "y": 597,
+          "w": 260,
+          "h": 31
+        },
+        "overflow": "visible"
+      },
+      {
+        "tag": "DIV",
+        "id": "v44-gps",
+        "class": "",
+        "parent": "soma-v42 soma-v43 soma-v44 soma-v45 soma-v46 v46-migration-warning soma-v47 v47-migration-warning soma-v48 soma-v49 soma-v50 soma-v51 soma-v34 soma-v52 soma-v54 soma-v55 soma-v57 soma-v66 soma-cyberpunk68 v57-real-field",
+        "text": "GARE SAINT-CHARLES\nBoulevard d’Athènes\n125 m · Marseille · La Canebière / Allée Léon Gambetta",
+        "position": "fixed",
+        "z": "68",
+        "style": null,
+        "rect": {
+          "x": 18,
+          "y": 94,
+          "w": 330,
+          "h": 75.1875
+        },
+        "overflow": "visible"
+      },
+      {
+        "tag": "DIV",
+        "id": "v45-tracker",
+        "class": "",
+        "parent": "soma-v42 soma-v43 soma-v44 soma-v45 soma-v46 v46-migration-warning soma-v47 v47-migration-warning soma-v48 soma-v49 soma-v50 soma-v51 soma-v34 soma-v52 soma-v54 soma-v55 soma-v57 soma-v66 soma-cyberpunk68 v57-real-field",
+        "text": "ACTE III · 0.45\nVille ouverte\nAppel disponible · Un homme derrière la balise",
+        "position": "fixed",
+        "z": "72",
+        "style": null,
+        "rect": {
+          "x": 18,
+          "y": 628.953125,
+          "w": 440,
+          "h": 65.046875
+        },
+        "overflow": "visible"
+      },
+      {
+        "tag": "DIV",
+        "id": "v45-autosave",
+        "class": "on",
+        "parent": "soma-v42 soma-v43 soma-v44 soma-v45 soma-v46 v46-migration-warning soma-v47 v47-migration-warning soma-v48 soma-v49 soma-v50 soma-v51 soma-v34 soma-v52 soma-v54 soma-v55 soma-v57 soma-v66 soma-cyberpunk68 v57-real-field",
+        "text": "CONTINUITÉ SAUVEGARDÉE",
+        "position": "fixed",
+        "z": "72",
+        "style": null,
+        "rect": {
+          "x": 971.75,
+          "y": 18,
+          "w": 290.25,
+          "h": 25
+        },
+        "overflow": "visible"
+      },
+      {
+        "tag": "DIV",
+        "id": "v52-hud",
+        "class": "",
+        "parent": "soma-v42 soma-v43 soma-v44 soma-v45 soma-v46 v46-migration-warning soma-v47 v47-migration-warning soma-v48 soma-v49 soma-v50 soma-v51 soma-v34 soma-v52 soma-v54 soma-v55 soma-v57 soma-v66 soma-cyberpunk68 v57-real-field",
+        "text": "MARSEILLE CENTRE · TRAME DE VÉRITÉ\nV52-MC-33 · Rue de la Providence / Rue Magenta\nSOURCE DÉCLARÉE · STAGED NON CERTIFIÉ · cache 6/13\nAncrer la Canebière · 1/10",
+        "position": "fixed",
+        "z": "48",
+        "style": null,
+        "rect": {
+          "x": 330,
+          "y": 613.5,
+          "w": 620,
+          "h": 88.5
+        },
+        "overflow": "visible"
+      },
+      {
+        "tag": "ASIDE",
+        "id": "v54-attribution",
+        "class": "",
+        "parent": "soma-v42 soma-v43 soma-v44 soma-v45 soma-v46 v46-migration-warning soma-v47 v47-migration-warning soma-v48 soma-v49 soma-v50 soma-v51 soma-v34 soma-v52 soma-v54 soma-v55 soma-v57 soma-v66 soma-cyberpunk68 v57-real-field",
+        "text": "Données : © contributeurs OpenStreetMap · ODbL 1.0 · extrait BBBike",
+        "position": "fixed",
+        "z": "95",
+        "style": null,
+        "rect": {
+          "x": 8,
+          "y": 695,
+          "w": 401.21875,
+          "h": 21
+        },
+        "overflow": "visible"
+      },
+      {
+        "tag": "OUTPUT",
+        "id": "terrain56-hud",
+        "class": "",
+        "parent": "soma-v42 soma-v43 soma-v44 soma-v45 soma-v46 v46-migration-warning soma-v47 v47-migration-warning soma-v48 soma-v49 soma-v50 soma-v51 soma-v34 soma-v52 soma-v54 soma-v55 soma-v57 soma-v66 soma-cyberpunk68 v57-real-field",
+        "text": "IGN · 6.57 m · grille 25 m · non certifié",
+        "position": "fixed",
+        "z": "8",
+        "style": null,
+        "rect": {
+          "x": 18,
+          "y": 528,
+          "w": 270.421875,
+          "h": 27
+        },
+        "overflow": "visible"
+      },
+      {
+        "tag": "ASIDE",
+        "id": "v70-hud",
+        "class": "",
+        "parent": "soma-v42 soma-v43 soma-v44 soma-v45 soma-v46 v46-migration-warning soma-v47 v47-migration-warning soma-v48 soma-v49 soma-v50 soma-v51 soma-v34 soma-v52 soma-v54 soma-v55 soma-v57 soma-v66 soma-cyberpunk68 v57-real-field",
+        "text": "CORTEX TACTIQUE · MAJ+F1\n\nCyberdeck 100 · charge neurale 0%\n\nà l’arrêt · silencieux · suspicion 0%\n\nMaj+F2 Écho · Maj+F3 Rempart · Maj+F4 Ancrage",
+        "position": "fixed",
+        "z": "12",
+        "style": null,
+        "rect": {
+          "x": 18,
+          "y": 377,
+          "w": 250,
+          "h": 107
+        },
+        "overflow": "visible"
+      }
+    ]
+  },
+  {
+    "width": 1024,
+    "height": 768,
+    "rows": [
+      {
+        "tag": "DIV",
+        "id": "",
+        "class": "game",
+        "parent": "soma-v42 soma-v43 soma-v44 soma-v45 soma-v46 v46-migration-warning soma-v47 v47-migration-warning soma-v48 soma-v49 soma-v50 soma-v51 soma-v34 soma-v52 soma-v54 soma-v55 soma-v57 soma-v66 soma-cyberpunk68 v57-real-field",
+        "text": "SOMA//MASSILIA 0.72\nJ1 · 21:28 · Soirée\nMarseille · Cours Belsunce / Rue de la Providence\nCellule NULL · Nuit claire · 21:28\nNV 1\n0/336 XP\nINTÉGRITÉ\n100/104\nBLINDAGE\n65/120\nDETTE\n28\nTENSION\n12\nMÉMOIRE\n100\nP-12 TRAME\n12 / 72\nSEMI\nVÉHICULE\n00",
+        "position": "fixed",
+        "z": "auto",
+        "style": null,
+        "rect": {
+          "x": 0,
+          "y": 0,
+          "w": 1024,
+          "h": 768
+        },
+        "overflow": "visible"
+      },
+      {
+        "tag": "DIV",
+        "id": "",
+        "class": "hud",
+        "parent": "game",
+        "text": "SOMA//MASSILIA 0.72\nJ1 · 21:28 · Soirée\nMarseille · Cours Belsunce / Rue de la Providence\nCellule NULL · Nuit claire · 21:28\nNV 1\n0/336 XP\nINTÉGRITÉ\n100/104\nBLINDAGE\n65/120\nDETTE\n28\nTENSION\n12\nMÉMOIRE\n100\nP-12 TRAME\n12 / 72\nSEMI\nVÉHICULE\n00",
+        "position": "absolute",
+        "z": "auto",
+        "style": null,
+        "rect": {
+          "x": 0,
+          "y": 0,
+          "w": 1024,
+          "h": 768
+        },
+        "overflow": "visible"
+      },
+      {
+        "tag": "DIV",
+        "id": "",
+        "class": "topbar",
+        "parent": "hud",
+        "text": "SOMA//MASSILIA 0.72\nJ1 · 21:28 · Soirée\nMarseille · Cours Belsunce / Rue de la Providence\nCellule NULL · Nuit claire · 21:28",
+        "position": "absolute",
+        "z": "auto",
+        "style": null,
+        "rect": {
+          "x": 0,
+          "y": 0,
+          "w": 1024,
+          "h": 60
+        },
+        "overflow": "visible"
+      },
+      {
+        "tag": "DIV",
+        "id": "level27",
+        "class": "player-level",
+        "parent": "hud",
+        "text": "NV 1\n0/336 XP",
+        "position": "absolute",
+        "z": "auto",
+        "style": null,
+        "rect": {
+          "x": 18,
+          "y": 546,
+          "w": 121.09375,
+          "h": 31
+        },
+        "overflow": "visible"
+      },
+      {
+        "tag": "DIV",
+        "id": "",
+        "class": "stats",
+        "parent": "hud",
+        "text": "INTÉGRITÉ\n100/104\nBLINDAGE\n65/120\nDETTE\n28\nTENSION\n12\nMÉMOIRE\n100",
+        "position": "absolute",
+        "z": "auto",
+        "style": null,
+        "rect": {
+          "x": 22,
+          "y": 633,
+          "w": 310,
+          "h": 115
+        },
+        "overflow": "visible"
+      },
+      {
+        "tag": "DIV",
+        "id": "",
+        "class": "weapon",
+        "parent": "hud",
+        "text": "P-12 TRAME\n12 / 72\nSEMI",
+        "position": "absolute",
+        "z": "auto",
+        "style": null,
+        "rect": {
+          "x": 832,
+          "y": 653,
+          "w": 170,
+          "h": 95
+        },
+        "overflow": "visible"
+      },
+      {
+        "tag": "DIV",
+        "id": "quick28",
+        "class": "quick28",
+        "parent": "hud",
+        "text": "F1 · 2\nGel de réparation somatique\nF2 · 1\nPatch de blindage\nF3 · 1\nCellule neurale\nF4 · 0\nTampon mnésique",
+        "position": "fixed",
+        "z": "6",
+        "style": null,
+        "rect": {
+          "x": 256,
+          "y": 696.34375,
+          "w": 512,
+          "h": 51.65625
+        },
+        "overflow": "visible"
+      },
+      {
+        "tag": "DIV",
+        "id": "stance28",
+        "class": "stance28",
+        "parent": "hud",
+        "text": "ARME BASSE",
+        "position": "fixed",
+        "z": "5",
+        "style": null,
+        "rect": {
+          "x": 925.828125,
+          "y": 626,
+          "w": 76.171875,
+          "h": 12
+        },
+        "overflow": "visible"
+      },
+      {
+        "tag": "DIV",
+        "id": "nightObjective",
+        "class": "",
+        "parent": "hud",
+        "text": "[G] Rencontrer Sofia Amari · Le Résonance",
+        "position": "absolute",
+        "z": "auto",
+        "style": null,
+        "rect": {
+          "x": 20,
+          "y": 133,
+          "w": 349.90625,
+          "h": 37.5
+        },
+        "overflow": "visible"
+      },
+      {
+        "tag": "DIV",
+        "id": "modeText",
+        "class": "mode",
+        "parent": "hud",
+        "text": "1440 CR",
+        "position": "absolute",
+        "z": "auto",
+        "style": null,
+        "rect": {
+          "x": 957.640625,
+          "y": 112,
+          "w": 46.359375,
+          "h": 13
+        },
+        "overflow": "visible"
+      },
+      {
+        "tag": "BUTTON",
+        "id": "v34-launcher",
+        "class": "",
+        "parent": "game",
+        "text": "F6 DOSSIERS",
+        "position": "absolute",
+        "z": "80",
+        "style": null,
+        "rect": {
+          "x": 882.546875,
+          "y": 59,
+          "w": 119.453125,
+          "h": 35
+        },
+        "overflow": "visible"
+      },
+      {
+        "tag": "DIV",
+        "id": "v42-posture-hud",
+        "class": "",
+        "parent": "soma-v42 soma-v43 soma-v44 soma-v45 soma-v46 v46-migration-warning soma-v47 v47-migration-warning soma-v48 soma-v49 soma-v50 soma-v51 soma-v34 soma-v52 soma-v54 soma-v55 soma-v57 soma-v66 soma-cyberpunk68 v57-real-field",
+        "text": "DEBOUT · 1,72 M",
+        "position": "fixed",
+        "z": "54",
+        "style": null,
+        "rect": {
+          "x": 454.9609375,
+          "y": 612.40625,
+          "w": 114.078125,
+          "h": 23.59375
+        },
+        "overflow": "visible"
+      },
+      {
+        "tag": "DIV",
+        "id": "v42-city-hud",
+        "class": "",
+        "parent": "soma-v42 soma-v43 soma-v44 soma-v45 soma-v46 v46-migration-warning soma-v47 v47-migration-warning soma-v48 soma-v49 soma-v50 soma-v51 soma-v34 soma-v52 soma-v54 soma-v55 soma-v57 soma-v66 soma-cyberpunk68 v57-real-field",
+        "text": "Station Zéro\nCALCAIRE / VILLE\nNuit claire\ncontinuité urbaine 0.42",
+        "position": "fixed",
+        "z": "44",
+        "style": null,
+        "rect": {
+          "x": 18,
+          "y": 116,
+          "w": 148.625,
+          "h": 71.640625
+        },
+        "overflow": "visible"
+      },
+      {
+        "tag": "DIV",
+        "id": "v43-cred",
+        "class": "",
+        "parent": "soma-v42 soma-v43 soma-v44 soma-v45 soma-v46 v46-migration-warning soma-v47 v47-migration-warning soma-v48 soma-v49 soma-v50 soma-v51 soma-v34 soma-v52 soma-v54 soma-v55 soma-v57 soma-v66 soma-cyberpunk68 v57-real-field",
+        "text": "INCONNU\n0\nprochain palier 80",
+        "position": "fixed",
+        "z": "53",
+        "style": null,
+        "rect": {
+          "x": 879.265625,
+          "y": 18,
+          "w": 126.734375,
+          "h": 45
+        },
+        "overflow": "visible"
+      },
+      {
+        "tag": "DIV",
+        "id": "v43-weapon",
+        "class": "",
+        "parent": "soma-v42 soma-v43 soma-v44 soma-v45 soma-v46 v46-migration-warning soma-v47 v47-migration-warning soma-v48 soma-v49 soma-v50 soma-v51 soma-v34 soma-v52 soma-v54 soma-v55 soma-v57 soma-v66 soma-cyberpunk68 v57-real-field",
+        "text": "PRÉCISION · HANCHE\nP-12 TRAME · 100 % stabilité",
+        "position": "fixed",
+        "z": "52",
+        "style": null,
+        "rect": {
+          "x": 382,
+          "y": 645,
+          "w": 260,
+          "h": 31
+        },
+        "overflow": "visible"
+      },
+      {
+        "tag": "DIV",
+        "id": "v44-gps",
+        "class": "",
+        "parent": "soma-v42 soma-v43 soma-v44 soma-v45 soma-v46 v46-migration-warning soma-v47 v47-migration-warning soma-v48 soma-v49 soma-v50 soma-v51 soma-v34 soma-v52 soma-v54 soma-v55 soma-v57 soma-v66 soma-cyberpunk68 v57-real-field",
+        "text": "GARE SAINT-CHARLES\nBoulevard d’Athènes\n125 m · Marseille · La Canebière / Allée Léon Gambetta",
+        "position": "fixed",
+        "z": "68",
+        "style": null,
+        "rect": {
+          "x": 18,
+          "y": 94,
+          "w": 330,
+          "h": 75.1875
+        },
+        "overflow": "visible"
+      },
+      {
+        "tag": "DIV",
+        "id": "v45-tracker",
+        "class": "",
+        "parent": "soma-v42 soma-v43 soma-v44 soma-v45 soma-v46 v46-migration-warning soma-v47 v47-migration-warning soma-v48 soma-v49 soma-v50 soma-v51 soma-v34 soma-v52 soma-v54 soma-v55 soma-v57 soma-v66 soma-cyberpunk68 v57-real-field",
+        "text": "ACTE III · 0.45\nVille ouverte\nAppel disponible · Un homme derrière la balise",
+        "position": "fixed",
+        "z": "72",
+        "style": null,
+        "rect": {
+          "x": 18,
+          "y": 676.953125,
+          "w": 409.59375,
+          "h": 65.046875
+        },
+        "overflow": "visible"
+      },
+      {
+        "tag": "DIV",
+        "id": "v45-autosave",
+        "class": "on",
+        "parent": "soma-v42 soma-v43 soma-v44 soma-v45 soma-v46 v46-migration-warning soma-v47 v47-migration-warning soma-v48 soma-v49 soma-v50 soma-v51 soma-v34 soma-v52 soma-v54 soma-v55 soma-v57 soma-v66 soma-cyberpunk68 v57-real-field",
+        "text": "CONTINUITÉ SAUVEGARDÉE",
+        "position": "fixed",
+        "z": "72",
+        "style": null,
+        "rect": {
+          "x": 715.75,
+          "y": 18,
+          "w": 290.25,
+          "h": 25
+        },
+        "overflow": "visible"
+      },
+      {
+        "tag": "DIV",
+        "id": "v52-hud",
+        "class": "",
+        "parent": "soma-v42 soma-v43 soma-v44 soma-v45 soma-v46 v46-migration-warning soma-v47 v47-migration-warning soma-v48 soma-v49 soma-v50 soma-v51 soma-v34 soma-v52 soma-v54 soma-v55 soma-v57 soma-v66 soma-cyberpunk68 v57-real-field",
+        "text": "MARSEILLE CENTRE · TRAME DE VÉRITÉ\nV52-MC-33 · Rue de la Providence / Rue Magenta\nSOURCE DÉCLARÉE · STAGED NON CERTIFIÉ · cache 9/13\nAncrer la Canebière · 1/10",
+        "position": "fixed",
+        "z": "48",
+        "style": null,
+        "rect": {
+          "x": 202,
+          "y": 661.5,
+          "w": 620,
+          "h": 88.5
+        },
+        "overflow": "visible"
+      },
+      {
+        "tag": "ASIDE",
+        "id": "v54-attribution",
+        "class": "",
+        "parent": "soma-v42 soma-v43 soma-v44 soma-v45 soma-v46 v46-migration-warning soma-v47 v47-migration-warning soma-v48 soma-v49 soma-v50 soma-v51 soma-v34 soma-v52 soma-v54 soma-v55 soma-v57 soma-v66 soma-cyberpunk68 v57-real-field",
+        "text": "Données : © contributeurs OpenStreetMap · ODbL 1.0 · extrait BBBike",
+        "position": "fixed",
+        "z": "95",
+        "style": null,
+        "rect": {
+          "x": 8,
+          "y": 743,
+          "w": 401.21875,
+          "h": 21
+        },
+        "overflow": "visible"
+      },
+      {
+        "tag": "OUTPUT",
+        "id": "terrain56-hud",
+        "class": "",
+        "parent": "soma-v42 soma-v43 soma-v44 soma-v45 soma-v46 v46-migration-warning soma-v47 v47-migration-warning soma-v48 soma-v49 soma-v50 soma-v51 soma-v34 soma-v52 soma-v54 soma-v55 soma-v57 soma-v66 soma-cyberpunk68 v57-real-field",
+        "text": "IGN · 6.57 m · grille 25 m · non certifié",
+        "position": "fixed",
+        "z": "8",
+        "style": null,
+        "rect": {
+          "x": 18,
+          "y": 576,
+          "w": 270.421875,
+          "h": 27
+        },
+        "overflow": "visible"
+      },
+      {
+        "tag": "ASIDE",
+        "id": "v70-hud",
+        "class": "",
+        "parent": "soma-v42 soma-v43 soma-v44 soma-v45 soma-v46 v46-migration-warning soma-v47 v47-migration-warning soma-v48 soma-v49 soma-v50 soma-v51 soma-v34 soma-v52 soma-v54 soma-v55 soma-v57 soma-v66 soma-cyberpunk68 v57-real-field",
+        "text": "CORTEX TACTIQUE · MAJ+F1\n\nCyberdeck 100 · charge neurale 0%\n\nà l’arrêt · silencieux · suspicion 0%\n\nMaj+F2 Écho · Maj+F3 Rempart · Maj+F4 Ancrage",
+        "position": "fixed",
+        "z": "12",
+        "style": null,
+        "rect": {
+          "x": 18,
+          "y": 425,
+          "w": 250,
+          "h": 107
+        },
+        "overflow": "visible"
+      }
+    ]
+  }
+]

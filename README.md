@@ -106,6 +106,10 @@ python3 -m unittest discover -s game/tests/v72 -p 'test_*.py'
 
 Les contrôles propres à la version actuelle sont détaillés dans [README_v72.md](game/README_v72.md) ; les augmentations héritées dans [README_v70.md](game/README_v70.md), et les outils GIS facultatifs dans [README_v69.md](game/README_v69.md). Les tests du lanceur historique v0.71 visent sa commande v0.71 ; le lanceur partagé actuel est testé dans v0.72. Le contrôle historique Chromium avec Playwright reste disponible dans `game/tests/v68/browser_smoke.py`, avec `--version 0.69` et une URL de serveur pointant sur le HTML v0.69. Ces vérifications ne certifient ni une campagne humaine complète ni une reproduction métropolitaine 1:1.
 
+## Développement guidé
+
+Les contributions suivent les [consignes du projet](AGENTS.md). La [sélection des guides gamedev](docs/development/GAMEDEV_SKILLS.md) adapte `awesome-gamedev-agent-skills` au moteur WebGL 2 de Massilia, à ses données géographiques et à sa chaîne de reconstruction. La [procédure de validation](docs/development/VALIDATION.md) précise les contrôles à utiliser et les observations encore à réaliser sur la v0.72.
+
 ## Sources
 
 - **OpenStreetMap**, contributeurs OSM, ODbL 1.0 : extrait Marseille fourni, instantané déclaré du 18 septembre 2026, conservé pour la campagne ; extrait régional Geofabrik du **24 octobre 2026** pour les 51 809 cellules vectorielles métropolitaines, toutes acceptées par le validateur du moteur.

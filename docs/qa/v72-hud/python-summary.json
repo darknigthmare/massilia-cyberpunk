@@ -1,0 +1,26 @@
+[
+  {
+    "suite": "test_build_v72.py",
+    "tests": 10,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "successful": true
+  },
+  {
+    "suite": "test_viewer_build_v72.py",
+    "tests": 9,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "successful": true
+  },
+  {
+    "suite": "test_launch_cache_v72.py",
+    "tests": 13,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "successful": true
+  }
+]

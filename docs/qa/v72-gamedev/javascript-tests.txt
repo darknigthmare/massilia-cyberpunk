@@ -1,0 +1,382 @@
+TAP version 13
+# Subtest: real police shares a sampled contact with a colleague, without granting stun or arrest
+ok 1 - real police shares a sampled contact with a colleague, without granting stun or arrest
+  ---
+  duration_ms: 23.29777
+  type: 'test'
+  ...
+# Subtest: received evidence cannot relay itself or restart the original expiry in a loop
+ok 2 - received evidence cannot relay itself or restart the original expiry in a loop
+  ---
+  duration_ms: 14.325458
+  type: 'test'
+  ...
+# Subtest: radio is limited by faction, original source range and local zone space
+ok 3 - radio is limited by faction, original source range and local zone space
+  ---
+  duration_ms: 4.160901
+  type: 'test'
+  ...
+# Subtest: real camera alerts only nearby local security and keeps the observed point
+ok 4 - real camera alerts only nearby local security and keeps the observed point
+  ---
+  duration_ms: 2.690355
+  type: 'test'
+  ...
+# Subtest: explicitly compatible tactical units can exchange observations with historical police
+ok 5 - explicitly compatible tactical units can exchange observations with historical police
+  ---
+  duration_ms: 2.13652
+  type: 'test'
+  ...
+# Subtest: source death/replacement and receiver replacement never inherit an object identity
+ok 6 - source death/replacement and receiver replacement never inherit an object identity
+  ---
+  duration_ms: 1.673392
+  type: 'test'
+  ...
+# Subtest: old campaigns, wanted alone, imports and zone object transfers do not supply contacts
+ok 7 - old campaigns, wanted alone, imports and zone object transfers do not supply contacts
+  ---
+  duration_ms: 3.80169
+  type: 'test'
+  ...
+# Subtest: radio snapshots are detached; contact, observer and pair-work budgets stay bounded
+ok 8 - radio snapshots are detached; contact, observer and pair-work budgets stay bounded
+  ---
+  duration_ms: 13.850906
+  type: 'test'
+  ...
+# Subtest: lowered wanted level discards police broadcasts before a later dispatch
+ok 9 - lowered wanted level discards police broadcasts before a later dispatch
+  ---
+  duration_ms: 7.406534
+  type: 'test'
+  ...
+# Subtest: radio keeps motor lock and weapon jam; firing still needs a new personal visual confirmation
+ok 10 - radio keeps motor lock and weapon jam; firing still needs a new personal visual confirmation
+  ---
+  duration_ms: 2.526188
+  type: 'test'
+  ...
+# Subtest: a broadcast stores its original emitter point and cannot use a moving relay to reach farther
+ok 11 - a broadcast stores its original emitter point and cannot use a moving relay to reach farther
+  ---
+  duration_ms: 1.736527
+  type: 'test'
+  ...
+# Subtest: mixed terrain NGF and relative vehicle altitude do not create a false vertical radio barrier
+ok 12 - mixed terrain NGF and relative vehicle altitude do not create a false vertical radio barrier
+  ---
+  duration_ms: 1.380581
+  type: 'test'
+  ...
+# Subtest: leading decimals use the declared unit, preserving source tags and structural policy
+ok 13 - leading decimals use the declared unit, preserving source tags and structural policy
+  ---
+  duration_ms: 12.529354
+  type: 'test'
+  ...
+# Subtest: only the source-bound isolated full rectangle is narrowed; other surfaces retain identity
+ok 14 - only the source-bound isolated full rectangle is narrowed; other surfaces retain identity
+  ---
+  duration_ms: 1.050784
+  type: 'test'
+  ...
+# Subtest: different cells, geometry, source, clipping, extra surfaces and overlapping triangles fail closed
+ok 15 - different cells, geometry, source, clipping, extra surfaces and overlapping triangles fail closed
+  ---
+  duration_ms: 0.467404
+  type: 'test'
+  ...
+# Subtest: actual rendered triangle is selected; overlapping source envelopes stay explicit candidates
+ok 16 - actual rendered triangle is selected; overlapping source envelopes stay explicit candidates
+  ---
+  duration_ms: 1.928987
+  type: 'test'
+  ...
+# Subtest: occluders, culling, visibility, absent local axes and budgets never invent a road or access
+ok 17 - occluders, culling, visibility, absent local axes and budgets never invent a road or access
+  ---
+  duration_ms: 1.363085
+  type: 'test'
+  ...
+# Subtest: real delivered .5m source rectangle changes rendered native-DEM road triangles and preserves all source files
+ok 18 - real delivered .5m source rectangle changes rendered native-DEM road triangles and preserves all source files # SKIP
+  ---
+  duration_ms: 0.114943
+  type: 'test'
+  ...
+# Subtest: real v32 prepares visibly then applies its original intrusion exactly once with original cooldown
+ok 19 - real v32 prepares visibly then applies its original intrusion exactly once with original cooldown
+  ---
+  duration_ms: 15.520754
+  type: 'test'
+  ...
+# Subtest: real accepted-shot wrapper interrupts only a received hit, with no impact or cooldown refund
+ok 20 - real accepted-shot wrapper interrupts only a received hit, with no impact or cooldown refund
+  ---
+  duration_ms: 6.59113
+  type: 'test'
+  ...
+# Subtest: existing v33 arm damage factors still determine completion and interruption recovery
+ok 21 - existing v33 arm damage factors still determine completion and interruption recovery
+  ---
+  duration_ms: 5.664659
+  type: 'test'
+  ...
+# Subtest: losing true LOS interrupts and reacquiring it cannot start a ready attack for free
+ok 22 - losing true LOS interrupts and reacquiring it cannot start a ready attack for free
+  ---
+  duration_ms: 2.167927
+  type: 'test'
+  ...
+# Subtest: looking away hides the visible warning while an unobstructed hostile channel continues
+ok 23 - looking away hides the visible warning while an unobstructed hostile channel continues
+  ---
+  duration_ms: 4.388064
+  type: 'test'
+  ...
+# Subtest: NGF terrain height and the real positive-yaw/positive-pitch camera convention keep visible units in the HUD
+ok 24 - NGF terrain height and the real positive-yaw/positive-pitch camera convention keep visible units in the HUD
+  ---
+  duration_ms: 2.64711
+  type: 'test'
+  ...
+# Subtest: unknown LOS terrain, blind/jam effects, removed units and out-of-range channels cannot impact
+ok 25 - unknown LOS terrain, blind/jam effects, removed units and out-of-range channels cannot impact
+  ---
+  duration_ms: 11.90246
+  type: 'test'
+  ...
+# Subtest: the real paused render loop clears charges before its no-simulation branch
+ok 26 - the real paused render loop clears charges before its no-simulation branch
+  ---
+  duration_ms: 3.433805
+  type: 'test'
+  ...
+# Subtest: death, recovery, zone replacement, same-object zone ID, state import and explicit import reset clear transient channels
+ok 27 - death, recovery, zone replacement, same-object zone ID, state import and explicit import reset clear transient channels
+  ---
+  duration_ms: 12.641954
+  type: 'test'
+  ...
+# Subtest: bounded state and large deltas never shortcut charge; boss and ICE owners remain outside channels
+ok 28 - bounded state and large deltas never shortcut charge; boss and ICE owners remain outside channels
+  ---
+  duration_ms: 42.203817
+  type: 'test'
+  ...
+# Subtest: original v42 still classifies netrunners as human and does not provide them machine quickhacks
+ok 29 - original v42 still classifies netrunners as human and does not provide them machine quickhacks
+  ---
+  duration_ms: 1.066768
+  type: 'test'
+  ...
+# Subtest: historical conformance72: real frozen core63 is reused and a native clipped seam joins without source mutation
+ok 30 - historical conformance72: real frozen core63 is reused and a native clipped seam joins without source mutation
+  ---
+  duration_ms: 55.104671
+  type: 'test'
+  ...
+# Subtest: historical conformance72: coordinates that cross without common native identity never create a junction
+ok 31 - historical conformance72: coordinates that cross without common native identity never create a junction
+  ---
+  duration_ms: 5.134449
+  type: 'test'
+  ...
+# Subtest: historical conformance72: ambiguous nearby axes require an explicit source choice and never draw click connectors
+ok 32 - historical conformance72: ambiguous nearby axes require an explicit source choice and never draw click connectors
+  ---
+  duration_ms: 6.479126
+  type: 'test'
+  ...
+# Subtest: historical conformance72: coincident non-native endpoint alternatives from core63 are refused
+ok 33 - historical conformance72: coincident non-native endpoint alternatives from core63 are refused
+  ---
+  duration_ms: 6.580739
+  type: 'test'
+  ...
+# Subtest: historical conformance72: zero-length results cannot claim a transition between unrelated coincident axes
+ok 34 - historical conformance72: zero-length results cannot claim a transition between unrelated coincident axes
+  ---
+  duration_ms: 7.427756
+  type: 'test'
+  ...
+# Subtest: historical conformance72: one-way car access remains directional while pedestrian source access is retained
+ok 35 - historical conformance72: one-way car access remains directional while pedestrian source access is retained
+  ---
+  duration_ms: 16.661974
+  type: 'test'
+  ...
+# Subtest: historical conformance72: actual frozen core enforces car turn rules and step avoidance
+ok 36 - historical conformance72: actual frozen core enforces car turn rules and step avoidance
+  ---
+  duration_ms: 10.63513
+  type: 'test'
+  ...
+# Subtest: historical conformance72: prepared refusals for barriers, covered roads and unresolved conditions are not revived
+ok 37 - historical conformance72: prepared refusals for barriers, covered roads and unresolved conditions are not revived
+  ---
+  duration_ms: 2.320848
+  type: 'test'
+  ...
+# Subtest: historical conformance72: a missing cell is explicit and is never bridged by proximity
+ok 38 - historical conformance72: a missing cell is explicit and is never bridged by proximity
+  ---
+  duration_ms: 6.901362
+  type: 'test'
+  ...
+# Subtest: historical conformance72: cell count caps loading and an incomplete sector is explicit
+ok 39 - historical conformance72: cell count caps loading and an incomplete sector is explicit
+  ---
+  duration_ms: 1.481804
+  type: 'test'
+  ...
+# Subtest: historical conformance72: SHA, byte length, PBF, topology, core and cell source mismatches refuse analysis
+ok 40 - historical conformance72: SHA, byte length, PBF, topology, core and cell source mismatches refuse analysis
+  ---
+  duration_ms: 26.913821
+  type: 'test'
+  ...
+# Subtest: historical conformance72: native coordinate, metadata, permissions and turn conflicts across tiles are refused
+ok 41 - historical conformance72: native coordinate, metadata, permissions and turn conflicts across tiles are refused
+  ---
+  duration_ms: 8.814576
+  type: 'test'
+  ...
+# Subtest: historical conformance72: strict per-asset, decoded, resident and graph budgets bound analysis
+ok 42 - historical conformance72: strict per-asset, decoded, resident and graph budgets bound analysis
+  ---
+  duration_ms: 4.495025
+  type: 'test'
+  ...
+# Subtest: historical conformance72: catalogue metadata and graphs share the resident accounting limit
+ok 43 - historical conformance72: catalogue metadata and graphs share the resident accounting limit
+  ---
+  duration_ms: 0.765744
+  type: 'test'
+  ...
+# Subtest: historical conformance72: a stalled reader is aborted at the deadline and graph storage is released
+ok 44 - historical conformance72: a stalled reader is aborted at the deadline and graph storage is released
+  ---
+  duration_ms: 20.791808
+  type: 'test'
+  ...
+# Subtest: historical conformance72: external cancellation, concurrent requests and explicit cancellation remain isolated
+ok 45 - historical conformance72: external cancellation, concurrent requests and explicit cancellation remain isolated
+  ---
+  duration_ms: 2.520218
+  type: 'test'
+  ...
+# Subtest: historical conformance72: deadline after synchronous router work discards the result instead of presenting it
+ok 46 - historical conformance72: deadline after synchronous router work discards the result instead of presenting it
+  ---
+  duration_ms: 4.957573
+  type: 'test'
+  ...
+# Subtest: historical conformance72: the real router search cap interrupts rather than returning a truncated successful path
+ok 47 - historical conformance72: the real router search cap interrupts rather than returning a truncated successful path
+  ---
+  duration_ms: 7.987355
+  type: 'test'
+  ...
+# Subtest: historical conformance72: mutable caller coordinates do not alter endpoints during asynchronous reads
+ok 48 - historical conformance72: mutable caller coordinates do not alter endpoints during asynchronous reads
+  ---
+  duration_ms: 4.998494
+  type: 'test'
+  ...
+# Subtest: historical conformance72: world identity is copied and changing the caller manifest cannot redirect a running analysis
+ok 49 - historical conformance72: world identity is copied and changing the caller manifest cannot redirect a running analysis
+  ---
+  duration_ms: 4.258168
+  type: 'test'
+  ...
+# Subtest: historical conformance72: there is no DOM, fetch, storage or campaign dependency in the browser export
+ok 50 - historical conformance72: there is no DOM, fetch, storage or campaign dependency in the browser export
+  ---
+  duration_ms: 2.388771
+  type: 'test'
+  ...
+# Subtest: historical conformance72: real AMP world: Belsunce to République uses verified sectors and actual native turns
+ok 51 - historical conformance72: real AMP world: Belsunce to République uses verified sectors and actual native turns # SKIP
+  ---
+  duration_ms: 0.067813
+  type: 'test'
+  ...
+# Subtest: native source routes cross forty-eight cells without mutating inputs or retaining graphs
+ok 52 - native source routes cross forty-eight cells without mutating inputs or retaining graphs
+  ---
+  duration_ms: 128.549136
+  type: 'test'
+  ...
+# Subtest: an overlong direct spine is interrupted before IO and can explicitly expand
+ok 53 - an overlong direct spine is interrupted before IO and can explicitly expand
+  ---
+  duration_ms: 163.117164
+  type: 'test'
+  ...
+# Subtest: both endpoint cells precede lateral cells under a tight corridor budget
+ok 54 - both endpoint cells precede lateral cells under a tight corridor budget
+  ---
+  duration_ms: 6.095338
+  type: 'test'
+  ...
+# Subtest: missing coverage cannot become an assertion that no route exists
+ok 55 - missing coverage cannot become an assertion that no route exists
+  ---
+  duration_ms: 9.158404
+  type: 'test'
+  ...
+# Subtest: a known cell without prepared NAV leaves explicit incomplete corridor coverage without an asset read
+ok 56 - a known cell without prepared NAV leaves explicit incomplete corridor coverage without an asset read
+  ---
+  duration_ms: 4.131628
+  type: 'test'
+  ...
+# Subtest: an unreadable NAV cell stays incomplete while a verified empty graph is complete known coverage
+ok 57 - an unreadable NAV cell stays incomplete while a verified empty graph is complete known coverage
+  ---
+  duration_ms: 7.747828
+  type: 'test'
+  ...
+# Subtest: known unprepared cells retain corridor and catalogue budgets
+ok 58 - known unprepared cells retain corridor and catalogue budgets
+  ---
+  duration_ms: 2.457694
+  type: 'test'
+  ...
+# Subtest: omitted lateral coverage reports corridor incomplete instead of no route
+ok 59 - omitted lateral coverage reports corridor incomplete instead of no route
+  ---
+  duration_ms: 3.415057
+  type: 'test'
+  ...
+# Subtest: known descriptor byte budgets refuse before issuing any reads
+ok 60 - known descriptor byte budgets refuse before issuing any reads
+  ---
+  duration_ms: 1.418969
+  type: 'test'
+  ...
+# Subtest: crossing source axes, access masks, turns and steps retain native semantics
+ok 61 - crossing source axes, access masks, turns and steps retain native semantics
+  ---
+  duration_ms: 13.798157
+  type: 'test'
+  ...
+# Subtest: cancel, deadline, busy ownership and graph release survive corridor expansion
+ok 62 - cancel, deadline, busy ownership and graph release survive corridor expansion
+  ---
+  duration_ms: 21.27351
+  type: 'test'
+  ...
+1..62
+# tests 62
+# suites 0
+# pass 60
+# fail 0
+# cancelled 0
+# skipped 2
+# todo 0
+# duration_ms 3516.777792

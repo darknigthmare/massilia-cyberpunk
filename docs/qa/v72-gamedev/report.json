@@ -1,0 +1,960 @@
+{
+  "schema": "soma/browser-smoke/72/1",
+  "version": "0.72.0",
+  "startedAt": "2026-10-29T13:07:59.348Z",
+  "url": "http://127.0.0.1:8872/SOMA_MASSILIA_URBAIN_v0_72.html",
+  "output": "/tmp/massilia-v72-smoke-final",
+  "passed": true,
+  "environment": {
+    "headless": true,
+    "freshBrowserContext": true,
+    "viewport": {
+      "width": 1440,
+      "height": 1000
+    },
+    "softwareWebGLRequested": true,
+    "browser": "156.0.8078.73",
+    "playwright": "1.56.1"
+  },
+  "fixtures": [
+    "Private browser storage starts empty; no user profile, route interception or production API mock is used.",
+    "After a real Cortex activation, the smoke sets paused=true to compare serialized timers without elapsed gameplay time.",
+    "Credits are temporarily increased by 17 solely to prove that the real grouped import restores the exported value."
+  ],
+  "limits": [
+    "No long physical traversal, campaign completion, manual combat observation or performance certification.",
+    "The persisted v70 domain used by v70/v71 is exercised in v72; historical v70/v71 pages are not played or imported separately.",
+    "A live Cortex buff is populated before import; radio/netrunner are checked empty afterward, without injecting synthetic enemies or claiming a live combat reset.",
+    "Inspectors use the actual initial rendered view. Empty, occluded or budget-limited results are reported as such, not as successful object selection.",
+    "Only installed data and the initial streamed scene are observed; 92 destinations do not prove complete metropolitan or 1:1 architectural coverage."
+  ],
+  "steps": [
+    {
+      "name": "load-current-campaign",
+      "status": "passed",
+      "startedAt": "2026-10-29T13:08:00.004Z",
+      "observation": {
+        "title": "SOMA//MASSILIA 0.72 — Marseille augmentée",
+        "edition": {
+          "version": "0.72.0",
+          "ephemeral": true,
+          "newGeographicCells": 0,
+          "contactSharing": {
+            "version": "0.72.0",
+            "zoneId": "station-exterior",
+            "clock": 0,
+            "contactCount": 0,
+            "peerCount": 0,
+            "checks": 0,
+            "dropped": 0,
+            "config": {
+              "rangeM": 48,
+              "maxContacts": 128,
+              "maxPeers": 512,
+              "maxChecks": 4096
+            },
+            "persistent": false,
+            "sourceDataChanged": false,
+            "contacts": []
+          },
+          "netrunner": {
+            "ephemeral": true,
+            "activeChannels": 0,
+            "maxChannels": 64,
+            "counters": {
+              "started": 0,
+              "completed": 0,
+              "interrupted": 0
+            },
+            "lastInterruption": null,
+            "hud": {
+              "visibleChannels": 0,
+              "telegraphs": [],
+              "hint": "",
+              "chargeSeconds": 1.1
+            }
+          }
+        },
+        "save": {
+          "ready": true,
+          "blocked": false,
+          "revision": 3,
+          "lastSaved": "2026-10-29T13:08:17.410Z",
+          "lastError": "",
+          "loadSource": "legacy"
+        }
+      },
+      "finishedAt": "2026-10-29T13:08:17.522Z"
+    },
+    {
+      "name": "enter-real-marseille",
+      "status": "passed",
+      "startedAt": "2026-10-29T13:08:17.522Z",
+      "observation": {
+        "zone": "geo:V52-MC-33",
+        "buildings": 230,
+        "roads": 81,
+        "size": [
+          250,
+          250
+        ],
+        "vectorSource": "0d16c8cd7c77945b22cb0a018f19a7d0bd1b3a2cbf05c137fa62e3aa8fd56d82",
+        "terrainSource": "38eadcbdf00a64384e00923a85ce9886ec4d9a420d610dc9ccfd4449c41f344b",
+        "webgl2": true,
+        "shaderLinked": true,
+        "webglContextLost": false
+      },
+      "finishedAt": "2026-10-29T13:08:32.675Z"
+    },
+    {
+      "name": "cortex-keyboard-and-visible-controls",
+      "status": "passed",
+      "startedAt": "2026-10-29T13:08:32.675Z",
+      "observation": {
+        "shortcut": "Shift+F1",
+        "closeButtonReturnedToGame": true,
+        "title": "Cortex tactique",
+        "cards": 3,
+        "energy": "Cyberdeck 100 / 100",
+        "paused": true
+      },
+      "finishedAt": "2026-10-29T13:08:34.902Z"
+    },
+    {
+      "name": "grouped-save-export-import",
+      "status": "passed",
+      "startedAt": "2026-10-29T13:08:34.902Z",
+      "observation": {
+        "exportFile": "grouped-save-v72.json",
+        "bytes": 416861,
+        "sha256": "28953012d9ff82d243ba8cc54d0ec92976dc5a592e92038ad19dcbd5d3a82770",
+        "campaignSchema": "soma-continuity/37",
+        "modules": 11,
+        "activeBeforeImport": {
+          "scan": 0,
+          "barrier": 3.6833333333333345,
+          "focus": 0
+        },
+        "persisted": {
+          "schema": "soma-massilia/augmentations/1",
+          "selected": "barrier",
+          "cooldowns": {
+            "scan": 0,
+            "barrier": 23.68333333333335,
+            "focus": 0
+          },
+          "trace": 30.099999999999973,
+          "stats": {
+            "activations": 1,
+            "scan": 0,
+            "barrier": 1,
+            "focus": 0,
+            "damageAbsorbed": 0
+          }
+        },
+        "import": {
+          "result": {
+            "ok": true,
+            "modules": 11
+          },
+          "previousCredits": 1440,
+          "mutatedCredits": 1457
+        },
+        "after": {
+          "saveKey": "soma-massilia.continuity.v37",
+          "status": {
+            "ready": true,
+            "blocked": false,
+            "revision": 9,
+            "lastSaved": "2026-10-29T13:08:38.814Z",
+            "lastError": "",
+            "loadSource": "legacy"
+          },
+          "credits": 1440,
+          "zone": "geo:V52-MC-33",
+          "v67Schema": "soma-v67/1",
+          "conversations": {},
+          "v70": {
+            "schema": "soma-massilia/augmentations/1",
+            "selected": "barrier",
+            "cooldowns": {
+              "scan": 0,
+              "barrier": 23.68333333333335,
+              "focus": 0
+            },
+            "trace": 30.099999999999973,
+            "stats": {
+              "activations": 1,
+              "scan": 0,
+              "barrier": 1,
+              "focus": 0,
+              "damageAbsorbed": 0
+            }
+          },
+          "augmentation": {
+            "version": "0.70.0",
+            "persisted": {
+              "schema": "soma-massilia/augmentations/1",
+              "selected": "barrier",
+              "cooldowns": {
+                "scan": 0,
+                "barrier": 23.68333333333335,
+                "focus": 0
+              },
+              "trace": 30.099999999999973,
+              "stats": {
+                "activations": 1,
+                "scan": 0,
+                "barrier": 1,
+                "focus": 0,
+                "damageAbsorbed": 0
+              }
+            },
+            "active": {
+              "scan": 0,
+              "barrier": 0,
+              "focus": 0
+            },
+            "barrierRemaining": 0,
+            "modifiers": {
+              "spread": 1,
+              "recoil": 1,
+              "scanActive": false,
+              "barrierActive": false,
+              "focusActive": false,
+              "blocksHacking": false,
+              "neuralLoad": 30.099999999999973,
+              "neuralRisk": "low"
+            },
+            "lastReason": "restored",
+            "energy": 72.76000000000012,
+            "tension": 16.008600000000015,
+            "channel": null,
+            "scanTargets": [],
+            "perception": {
+              "signature": {
+                "level": 0,
+                "radiusM": 0,
+                "posture": "still"
+              },
+              "suspicion": 0,
+              "visibleObservers": 0,
+              "searchingObservers": 0,
+              "combatObservers": 0,
+              "rememberedObservers": 0,
+              "zoneId": "geo:V52-MC-33",
+              "observerCount": 0,
+              "activeSounds": 0,
+              "error": null,
+              "ready": true,
+              "hud": {
+                "signature": {
+                  "level": 0,
+                  "radiusM": 0,
+                  "posture": "still"
+                },
+                "suspicion": 0,
+                "visibleObservers": 0,
+                "searchingObservers": 0,
+                "combatObservers": 0,
+                "rememberedObservers": 0,
+                "zoneId": "geo:V52-MC-33",
+                "observerCount": 0,
+                "activeSounds": 0,
+                "error": null,
+                "ready": true
+              },
+              "observers": [],
+              "sourceDataChanged": false
+            }
+          },
+          "radio": {
+            "version": "0.72.0",
+            "zoneId": "geo:V52-MC-33",
+            "clock": 0,
+            "contactCount": 0,
+            "peerCount": 0,
+            "checks": 0,
+            "dropped": 0,
+            "config": {
+              "rangeM": 48,
+              "maxContacts": 128,
+              "maxPeers": 512,
+              "maxChecks": 4096
+            },
+            "persistent": false,
+            "sourceDataChanged": false,
+            "contacts": []
+          },
+          "netrunner": {
+            "ephemeral": true,
+            "activeChannels": 0,
+            "maxChannels": 64,
+            "counters": {
+              "started": 0,
+              "completed": 0,
+              "interrupted": 0
+            },
+            "lastInterruption": null,
+            "hud": {
+              "visibleChannels": 0,
+              "telegraphs": [],
+              "hint": "",
+              "chargeSeconds": 1.1
+            }
+          },
+          "savedV70": {
+            "schema": "soma-massilia/augmentations/1",
+            "selected": "barrier",
+            "cooldowns": {
+              "scan": 0,
+              "barrier": 23.68333333333335,
+              "focus": 0
+            },
+            "trace": 30.099999999999973,
+            "stats": {
+              "activations": 1,
+              "scan": 0,
+              "barrier": 1,
+              "focus": 0,
+              "damageAbsorbed": 0
+            }
+          },
+          "hasV71Domain": false,
+          "hasV72Domain": false
+        }
+      },
+      "finishedAt": "2026-10-29T13:08:39.547Z"
+    },
+    {
+      "name": "reload-restores-continuity",
+      "status": "passed",
+      "startedAt": "2026-10-29T13:08:39.547Z",
+      "observation": {
+        "saveKey": "soma-massilia.continuity.v37",
+        "status": {
+          "ready": true,
+          "blocked": false,
+          "revision": 13,
+          "lastSaved": "2026-10-29T13:09:08.249Z",
+          "lastError": "",
+          "loadSource": "current"
+        },
+        "credits": 1440,
+        "zone": "geo:V52-MC-33",
+        "v67Schema": "soma-v67/1",
+        "conversations": {},
+        "v70": {
+          "schema": "soma-massilia/augmentations/1",
+          "selected": "barrier",
+          "cooldowns": {
+            "scan": 0,
+            "barrier": 23.68333333333335,
+            "focus": 0
+          },
+          "trace": 30.099999999999973,
+          "stats": {
+            "activations": 1,
+            "scan": 0,
+            "barrier": 1,
+            "focus": 0,
+            "damageAbsorbed": 0
+          }
+        },
+        "augmentation": {
+          "version": "0.70.0",
+          "persisted": {
+            "schema": "soma-massilia/augmentations/1",
+            "selected": "barrier",
+            "cooldowns": {
+              "scan": 0,
+              "barrier": 23.68333333333335,
+              "focus": 0
+            },
+            "trace": 30.099999999999973,
+            "stats": {
+              "activations": 1,
+              "scan": 0,
+              "barrier": 1,
+              "focus": 0,
+              "damageAbsorbed": 0
+            }
+          },
+          "active": {
+            "scan": 0,
+            "barrier": 0,
+            "focus": 0
+          },
+          "barrierRemaining": 0,
+          "modifiers": {
+            "spread": 1,
+            "recoil": 1,
+            "scanActive": false,
+            "barrierActive": false,
+            "focusActive": false,
+            "blocksHacking": false,
+            "neuralLoad": 30.099999999999973,
+            "neuralRisk": "low"
+          },
+          "lastReason": "ready",
+          "energy": 72.76000000000012,
+          "tension": 16.008600000000015,
+          "channel": null,
+          "scanTargets": [],
+          "perception": {
+            "signature": {
+              "level": 0,
+              "radiusM": 0,
+              "posture": "still"
+            },
+            "suspicion": 0,
+            "visibleObservers": 0,
+            "searchingObservers": 0,
+            "combatObservers": 0,
+            "rememberedObservers": 0,
+            "zoneId": "geo:V52-MC-33",
+            "observerCount": 0,
+            "activeSounds": 0,
+            "error": null,
+            "ready": true,
+            "hud": {
+              "signature": {
+                "level": 0,
+                "radiusM": 0,
+                "posture": "still"
+              },
+              "suspicion": 0,
+              "visibleObservers": 0,
+              "searchingObservers": 0,
+              "combatObservers": 0,
+              "rememberedObservers": 0,
+              "zoneId": "geo:V52-MC-33",
+              "observerCount": 0,
+              "activeSounds": 0,
+              "error": null,
+              "ready": true
+            },
+            "observers": [],
+            "sourceDataChanged": false
+          }
+        },
+        "radio": {
+          "version": "0.72.0",
+          "zoneId": "geo:V52-MC-33",
+          "clock": 0,
+          "contactCount": 0,
+          "peerCount": 0,
+          "checks": 0,
+          "dropped": 0,
+          "config": {
+            "rangeM": 48,
+            "maxContacts": 128,
+            "maxPeers": 512,
+            "maxChecks": 4096
+          },
+          "persistent": false,
+          "sourceDataChanged": false,
+          "contacts": []
+        },
+        "netrunner": {
+          "ephemeral": true,
+          "activeChannels": 0,
+          "maxChannels": 64,
+          "counters": {
+            "started": 0,
+            "completed": 0,
+            "interrupted": 0
+          },
+          "lastInterruption": null,
+          "hud": {
+            "visibleChannels": 0,
+            "telegraphs": [],
+            "hint": "",
+            "chargeSeconds": 1.1
+          }
+        },
+        "savedV70": {
+          "schema": "soma-massilia/augmentations/1",
+          "selected": "barrier",
+          "cooldowns": {
+            "scan": 0,
+            "barrier": 23.68333333333335,
+            "focus": 0
+          },
+          "trace": 30.099999999999973,
+          "stats": {
+            "activations": 1,
+            "scan": 0,
+            "barrier": 1,
+            "focus": 0,
+            "damageAbsorbed": 0
+          }
+        },
+        "hasV71Domain": false,
+        "hasV72Domain": false
+      },
+      "finishedAt": "2026-10-29T13:09:08.430Z"
+    },
+    {
+      "name": "open-real-v72-flyover-button",
+      "status": "passed",
+      "startedAt": "2026-10-29T13:09:08.430Z",
+      "observation": {
+        "metadata": {
+          "version": "0.72.0",
+          "defaultWorld": "data/v69/metropole/manifest.json",
+          "fallbackWorld": "data/v69/world/manifest.json",
+          "communes": 92,
+          "returnToGame": "SOMA_MASSILIA_URBAIN_v0_72.html"
+        },
+        "scene": {
+          "camera": {
+            "e": 892201.6480966414,
+            "n": 6247024.566415883,
+            "h": 180,
+            "yaw": 0.35,
+            "pitch": -0.55,
+            "speed": 45
+          },
+          "manifestURL": "http://127.0.0.1:8872/data/v69/world/manifest.json",
+          "mode": "fallback-centre",
+          "generation": 2,
+          "targetIds": [
+            "V52-MC-W03-S01",
+            "V52-MC-41",
+            "V52-MC-W03-S00",
+            "V52-MC-W03-S02",
+            "V52-MC-W04-S01",
+            "V52-MC-31",
+            "V52-MC-51",
+            "V52-MC-W04-S00",
+            "V52-MC-W04-S02"
+          ],
+          "resident": 4,
+          "pendingGeometry": 1,
+          "geometry": {
+            "meshes": 3,
+            "bytes": 8847576,
+            "maxBytes": 134217728
+          },
+          "cache": {
+            "schema": "soma-metropole/streaming-status/1",
+            "epoch": 1,
+            "resident": 4,
+            "residentIds": [
+              "V52-MC-41",
+              "V52-MC-W03-S01",
+              "V52-MC-W03-S00",
+              "V52-MC-W03-S02"
+            ],
+            "accountedBytes": 11438152,
+            "maxResidentBytes": 201326592,
+            "memoryFactor": 4,
+            "accounting": "decoded UTF-8 bytes multiplied by memoryFactor; not a browser heap measurement",
+            "running": 2,
+            "queued": 3,
+            "maxPending": 64,
+            "protectedIds": [
+              "V52-MC-W03-S01",
+              "V52-MC-41",
+              "V52-MC-W03-S00",
+              "V52-MC-W03-S02",
+              "V52-MC-W04-S01",
+              "V52-MC-31",
+              "V52-MC-51",
+              "V52-MC-W04-S00",
+              "V52-MC-W04-S02"
+            ],
+            "loads": 4,
+            "cacheHits": 0,
+            "evictions": 0,
+            "cancelled": 0,
+            "failures": 0,
+            "readyFor3D": []
+          },
+          "renderedFrames": 15,
+          "buildFailures": 0,
+          "errors": [],
+          "buildings": 834,
+          "roadTriangles": 4534,
+          "estimatedBuildings": 810,
+          "ignHeightBuildings": 0,
+          "terrainOnlySectors": 0,
+          "sourceSHA256": "0d16c8cd7c77945b22cb0a018f19a7d0bd1b3a2cbf05c137fa62e3aa8fd56d82",
+          "buildingParts": {
+            "proofSHA256": "7dfd83c636fbc65f12aaaaab8d533bda8af0fbf323a79769928a3cac79cf4b88",
+            "sourceSHA256": "0d16c8cd7c77945b22cb0a018f19a7d0bd1b3a2cbf05c137fa62e3aa8fd56d82",
+            "parents": 9,
+            "matchedParents": 1
+          },
+          "version": "0.72.0",
+          "worldIndex": {
+            "tiles": 168,
+            "flightTiles": 168,
+            "terrainOnlyTiles": 0,
+            "partialTerrainTiles": 0,
+            "gridEntries": 168,
+            "boundsL93": [
+              891326.6480966414,
+              6245649.566415883,
+              894576.6480966414,
+              6248899.566415883
+            ],
+            "communes": 92,
+            "communePolygons": 165,
+            "communeVertices": 54800,
+            "communeBuckets": 1055,
+            "communeBucketReferences": 2352,
+            "queries": {
+              "cellQueries": 99,
+              "gridLookups": 34184,
+              "communeQueries": 3,
+              "polygonTests": 95
+            }
+          },
+          "routeAnalysis": {
+            "locked": false,
+            "sceneStable": false,
+            "navigationReads": 0,
+            "sceneRunning": 2,
+            "sceneQueued": 3,
+            "maximumGlobalRequests": 2
+          },
+          "navigationRequired": false,
+          "campaignPersistenceLoaded": false,
+          "webglError": 0,
+          "webglErrors": [],
+          "coverageText": "Centre de Marseille · carte partielle · certaines hauteurs estimées"
+        },
+        "scope": "Initial installed scene only; no complete-metropolis claim."
+      },
+      "finishedAt": "2026-10-29T13:09:21.170Z"
+    },
+    {
+      "name": "inspect-architecture-in-rendered-scene",
+      "status": "passed",
+      "startedAt": "2026-10-29T13:09:21.171Z",
+      "observation": {
+        "statusText": "Bâtiment visible à 215 m · osm/way/67716270",
+        "selectionObserved": true,
+        "actualResult": {
+          "status": "building",
+          "selection": {
+            "id": "osm/way/67716270",
+            "name": null,
+            "osmURL": "https://www.openstreetmap.org/way/67716270",
+            "heightMeters": 17.450000000000003,
+            "minHeightMeters": 0,
+            "baseAltitudeNGFMeters": 32.17564516720263,
+            "heightSource": "procedural-estimate",
+            "heightQuality": "estimated",
+            "heightKind": "model-total",
+            "baseQuality": "derived-from-valid-dem",
+            "roof": {
+              "requestedShape": null,
+              "displayedShape": "flat",
+              "modelled": false,
+              "reason": "roof-shape-unavailable",
+              "quality": "unsurveyed",
+              "surveyed": false
+            },
+            "appearance": {
+              "wallSource": "interpreted-marseille-palette",
+              "roofSource": "interpreted-marseille-palette",
+              "lightingSource": "interpreted-cyberpunk",
+              "facadeSurveyed": false
+            },
+            "footprint": {
+              "source": "prepared-osm-triangles",
+              "geometrySHA256": "cfd49d22167642576f37860b2e6968d131f792f20867d492216a66ccc17662ad",
+              "cellId": "V52-MC-W03-S00",
+              "sourcePbfSHA256": "0d16c8cd7c77945b22cb0a018f19a7d0bd1b3a2cbf05c137fa62e3aa8fd56d82",
+              "clippedToCell": true,
+              "accuracyCertified": false
+            },
+            "sourceTags": {
+              "building": "yes"
+            },
+            "architecturalOneToOneCertified": false,
+            "physicalAccessVerified": false,
+            "distanceMeters": 215.0317610151502,
+            "selectedCellId": "V52-MC-W03-S00",
+            "hitL93": {
+              "e": 892264.508071025,
+              "n": 6247196.772080027,
+              "h": 49.62564468383789
+            }
+          },
+          "testedTriangles": 57799,
+          "maxTriangles": 600000,
+          "maxDistanceMeters": 1500
+        },
+        "openedByRealButton": true,
+        "closedByShortcut": "I"
+      },
+      "finishedAt": "2026-10-29T13:09:39.120Z"
+    },
+    {
+      "name": "inspect-road-in-rendered-scene",
+      "status": "passed",
+      "startedAt": "2026-10-29T13:09:39.120Z",
+      "observation": {
+        "statusText": "Le réticule rencontre un bâtiment, le relief ou une autre surface. Visez une surface routière visible.",
+        "selectionObserved": false,
+        "actualResult": {
+          "status": "occluded",
+          "selection": null,
+          "testedTriangles": 57799
+        },
+        "openedByRealButton": true,
+        "closedByShortcut": "J"
+      },
+      "finishedAt": "2026-10-29T13:09:43.935Z"
+    },
+    {
+      "name": "flyover-keeps-campaign-storage-intact",
+      "status": "passed",
+      "startedAt": "2026-10-29T13:09:43.935Z",
+      "observation": {
+        "storageKeysCompared": 16,
+        "exactStorageUnchanged": true,
+        "mode": "fallback-centre"
+      },
+      "finishedAt": "2026-10-29T13:09:43.995Z"
+    },
+    {
+      "name": "return-link-restores-campaign",
+      "status": "passed",
+      "startedAt": "2026-10-29T13:09:43.995Z",
+      "observation": {
+        "saveKey": "soma-massilia.continuity.v37",
+        "status": {
+          "ready": true,
+          "blocked": false,
+          "revision": 17,
+          "lastSaved": "2026-10-29T13:10:05.124Z",
+          "lastError": "",
+          "loadSource": "current"
+        },
+        "credits": 1440,
+        "zone": "geo:V52-MC-33",
+        "v67Schema": "soma-v67/1",
+        "conversations": {},
+        "v70": {
+          "schema": "soma-massilia/augmentations/1",
+          "selected": "barrier",
+          "cooldowns": {
+            "scan": 0,
+            "barrier": 23.68333333333335,
+            "focus": 0
+          },
+          "trace": 30.099999999999973,
+          "stats": {
+            "activations": 1,
+            "scan": 0,
+            "barrier": 1,
+            "focus": 0,
+            "damageAbsorbed": 0
+          }
+        },
+        "augmentation": {
+          "version": "0.70.0",
+          "persisted": {
+            "schema": "soma-massilia/augmentations/1",
+            "selected": "barrier",
+            "cooldowns": {
+              "scan": 0,
+              "barrier": 23.68333333333335,
+              "focus": 0
+            },
+            "trace": 30.099999999999973,
+            "stats": {
+              "activations": 1,
+              "scan": 0,
+              "barrier": 1,
+              "focus": 0,
+              "damageAbsorbed": 0
+            }
+          },
+          "active": {
+            "scan": 0,
+            "barrier": 0,
+            "focus": 0
+          },
+          "barrierRemaining": 0,
+          "modifiers": {
+            "spread": 1,
+            "recoil": 1,
+            "scanActive": false,
+            "barrierActive": false,
+            "focusActive": false,
+            "blocksHacking": false,
+            "neuralLoad": 30.099999999999973,
+            "neuralRisk": "low"
+          },
+          "lastReason": "ready",
+          "energy": 72.76000000000012,
+          "tension": 16.008600000000015,
+          "channel": null,
+          "scanTargets": [],
+          "perception": {
+            "signature": {
+              "level": 0,
+              "radiusM": 0,
+              "posture": "still"
+            },
+            "suspicion": 0,
+            "visibleObservers": 0,
+            "searchingObservers": 0,
+            "combatObservers": 0,
+            "rememberedObservers": 0,
+            "zoneId": "geo:V52-MC-33",
+            "observerCount": 0,
+            "activeSounds": 0,
+            "error": null,
+            "ready": true,
+            "hud": {
+              "signature": {
+                "level": 0,
+                "radiusM": 0,
+                "posture": "still"
+              },
+              "suspicion": 0,
+              "visibleObservers": 0,
+              "searchingObservers": 0,
+              "combatObservers": 0,
+              "rememberedObservers": 0,
+              "zoneId": "geo:V52-MC-33",
+              "observerCount": 0,
+              "activeSounds": 0,
+              "error": null,
+              "ready": true
+            },
+            "observers": [],
+            "sourceDataChanged": false
+          }
+        },
+        "radio": {
+          "version": "0.72.0",
+          "zoneId": "geo:V52-MC-33",
+          "clock": 0,
+          "contactCount": 0,
+          "peerCount": 0,
+          "checks": 0,
+          "dropped": 0,
+          "config": {
+            "rangeM": 48,
+            "maxContacts": 128,
+            "maxPeers": 512,
+            "maxChecks": 4096
+          },
+          "persistent": false,
+          "sourceDataChanged": false,
+          "contacts": []
+        },
+        "netrunner": {
+          "ephemeral": true,
+          "activeChannels": 0,
+          "maxChannels": 64,
+          "counters": {
+            "started": 0,
+            "completed": 0,
+            "interrupted": 0
+          },
+          "lastInterruption": null,
+          "hud": {
+            "visibleChannels": 0,
+            "telegraphs": [],
+            "hint": "",
+            "chargeSeconds": 1.1
+          }
+        },
+        "savedV70": {
+          "schema": "soma-massilia/augmentations/1",
+          "selected": "barrier",
+          "cooldowns": {
+            "scan": 0,
+            "barrier": 23.68333333333335,
+            "focus": 0
+          },
+          "trace": 30.099999999999973,
+          "stats": {
+            "activations": 1,
+            "scan": 0,
+            "barrier": 1,
+            "focus": 0,
+            "damageAbsorbed": 0
+          }
+        },
+        "hasV71Domain": false,
+        "hasV72Domain": false
+      },
+      "finishedAt": "2026-10-29T13:10:05.285Z"
+    },
+    {
+      "name": "runtime-and-network-errors",
+      "status": "passed",
+      "startedAt": "2026-10-29T13:10:05.285Z",
+      "observation": {
+        "pageErrors": 0,
+        "optionalManifest404s": 1,
+        "optionalManifestBodyCancellations": 1,
+        "navigationAborts": 0,
+        "warningsRecorded": 0
+      },
+      "finishedAt": "2026-10-29T13:10:05.306Z"
+    }
+  ],
+  "screenshots": [
+    "01-campaign-real-marseille.png",
+    "02-cortex.png",
+    "03-flyover-installed-data.png",
+    "04-inspector-architecture.png",
+    "04-inspector-road.png"
+  ],
+  "pageErrors": [],
+  "consoleErrors": [
+    {
+      "step": "open-real-v72-flyover-button",
+      "text": "Failed to load resource: the server responded with a status of 404 (File not found)",
+      "location": {
+        "url": "http://127.0.0.1:8872/data/v69/metropole/manifest.json",
+        "lineNumber": 0,
+        "columnNumber": 0
+      },
+      "expected": true,
+      "reason": "Browser resource error for the same observed optional-manifest 404."
+    }
+  ],
+  "consoleWarnings": [],
+  "httpErrors": [
+    {
+      "step": "open-real-v72-flyover-button",
+      "status": 404,
+      "url": "http://127.0.0.1:8872/data/v69/metropole/manifest.json",
+      "resourceType": "fetch",
+      "expected": true,
+      "reason": "Optional metropolitan manifest absent; real centre fallback successfully rendered."
+    }
+  ],
+  "requestFailures": [
+    {
+      "step": "open-real-v72-flyover-button",
+      "url": "http://127.0.0.1:8872/data/v69/metropole/manifest.json",
+      "resourceType": "fetch",
+      "error": "net::ERR_ABORTED",
+      "duringNavigation": false,
+      "expected": true,
+      "expectedKind": "optional-manifest-response-body-cancel",
+      "reason": "Viewer readBytes() cancelled the response body of the logged optional metropolitan manifest HTTP 404; the real centre fallback was successfully rendered."
+    }
+  ],
+  "requests": {
+    "total": 36,
+    "responsesByStatus": {
+      "200": 35,
+      "404": 1
+    }
+  },
+  "finishedAt": "2026-10-29T13:10:05.619Z"
+}

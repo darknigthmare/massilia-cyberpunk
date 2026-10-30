@@ -20,7 +20,7 @@ REPORT = ROOT / 'data/v72/BUILD_REPORT.json'
 PARENT_SHA256 = '6bd174abf56504640edbc8c92a4d9279fb76f0d6b079f3d4ae4bbb5a948c333d'
 VERSION = '0.72.0'
 EXTENSIONS = ('tools.v72_fidelity', 'tools.v72_routing',
-              'tools.v72_contact_sharing', 'tools.v72_netrunner')
+              'tools.v72_contact_sharing', 'tools.v72_netrunner', 'tools.v72_hud')
 FROZEN_PARENT_SOURCES = {
     'build.py': '94c6966abaa2e11f85af578ec14d6deba8ac7b400572a6747ba248f3276454cf',
     'build_v68.py': '04e6ac1adde4e656166710176a52597a65202b87ecd33ea7e1f15ab9eb55a1c0',
