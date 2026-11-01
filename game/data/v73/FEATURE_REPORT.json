@@ -1,0 +1,283 @@
+{
+  "schema": "soma-massilia/feature-delivery/1",
+  "version": "0.73.0",
+  "dateUTC": "2026-11-01",
+  "parentVersion": "0.72.0",
+  "parentCommit": "3ce16c39a2cb72efd5189c5e3fb3bc069faeb57a",
+  "parentMainSHA256": "77f09426c0c68ec2702f8ce8cc46b75d5005d468d2988416f6cbe92155ae1c50",
+  "parentViewerSHA256": "b0d2910a557c59197303a2907537d413a0d6c856d63bd2cdf8b6052d322863c7",
+  "artifacts": {
+    "SOMA_MASSILIA_URBAIN_v0_73.html": {
+      "bytes": 64278985,
+      "sha256": "b629b30434dddb8eee66402afc1f5c9eaf47389b60a3fe9125f039cdc3f4e0f2",
+      "trackedInGit": false
+    },
+    "metropole-viewer-v73.html": {
+      "bytes": 1783379,
+      "sha256": "7a6ebbffed7b52300447f3682d45decef741d1c4c2e51ac923ef19a0aef1b227",
+      "trackedInGit": false
+    }
+  },
+  "inspirationReferences": [
+    "Syndicate (PS3)",
+    "Cyberpunk 2077 (PS5)",
+    "E.Y.E: Divine Cybermancy (Steam)"
+  ],
+  "deliveredLots": {
+    "existingPaidEcho": {
+      "key": "Shift+F2",
+      "resourceOwner": "v42 cyberdeck",
+      "persistenceOwner": "core.v70",
+      "energyCost": 12,
+      "durationSeconds": 5,
+      "cooldownSeconds": 12,
+      "rangeMetersInLocalPlane": 24,
+      "maximumCandidatesExamined": 128,
+      "maximumTargets": 8,
+      "maximumVisibleMarkers": 4,
+      "requiresCurrentCameraFrustumAndLOS": true,
+      "usesNativeBodyHeightOnGeographicTerrain": true,
+      "NPCAnimationHeightUsedAsAbsoluteNGF": false,
+      "markerRectanglesMeasuredAndHUDExcluded": true,
+      "machineClassificationOwner": "v42 isMachine",
+      "newDamageOrResourceOwner": false,
+      "transientReadoutsResetOnPauseAndContextReplacement": true,
+      "report": {
+        "path": "/workspace/massilia-geodata-generated/validation-v73-2026-11-01/tactics/REPORT.md",
+        "bytes": 7867,
+        "sha256": "d096c1315e7dbaf6e4cad5e48c01c0f156d67f962c35288138b6a89ee56963c6"
+      }
+    },
+    "combatHUD": {
+      "narrativeObjectiveNode": "v45-tracker",
+      "objectiveGroup": "navigation",
+      "originalNodeAndOwnerRetained": true,
+      "accessibleEchoSummaryOutOfGridFlow": true,
+      "resolutionsVerified": [
+        [
+          1024,
+          768
+        ],
+        [
+          1280,
+          720
+        ]
+      ],
+      "largeTextEchoVerified": true,
+      "criticalReadouts": [
+        "health",
+        "armor",
+        "ammunition",
+        "statistics"
+      ],
+      "initialOverflowReproducedAndCorrected": true
+    },
+    "geographicCorridorGuide": {
+      "optional": true,
+      "guideIsRouteWaypoint": false,
+      "createsGraphConnector": false,
+      "initialCells": 96,
+      "expandedCells": 192,
+      "initialNodes": 24000,
+      "expandedNodes": 48000,
+      "initialEdges": 32000,
+      "expandedEdges": 64000,
+      "maximumAccountedResidentBytes": 134217728,
+      "defaultMillisecondsPerAnalysis": 6000,
+      "globalAssetRequests": 2,
+      "NAVReadsConcurrent": 1,
+      "fullBentSpineReservedBeforeIO": true,
+      "knownUnpreparedSectorsRemainMissing": true,
+      "globalDisconnectionClaimed": false,
+      "nativeRouterSHA256": "d2dc3ea29f653a066e3a812b7db3b79c0c8bb81cb97319ad888618048f37d9ae",
+      "realDetourMeters": [
+        5138.142,
+        7341.705,
+        9196.507
+      ],
+      "realCellCounts": [
+        75,
+        108,
+        107
+      ],
+      "samePairsFailedInExpandedDirectCorridor": true,
+      "report": {
+        "path": "/workspace/massilia-geodata-generated/validation-v73-2026-11-01/routing/proof.json",
+        "bytes": 886437,
+        "sha256": "eecb351fe8b7e07c09f5f1e1f02c8996a051eab2101fea27eedf739e0048739c"
+      }
+    },
+    "pitchedRoofFidelity": {
+      "newlyModelledRoofs": 8,
+      "realCohortSize": 38,
+      "previouslyModelledInCohort": 10,
+      "nowModelledInCohort": 18,
+      "realCellsVerified": 12,
+      "sourceAssetsVerifiedUnchanged": 36,
+      "courtyardControls": 10,
+      "cellBoundaryControls": 49,
+      "addedRenderedGeometryBytes": 9612,
+      "sourceHeightAndRiseRequired": true,
+      "maximumOuterFootprintAreaDeficitRatio": 0.01,
+      "rectangleReplacesFootprint": false,
+      "sourceFootprintsWallsHolesAndTerrainRetained": true,
+      "roofSurveyed": false,
+      "ridgeAndProfile": "inferred parametric model",
+      "sourceAssetsRewritten": false,
+      "groundBasePolicyChanged": false,
+      "report": {
+        "path": "/workspace/massilia-geodata-generated/validation-v73-2026-11-01/urban/REAL_DATA_QA.json",
+        "bytes": 56011,
+        "sha256": "0fbc0a87c180272cdc0f2f4a26a4b26a7ffb73be8c996f8ffc5bc4a35a0629f0"
+      }
+    },
+    "launcher": {
+      "edition": 73,
+      "HTMLFilesChecked": 11,
+      "reportsChecked": 9,
+      "originalFilesChecked": 27,
+      "payloadPartsChecked": 5,
+      "centreCellsChecked": 168,
+      "frozenParentSourceFiles": 90,
+      "fullPrepareAndVerifyCompleted": true,
+      "fullChainScope": "Initial candidate6ed9; final edition73 builders and verify rerun after HUD correction,16 parent artifacts unchanged.",
+      "sourceOnlyBuildScope": "Initial candidate6ed9, without Git or generated parent HTML; later HUD extension does not change parent reconstruction.",
+      "finalWarmSecondsToHTTP200": 1.3965619080117904,
+      "measurementScope": "Shared managed worker HTTP startup, not gameplay FPS or GPU measurement.",
+      "initialReport": {
+        "path": "/workspace/massilia-geodata-generated/validation-v73-2026-11-01/launch/summary.json",
+        "bytes": 328,
+        "sha256": "1545cc5dbfc53869ad5c93b4eb6a0f80362cd5be5d9f20c916f86f06cbefa295"
+      },
+      "finalReport": {
+        "path": "/workspace/massilia-geodata-generated/validation-v73-2026-11-01/launch/final/summary.json",
+        "bytes": 848,
+        "sha256": "e8afd60b7ae01627f26cd5b341c4fb28e80dc85359901d2c6e2b3895c91015af"
+      }
+    }
+  },
+  "geography": {
+    "reusedDataVersion": "0.69.0",
+    "worldManifestSHA256": "881a3fec8837fe7922801102f5fa8c33ffa85ea743ed726e7d1f71dcb8ab0bfe",
+    "communes": 92,
+    "metropoleCells": 52020,
+    "vectorSurfaceNavigationCells": 51809,
+    "terrainOnlyCells": 211,
+    "partialTerrainCells": 71,
+    "nativeDEMStepMeters": 5,
+    "eavesHeightReferences": 299391,
+    "campaignCells": 168,
+    "campaignSquareKilometers": 10.5,
+    "newGeographicCells": 0,
+    "originalSourceAssetsChanged": false,
+    "renderedRoofGeometryModified": true,
+    "fullArchitecturalOneToOne": false,
+    "physicalMetropoleCampaign": false
+  },
+  "continuity": {
+    "newCoreV73": false,
+    "coreV70Preserved": true,
+    "transientBuffsRestored": false,
+    "viewerUsesCampaignStorage": false,
+    "historicalExportSource": "Actual grouped export buttons of fresh v70 and v71 pages; no fabricated historical envelope.",
+    "sourceProfilesAreRealPlayerSaves": false,
+    "invalidSemanticImportLeavesStorageByteIdentical": true,
+    "snapshotComparison": "Only updatedAt synthesized on every snapshot is normalized; a no-action control proves the timestamp effect. Stored bytes and all other data stay exact."
+  },
+  "validation": {
+    "automatedTests": {
+      "counts": {
+        "javascript-inherited": {
+          "tests": 401,
+          "pass": 401,
+          "fail": 0,
+          "skipped": 0
+        },
+        "javascript-v73": {
+          "tests": 74,
+          "pass": 74,
+          "fail": 0,
+          "skipped": 0
+        },
+        "python-v70": {
+          "tests": 21,
+          "passed": true,
+          "historicalLauncher": null
+        },
+        "python-v71": {
+          "tests": 43,
+          "passed": true,
+          "historicalLauncher": "Historical launcher 71 commit e348acef66830210487b0615e662757880381c80 SHA256 1f1c78230e9c2713249362ecc0dec227f57f22d458ff4f0ac90e1a8c85b1ea2e"
+        },
+        "python-v72": {
+          "tests": 46,
+          "passed": true,
+          "historicalLauncher": "Historical launcher 72 commit 3ce16c3 SHA256 c2a96f0adbedb7753ca3f3ccddbe1ffdc78291258f3c77f2b14c94985b16885e"
+        },
+        "python-v73": {
+          "tests": 46,
+          "passed": true,
+          "historicalLauncher": null
+        }
+      },
+      "totalPassed": 631,
+      "skipped": 0,
+      "failed": 0
+    },
+    "historicalLauncherReplay": {
+      "method": "Exact historical launcher executed in memory with original test assertions; current launcher tested by73.",
+      "v71Commit": "e348acef66830210487b0615e662757880381c80",
+      "v71LauncherSHA256": "1f1c78230e9c2713249362ecc0dec227f57f22d458ff4f0ac90e1a8c85b1ea2e",
+      "v72Commit": "3ce16c39a2cb72efd5189c5e3fb3bc069faeb57a",
+      "v72LauncherSHA256": "c2a96f0adbedb7753ca3f3ccddbe1ffdc78291258f3c77f2b14c94985b16885e"
+    },
+    "independentReview": {
+      "path": "/workspace/massilia-geodata-generated/validation-v73-2026-11-01/urban/INDEPENDENT_REVIEW.md",
+      "bytes": 2569,
+      "sha256": "149ad62c826af1e322e0108da53b9642974623b280bbbad43de6a57f41f62bb1"
+    },
+    "browser": {
+      "smoke": {
+        "path": "/workspace/massilia-geodata-generated/validation-v73-2026-11-01/browser/smoke-final/report.json",
+        "bytes": 27975,
+        "sha256": "cdf5bff66449ea1fb5777aa70368822ce670effa1c48918bc88bf9d67ccce8f2",
+        "passed": true,
+        "steps": 11,
+        "JSPageErrors": 0
+      },
+      "features": {
+        "path": "/workspace/massilia-geodata-generated/validation-v73-2026-11-01/browser/features-final-02/report.json",
+        "bytes": 74883,
+        "sha256": "24b4ffae4c793e5e2d5b9d5d022ff2de462fe374a0bd444435e8f0eb5d1a2e41",
+        "passed": true,
+        "steps": 9,
+        "JSPageErrors": 0
+      },
+      "continuity": {
+        "path": "/workspace/massilia-geodata-generated/validation-v73-2026-11-01/continuity/report.json",
+        "bytes": 490000,
+        "sha256": "35b9b677399204840678304a17a2471f4525e484708dafb20365df025e885660",
+        "passed": true,
+        "steps": 15,
+        "JSPageErrors": 0
+      },
+      "mainSHA256": "b629b30434dddb8eee66402afc1f5c9eaf47389b60a3fe9125f039cdc3f4e0f2",
+      "viewerSHA256": "7a6ebbffed7b52300447f3682d45decef741d1c4c2e51ac923ef19a0aef1b227",
+      "qualifiedPriorAttempts": "Earlier screenshots exposed HUD overflow and an occluded roof aim. The historical-import first attempt compared a synthesized timestamp; its no-action diagnosis is retained. Final reports qualify all fixture interventions.",
+      "humanCampaignOrPlayerGPUCertified": false
+    },
+    "evidenceDirectory": "/workspace/massilia-geodata-generated/validation-v73-2026-11-01"
+  },
+  "remainingWork": [
+    "Missing architectural surveys for facades, roofs and dimensions.",
+    "Reconcile inherited body/part ground bases where a lower roof facet is occluded by another volume.",
+    "Unsourced road widths, unresolved structure altitudes and physical metropolitan traversal/access verification.",
+    "Performance and long playthrough observations on player hardware."
+  ],
+  "dataDelivery": {
+    "cacheOutsideGit": true,
+    "archiveUnchanged": true,
+    "archiveSHA256": "37bc83835a4c9da031f1decacbdf80ae7ce5644236abefa50dc89811019b2211",
+    "freshCloudRestorationVerified": false
+  }
+}
