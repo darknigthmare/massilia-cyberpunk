@@ -28,3 +28,27 @@ __pycache__/
 # Dépendances et résultats facultatifs du smoke navigateur.
 /node_modules/
 /test-results/
+
+/game/SOMA_MASSILIA_URBAIN_v0_73.html
+/game/metropole-viewer-v73.html
+/game/data/v73/BUILD_REPORT.json
+/game/data/v73/VIEWER_BUILD_REPORT.json
+/game/data/v73/LAUNCH_CACHE.json
+
+/game/SOMA_MASSILIA_URBAIN_v0_74.html
+/game/metropole-viewer-v74.html
+/game/data/v74/BUILD_REPORT.json
+/game/data/v74/VIEWER_BUILD_REPORT.json
+/game/data/v74/LAUNCH_CACHE.json
+
+/game/SOMA_MASSILIA_URBAIN_v0_75.html
+/game/metropole-viewer-v75.html
+/game/data/v75/BUILD_REPORT.json
+/game/data/v75/VIEWER_BUILD_REPORT.json
+/game/data/v75/LAUNCH_CACHE.json
+
+/game/SOMA_MASSILIA_URBAIN_v0_76.html
+/game/metropole-viewer-v76.html
+/game/data/v76/BUILD_REPORT.json
+/game/data/v76/VIEWER_BUILD_REPORT.json
+/game/data/v76/LAUNCH_CACHE.json

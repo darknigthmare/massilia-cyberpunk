@@ -1,0 +1,333 @@
+{
+  "schema": "soma-massilia/feature-delivery/1",
+  "version": "0.75.0",
+  "dateUTC": "2026-11-02",
+  "parentVersion": "0.74.0",
+  "parentCommit": "bb48f68b2eebdb2ba9461a1666ceceb0f099ce2f",
+  "parentMainSHA256": "1b776a1b8b3c2861093e1670d1b203025b158bd0fb0f464f0ab3d58086139330",
+  "parentViewerSHA256": "69d6713e08f9f8deaf1f294c0e3ffb846d930e4b2a4e8d7cbe714d8058a1c7bd",
+  "producerInputsSHA256": "a63f605632ee83afad7427832849557c9f8639e74b39b5266b7b62827ee9e9f0",
+  "artifacts": {
+    "SOMA_MASSILIA_URBAIN_v0_75.html": {
+      "bytes": 67184843,
+      "sha256": "fe4ba1538007c85c14d4d39aca0017f5bb2ec090986f6181896ce46fa1cb9aad",
+      "trackedInGit": false
+    },
+    "metropole-viewer-v75.html": {
+      "bytes": 1794179,
+      "sha256": "d18ffa35f7243855e49cb174ab6d69b9f14e8e8ed467a38ebdb789bbb7600de3",
+      "trackedInGit": false
+    }
+  },
+  "inspirationReferences": [
+    "Syndicate (PS3)",
+    "Cyberpunk 2077 (PS5)",
+    "E.Y.E: Divine Cybermancy (Steam)"
+  ],
+  "deliveredLots": {
+    "centreNativeTerrainPilot": {
+      "optIn": true,
+      "newProfileDefaultStepMeters": 25,
+      "selectedStepMeters": 5,
+      "campaignCells": 168,
+      "campaignSquareKilometers": 10.5,
+      "newGeographicCells": 0,
+      "gridSHA256": "369b81cbdadecbe6e6c96bd849559a6707aaa7106bb702949509474e92b245c0",
+      "nodes": 426409,
+      "validNodes": 424059,
+      "noDataNodes": 2350,
+      "sampling": "Exact float32 nodes and validity masks copied from prepared strict-bilinear IGN 5m tiles; not raw raster pixel identity.",
+      "crs": "EPSG:2154",
+      "verticalDatum": "NGF-IGN69",
+      "renderContactAndTerrainLOSOwner": "Shared terrain56 triangulated Grid, sight61",
+      "preferenceOwner": "Existing terrain56/58 active-pack IndexedDB; no new persistence domain",
+      "continuityImportChangesSelectedTerrain": false,
+      "publicTerrainInstallChecksAllAdmittedTilePairsBeforeCacheWrite": true,
+      "switchAllowedInGeographicCampaign": false,
+      "restoredPoseRequiresSupportedFreeSlope": true,
+      "sourceRoadFallbackIsAnnounced": true,
+      "failedEntrySuspendsAtExistingTitle": true,
+      "missingGroundFilled": false,
+      "inferredFoundations": "Measured terrain extrema over complete original footprints, courtyard interiors excluded.",
+      "sourceIGNGroundReferencesRetained": true,
+      "foundationAudit": {
+        "fragments": 38206,
+        "uniqueObjects": 34986,
+        "sourceRefs": 14323,
+        "uniqueSourceRefs": 14279,
+        "fixedSourceBasesWithTerrainAboveBase": 13314,
+        "fixedSourceEavesWithTerrainAboveEave": 77,
+        "uniqueFixedSourceEavesWithTerrainAboveEave": 77,
+        "fixedSourceEavesWithTerrainAboveEave3cm": 76,
+        "fixedSourceBaseThresholdM": 0.03,
+        "fixedSourceEaveThresholdM": 0
+      },
+      "fixedReferenceConflictsExplainedBeforeActivation": true,
+      "allBuildingsReconciledWithTerrain": false,
+      "certifiedOneToOne": false,
+      "sourceProvenance": {
+        "path": "/workspace/massilia-cyberpunk/game/data/v75/terrain-source.json",
+        "bytes": 70036,
+        "sha256": "837b637ac684bce0d2b67d0252554eca5ec3db4c7171563dc42484151cf78abf"
+      },
+      "numericAudit": {
+        "path": "/workspace/massilia-geodata-generated/validation-v75-2026-11-02/terrain/numeric-source-audit.json",
+        "bytes": 28116,
+        "sha256": "a6bce341d89ad37654b2938624a546b7e9d9d86c0eb21bd395e43afebdaaa2ac"
+      },
+      "sourceChecks": {
+        "path": "/workspace/massilia-geodata-generated/validation-v75-2026-11-02/terrain/source-checks.json",
+        "bytes": 2202,
+        "sha256": "8f277cc549f09af52e0eb54b5d92d0335070177d064de952892bb364609be3e7"
+      }
+    },
+    "actThreeOperations": {
+      "owners": [
+        "city45",
+        "production43",
+        "combat32",
+        "campaign37",
+        "grouped64"
+      ],
+      "newPersistenceDomain": false,
+      "traceActionsPreserveAuthoredDriveMode": 3,
+      "inactiveObjectiveFeedbackRestored": true,
+      "physicalProgression74ProofsPreserved": true,
+      "operations": 5,
+      "stages": 20,
+      "timedChannels": 5,
+      "driveStages": 5,
+      "combatEncounters": 5,
+      "authoredCombatUnits": 24,
+      "choiceStages": 5,
+      "automaticHotspotDefinitions": 8,
+      "exactAutomaticHotspotEnemyIdentities": 31,
+      "identityRegistryDerivedBeforeSetup": true,
+      "identitiesBoundedBySourceZoneAndIndex": true,
+      "storyGigAndInventedIDsAccepted": false,
+      "hotspotHealthAndTerminalDefeatRestoredFromExistingCombat32": true,
+      "legacyBladeLootAliasRestrictedToExactSourceIdentityAndRole": true,
+      "drivenVehicleIdentityAndConditionRetained": true,
+      "rewardsAndReputationOnce": true,
+      "browserCompletionUsesDeclaredControlledDamageFixtures": true,
+      "humanContinuousCampaignPlaythrough": false,
+      "report": {
+        "path": "/workspace/massilia-geodata-generated/validation-v75-2026-11-02/missions/DELIVERY.json",
+        "bytes": 2844,
+        "sha256": "c01602144a5125cabcd877f7d8b51bdb47aff00f56d9372eeaa9ef841cf1cdf5"
+      }
+    },
+    "sniperCounterplay": {
+      "chargeSeconds": 1.05,
+      "maximumChannels": 32,
+      "personalCurrentContactAndNativeLOSRequired": true,
+      "radioAloneGrantsAttack": false,
+      "interruptions": [
+        "received hit",
+        "lost sight/contact/range",
+        "system disruption",
+        "pause/hidden document",
+        "death/driving/recovery/cyber",
+        "zone/state/identity/import change"
+      ],
+      "interruptionRefundsRecovery": false,
+      "nativeTactics33HoldAimOnlyDuringPreparation": true,
+      "movementResumesAfterReleaseOrInterruption": true,
+      "damageArmourBarrierAndCooldownOwnersPreserved": true,
+      "activeChannelRestoredFromSave": false,
+      "persistentScalar": "Existing attackClock in combat32/33, validated37",
+      "newPlayerResourceOrDamageOwner": false,
+      "sharedHUD72MaximumRows": 4,
+      "newParallelHUDTree": false,
+      "echo73ReadsRealChannel": true,
+      "bossAndICEExcluded": true,
+      "additionalUpdate32WorstCaseLOSRays": 96,
+      "additionalStable32ChannelUpdateLOSRays": 64,
+      "additionalRenderMaintainMaximumLOSRays": 32,
+      "HUDReadLOSRays": 0,
+      "report": {
+        "path": "/workspace/massilia-geodata-generated/validation-v75-2026-11-02/combat/report.json",
+        "bytes": 2807,
+        "sha256": "a51f42e4ef12b5b93696629608803f65d16678431f8a5214731c9947ac49d2e0"
+      }
+    },
+    "terrestrialVehicleSupports": {
+      "owners": [
+        "vehicle24",
+        "geography55",
+        "terrain56",
+        "collision57",
+        "fleet45"
+      ],
+      "maximumBodyMovementPerSampleMeters": 0.04,
+      "maximumSamples": 128,
+      "localSupportsPerSample": 9,
+      "maximumSlopeRatio": 0.7,
+      "sourceGridStepRespected": true,
+      "noDataRefused": true,
+      "existingVehicleDimensionsContactMarginsAndMechanicsRetained": true,
+      "alreadyBuiltNeighbourBodiesPreserved": true,
+      "newVehicleSpecs": 0,
+      "airWaterAndAuthoredNonGeographicOwnersPreserved": true,
+      "analyticalContinuousCollisionDetection": false,
+      "sourceRoadTraversabilityCertified": false,
+      "syntheticOwnerRegressionRatesHz": [
+        30,
+        60,
+        120
+      ],
+      "ownerProof": {
+        "path": "/workspace/massilia-geodata-generated/validation-v75-2026-11-02/vehicles/owners-before-after.json",
+        "bytes": 5130,
+        "sha256": "4a58cd1c5995a73e0a28ac33203889c7a5092c0468b941b4feeb117a5af17c7b"
+      },
+      "review": {
+        "path": "/workspace/massilia-geodata-generated/validation-v75-2026-11-02/vehicles/review.json",
+        "bytes": 3451,
+        "sha256": "b0d531110af0f97c9f6baa5e198fd335e391a6f4b9cbad465e5420665c07d31b"
+      }
+    }
+  },
+  "launcher": {
+    "edition": 75,
+    "builders": 15,
+    "HTMLFilesChecked": 15,
+    "reportsChecked": 13,
+    "originalFilesChecked": 27,
+    "payloadPartsChecked": 5,
+    "centreCellsChecked": 168,
+    "frozenParentSourceFiles": 112,
+    "parentArtifactsUnchanged": 24,
+    "cacheUsesContentRatherThanTimestamps": true,
+    "stdlibOnlyNormalLaunch": true,
+    "report": {
+      "path": "/workspace/massilia-geodata-generated/validation-v75-2026-11-02/launch/summary.json",
+      "bytes": 14491,
+      "sha256": "8acccd3cfd0280aaeba776421e9213708cc460991f58802218db1e1f5dcca38b"
+    }
+  },
+  "geography": {
+    "worldManifestSHA256": "881a3fec8837fe7922801102f5fa8c33ffa85ea743ed726e7d1f71dcb8ab0bfe",
+    "communes": 92,
+    "metropoleCells": 52020,
+    "vectorSurfaceNavigationCells": 51809,
+    "terrainOnlyCells": 211,
+    "partialTerrainCells": 71,
+    "eavesHeightReferences": 299391,
+    "campaignCells": 168,
+    "campaignSquareKilometers": 10.5,
+    "newGeographicCells": 0,
+    "metropolitanSourceAssetsChanged": false,
+    "viewerRenderedGeometryByteIdenticalToParent74": true,
+    "fullArchitecturalOneToOne": false,
+    "physicalMetropoleCampaign": false
+  },
+  "continuity": {
+    "newCoreV75": false,
+    "augmentationOwner": "core.v70/v42",
+    "enemyCombatOwners": [
+      "layer32",
+      "module33"
+    ],
+    "operationOwner": "module45",
+    "terrainOwner": "existing terrain56/58 cache",
+    "actualUIExportVersions": [
+      70,
+      71,
+      73,
+      74
+    ],
+    "realPlayerProfilesUsed": false,
+    "activePreparationsSerialized": false
+  },
+  "validation": {
+    "automatedTests": {
+      "counts": {
+        "javascript-inherited": {
+          "tests": 521,
+          "pass": 521,
+          "fail": 0,
+          "skipped": 0
+        },
+        "python-v70": {
+          "tests": 21,
+          "passed": true,
+          "historicalLauncher": null
+        },
+        "python-v71": {
+          "tests": 43,
+          "passed": true,
+          "historicalLauncher": "Historical launcher 71 commit e348acef66830210487b0615e662757880381c80 SHA256 1f1c78230e9c2713249362ecc0dec227f57f22d458ff4f0ac90e1a8c85b1ea2e"
+        },
+        "python-v72": {
+          "tests": 46,
+          "passed": true,
+          "historicalLauncher": "Historical launcher 72 commit 3ce16c39a2cb72efd5189c5e3fb3bc069faeb57a SHA256 c2a96f0adbedb7753ca3f3ccddbe1ffdc78291258f3c77f2b14c94985b16885e"
+        },
+        "python-v73": {
+          "tests": 46,
+          "passed": true,
+          "historicalLauncher": "Historical launcher 73 commit c0df4febf3502d20b07197f901d1d144ca13cd00 SHA256 347d918fae2527a6c3be0b30591e3eee257ab834f76fc3edb1663a9ee9b5f045"
+        },
+        "python-v74": {
+          "tests": 49,
+          "passed": true,
+          "historicalLauncher": "Historical launcher 74 commit bb48f68b2eebdb2ba9461a1666ceceb0f099ce2f SHA256 9c8643b5610d091f6a698fb96da52eff93e30101ff0e5bf1bf3b5df495097d6d"
+        },
+        "javascript-v75": {
+          "tests": 50,
+          "pass": 50,
+          "fail": 0,
+          "skipped": 0
+        },
+        "python-v75": {
+          "tests": 52,
+          "passed": true
+        }
+      },
+      "totalPassed": 828,
+      "failedFinal": 0,
+      "skipped": 0
+    },
+    "testReport": {
+      "path": "/workspace/massilia-geodata-generated/validation-v75-2026-11-02/tests/RESULTS.json",
+      "bytes": 6158,
+      "sha256": "e9c5b43082c157f463129bdfa41a6c0ee30f83a25d15d9a5bf0f4c4b89c4ebb5"
+    },
+    "browserSummary": {
+      "path": "/workspace/massilia-geodata-generated/validation-v75-2026-11-02/browser/QA_SUMMARY.json",
+      "bytes": 27409,
+      "sha256": "e10d584906df5a6f63e697703695a92f592d3f143d28454c6ebaa7b7802c930d"
+    },
+    "browserPassedSteps": 101,
+    "headlessSoftwareWebGL": true,
+    "sourceAndArtifactProvenanceQualified": true,
+    "failedDiagnosticsRetained": true,
+    "independentReviews": [
+      {
+        "path": "/workspace/massilia-geodata-generated/validation-v75-2026-11-02/combat/REVIEW.md",
+        "bytes": 3281,
+        "sha256": "a5cfe85e11c31f307c664d70667f1736ad9adaaf6c530318a0dcdad85ffec917"
+      },
+      {
+        "path": "/workspace/massilia-geodata-generated/validation-v75-2026-11-02/vehicles/review.json",
+        "bytes": 3451,
+        "sha256": "b0d531110af0f97c9f6baa5e198fd335e391a6f4b9cbad465e5420665c07d31b"
+      }
+    ],
+    "evidenceDirectory": "/workspace/massilia-geodata-generated/validation-v75-2026-11-02",
+    "humanFullPlaythroughOrPlayerGPUCertified": false
+  },
+  "remainingWork": [
+    "Resolve the documented 77 fixed building eave/terrain conflicts from source evidence; do not arbitrarily move fixed IGN references.",
+    "Survey missing facades, roofs, street widths, structures and access details for full architectural one-to-one fidelity.",
+    "Extend and verify the physical geographic campaign beyond the 168 centre cells across AMP.",
+    "Observe full continuous human campaign traversal/combat and performance on player hardware."
+  ],
+  "dataDelivery": {
+    "cacheOutsideGit": true,
+    "archiveUnchanged": true,
+    "archiveSHA256": "37bc83835a4c9da031f1decacbdf80ae7ce5644236abefa50dc89811019b2211",
+    "freshCloudRestorationVerified": false
+  }
+}

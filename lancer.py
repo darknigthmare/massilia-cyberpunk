@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Prepare the verified original release and launch SOMA//MASSILIA v0.72."""
+"""Prepare the verified original release and launch SOMA//MASSILIA v0.76."""
 
 from pathlib import Path
 import argparse
@@ -16,9 +16,14 @@ ROOT = Path(__file__).resolve().parent
 GAME = ROOT / "game"
 PAYLOAD = ROOT / "payload"
 CHUNK = 1024 * 1024
-BUILDERS = ("build_v68.py", "build_v69.py", "build_v70.py", "build_v71.py", "build_v72.py",
+# Verification includes imports and child builders: never create bytecode artifacts.
+sys.dont_write_bytecode = True
+SUBPROCESS_ENV = dict(os.environ, PYTHONDONTWRITEBYTECODE="1")
+BUILDERS = ("build_v68.py", "build_v69.py", "build_v70.py", "build_v71.py", "build_v72.py", "build_v73.py", "build_v74.py", "build_v75.py", "build_v76.py",
             "tools/build_metropole_viewer.py", "tools/build_metropole_viewer_v70.py",
-            "tools/build_metropole_viewer_v71.py", "tools/build_metropole_viewer_v72.py")
+            "tools/build_metropole_viewer_v71.py", "tools/build_metropole_viewer_v72.py",
+            "tools/build_metropole_viewer_v73.py", "tools/build_metropole_viewer_v74.py",
+            "tools/build_metropole_viewer_v75.py", "tools/build_metropole_viewer_v76.py")
 
 
 class PreparationError(Exception):
@@ -27,7 +32,11 @@ class PreparationError(Exception):
 
 def path_in(directory, relative):
     path = directory / relative
-    if Path(relative).is_absolute() or not path.resolve().is_relative_to(directory.resolve()):
+    relative_path = Path(relative)
+    if (relative_path.is_absolute() or '..' in relative_path.parts or
+            not path.resolve().is_relative_to(directory.resolve()) or
+            any((directory / Path(*relative_path.parts[:index])).is_symlink()
+                for index in range(1, len(relative_path.parts) + 1))):
         raise PreparationError(f"Chemin de livraison invalide : {relative}")
     return path
 
@@ -144,7 +153,7 @@ def prepare(manifest):
                         shutil.copyfile(path_in(GAME, relative), target)
                 result = subprocess.run(
                     [sys.executable, str(staged / "build.py")],
-                    cwd=staged, capture_output=True, text=True, check=False,
+                    cwd=staged, capture_output=True, text=True, check=False, env=SUBPROCESS_ENV,
                 )
                 if result.returncode:
                     raise PreparationError("La reconstruction du jeu a échoué : " + result.stderr.strip())
@@ -179,35 +188,35 @@ def main():
         check_game(manifest)
         print("Vérification réussie : 5 parties et 27 fichiers originaux conformes.")
         for name in BUILDERS:
-            result = subprocess.call([sys.executable, str(GAME / name), "--verify"], cwd=GAME)
+            result = subprocess.call([sys.executable, str(GAME / name), "--verify"], cwd=GAME, env=SUBPROCESS_ENV)
             if result:
                 return result
         return 0
     prepare(manifest)
     if str(GAME) not in sys.path:
         sys.path.insert(0, str(GAME))
-    from tools import launch_cache_v72
+    from tools import launch_cache_v76
     if not args.prepare_only:
-        cached = launch_cache_v72.try_ready(GAME)
+        cached = launch_cache_v76.try_ready(GAME)
         if cached['ready']:
-            print(f"Édition 0.72 contrôlée sans reconstruction ({cached['seconds']:.2f} s).", flush=True)
+            print(f"Édition 0.76 contrôlée sans reconstruction ({cached['seconds']:.2f} s).", flush=True)
             return serve(args)
-    expected_sources = launch_cache_v72.source_inputs(GAME)
+    expected_sources = launch_cache_v76.source_inputs(GAME)
     for name in BUILDERS:
-        result = subprocess.call([sys.executable, str(GAME / name)], cwd=GAME)
+        result = subprocess.call([sys.executable, str(GAME / name)], cwd=GAME, env=SUBPROCESS_ENV)
         if result:
             return result
-    launch_cache_v72.record_prepared(expected_sources, GAME)
+    launch_cache_v76.record_prepared(expected_sources, GAME)
     if args.prepare_only:
         return 0
     return serve(args)
 
 
 def serve(args):
-    command = [sys.executable, str(GAME / "tools" / "serve_v72.py"), "--port", str(args.port)]
+    command = [sys.executable, str(GAME / "tools" / "serve_v76.py"), "--port", str(args.port)]
     if args.no_browser:
         command.append("--no-browser")
-    return subprocess.call(command, cwd=GAME)
+    return subprocess.call(command, cwd=GAME, env=SUBPROCESS_ENV)
 
 
 if __name__ == "__main__":
