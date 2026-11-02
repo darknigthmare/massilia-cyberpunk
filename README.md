@@ -1,8 +1,8 @@
-# Massilia Cyberpunk — SOMA//MASSILIA v0.74
+# Massilia Cyberpunk — SOMA//MASSILIA v0.75
 
 **Marseille augmentée** poursuit la reconstruction de la ville dans l’ambiance cyberpunk du projet : architecture méditerranéenne, fenêtres éclairées et accents cyan, magenta et ambre.
 
-La v0.74 poursuit **la mobilité, le soutien médical, les opérations d’Acte III et les fondations de toiture**. Elle corrige les franchissements à pied, les sorties terrestres éloignées, les soins à travers les obstacles et la sauvegarde des rencontres v45. Les références demandées — *Syndicate*, *Cyberpunk 2077* et *E.Y.E: Divine Cybermancy* — orientent ces systèmes propres à Massilia.
+La v0.75 poursuit **le relief du centre, les opérations d’Acte III, le contre-jeu des snipers et la conduite terrestre**. Un pilote IGN à 5 m est activable depuis l’Atlas ; le relief historique reste disponible. Les références demandées — *Syndicate*, *Cyberpunk 2077* et *E.Y.E: Divine Cybermancy* — orientent les systèmes propres à Massilia.
 
 La campagne embarquée couvre **168 cellules de 250 m, soit 10,5 km² du centre de Marseille**. Le nouveau survol couvre les **92 communes de la métropole Aix-Marseille-Provence**, avec **52 020 secteurs de relief IGN à 5 m**, les objets OSM et **299 391 références IGN de hauteur à l’égout**. Le cache métropolitain complet est installé dans cet environnement cloud ; il reste hors Git. Une copie source seule utilise explicitement le centre partiel jusqu’à préparation des données. Les façades, toitures et dimensions encore inconnues restent interprétées : la restitution architecturale complète à 1:1 n’est pas atteinte.
 
@@ -13,7 +13,7 @@ Utilisez une copie complète de cette version, avec `game/`, `payload/` et le la
 - Windows : lancez **`LANCER_JEU.cmd` à la racine du dépôt**.
 - Linux/macOS : depuis la racine, exécutez `python3 lancer.py`.
 
-Le premier lancement restaure les fichiers originaux, vérifie leurs empreintes, reconstruit les éditions v0.68 à v0.74, les survols et les assets du centre déjà livré. Le serveur ouvre la v0.74 dans le navigateur et reste lié à la machine locale. `Ctrl+C` l’arrête. La préparation du jeu livré ne télécharge aucune donnée. Prévoir au moins 1 Go libre en plus du dépôt pour les sorties et fichiers temporaires ; les imports géographiques peuvent demander davantage.
+Le premier lancement restaure les fichiers originaux, vérifie leurs empreintes, reconstruit les éditions v0.68 à v0.75, les survols et les assets du centre déjà livré. Le serveur ouvre la v0.75 dans le navigateur et reste lié à la machine locale. `Ctrl+C` l’arrête. La préparation du jeu livré ne télécharge aucune donnée. Prévoir au moins 1 Go libre en plus du dépôt pour les sorties et fichiers temporaires ; les imports géographiques peuvent demander davantage.
 
 Les lancements suivants contrôlent les sources, sorties et assets préparés avant de les réutiliser. Une entrée modifiée ou abîmée déclenche la préparation complète. `--prepare-only` et `--verify` conservent leurs contrôles complets.
 
@@ -26,6 +26,15 @@ python3 lancer.py --no-browser
 Sous Windows, remplacez `python3` par `python`. Utilisez `--port 8766` si nécessaire. Les anciennes commandes conservées dans `game/` visent les éditions antérieures : le lanceur à la racine choisit la version actuelle.
 
 Le bouton **« Survoler la métropole »** ouvre l’explorateur indépendant. Sa carte propose les 92 communes ; il affiche les données effectivement installées, avec un repli explicitement marqué sur le centre partiel. Le survol n’utilise aucune sauvegarde de campagne. Clavier ZQSD/WASD ou flèches, souris pour regarder, Espace pour monter, C pour descendre et Maj pour accélérer.
+
+## Ce qui change en v0.75
+
+- **Relief du centre** : le pilote IGN à 5 m utilise la même grille pour le sol, les triangles rendus et les lignes de vue. Activez-le dans l’Atlas depuis la ville historique avant d’entrer dans Marseille réelle. Le cache de relief existant conserve le choix ; les imports de continuité gardent le relief installé.
+- **Acte III** : les actions « Tracer » conservent le trajet automobile des étapes de conduite. Les objectifs inactifs expliquent à nouveau leur état, avec les mêmes preuves physiques pour avancer.
+- **Snipers** : la préparation visible du tir peut être interrompue par un coup ou une perte de vue. Une ancienne charge ne permet plus un tir immédiat au retour du joueur ; la récupération reste consommée.
+- **Véhicules terrestres** : la carrosserie est contrôlée pendant le virage, avec neuf appuis locaux sur le relief. Une pente courte trop forte ne disparaît plus dans la moyenne des coins du véhicule.
+
+[Guide et validation de la v0.75](game/README_v75.md).
 
 ## Ce qui change en v0.74
 
