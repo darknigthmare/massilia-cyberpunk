@@ -1,0 +1,358 @@
+{
+  "schema": "soma-massilia/feature-report/77/1",
+  "version": "0.77.0",
+  "date": "2026-11-09",
+  "parent": {
+    "version": "0.76.0",
+    "commit": "a41c72c1a43e8395de43812c4903a989f4136595",
+    "baseMainCommit": "25e517c07c0ec62fd29771b6167a0875d300fda2",
+    "frozenProducerCount": 144
+  },
+  "status": "Validated final sources; publication recorded separately against the final Git commit.",
+  "features": {
+    "reload": {
+      "owner": "native27 ammunition, existing persistence37/64",
+      "before": "Arsenal27 equip and active-weapon deposit29 left a reload on the former weapon. Reproduced in parent76 Chromium.",
+      "after": "Ephemeral action identity guards weapon, scene, save root and ammo record before native27 transfer; selection/deposit and incompatible transitions cancel. Ordinary pause preserves the timer.",
+      "newSaveDomain": false,
+      "damageStockCapacityChanges": false
+    },
+    "guidance": {
+      "owners": [
+        "production43",
+        "city45"
+      ],
+      "before": "Automatic operation/call/race transitions could overwrite or clear an unrelated manual GPS destination. Parent76 acceptance reproduced in Chromium.",
+      "after": "Automatic routes match exact source target/label/vehicleOnly tuple. Explicit Tracer actions keep replacement semantics. Stories/gigs43 offer Tracer using the same45 GPS.",
+      "storyHandIn": "station-interiorA",
+      "operationHandIn": "station-exterior",
+      "newSaveDomain": false,
+      "rewardChanges": false,
+      "limitations": [
+        "An exactly identical manual tuple cannot be distinguished without a new ownership field.",
+        "Historical escort delivery GPS vehicleOnly=false remains; it does not establish a vehicle route.",
+        "The pre-existing Port race to corniche-route remains refused without a known vehicle connection."
+      ]
+    },
+    "architecture": {
+      "scope": "The unchanged77-object conflict cohort from edition76.",
+      "rawFieldChecks": 385,
+      "sourceDocument": {
+        "url": "https://data.geopf.fr/annexes/ressources/documentation/DC_BDTOPO_3-5.pdf",
+        "sha256": "0542356dcf921bff5263043fe2af288a018d61d8e0f4d750005142f09cdb7331",
+        "printedPages": [
+          68,
+          76,
+          77,
+          78
+        ]
+      },
+      "after": "Atlas distinguishes the retained calculated reference min-ground+height from source min/max roof statistics and explicit missing fields.",
+      "minimumRoofAvailable": 77,
+      "maximumRoofAvailable": 41,
+      "maximumRoofMissing": 36,
+      "differentMinimumRoofAndCalculatedReference": 39,
+      "maximumDifferenceM": 0.10000000000000853,
+      "geometryChanged": false,
+      "referenceChanged": false,
+      "causeOfFieldDifferenceEstablished": false
+    },
+    "roadInspection": {
+      "owner": "viewer-road72 candidate attribution only",
+      "sourceCell": "V52-MC-13",
+      "targetL93": [
+        892976.311340941,
+        6247730.345141885
+      ],
+      "beforeWrongCandidate": "osm/way/460530284",
+      "remainingCompatibleCandidate": "osm/way/353224808",
+      "after": "Directed axis side determines the corresponding source sidewalk width, preserving the existing3cm tolerance.",
+      "compiledCellGeometrySHA256": "6a77fc777fbad548ea02cebdeaf0e43aee206ef13caa96ae8cf494c94acf5669",
+      "independentReviewProbes": 43,
+      "geometryChanged": false,
+      "navigationChanged": false,
+      "physicalAccessibilityVerified": false,
+      "limitations": [
+        "Candidate axes remain compatible sources of an ambiguous union, not proof of ownership.",
+        "The inherited segment-band approximation at mitred corners remains."
+      ]
+    }
+  },
+  "coverage": {
+    "physicalCells": 168,
+    "physicalAreaKm2": 10.5,
+    "metropolitanCommunes": 92,
+    "metropolitanTerrainCells": 52020,
+    "newPhysicalCells": 0,
+    "completeArchitecturalOneToOne": false,
+    "wholeMetropolisPhysicalTraversal": false,
+    "optionalMetropoleCacheInGit": false,
+    "manifestSHA256": "881a3fec8837fe7922801102f5fa8c33ffa85ea743ed726e7d1f71dcb8ab0bfe"
+  },
+  "validation": {
+    "unitTests": {
+      "passed": true,
+      "counts": {
+        "jsInherited": 630,
+        "jsCurrent": 41,
+        "pythonInherited": 314,
+        "pythonCurrentInfra": 43,
+        "pythonCurrentFeature": 13
+      },
+      "totalTests": 1041,
+      "failures": 0,
+      "skipped": 0,
+      "historicalLauncherReplay": "Exact launcher source from each historical commit; assertions unchanged; one process per edition.",
+      "evidence": {
+        "inheritedJS": "tests/inherited-js.log",
+        "currentJS": "tests/current-js.log",
+        "historicalPython": "tests/inherited-python.json",
+        "currentPythonFeatures": {
+          "architecture": 4,
+          "patches": 9
+        },
+        "currentInfra": "launch/infra-targeted.json"
+      },
+      "affectedTestsRevalidatedAfterContrast": {
+        "javascript": 7,
+        "python": 4,
+        "additionalUniqueTests": 0,
+        "logs": [
+          "tests/architecture-contrast-js.log",
+          "tests/architecture-contrast-python.log"
+        ]
+      },
+      "affectedTestsRevalidatedAfterFinalNormalization": {
+        "javascript": 7,
+        "python": 4,
+        "additionalUniqueTests": 0,
+        "logs": [
+          "tests/architecture-final-js.log",
+          "tests/architecture-final-python.log"
+        ]
+      },
+      "finalProducerInputsSHA256": "3e450a79f125c4578ba6b74b14b86a49397719fbdcbd7fd74f2840ad8c30399e",
+      "runtime": {
+        "python": "3.12.14",
+        "node": "v24.19.0"
+      },
+      "currentInfraFinalSourceValidation": {
+        "passed": true,
+        "tests": 43,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      }
+    },
+    "browser": {
+      "passed": true,
+      "scopedPassedSteps": 27,
+      "failed": 0,
+      "uniqueStepNames": 25,
+      "repeatedAcrossFreshProfiles": [
+        "load-real-current-edition",
+        "runtime-errors-remain-empty"
+      ],
+      "reports": {
+        "gameplay": 20,
+        "viewer": 7
+      },
+      "freshProfiles": 2,
+      "sourceSetUnchanged": true,
+      "environment": {
+        "playwright": "1.62.1",
+        "chromium": "154.0.8037.57",
+        "softwareWebGL": "SwiftShader",
+        "viewport": [
+          1280,
+          720
+        ]
+      },
+      "summary": {
+        "path": "browser/QA_SUMMARY.json",
+        "bytes": 14768,
+        "sha256": "ce4d9e21c2546e83bb7a1cc9594294fb999e572c36200222797c05436f66d7d4"
+      },
+      "scriptSHA256": "ae30802f8987d8e25eeb6ab0c917f6cccb15bb61c89b2871733f6c46d0103ff8",
+      "scope": [
+        "native reload/arsenal/deposit and ordinary pause",
+        "native37/64 import/refusal and reload continuity",
+        "manual45 GPS preserved; explicit43 Tracer for stage and interior hand-in",
+        "Atlas77 source values, missing maxima, scrolling and visible documentation link",
+        "native independent viewer, actual directed sidewalk case and campaign storage preserved",
+        "native return link to current game"
+      ],
+      "limits": [
+        "Controlled weapon ownership/ammo, death state and authored43 progress are explicit fixtures; no continuous human campaign or natural death/recovery claim.",
+        "Direct road-ray diagnostic and all preflight/superseded scoped reports are excluded from canonical acceptance counts.",
+        "Current installed AMP viewer tested; source-only browser fallback, full metropolitan physical traversal, architectural1:1 certification, playerGPU performance and fresh-cloud restoration were not tested."
+      ],
+      "supersededEvidence": "browser/SUPERSEDED_REPORTS.json; intermediate reports are not reused as final acceptance"
+    },
+    "launcher": {
+      "fullPreparation": {
+        "ok": true,
+        "command": [
+          "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+          "-B",
+          "-S",
+          "/workspace/massilia-cyberpunk/lancer.py",
+          "--prepare-only"
+        ],
+        "exitCode": 0,
+        "seconds": 334.39519669499714,
+        "builderCount": 19,
+        "parents": {
+          "ok": true,
+          "parentArtifactsComparedToContentVerifiedReceipt76": 32,
+          "parentHTML": 17,
+          "parentReports": 15,
+          "parentSourcesPinned": 144,
+          "changed": {},
+          "receipt76SHA256": "705682c2b84312c627d1a5804d7c38c44e648da0aa15ee00adecbc22c94abcbe"
+        },
+        "recordedAt": "2026-11-09T05:41:24.868298+00:00"
+      },
+      "readOnlyVerification": {
+        "ok": true,
+        "command": [
+          "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+          "-B",
+          "-S",
+          "/workspace/massilia-cyberpunk/lancer.py",
+          "--verify"
+        ],
+        "exitCode": 0,
+        "seconds": 385.75190627301345,
+        "verifiedFilesAndTimestamps": 901,
+        "bytecodeFilesUnchanged": 148,
+        "changed": [],
+        "bytecodeWritesDisabledForAllBuilders": true
+      },
+      "sourceOnly": {
+        "ok": true,
+        "copiedFiles": 204,
+        "preservedOriginalFiles": 27,
+        "canonicalHTMLAndReportsByteIdentical": true,
+        "gitCopied": false,
+        "optionalMetropoleCopied": false,
+        "preparedCentreCopied": false,
+        "gisImportsBlocked": [
+          "numpy",
+          "osgeo",
+          "pyproj",
+          "rasterio",
+          "shapely"
+        ],
+        "sourceInputsUnchanged": true,
+        "verifyWritesFilesOrTimestamps": false,
+        "centreBootstrap": {
+          "preparedCells": 168,
+          "worldManifestSHA256": "443d24d1acb87fa3e264392a953b95b27d966e7eb1ff64abf3bcc9d157b10b21",
+          "gisImportsBlocked": true,
+          "parentHTMLPublished": false,
+          "payloadPartsVerified": 5,
+          "immutableOriginalFilesVerified": 27,
+          "initiallyAbsent": true,
+          "copiedPreparedAssets": false,
+          "sourceReconstructedFiles": 673,
+          "allPreparedFilesByteIdenticalToCanonical": true,
+          "seconds": 50.94477120396914,
+          "command": [
+            "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+            "-B",
+            "-S",
+            "-c",
+            "<native B69.build + prepare_world + verify_world NoGIS harness>"
+          ]
+        }
+      },
+      "sourceOnlyTransitiveInputs": 184,
+      "sourceOnlyReportsAndPagesByteIdentical": true,
+      "cachedHTTP": {
+        "ok": true,
+        "receiptChecks": [
+          {
+            "ready": true,
+            "reason": "content-verified",
+            "seconds": 1.4375615429598838,
+            "worldCells": 168
+          },
+          {
+            "ready": true,
+            "reason": "content-verified",
+            "seconds": 1.1484500310034491,
+            "worldCells": 168
+          }
+        ],
+        "launcherFirstCompleteHTTPSeconds": 2.3284303480177186,
+        "timingConditions": "Warm filesystem after full preparation, full verification and two content checks; no browser render or GPU benchmark.",
+        "port": 8790,
+        "http": {
+          "SOMA_MASSILIA_URBAIN_v0_77.html": {
+            "status": 200,
+            "bytes": 67329974,
+            "sha256": "98bc42719f32d840e5577e6d5062ab9bcd6508969b149b2c0c53f7622ef1ae74"
+          },
+          "metropole-viewer-v77.html": {
+            "status": 200,
+            "bytes": 1795598,
+            "sha256": "1679fe786e1ab1f574e2906b2d2a9ef2b23b72b5fdcc2d6a31e165e09acb816d"
+          }
+        },
+        "generatedArtifactsReportsReceiptUnchanged": true,
+        "builderRunCount": 0,
+        "ownLauncherProcessGroupStopped": 375556,
+        "noExistingServiceStopped": true
+      },
+      "summary": {
+        "path": "launch/summary.json",
+        "bytes": 18523,
+        "sha256": "8580430a70fd02a5c065225a5136ff7b5b9ff61f369511bb398584ec91eebbfa"
+      }
+    },
+    "historicalPythonLauncherRefs": {
+      "71": "e348acef66830210487b0615e662757880381c80",
+      "72": "3ce16c39a2cb72efd5189c5e3fb3bc069faeb57a",
+      "73": "c0df4febf3502d20b07197f901d1d144ca13cd00",
+      "74": "bb48f68b2eebdb2ba9461a1666ceceb0f099ce2f",
+      "75": "d4c60b1a8eed1cbb89834cf3bebfd64e25a90d36",
+      "76": "a41c72c1a43e8395de43812c4903a989f4136595"
+    },
+    "historicalPythonMethod": "One process per edition. Discover original suite, compile exact Git launcher into an in-memory module with the native lancer.py path, replace the sole launcher test module L binding, run unchanged assertions. Version 70 is direct. Version 77 tests the actual current launcher.",
+    "intermediateCorrections": [
+      "One newly added PDF link changed from browser-default dark blue to visible cyan after screenshot review.",
+      "One trailing ASCII space was removed before final complete preparation.",
+      "Browser harness corrected title-button scope, native camera direction and readiness after teleport; original failures retained.",
+      "The final27 browser steps are bound to final producer inputs3e450a79 and final HTML98bc4271/1679fe78."
+    ],
+    "commands": {
+      "javascriptInherited": "node --test --test-concurrency=2 game/tests/v67/core.test.cjs game/tests/v68/*.test.cjs game/tests/v69/*.test.cjs game/tests/v70/*.test.cjs game/tests/v71/*.test.cjs game/tests/v72/*.test.cjs game/tests/v73/*.test.cjs game/tests/v74/*.test.cjs game/tests/v75/*.test.cjs game/tests/v76/*.test.cjs (MASSILIA_ROUTE_WORLD set to the installed source world)",
+      "javascriptCurrent": "node --test --test-concurrency=2 game/tests/v77/*.test.cjs",
+      "pythonCurrent": "All 56 unique cases: 43 infra plus 4 architecture and 9 combat/navigation patch cases; targeted runs recorded separately.",
+      "prepare": "PYTHONDONTWRITEBYTECODE=1 python3 -B -S lancer.py --prepare-only",
+      "verify": "PYTHONDONTWRITEBYTECODE=1 python3 -B -S lancer.py --verify",
+      "browser": "node game/tests/v77/browser_current.cjs --scope gameplay|viewer --url http://127.0.0.1:8817/SOMA_MASSILIA_URBAIN_v0_77.html --chromium /usr/bin/chromium --output <separate proof directory>"
+    }
+  },
+  "evidenceRoot": "/workspace/massilia-geodata-generated/validation-v77-2026-11-09",
+  "limitations": [
+    "Automated fixture-based QA is not a human campaign playthrough.",
+    "SwiftShader screenshots do not measure player GPU performance.",
+    "Fresh cloud snapshot restoration is not independently tested.",
+    "Facade/roof/road estimates remain explicit; no new surveyed geometry or invented geographic connection."
+  ],
+  "producerInputsSHA256": "3e450a79f125c4578ba6b74b14b86a49397719fbdcbd7fd74f2840ad8c30399e",
+  "outputs": {
+    "game": {
+      "output": "SOMA_MASSILIA_URBAIN_v0_77.html",
+      "bytes": 67329974,
+      "sha256": "98bc42719f32d840e5577e6d5062ab9bcd6508969b149b2c0c53f7622ef1ae74"
+    },
+    "viewer": {
+      "output": "metropole-viewer-v77.html",
+      "bytes": 1795598,
+      "sha256": "1679fe786e1ab1f574e2906b2d2a9ef2b23b72b5fdcc2d6a31e165e09acb816d"
+    }
+  }
+}

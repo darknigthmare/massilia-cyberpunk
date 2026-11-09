@@ -1,0 +1,575 @@
+{
+  "schema": "soma-massilia/feature-report/78/1",
+  "version": "0.78.0",
+  "date": "2026-11-09",
+  "parent": {
+    "version": "0.77.0",
+    "commit": "4af0d9b5de9ff5e768bfef756b2d389f00a9f150",
+    "frozenProducerCount": 160,
+    "baseMainCommit": "25e517c07c0ec62fd29771b6167a0875d300fda2"
+  },
+  "status": "Validated final producer set; Git and cloud publication receipts are recorded separately against the final commit.",
+  "producerInputsSHA256": "7acf07ecf1a1525d6faff1c83defc8c7f6a0b5430f31674c2185bab2f8b121ed",
+  "features": {
+    "architecture": {
+      "newModelledRoofs": 6,
+      "IDs": [
+        "osm/way/88768421",
+        "osm/way/264887624",
+        "osm/way/264887711",
+        "osm/way/264887685",
+        "osm/way/264887686",
+        "osm/way/265248452"
+      ],
+      "cells": [
+        {
+          "cellId": "V52-MC-W03-N86",
+          "beforeGeometryBytes": 2380536,
+          "afterGeometryBytes": 2387448,
+          "terrainTriangles": 5000,
+          "roadTriangles": 6805,
+          "otherRenderedVerticesIdentical": true
+        },
+        {
+          "cellId": "V52-MC-W04-N01",
+          "beforeGeometryBytes": 3710448,
+          "afterGeometryBytes": 3719088,
+          "terrainTriangles": 5000,
+          "roadTriangles": 7121,
+          "otherRenderedVerticesIdentical": true
+        },
+        {
+          "cellId": "V52-MC-W04-S00",
+          "beforeGeometryBytes": 4519044,
+          "afterGeometryBytes": 4520556,
+          "terrainTriangles": 5000,
+          "roadTriangles": 10713,
+          "otherRenderedVerticesIdentical": true
+        },
+        {
+          "cellId": "V52-MC-W04-S01",
+          "beforeGeometryBytes": 3763044,
+          "afterGeometryBytes": 3765636,
+          "terrainTriangles": 5000,
+          "roadTriangles": 11817,
+          "otherRenderedVerticesIdentical": true
+        }
+      ],
+      "geometryScope": "Independent viewer only; campaign unchanged",
+      "renderedRoofGeometryChanged": true,
+      "originalGeographicSourceDataChanged": false,
+      "sourceFootprintsChanged": false,
+      "totalAndRoofHeightSourceParametersChanged": false,
+      "groundAndIGNReferencesChanged": false,
+      "roofAndApexSurveyed": false,
+      "entireBoundaryToleranceM": 0.01,
+      "toleranceIsHorizontalOnly": true,
+      "maximumSourceWallAboveDerivedFrameEaveMeters": 0.011049727977017199,
+      "independentProjectedAreaDifferenceMaxM2": 5.17682914575609e-09,
+      "controlCourtyards": 6,
+      "controlSourceObjectsCrossingCellBoundaries": 19,
+      "sourcePbfSHA256": "258a6450ae90142b4c4c19c851e3983a5c82c0e216dbe5f4d6fcbda0b0646467",
+      "proofs": {
+        "NATIVE_GEOMETRY.json": {
+          "bytes": 125382,
+          "sha256": "1bc6b944189e67865cbbf5ae1f55b6a358a12e4a52b6b1bce6eb582092c8dd0d"
+        },
+        "INDEPENDENT_SOURCE_AUDIT.json": {
+          "bytes": 5935,
+          "sha256": "bcc3830792d05923436cc41dc05708a55b1ce0fe1050cdac36712f0db52396f8"
+        },
+        "PEER_REVIEW.json": {
+          "bytes": 3169,
+          "sha256": "dde1c9b455144703dfcaa694536af0b115d7c2d8f1fe44ec722819807d22697e"
+        }
+      },
+      "interpretation": "A bounded derived convex frame supplies the pyramid profile, clipped to the original source domain. Incomplete, multi-outer, holed or more strongly non-convex outlines retain their previous treatment."
+    },
+    "missions": {
+      "owner": "native45 and existing37/64 serializers",
+      "escortVehicleRoutes": true,
+      "escortDefinitions": 3,
+      "activeCallTraceTargets": "Escort delivery targetZone, other calls original zone; native objective semantics, no pickup/passenger state added.",
+      "manualGPSPreserved": true,
+      "legacyExactEscortTuplesRecognized": true,
+      "portRace": {
+        "previousTarget": "corniche-route",
+        "target": "corniche-exterior",
+        "meaning": "Explicit level-design adaptation in the authored conceptual world, not a geographic alias or connector.",
+        "otherSevenRoutesUnchanged": true
+      },
+      "zonesOrGraphLinksAdded": false,
+      "rewardsChanged": false,
+      "newSaveDomain": false
+    },
+    "chamber": {
+      "owner": "native material30",
+      "before": "Real77 R action could finish after changing zone, clearing the former jam and wearing the weapon in the new scene.",
+      "after": "Bind the native action to live core/zone/weapon/durability record; cancel incompatible transitions and direct37 import. Ordinary pause preserves it. Group64 transfer refuses an active chamber action.",
+      "nativeDurationSeconds": 0.9,
+      "nativeConditionWear": 0.6,
+      "damageOrAmmoChanges": false,
+      "newSaveDomain": false
+    },
+    "worldTransaction": {
+      "owner": "native metric55 handoff and existing58 snapshots",
+      "before": "Source snapshot was outside try/finally; later failures could duplicate car membership and retain destination coordinates.",
+      "after": "Restore physical identity/pose, source and target memberships, their two memory entries, spatial state and55/52 seam counters; always release the transition lock.",
+      "existingVINCompensation": "One native45 register attempt only after the registration boundary was reached, with the same pre-existing VIN, fleet root and record; restore car properties afterwards.",
+      "testsUseDeclaredFaultInjection": true,
+      "naturalFailureDuringHumanTraversalClaimed": false,
+      "fullGlobalAtomicityClaimed": false,
+      "durablePersistenceGuaranteed": false,
+      "discoveryRewards52GloballyRewound": false,
+      "geographicDataOrMovementPhysicsChanged": false
+    }
+  },
+  "coverage": {
+    "physicalCells": 168,
+    "physicalAreaKm2": 10.5,
+    "metropolitanCommunes": 92,
+    "metropolitanTerrainCells": 52020,
+    "newPhysicalCells": 0,
+    "completeArchitecturalOneToOne": false,
+    "wholeMetropolisPhysicalTraversal": false,
+    "optionalMetropoleCacheInGit": false,
+    "manifestSHA256": "881a3fec8837fe7922801102f5fa8c33ffa85ea743ed726e7d1f71dcb8ab0bfe"
+  },
+  "validation": {
+    "unitTests": {
+      "passed": true,
+      "counts": {
+        "jsInherited": 671,
+        "jsCurrent": 54,
+        "pythonInherited": 370,
+        "pythonCurrentInfra": 44,
+        "pythonCurrentFeature": 16
+      },
+      "totalTests": 1155,
+      "failures": 0,
+      "skipped": 0,
+      "rerunsAndPeerProbesNotAddedToCount": true,
+      "historicalLauncherReplay": "Exact71–77 launcher source in memory; assertions unchanged; separate processes;70 direct.",
+      "runtime": {
+        "python": "3.12.14",
+        "node": "v24.19.0"
+      }
+    },
+    "browser": {
+      "passed": true,
+      "scopedPassedSteps": 29,
+      "failed": 0,
+      "uniqueStepNames": 27,
+      "repeatedAcrossFreshProfiles": [
+        "runtime-errors-remain-empty"
+      ],
+      "freshProfiles": 3,
+      "reports": {
+        "gameplay": 18,
+        "viewer": 7,
+        "world": 4
+      },
+      "sourceSetUnchanged": true,
+      "environment": {
+        "freshNonPersistentContext": true,
+        "softwareWebGL": true,
+        "viewport": {
+          "width": 1280,
+          "height": 720
+        },
+        "chromium": "154.0.8037.57",
+        "playwright": "1.62.1"
+      },
+      "scripts": {
+        "browser_gameplay.cjs": {
+          "path": "/workspace/massilia-geodata-generated/validation-v78-2026-11-09/browser/scripts/browser_gameplay.cjs",
+          "bytes": 19012,
+          "sha256": "433cd2d9babffe1b21eb3a4a4b0f7ade6f6b1399207f966275a7b888fcd66379"
+        },
+        "browser_viewer.cjs": {
+          "path": "/workspace/massilia-geodata-generated/validation-v78-2026-11-09/browser/scripts/browser_viewer.cjs",
+          "bytes": 8215,
+          "sha256": "2902c338f4b90f5f05108378155d211f54f5b7ea81fda66f3c604e6ffe8fb8d3"
+        },
+        "browser_world.cjs": {
+          "path": "/workspace/massilia-geodata-generated/validation-v78-2026-11-09/browser/scripts/browser_world.cjs",
+          "bytes": 5252,
+          "sha256": "18638158ba6db13729f6aa2bdf5d102e85a1c299006fc18c928edf49f8ffa869"
+        },
+        "browser_harness.cjs": {
+          "path": "/workspace/massilia-geodata-generated/validation-v78-2026-11-09/browser/scripts/browser_harness.cjs",
+          "bytes": 6337,
+          "sha256": "c2eb53e226eb5739797b9e06c9605fe1353445ff159d5ef0b4288bace79db03a"
+        },
+        "browser_provenance.cjs": {
+          "path": "/workspace/massilia-geodata-generated/validation-v78-2026-11-09/browser/scripts/browser_provenance.cjs",
+          "bytes": 4776,
+          "sha256": "66c8e6752df4240a225a4561a7e3932d9f8a4b65fa9d551772d715cc52689dd4"
+        },
+        "browser-provenance.test.cjs": {
+          "path": "/workspace/massilia-geodata-generated/validation-v78-2026-11-09/browser/scripts/browser-provenance.test.cjs",
+          "bytes": 1978,
+          "sha256": "fa7470b986a90825e3f0d8736f1a77d6dcc7a689d280a7e6fc8eca8f88bf80e6"
+        }
+      },
+      "summary": {
+        "path": "browser/QA_SUMMARY.json",
+        "bytes": 12989,
+        "sha256": "7409c32b53886b223701dbe1b68bc14b2403d99b887aeadeb732e27850d32575"
+      },
+      "roofWitness": {
+        "target": {
+          "id": "osm/way/264887685",
+          "cell": "V52-MC-W04-S00",
+          "e": 891967.6098140328,
+          "n": 6247387.865841345,
+          "h": 46.81017304225207
+        },
+        "pose": {
+          "e": 891967.6098140328,
+          "n": 6247385.029247573,
+          "h": 86.81017304225207
+        },
+        "result": {
+          "status": "building",
+          "selection": {
+            "id": "osm/way/264887685",
+            "name": null,
+            "osmURL": "https://www.openstreetmap.org/way/264887685",
+            "heightMeters": 35,
+            "minHeightMeters": 0,
+            "baseAltitudeNGFMeters": 11.81017304225207,
+            "heightSource": "osm-height",
+            "heightQuality": "declared",
+            "heightKind": "model-total",
+            "baseQuality": "derived-from-valid-dem",
+            "roof": {
+              "requestedShape": "pyramidal",
+              "displayedShape": "pyramidal",
+              "modelled": true,
+              "reason": "osm-parametric-pyramidal-source-clipped-convex-frame",
+              "quality": "inferred-parametric",
+              "surveyed": false
+            },
+            "appearance": {
+              "wallSource": "interpreted-marseille-palette",
+              "roofSource": "interpreted-marseille-palette",
+              "lightingSource": "interpreted-cyberpunk",
+              "facadeSurveyed": false
+            },
+            "footprint": {
+              "source": "prepared-osm-triangles",
+              "geometrySHA256": "fad077b2a1f2806c832547bc840f58cb00dec744f121fd4acda7193a17a106a3",
+              "cellId": "V52-MC-W04-S00",
+              "sourcePbfSHA256": "258a6450ae90142b4c4c19c851e3983a5c82c0e216dbe5f4d6fcbda0b0646467",
+              "clippedToCell": true,
+              "accuracyCertified": false
+            },
+            "sourceTags": {
+              "building:part": "yes",
+              "height": "35",
+              "roof:shape": "pyramidal",
+              "roof:height": "5"
+            },
+            "architecturalOneToOneCertified": false,
+            "physicalAccessVerified": false,
+            "roofFrame78": {
+              "boundaryToleranceMeters": 0.01,
+              "sourceAreaM2": 29.696793853947803,
+              "frameAreaM2": 29.713220279749144,
+              "sourceFootprintRetained": true,
+              "entireBoundariesChecked": true,
+              "apexInferred": true,
+              "roofSurveyed": false
+            },
+            "distanceMeters": 43.610529600150755,
+            "selectedCellId": "V52-MC-W04-S00",
+            "hitL93": {
+              "e": 891967.6159838024,
+              "n": 6247388.11412823,
+              "h": 43.308888402953976
+            }
+          },
+          "testedTriangles": 41859,
+          "maxTriangles": 600000,
+          "maxDistanceMeters": 1500
+        }
+      },
+      "nativeWorldTransfer": {
+        "before": {
+          "zone": "geo:V52-MC-12",
+          "camera": {
+            "x": -39.18420848157257,
+            "y": 31.400707580457635,
+            "z": -124.58
+          },
+          "car": {
+            "id": "geo:V52-MC-12-pilot-taxi",
+            "x": -39.18420848157257,
+            "z": -124.58,
+            "heading": 3.141592653589793,
+            "condition": 100
+          },
+          "world": {
+            "e": 892662.4638881598,
+            "n": 6247899.146415883
+          },
+          "travel": {
+            "footCrossings": 0,
+            "vehicleCrossings": 0,
+            "blockedCrossings": 0,
+            "maxMetricError": 0,
+            "lastCrossing": null,
+            "restoredCells": 0
+          }
+        },
+        "ok": true,
+        "after": {
+          "zone": "geo:V52-MC-W01-N03",
+          "camera": {
+            "x": -39.18420848157257,
+            "y": 31.400707580457635,
+            "z": 125.4199999999255
+          },
+          "car": {
+            "id": "geo:V52-MC-12-pilot-taxi",
+            "x": -39.18420848157257,
+            "z": 125.4199999999255,
+            "heading": 3.141592653589793,
+            "condition": 100
+          },
+          "world": {
+            "e": 892662.4638881598,
+            "n": 6247899.146415883
+          },
+          "travel": {
+            "footCrossings": 0,
+            "vehicleCrossings": 1,
+            "blockedCrossings": 0,
+            "maxMetricError": 0,
+            "lastCrossing": {
+              "from": "V52-MC-12",
+              "to": "V52-MC-W01-N03",
+              "mode": "vehicle",
+              "sourceRoad": "osm/way/460530280",
+              "worldBefore": {
+                "e": 892662.4638881598,
+                "n": 6247899.146415883
+              },
+              "worldAfter": {
+                "e": 892662.4638881598,
+                "n": 6247899.146415883
+              },
+              "errorMeters": 0
+            },
+            "restoredCells": 0
+          }
+        },
+        "sameCar": true,
+        "sourceMembership": 0,
+        "targetMembership": 1
+      },
+      "limits": [
+        "No human campaign playthrough or continuous geographic traversal.",
+        "Cars at authored44 and geographic55 portals are declared bounded handoff fixtures, not continuously driven routes.",
+        "The escort engine has no passenger/pickup ledger; this check aligns its existing active target and driving completion, not passenger transport.",
+        "Source roofs and apex remain inferred; no source façade or roof survey, architectural1:1 or player GPU performance certification.",
+        "World rollback fault injection is covered by owner unit tests; browser_world validates only a native positive geographic transfer.",
+        "Source-only browser fallback and fresh cloud restoration were not exercised."
+      ],
+      "executionPhase": "Executed against stable candidate; complete21-builder prepare reproduced both HTML and both reports byte-for-byte with the complete producer set unchanged.",
+      "finalReconstructionMatchesTestedArtifacts": true
+    },
+    "launcher": {
+      "fullPreparation": {
+        "ok": true,
+        "command": [
+          "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+          "-B",
+          "-S",
+          "/workspace/massilia-cyberpunk/lancer.py",
+          "--prepare-only"
+        ],
+        "exitCode": 0,
+        "seconds": 451.8414336949936,
+        "builderCount": 21,
+        "parents": {
+          "ok": true,
+          "parentArtifactsComparedToContentVerifiedReceipt77": 36,
+          "parentHTML": 19,
+          "parentReports": 17,
+          "parentSourcesPinned": 160,
+          "changed": {},
+          "receipt77SHA256": "89668c9ffa905bc78e0524fff402ab060fb6c5ba3c4da7b2a4ac31e49ba41f22"
+        },
+        "preflightPairAndReportsByteIdentical": true,
+        "finalPair": {
+          "SOMA_MASSILIA_URBAIN_v0_78.html": {
+            "bytes": 67338716,
+            "sha256": "e550b4ed050a953b9a5f19180f451299d79ecd9e9c4eba4e2906fcbd16dd2af1"
+          },
+          "metropole-viewer-v78.html": {
+            "bytes": 1802867,
+            "sha256": "44ffd606b3ecbe2f34e5b49356573187e095273b9ac05277f952d8d2dad2e326"
+          },
+          "data/v78/BUILD_REPORT.json": {
+            "bytes": 180180,
+            "sha256": "23d5eb94e2c67b4e0f4aeb7f171156f530b98b9c4ebf5c570baac0135bf373af"
+          },
+          "data/v78/VIEWER_BUILD_REPORT.json": {
+            "bytes": 180083,
+            "sha256": "3c4ba73bbb2e05288021e3f8a2d9bcc3289015168e9a74418ff90c7ba436ab51"
+          }
+        },
+        "producerInputsUnchanged": true,
+        "inputsCanonicalSHA256": "7acf07ecf1a1525d6faff1c83defc8c7f6a0b5430f31674c2185bab2f8b121ed",
+        "recordedAt": "2026-11-09T06:51:01.368679+00:00"
+      },
+      "readOnlyVerification": {
+        "ok": true,
+        "command": [
+          "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+          "-B",
+          "-S",
+          "/workspace/massilia-cyberpunk/lancer.py",
+          "--verify"
+        ],
+        "exitCode": 0,
+        "seconds": 459.8521997699863,
+        "verifiedFilesAndTimestamps": 917,
+        "bytecodeFilesUnchanged": 148,
+        "changed": [],
+        "bytecodeWritesDisabledForAllBuilders": true
+      },
+      "sourceOnly": {
+        "ok": true,
+        "copiedFiles": 216,
+        "preservedOriginalFiles": 27,
+        "canonicalHTMLAndReportsByteIdentical": true,
+        "gitCopied": false,
+        "optionalMetropoleCopied": false,
+        "preparedCentreCopied": false,
+        "gisImportsBlocked": [
+          "numpy",
+          "osgeo",
+          "pyproj",
+          "rasterio",
+          "shapely"
+        ],
+        "sourceInputsUnchanged": true,
+        "verifyWritesFilesOrTimestamps": false,
+        "centreBootstrap": {
+          "preparedCells": 168,
+          "worldManifestSHA256": "443d24d1acb87fa3e264392a953b95b27d966e7eb1ff64abf3bcc9d157b10b21",
+          "gisImportsBlocked": true,
+          "parentHTMLPublished": false,
+          "payloadPartsVerified": 5,
+          "immutableOriginalFilesVerified": 27,
+          "initiallyAbsent": true,
+          "copiedPreparedAssets": false,
+          "sourceReconstructedFiles": 673,
+          "allPreparedFilesByteIdenticalToCanonical": true,
+          "seconds": 44.32917295396328,
+          "command": [
+            "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+            "-B",
+            "-S",
+            "-c",
+            "<native B69.build + prepare_world + verify_world NoGIS harness>"
+          ]
+        }
+      },
+      "transitiveSourceInputs": 196,
+      "cachedHTTP": {
+        "ok": true,
+        "receiptChecks": [
+          {
+            "ready": true,
+            "reason": "content-verified",
+            "seconds": 2.15613796596881,
+            "worldCells": 168
+          },
+          {
+            "ready": true,
+            "reason": "content-verified",
+            "seconds": 1.6915093130082823,
+            "worldCells": 168
+          }
+        ],
+        "launcherFirstCompleteHTTPSeconds": 2.995242953998968,
+        "timingConditions": "Warm filesystem after full preparation, full verification and two content checks; no browser render or GPU benchmark.",
+        "port": 8790,
+        "http": {
+          "SOMA_MASSILIA_URBAIN_v0_78.html": {
+            "status": 200,
+            "bytes": 67338716,
+            "sha256": "e550b4ed050a953b9a5f19180f451299d79ecd9e9c4eba4e2906fcbd16dd2af1"
+          },
+          "metropole-viewer-v78.html": {
+            "status": 200,
+            "bytes": 1802867,
+            "sha256": "44ffd606b3ecbe2f34e5b49356573187e095273b9ac05277f952d8d2dad2e326"
+          }
+        },
+        "generatedArtifactsReportsReceiptUnchanged": true,
+        "builderRunCount": 0,
+        "ownLauncherProcessGroupStopped": 389256,
+        "noExistingServiceStopped": true
+      },
+      "summary": {
+        "path": "launch/summary.json",
+        "bytes": 20626,
+        "sha256": "b42ac8ac64eee6ab99c661c39d3b86a3c476aee6de21275cf54f7171c022fee5"
+      }
+    },
+    "historicalPythonLauncherRefs": {
+      "71": "e348acef66830210487b0615e662757880381c80",
+      "72": "3ce16c39a2cb72efd5189c5e3fb3bc069faeb57a",
+      "73": "c0df4febf3502d20b07197f901d1d144ca13cd00",
+      "74": "bb48f68b2eebdb2ba9461a1666ceceb0f099ce2f",
+      "75": "d4c60b1a8eed1cbb89834cf3bebfd64e25a90d36",
+      "76": "a41c72c1a43e8395de43812c4903a989f4136595",
+      "77": "4af0d9b5de9ff5e768bfef756b2d389f00a9f150"
+    },
+    "historicalPythonMethod": "Discover unchanged suites in separate processes, compile their exact historical Git launcher into an in-memory module using the actual lancer.py path, and replace only the sole test module L binding. Version70 is direct; version78 tests the actual current launcher.",
+    "commands": {
+      "javascriptInherited": "MASSILIA_ROUTE_WORLD=/workspace/massilia-geodata-generated/world-amp-navigation-2026-10-26/manifest.json node --test --test-concurrency=2 game/tests/v67/core.test.cjs game/tests/v68/*.test.cjs ... game/tests/v77/*.test.cjs (all67–77 paths supplied in actual run)",
+      "javascriptCurrent": "node --test --test-concurrency=2 game/tests/v78/*.test.cjs",
+      "pythonCurrent": "60 unique cases run as44 infra plus16 feature patch cases, separately; original assertions unchanged.",
+      "prepare": "PYTHONDONTWRITEBYTECODE=1 python3 -B -S lancer.py --prepare-only",
+      "verify": "PYTHONDONTWRITEBYTECODE=1 python3 -B -S lancer.py --verify",
+      "browser": "Three separate drivers browser_gameplay.cjs/browser_viewer.cjs/browser_world.cjs with --url current78 page, --chromium /usr/bin/chromium and separate --output directories. Full exact commands in browser/QA_SUMMARY.json."
+    },
+    "diagnosticsRetained": [
+      "browser/viewer-wording-v1: old assertion wording, corrected only in viewer script; unaffected driver reports retained.",
+      "browser/PREFLIGHT_INDEX.json: native77 defects and positive seam probes; none counted as78 acceptance.",
+      "architecture/DELIVERY.json: original independent-audit import/large-coordinate diagnostics, final translated-frame comparison retained.",
+      "world/DELIVERY.json: explicit fault injection and negative boarding audit; no unsupported mounting guard introduced."
+    ]
+  },
+  "evidenceRoot": "/workspace/massilia-geodata-generated/validation-v78-2026-11-09",
+  "peerReviews": {
+    "architecture": "architecture/PEER_REVIEW.json",
+    "world": "world/INDEPENDENT_REVIEW_COMBAT.json",
+    "missions": "combat/DELIVERY.json",
+    "combat": "missions/COMBAT_REVIEW.json"
+  },
+  "limits": [
+    "Six roof profiles and apexes are interpretations, not architectural surveys.",
+    "A1cm boundary tolerance is not survey or vertical accuracy.",
+    "Mission routes use the authored conceptual world, not proof of whole-metropolis physical accessibility.",
+    "Fault-injected rollback tests establish the declared local contract; observers and durable persistence are not globally atomic.",
+    "Bounded browser fixtures are not a human campaign or GPU-player performance benchmark.",
+    "Fresh cloud snapshot restoration remains unverified."
+  ],
+  "outputs": {
+    "SOMA_MASSILIA_URBAIN_v0_78.html": {
+      "bytes": 67338716,
+      "sha256": "e550b4ed050a953b9a5f19180f451299d79ecd9e9c4eba4e2906fcbd16dd2af1"
+    },
+    "metropole-viewer-v78.html": {
+      "bytes": 1802867,
+      "sha256": "44ffd606b3ecbe2f34e5b49356573187e095273b9ac05277f952d8d2dad2e326"
+    }
+  }
+}

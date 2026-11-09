@@ -1,0 +1,185 @@
+{
+  "tile": {
+    "boundsL93": [
+      892826.6480966414,
+      6247649.566415883,
+      893076.6480966414,
+      6247899.566415883
+    ],
+    "cellId": "V52-MC-13",
+    "contentSHA256": "f39d6bee067ede804c7d89bb5c4544d82d16247fc9b23b01f47a3eac281c84c0",
+    "gridX": 0,
+    "gridY": -2,
+    "navigation": {
+      "bytes": 16595,
+      "decodedBytes": 82155,
+      "encoding": "gzip-json",
+      "path": "layers/navigation.679118861267/tiles/V52-MC-13.navigation.json.gz",
+      "sha256": "a296f4d5aa1e280c278ba9b5e196afc680b2f9788b5dfd62b2111849be45cc91"
+    },
+    "preparation": {
+      "activationPerformed": false,
+      "missingLayers": [],
+      "terrainComplete": true
+    },
+    "surfaces": {
+      "bytes": 27886,
+      "decodedBytes": 144570,
+      "encoding": "gzip-json",
+      "path": "layers/surfaces.45963a691b3b/tiles/V52-MC-13.surfaces.json.gz",
+      "sha256": "c7ba6652f1c9ba78bb165a6f3d691278e3b14199aefc99a9ce2d9ee1ef310fb6"
+    },
+    "terrain": {
+      "bytes": 12357,
+      "complete": true,
+      "decodedBytes": 21174,
+      "encoding": "gzip-json",
+      "gridSHA256": "597618458b69f2eb01c7eab56adef9ef900c407b411a33a1fdbe670e950275de",
+      "noDataNodes": 0,
+      "nodes": 2809,
+      "path": "tiles/V52-MC-13.terrain.json.gz",
+      "sha256": "701a7801e87f690f3f1263d774488ac3bce6015af1cde664532a8ca0d7a9ad06",
+      "stepM": 5,
+      "validNodes": 2809
+    },
+    "vector": {
+      "bytes": 70698,
+      "decodedBytes": 428886,
+      "encoding": "gzip-json",
+      "path": "tiles/V52-MC-13.vector.json.gz",
+      "sha256": "bcf95d161ca374cc7696da0c1b584a7d23154141012d5c5fcdea3a0f2c83c724"
+    }
+  },
+  "feature": {
+    "geometry": {
+      "coordinates": [
+        [
+          5.3778354,
+          43.302761200000006
+        ],
+        [
+          5.3777567,
+          43.302727100000006
+        ],
+        [
+          5.377271699999999,
+          43.3025133
+        ],
+        [
+          5.377163900000001,
+          43.3024658
+        ],
+        [
+          5.376876799999999,
+          43.3023479
+        ]
+      ],
+      "type": "LineString"
+    },
+    "id": "osm/way/460530284",
+    "properties": {
+      "canonical_id": "osm/way/460530284",
+      "cycleway:both": "no",
+      "highway": "secondary",
+      "lanes": "4",
+      "lanes:backward": "3",
+      "lanes:forward": "1",
+      "name": "Boulevard Charles Nédelec",
+      "name:etymology:wikidata": "Q113977095",
+      "name:oc": "Baloard Carles Nedelec",
+      "sidewalk:both:surface": "asphalt",
+      "sidewalk:left": "yes",
+      "sidewalk:right": "separate",
+      "smoothness": "excellent",
+      "soma:geometry_sha256": "bbb9b236294456bafa5bb0f73561b0e6bf9e0c378a921bb50d441e7c5e2fb2bd",
+      "soma:layer": "roads",
+      "soma:metricGeometry": {
+        "coordinates": [
+          [
+            893021.4153369619,
+            6247750.577028409
+          ],
+          [
+            893015.1429052241,
+            6247746.5956625
+          ],
+          [
+            892976.5002039359,
+            6247721.654062147
+          ],
+          [
+            892967.9110558414,
+            6247716.112695687
+          ],
+          [
+            892945.007013635,
+            6247702.310770241
+          ]
+        ],
+        "type": "LineString"
+      },
+      "soma:node_refs": [
+        "26491389",
+        "4561676161",
+        "5692348761",
+        "26779373",
+        "3159088620"
+      ],
+      "soma:sourceBoundsL93": [
+        892945.007013635,
+        6247702.310770241,
+        893021.4153369619,
+        6247750.577028409
+      ],
+      "source:name:oc": "ieo-bdtopoc",
+      "surface": "asphalt"
+    },
+    "type": "Feature"
+  },
+  "profile": {
+    "foot": false,
+    "geometrySHA256": "bbb9b236294456bafa5bb0f73561b0e6bf9e0c378a921bb50d441e7c5e2fb2bd",
+    "invalidWidth": false,
+    "lanes": 4,
+    "markings": true,
+    "oneway": false,
+    "sidewalk": {
+      "known": true,
+      "left": true,
+      "leftWidth": 1.5,
+      "right": false,
+      "rightWidth": 1.5
+    },
+    "structural": false,
+    "surface": "asphalt",
+    "unsealed": false,
+    "width": 12.6,
+    "widthSource": "estimated-from-lanes"
+  },
+  "triangleIndex": 31,
+  "triangleLocal": [
+    [
+      23.35443695646245,
+      42.436691449955106
+    ],
+    [
+      24.6784781483002,
+      45.52611195575446
+    ],
+    [
+      25.956817794009112,
+      44.70101858768612
+    ]
+  ],
+  "pointL93": [
+    892976.311340941,
+    6247730.345141885
+  ],
+  "signedDistances": [
+    -7.404572244420155
+  ],
+  "schema": "soma-massilia/navigation77-source-regression/1",
+  "manifestSHA256": "881a3fec8837fe7922801102f5fa8c33ffa85ea743ed726e7d1f71dcb8ab0bfe",
+  "sourcePbfSHA256": "258a6450ae90142b4c4c19c851e3983a5c82c0e216dbe5f4d6fcbda0b0646467",
+  "meaning": "Original OSM axis and prepared native walk-union triangle; compatible axis candidates do not prove surface ownership or physical access."
+}
