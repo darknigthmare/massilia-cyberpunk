@@ -1,6 +1,6 @@
 # Validation de Massilia Cyberpunk
 
-La version courante est la **v0.77**. Voir son [guide et ses commandes](../../game/README_v77.md) et son [rapport de livraison](../../game/data/v77/FEATURE_REPORT.json). La procédure ci-dessous conserve la référence v0.72 et ses limites ; les anciens résultats ne valent pas validation de la v0.77.
+La version courante est la **v0.78**. Voir son [guide et ses commandes](../../game/README_v78.md) et son [rapport de livraison](../../game/data/v78/FEATURE_REPORT.json). La procédure ci-dessous conserve la référence v0.72 et ses limites ; les anciens résultats ne valent pas validation de la v0.78.
 
 ## Référence et portée
 
