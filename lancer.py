@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Prepare the verified original release and launch SOMA//MASSILIA v0.76."""
+"""Prepare the verified original release and launch SOMA//MASSILIA v0.77."""
 
 from pathlib import Path
 import argparse
@@ -19,11 +19,11 @@ CHUNK = 1024 * 1024
 # Verification includes imports and child builders: never create bytecode artifacts.
 sys.dont_write_bytecode = True
 SUBPROCESS_ENV = dict(os.environ, PYTHONDONTWRITEBYTECODE="1")
-BUILDERS = ("build_v68.py", "build_v69.py", "build_v70.py", "build_v71.py", "build_v72.py", "build_v73.py", "build_v74.py", "build_v75.py", "build_v76.py",
+BUILDERS = ("build_v68.py", "build_v69.py", "build_v70.py", "build_v71.py", "build_v72.py", "build_v73.py", "build_v74.py", "build_v75.py", "build_v76.py", "build_v77.py",
             "tools/build_metropole_viewer.py", "tools/build_metropole_viewer_v70.py",
             "tools/build_metropole_viewer_v71.py", "tools/build_metropole_viewer_v72.py",
             "tools/build_metropole_viewer_v73.py", "tools/build_metropole_viewer_v74.py",
-            "tools/build_metropole_viewer_v75.py", "tools/build_metropole_viewer_v76.py")
+            "tools/build_metropole_viewer_v75.py", "tools/build_metropole_viewer_v76.py", "tools/build_metropole_viewer_v77.py")
 
 
 class PreparationError(Exception):
@@ -195,25 +195,25 @@ def main():
     prepare(manifest)
     if str(GAME) not in sys.path:
         sys.path.insert(0, str(GAME))
-    from tools import launch_cache_v76
+    from tools import launch_cache_v77
     if not args.prepare_only:
-        cached = launch_cache_v76.try_ready(GAME)
+        cached = launch_cache_v77.try_ready(GAME)
         if cached['ready']:
-            print(f"Édition 0.76 contrôlée sans reconstruction ({cached['seconds']:.2f} s).", flush=True)
+            print(f"Édition 0.77 contrôlée sans reconstruction ({cached['seconds']:.2f} s).", flush=True)
             return serve(args)
-    expected_sources = launch_cache_v76.source_inputs(GAME)
+    expected_sources = launch_cache_v77.source_inputs(GAME)
     for name in BUILDERS:
         result = subprocess.call([sys.executable, str(GAME / name)], cwd=GAME, env=SUBPROCESS_ENV)
         if result:
             return result
-    launch_cache_v76.record_prepared(expected_sources, GAME)
+    launch_cache_v77.record_prepared(expected_sources, GAME)
     if args.prepare_only:
         return 0
     return serve(args)
 
 
 def serve(args):
-    command = [sys.executable, str(GAME / "tools" / "serve_v76.py"), "--port", str(args.port)]
+    command = [sys.executable, str(GAME / "tools" / "serve_v77.py"), "--port", str(args.port)]
     if args.no_browser:
         command.append("--no-browser")
     return subprocess.call(command, cwd=GAME, env=SUBPROCESS_ENV)

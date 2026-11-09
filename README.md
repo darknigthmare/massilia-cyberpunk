@@ -1,10 +1,10 @@
-# Massilia Cyberpunk — SOMA//MASSILIA v0.76
+# Massilia Cyberpunk — SOMA//MASSILIA v0.77
 
 **Marseille augmentée** poursuit la reconstruction de la ville dans l’ambiance cyberpunk du projet : architecture méditerranéenne, fenêtres éclairées et accents cyan, magenta et ambre.
 
-La v0.76 poursuit **les histoires et contrats, le contre-jeu des unités lourdes, les entrées dans le centre et l’audit du bâti**. Elle répare les lieux invalides des missions, rend la capsule de brume effective et permet d’examiner les conflits entre cotes IGN et relief. Les références *Syndicate*, *Cyberpunk 2077* et *E.Y.E: Divine Cybermancy* orientent les systèmes propres à Massilia.
+La v0.77 poursuit **le combat, le guidage des missions et la lecture des données géographiques**. Elle lie la recharge à l’arme réellement équipée, protège les destinations GPS personnelles pendant les transitions automatiques et précise l’interprétation des cotes IGN et des trottoirs. Les références *Syndicate*, *Cyberpunk 2077* et *E.Y.E: Divine Cybermancy* orientent les systèmes propres à Massilia.
 
-La campagne embarquée couvre **168 cellules de 250 m, soit 10,5 km² du centre de Marseille**. Le nouveau survol couvre les **92 communes de la métropole Aix-Marseille-Provence**, avec **52 020 secteurs de relief IGN à 5 m**, les objets OSM et **299 391 références IGN de hauteur à l’égout**. Le cache métropolitain complet est installé dans cet environnement cloud ; il reste hors Git. Une copie source seule utilise explicitement le centre partiel jusqu’à préparation des données. Les façades, toitures et dimensions encore inconnues restent interprétées : la restitution architecturale complète à 1:1 n’est pas atteinte.
+La campagne embarquée couvre **168 cellules de 250 m, soit 10,5 km² du centre de Marseille**. Le nouveau survol couvre les **92 communes de la métropole Aix-Marseille-Provence**, avec **52 020 secteurs de relief IGN à 5 m**, les objets OSM et **299 391 appariements à des hauteurs IGN de bâtiment**. Le cache métropolitain complet est installé dans cet environnement cloud ; il reste hors Git. Une copie source seule utilise explicitement le centre partiel jusqu’à préparation des données. Les façades, toitures et dimensions encore inconnues restent interprétées : la restitution architecturale complète à 1:1 n’est pas atteinte.
 
 ## Jouer
 
@@ -13,7 +13,7 @@ Utilisez une copie complète de cette version, avec `game/`, `payload/` et le la
 - Windows : lancez **`LANCER_JEU.cmd` à la racine du dépôt**.
 - Linux/macOS : depuis la racine, exécutez `python3 lancer.py`.
 
-Le premier lancement restaure les fichiers originaux, vérifie leurs empreintes, reconstruit les éditions v0.68 à v0.76, les survols et les assets du centre déjà livré. Le serveur ouvre la v0.76 dans le navigateur et reste lié à la machine locale. `Ctrl+C` l’arrête. La préparation du jeu livré ne télécharge aucune donnée. Prévoir au moins 2 Go libres en plus du dépôt pour les sorties et fichiers temporaires ; les imports géographiques peuvent demander davantage.
+Le premier lancement restaure les fichiers originaux, vérifie leurs empreintes, reconstruit les éditions v0.68 à v0.77, les survols et les assets du centre déjà livré. Le serveur ouvre la v0.77 dans le navigateur et reste lié à la machine locale. `Ctrl+C` l’arrête. La préparation du jeu livré ne télécharge aucune donnée. Prévoir au moins 2 Go libres en plus du dépôt pour les sorties et fichiers temporaires ; les imports géographiques peuvent demander davantage.
 
 Les lancements suivants contrôlent les sources, sorties et assets préparés avant de les réutiliser. Une entrée modifiée ou abîmée déclenche la préparation complète. `--prepare-only` et `--verify` conservent leurs contrôles complets.
 
@@ -26,6 +26,15 @@ python3 lancer.py --no-browser
 Sous Windows, remplacez `python3` par `python`. Utilisez `--port 8766` si nécessaire. Les anciennes commandes conservées dans `game/` visent les éditions antérieures : le lanceur à la racine choisit la version actuelle.
 
 Le bouton **« Survoler la métropole »** ouvre l’explorateur indépendant. Sa carte propose les 92 communes ; il affiche les données effectivement installées, avec un repli explicitement marqué sur le centre partiel. Le survol n’utilise aucune sauvegarde de campagne. Clavier ZQSD/WASD ou flèches, souris pour regarder, Espace pour monter, C pour descendre et Maj pour accélérer.
+
+## Ce qui change en v0.77
+
+- **Recharge** : changer d’arme par l’arsenal ou déposer l’arme active annule sa recharge. Les munitions restent gérées par le système existant.
+- **Guidage** : les transitions automatiques des missions préservent une destination GPS sans lien avec leur objectif. Les histoires et contrats proposent une action explicite « Tracer » ; les lieux de remise de Station Zéro sont distingués.
+- **Bâti** : la fiche Atlas distingue la référence calculée du modèle et les champs altimétriques IGN. Les cotes et géométries restent conservées.
+- **Voirie** : l’inspection respecte le côté gauche ou droit déclaré pour les trottoirs asymétriques, sans changer la chaussée ou la navigation.
+
+[Guide et validation de la v0.77](game/README_v77.md).
 
 ## Ce qui change en v0.76
 
@@ -144,7 +153,7 @@ Les contrôles propres à la version actuelle sont détaillés dans [README_v74.
 
 ## Développement guidé
 
-Les contributions suivent les [consignes du projet](AGENTS.md). La [sélection des guides gamedev](docs/development/GAMEDEV_SKILLS.md) adapte `awesome-gamedev-agent-skills` au moteur WebGL 2 de Massilia, à ses données géographiques et à sa chaîne de reconstruction. La [procédure de validation](docs/development/VALIDATION.md) précise les contrôles à utiliser et les observations des éditions antérieures ; le guide v0.74 indique les contrôles courants.
+Les contributions suivent les [consignes du projet](AGENTS.md). La [sélection des guides gamedev](docs/development/GAMEDEV_SKILLS.md) adapte `awesome-gamedev-agent-skills` au moteur WebGL 2 de Massilia, à ses données géographiques et à sa chaîne de reconstruction. La [procédure de validation](docs/development/VALIDATION.md) précise les contrôles à utiliser et les observations des éditions antérieures ; le guide v0.77 indique les contrôles courants.
 
 ## Sources
 
