@@ -8,6 +8,8 @@ La campagne embarquée couvre **168 cellules de 250 m, soit 10,5 km² du centre 
 
 ## Jouer
 
+La publication web utilise [massilia-cyberpunk.vercel.app](https://massilia-cyberpunk.vercel.app/) et sert le même jeu reconstruit avec les données du centre fournies. Le manifeste `/release.json` permet de vérifier le SHA et la version effectivement publiés. [Préparation et contrôle de l’hébergement](hosting/README.md).
+
 Utilisez une copie complète de cette version, avec `game/`, `payload/` et le lanceur à la racine. Python **3.11 ou plus récent** et un navigateur compatible **WebGL 2** suffisent ; aucun outil GIS ou Node.js n’est nécessaire pour jouer.
 
 - Windows : lancez **`LANCER_JEU.cmd` à la racine du dépôt**.
