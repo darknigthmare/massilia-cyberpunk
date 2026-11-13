@@ -1,4 +1,6 @@
 __pycache__/
+/vercel-dist/
+/hosting/.reports/
 *.py[cod]
 .massilia-prepare-*/
 /game/baseline/v66.html

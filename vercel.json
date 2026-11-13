@@ -1,0 +1,30 @@
+{
+  "framework": null,
+  "installCommand": "true",
+  "buildCommand": "python3 hosting/build_static.py",
+  "outputDirectory": "vercel-dist",
+  "rewrites": [
+    { "source": "/", "destination": "/SOMA_MASSILIA_URBAIN_v0_78.html" }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        { "key": "X-Content-Type-Options", "value": "nosniff" },
+        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" }
+      ]
+    },
+    {
+      "source": "/(.*).html",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }
+      ]
+    },
+    {
+      "source": "/release.json",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }
+      ]
+    }
+  ]
+}
